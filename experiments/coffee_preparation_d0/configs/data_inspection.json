@@ -1,0 +1,220 @@
+{
+  "episodes": 1000,
+  "total_steps": 689273,
+  "first_episode": "demo_0",
+  "env_args": {
+    "env_name": "CoffeePreparation_D0",
+    "env_version": "1.4.1",
+    "type": 1,
+    "env_kwargs": {
+      "has_renderer": false,
+      "has_offscreen_renderer": true,
+      "ignore_done": true,
+      "use_object_obs": true,
+      "use_camera_obs": true,
+      "control_freq": 20,
+      "controller_configs": {
+        "type": "OSC_POSE",
+        "input_max": 1,
+        "input_min": -1,
+        "output_max": [
+          0.05,
+          0.05,
+          0.05,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "output_min": [
+          -0.05,
+          -0.05,
+          -0.05,
+          -0.5,
+          -0.5,
+          -0.5
+        ],
+        "kp": 150,
+        "damping": 1,
+        "impedance_mode": "fixed",
+        "kp_limits": [
+          0,
+          300
+        ],
+        "damping_limits": [
+          0,
+          10
+        ],
+        "position_limits": null,
+        "orientation_limits": null,
+        "uncouple_pos_ori": true,
+        "control_delta": true,
+        "interpolation": null,
+        "ramp_ratio": 0.2
+      },
+      "robots": [
+        "Panda"
+      ],
+      "camera_depths": false,
+      "camera_heights": 84,
+      "camera_widths": 84,
+      "render_gpu_device_id": 0,
+      "reward_shaping": false,
+      "camera_names": [
+        "agentview",
+        "robot0_eye_in_hand"
+      ]
+    }
+  },
+  "structure": {
+    "actions": {
+      "shape": [
+        673,
+        7
+      ],
+      "dtype": "float64"
+    },
+    "dones": {
+      "shape": [
+        673
+      ],
+      "dtype": "int64"
+    },
+    "obs/agentview_image": {
+      "shape": [
+        673,
+        84,
+        84,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "obs/object": {
+      "shape": [
+        673,
+        86
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_eef_pos": {
+      "shape": [
+        673,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_eef_pos_rel_pod": {
+      "shape": [
+        673,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_eef_pos_rel_pod_holder": {
+      "shape": [
+        673,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_eef_quat": {
+      "shape": [
+        673,
+        4
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_eef_quat_rel_pod": {
+      "shape": [
+        673,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "obs/robot0_eef_quat_rel_pod_holder": {
+      "shape": [
+        673,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "obs/robot0_eef_vel_ang": {
+      "shape": [
+        673,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_eef_vel_lin": {
+      "shape": [
+        673,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_eye_in_hand_image": {
+      "shape": [
+        673,
+        84,
+        84,
+        3
+      ],
+      "dtype": "uint8"
+    },
+    "obs/robot0_gripper_qpos": {
+      "shape": [
+        673,
+        2
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_gripper_qvel": {
+      "shape": [
+        673,
+        2
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_joint_pos": {
+      "shape": [
+        673,
+        7
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_joint_pos_cos": {
+      "shape": [
+        673,
+        7
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_joint_pos_sin": {
+      "shape": [
+        673,
+        7
+      ],
+      "dtype": "float64"
+    },
+    "obs/robot0_joint_vel": {
+      "shape": [
+        673,
+        7
+      ],
+      "dtype": "float64"
+    },
+    "rewards": {
+      "shape": [
+        673
+      ],
+      "dtype": "float64"
+    },
+    "states": {
+      "shape": [
+        673,
+        62
+      ],
+      "dtype": "float64"
+    }
+  },
+  "action_dim": 7
+}

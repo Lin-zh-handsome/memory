@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+data/
+checkpoints/
+*.hdf5
+*.pt
+*.pkl

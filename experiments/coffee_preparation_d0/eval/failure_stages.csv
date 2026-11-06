@@ -1,0 +1,9 @@
+model,metric,failed_episodes,never_achieved_count,never_achieved_fraction
+M0,grasp,90,16,0.17777777777777778
+M0,insertion,90,82,0.9111111111111111
+M0,mug_grasp,90,0,0.0
+M0,mug_place,90,4,0.044444444444444446
+M2,grasp,87,14,0.16091954022988506
+M2,insertion,87,75,0.8620689655172413
+M2,mug_grasp,87,0,0.0
+M2,mug_place,87,4,0.04597701149425287

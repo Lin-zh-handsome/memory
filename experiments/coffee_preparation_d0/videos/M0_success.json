@@ -1,0 +1,9 @@
+{
+  "model": "M0",
+  "train_seed": 0,
+  "epoch": 50,
+  "env_seed": 100000,
+  "success": 1,
+  "steps": 649,
+  "stages": "{\"grasp\": true, \"insertion\": true, \"mug_grasp\": true, \"mug_place\": true, \"rim\": true, \"task\": true}"
+}

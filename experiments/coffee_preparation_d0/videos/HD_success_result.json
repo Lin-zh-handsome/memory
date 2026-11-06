@@ -1,0 +1,15 @@
+{
+  "model": "M2",
+  "train_seed": 0,
+  "epoch": 50,
+  "env_seed": 100006,
+  "demo_rng_seed": 0,
+  "success": true,
+  "steps": 584,
+  "resolution": [
+    1280,
+    720
+  ],
+  "purpose": "HD demonstration only; excluded from formal evaluations",
+  "video": "/home/linzhenghong/project/coffee_dp_official/experiments/coffee_preparation_d0/videos/M2_epoch50_HD_attempt0.mp4"
+}

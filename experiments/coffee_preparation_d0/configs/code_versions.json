@@ -1,0 +1,13 @@
+{
+  "torch": "2.4.1+cu121",
+  "torchvision": "0.19.1+cu121",
+  "diffusers": "0.11.1",
+  "robosuite": "1.4.1",
+  "mamba_ssm": "2.2.2",
+  "mujoco": "2.3.2",
+  "python": "3.10.22 (main, Oct  1 2026, 20:14:04) [GCC 14.3.0]",
+  "cuda": "12.1",
+  "robomimic": "0.3.0",
+  "diffusion_policy_commit": "5ba07ac6661db573af695b419a7947ecb704690f",
+  "mimicgen_commit": "c0fbff22ba40060f05a917a80817f3f5c20731e7"
+}

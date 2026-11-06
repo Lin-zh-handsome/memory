@@ -1,0 +1,13 @@
+{
+  "M0_parameters": 329334535,
+  "M2_training_parameters": 337457727,
+  "M2_inference_parameters": 337377543,
+  "added_training_parameters": 8123192,
+  "added_inference_parameters": 8043008,
+  "median_formal_epoch_seconds": {
+    "M0": 1170.7155741387978,
+    "M2": 1629.1611281021032
+  },
+  "timing_interpretation": "Observed wall time includes data loading and GPU sharing. Seed-0 models are authorized to run concurrently on one GPU; timing ratios are not isolated module compute overhead.",
+  "observed_epoch_time_ratio_M2_to_M0": 1.3915943070122283
+}

@@ -1,0 +1,8 @@
+{
+  "model": "M2",
+  "train_seed": 0,
+  "epoch": 100,
+  "successful_episodes": 42,
+  "episodes": 50,
+  "success_rate": 0.84
+}

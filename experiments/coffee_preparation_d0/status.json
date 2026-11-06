@@ -1,0 +1,25 @@
+{
+  "complete_trainings": 2,
+  "complete_checkpoint_evaluations": 17,
+  "completed_episodes": 850,
+  "summary": [
+    {
+      "model": "M0",
+      "seed0_best": 0.88,
+      "seed1_best": null,
+      "seed2_best": null,
+      "mean": null,
+      "std_ddof1": null,
+      "M2_minus_M0_percentage_points": null
+    },
+    {
+      "model": "M2",
+      "seed0_best": 0.9,
+      "seed1_best": null,
+      "seed2_best": null,
+      "mean": null,
+      "std_ddof1": null,
+      "M2_minus_M0_percentage_points": null
+    }
+  ]
+}
