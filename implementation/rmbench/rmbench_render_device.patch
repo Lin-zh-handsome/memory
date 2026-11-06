@@ -1,0 +1,55 @@
+diff --git a/envs/_base_task.py b/envs/_base_task.py
+index 3339ff9..e6cdaff 100644
+--- a/envs/_base_task.py
++++ b/envs/_base_task.py
+@@ -88,7 +88,10 @@ class Base_Task(gym.Env):
+         self.plan_success = True
+         self.step_lim = None
+         self.fix_gripper = False
+-        self.setup_scene()
++        self.setup_scene(
++            render_device=kwags.get("render_device"),
++            camera_shader=kwags.get("camera_shader", "rt"),
++        )
+ 
+         self.left_js = None
+         self.right_js = None
+@@ -209,23 +212,28 @@ class Base_Task(gym.Env):
+         Set the scene
+             - Set up the basic scene: light source, viewer.
+         """
+-        self.engine = sapien.Engine()
+-        # declare sapien renderer
+-        from sapien.render import set_global_config
++        from sapien.render import RenderSystem, set_global_config
+ 
+         set_global_config(max_num_materials=50000, max_num_textures=50000)
+-        self.renderer = sapien.SapienRenderer()
+-        # give renderer to sapien sim
+-        self.engine.set_renderer(self.renderer)
+-
+-        sapien.render.set_camera_shader_dir("rt")
++        sapien.render.set_camera_shader_dir(kwargs.get("camera_shader", "rt"))
+         sapien.render.set_ray_tracing_samples_per_pixel(32)
+         sapien.render.set_ray_tracing_path_depth(8)
+         sapien.render.set_ray_tracing_denoiser("oidn")
+ 
+-        # declare sapien scene
+         scene_config = sapien.SceneConfig()
+-        self.scene = self.engine.create_scene(scene_config)
++        device = kwargs.get("render_device")
++        if device is None:
++            self.engine = sapien.Engine()
++            self.renderer = sapien.SapienRenderer()
++            self.engine.set_renderer(self.renderer)
++            self.scene = self.engine.create_scene(scene_config)
++        else:
++            if self.render_freq:
++                raise ValueError("Explicit render-device selection requires headless mode")
++            sapien.physx.set_scene_config(scene_config)
++            self.scene = sapien.Scene([
++                sapien.physx.PhysxCpuSystem(), RenderSystem(device),
++            ])
+         # set simulation timestep
+         self.scene.set_timestep(kwargs.get("timestep", 1 / 250))
+         # add ground to scene
