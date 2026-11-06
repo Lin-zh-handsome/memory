@@ -2,6 +2,8 @@
 
 import argparse
 from collections import deque
+from datetime import datetime
+import fcntl
 import importlib
 import importlib.util
 import json
@@ -369,13 +371,57 @@ def summarize(path, args, protocol, policy, rows):
         "observe_seconds": sum(row["observe_seconds"] for row in rows),
         "predict_seconds": sum(row["predict_seconds"] for row in rows),
         "render_pci": pci_address(args.render_pci), "camera_shader": args.camera_shader,
+        "render_pcis": sorted({row.get("render_pci", pci_address(args.render_pci)) for row in rows}),
         **parameter_counts(policy, args.model),
     }
     atomic_json(path, payload)
     return payload
 
 
-def rollout(args, protocol, policy, factory, config):
+def reached_cutoff(args):
+    return args.stop_at is not None and time.time() >= args.stop_at.timestamp()
+
+
+def stopped_at_cutoff(args, output, episodes=None):
+    if episodes is None:
+        log = output / "episodes.jsonl"
+        episodes = sum(bool(line) for line in log.read_text().splitlines()) if log.exists() else 0
+    print(json.dumps({"event": "evaluation_cutoff", "model": args.model, "epoch": args.epoch,
+                      "episodes": episodes, "complete": False}), flush=True)
+    return 75
+
+
+def evaluate_checkpoint(args, protocol):
+    output = args.experiment / f"evaluation/{args.model}/epoch_{args.epoch:03d}"
+    output.mkdir(parents=True, exist_ok=True)
+    with (output / ".rollout.lock").open("a") as lock:
+        if args.stop_at is None:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+        else:
+            while not reached_cutoff(args):
+                try:
+                    fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    break
+                except BlockingIOError:
+                    time.sleep(min(1, max(0, args.stop_at.timestamp() - time.time())))
+            else:
+                return stopped_at_cutoff(args, output)
+
+        summary_path = output / "summary.json"
+        if summary_path.exists():
+            summary = json.loads(summary_path.read_text())
+            if (summary["complete"] and summary["episodes"] == protocol["eval_episodes"]
+                    and summary["model"] == args.model and summary["epoch"] == args.epoch):
+                print(json.dumps({**summary, "already_complete": True}), flush=True)
+                return 0
+        if reached_cutoff(args):
+            return stopped_at_cutoff(args, output)
+        factory, _, config = make_simulator(args, protocol)
+        policy = get_policy(args, protocol)
+        return rollout(args, protocol, policy, factory, config, output)
+
+
+def rollout(args, protocol, policy, factory, config, output):
     reset_path = args.experiment / "evaluation/reset_seeds.json"
     manifest = json.loads(reset_path.read_text())
     seeds = manifest["seeds"]
@@ -383,8 +429,6 @@ def rollout(args, protocol, policy, factory, config):
             or len(set(seeds)) != len(seeds) or manifest["task"] != protocol["task"]
             or manifest["task_config"] != protocol["task_config"]):
         raise ValueError("Expected one complete official reset list for all checkpoints")
-    output = args.experiment / f"evaluation/{args.model}/epoch_{args.epoch:03d}"
-    output.mkdir(parents=True, exist_ok=True)
     run_config_path = output / "evaluation_protocol.json"
     run_config = {
         "batch_size": args.batch_size, "camera_shader": args.camera_shader,
@@ -403,6 +447,9 @@ def rollout(args, protocol, policy, factory, config):
         raise ValueError("Saved rollouts end partway through a deterministic batch")
     environments = [factory() for _ in range(min(batch_size, len(seeds) - len(rows)))]
     for start in range(len(rows), len(seeds), batch_size):
+        if reached_cutoff(args):
+            summarize(output / "summary.json", args, protocol, policy, rows)
+            return stopped_at_cutoff(args, output, len(rows))
         entries = [(slot, env, start + slot, seed)
                    for slot, (env, seed) in enumerate(zip(environments, seeds[start:start + batch_size]))]
         group = list(evaluate_group(args, protocol, policy, config, entries, output, len(kinds) < 2))
@@ -428,6 +475,7 @@ def rollout(args, protocol, policy, factory, config):
         if (start // batch_size + 1) % config["clear_cache_freq"] == 0:
             environments[0].close_env(clear_cache=True)
     print(json.dumps(summarize(output / "summary.json", args, protocol, policy, rows)), flush=True)
+    return 0
 
 
 def main():
@@ -449,6 +497,8 @@ def main():
     formal.add_argument("--model", choices=["M0", "M3"], required=True)
     formal.add_argument("--epoch", type=int, required=True)
     formal.add_argument("--batch-size", type=int, default=2)
+    formal.add_argument("--stop-at", type=datetime.fromisoformat,
+                        help="Stop before another batch after this ISO 8601 time with UTC offset")
     args = parser.parse_args()
     args.experiment, args.rmbench, args.data = (p.resolve() for p in (args.experiment, args.rmbench, args.data))
     protocol = json.loads((args.experiment / "configs/protocol.json").read_text())
@@ -465,32 +515,34 @@ def main():
     torch.set_num_threads(1)
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
+    if args.command == "rollout":
+        if args.batch_size < 1 or args.epoch not in protocol["eval_epochs"]:
+            parser.error("Expected a protocol checkpoint and a positive evaluation batch size")
+        if args.stop_at is not None and args.stop_at.utcoffset() is None:
+            parser.error("--stop-at requires a time zone offset")
+        args.verify_steps = None
+        return evaluate_checkpoint(args, protocol)
     factory, unstable, config = make_simulator(args, protocol)
     if args.command == "prepare-seeds":
         prepare_seeds(args, protocol, factory, unstable, config)
         return
-    args.verify_steps = args.steps if args.command == "verify" else None
-    if args.command == "verify":
-        args.model = "M3"
-        if args.steps <= protocol["n_action_steps"]:
-            parser.error("Verification must cross an action window")
-        seed = protocol["eval_seed_start"] if args.seed is None else args.seed
-        policy = get_policy(args, protocol)
-        output = args.experiment / "evaluation/verification"
-        output.mkdir(parents=True, exist_ok=True)
-        result, = evaluate_group(args, protocol, policy, config, [(0, factory(), 0, seed)], output, False)
-        if result["replans"] < 2 or result["steps"] != args.steps:
-            raise RuntimeError(f"Verification did not cover the requested action windows: {result}")
-        atomic_json(output / "real_closed_loop.json", {
-            "render_pci": pci_address(args.render_pci), "camera_shader": args.camera_shader, **result
-        })
-        print(json.dumps(result), flush=True)
-    else:
-        if args.batch_size < 1 or args.epoch not in protocol["eval_epochs"]:
-            parser.error("Expected a protocol checkpoint and a positive evaluation batch size")
-        rollout(args, protocol, get_policy(args, protocol), factory, config)
+    args.verify_steps = args.steps
+    args.model = "M3"
+    if args.steps <= protocol["n_action_steps"]:
+        parser.error("Verification must cross an action window")
+    seed = protocol["eval_seed_start"] if args.seed is None else args.seed
+    policy = get_policy(args, protocol)
+    output = args.experiment / "evaluation/verification"
+    output.mkdir(parents=True, exist_ok=True)
+    result, = evaluate_group(args, protocol, policy, config, [(0, factory(), 0, seed)], output, False)
+    if result["replans"] < 2 or result["steps"] != args.steps:
+        raise RuntimeError(f"Verification did not cover the requested action windows: {result}")
+    atomic_json(output / "real_closed_loop.json", {
+        "render_pci": pci_address(args.render_pci), "camera_shader": args.camera_shader, **result
+    })
+    print(json.dumps(result), flush=True)
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
 

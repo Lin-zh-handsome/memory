@@ -256,6 +256,8 @@ def report(root):
     source = read_json(config_dir / "source.json")
     if source and source.get("experiment_commit"):
         lines.append(f"- 本实验实现提交为 {source['experiment_commit']}。")
+    if source and source.get("evaluation_commit"):
+        lines.append(f"- 正式闭环调度与续跑提交为 {source['evaluation_commit']}。")
 
     evaluation.mkdir(exist_ok=True)
     target = evaluation / "report.md"
