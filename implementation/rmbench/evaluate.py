@@ -497,7 +497,7 @@ def main():
     verify.add_argument("--seed", type=int)
     verify.add_argument("--steps", type=int, default=17)
     formal = sub.add_parser("rollout")
-    formal.add_argument("--model", choices=["M0", "M3"], required=True)
+    formal.add_argument("--model", choices=["M0", "M2", "M3"], required=True)
     formal.add_argument("--epoch", type=int, required=True)
     formal.add_argument("--batch-size", type=int, default=2)
     formal.add_argument("--stop-at", type=datetime.fromisoformat,

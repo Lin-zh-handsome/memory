@@ -216,13 +216,26 @@ def validate_trainer(pid, model, gpu, campaign):
         raise RuntimeError(f"PID {pid} does not match the requested training job")
 
 
-async def wait_for_trainer(pid, model, gpu, campaign):
-    if (campaign.logs / f"{model}_complete.json").is_file():
-        return
-    validate_trainer(pid, model, gpu, campaign)
+def describe_evaluator(pid, campaign, gpu):
+    process = Path(f"/proc/{pid}")
+    argv = (process / "cmdline").read_bytes().split(b"\0")
+    env = (process / "environ").read_bytes().split(b"\0")
+    expected = [str(CODE / "evaluate.py").encode(), b"--experiment", str(campaign.args.root).encode()]
+    suffix = argv[-8:-1]
+    if (process.stat().st_uid != os.getuid() or argv[2:5] != expected
+            or len(suffix) != 7 or suffix[:2] != [b"rollout", b"--model"]
+            or suffix[3] != b"--epoch" or suffix[5:] != [b"--batch-size", b"2"]
+            or f"CUDA_VISIBLE_DEVICES={gpu}".encode() not in env):
+        raise RuntimeError(f"PID {pid} is not an evaluator for {gpu}")
+    model, epoch = suffix[2].decode(), int(suffix[4])
+    if model not in MODEL_NAMES or epoch not in campaign.config["eval_epochs"]:
+        raise RuntimeError(f"PID {pid} is running an unexpected evaluation")
+    return pid, model, epoch
+
+
+async def wait_for_process(pid):
     process_stat = Path(f"/proc/{pid}/stat")
     start_time = process_stat.read_text().rsplit(")", 1)[1].split()[19]
-    record("attached_training", model=model, gpu=gpu, pid=pid)
     while True:
         try:
             fields = process_stat.read_text().rsplit(")", 1)[1].split()
@@ -231,16 +244,26 @@ async def wait_for_trainer(pid, model, gpu, campaign):
         if fields[0] in ("Z", "X") or fields[19] != start_time:
             break
         await asyncio.sleep(12)
+
+
+async def wait_for_trainer(pid, model, gpu, campaign):
+    if (campaign.logs / f"{model}_complete.json").is_file():
+        return
+    validate_trainer(pid, model, gpu, campaign)
+    record("attached_training", model=model, gpu=gpu, pid=pid)
+    await wait_for_process(pid)
     if not (campaign.logs / f"{model}_complete.json").is_file():
         record("training_recovery", model=model, gpu=gpu, previous_pid=pid)
         campaign.check_idle(gpu)
         await campaign.train(model, gpu)
 
 
-async def train_and_evaluate(campaign, gpus, adopted):
+async def train_and_evaluate(campaign, gpus, adopted, active_evaluations):
     pending = [(model, epoch) for epoch in campaign.config["eval_epochs"] for model in MODEL_NAMES]
     training = [model for model in MODEL_NAMES if not (campaign.logs / f"{model}_complete.json").exists()]
     training_failed = asyncio.Event()
+    for _, model, epoch in active_evaluations.values():
+        pending.remove((model, epoch))
 
     async def worker(gpu, models):
         for model in models:
@@ -253,6 +276,16 @@ async def train_and_evaluate(campaign, gpus, adopted):
             except Exception:
                 training_failed.set()
                 raise
+        if gpu in active_evaluations:
+            pid, model, epoch = active_evaluations[gpu]
+            record("attached_evaluation", model=model, epoch=epoch, gpu=gpu, pid=pid)
+            await wait_for_process(pid)
+            done = read_json(campaign.args.root / f"evaluation/{model}/epoch_{epoch:03d}/summary.json")
+            if not done or not done["complete"]:
+                campaign.check_idle(gpu)
+                await campaign.evaluate(gpu, model, epoch)
+            else:
+                report(campaign.args.root)
         while pending:
             if training_failed.is_set():
                 return
@@ -309,10 +342,21 @@ async def run_task(args, task, phase):
     campaign = Campaign(SimpleNamespace(root=root, data=data, rmbench=args.rmbench,
                                         camera_shader="rt", eval_batch_size=2, switch_at=None))
     adopted = dict(zip(MODEL_NAMES, args.adopt_swap_trainers)) if task == "swap_blocks" else {}
+    active_evaluations = {}
+    if task == "swap_blocks":
+        active_evaluations = {
+            gpu: describe_evaluator(pid, campaign, gpu)
+            for gpu, pid in zip(args.gpus, args.adopt_swap_evaluators)
+        }
     gpus = []
     for index, gpu in enumerate(args.gpus):
         try:
-            if adopted and index < len(MODEL_NAMES):
+            if gpu in active_evaluations:
+                campaign.pcis[gpu] = subprocess.check_output(
+                    ["nvidia-smi", "-i", gpu, "--query-gpu=pci.bus_id", "--format=csv,noheader"],
+                    text=True,
+                ).strip()
+            elif adopted and index < len(MODEL_NAMES):
                 model = MODEL_NAMES[index]
                 if not (campaign.logs / f"{model}_complete.json").is_file():
                     validate_trainer(adopted[model], model, gpu, campaign)
@@ -341,7 +385,7 @@ async def run_task(args, task, phase):
         child = await campaign.start("verify", primary, "evaluate.py", *campaign.evaluator_args(primary),
                                      "verify", "--seed", seeds[0])
         await campaign.finish("verify", child)
-    await train_and_evaluate(campaign, gpus, adopted)
+    await train_and_evaluate(campaign, gpus, adopted, active_evaluations)
     result = verify_result(root, task)
     report(root)
     atomic_json(complete, result)
@@ -402,7 +446,11 @@ async def main():
     parser.add_argument("--gpus", nargs="+", required=True)
     parser.add_argument("--adopt-swap-trainers", nargs=2, type=int, default=(),
                         metavar=("M0_PID", "M3_PID"))
+    parser.add_argument("--swap-only", action="store_true")
+    parser.add_argument("--adopt-swap-evaluators", nargs="+", type=int, default=())
     args = parser.parse_args()
+    if len(args.adopt_swap_evaluators) > len(args.gpus):
+        parser.error("One GPU is required for each adopted evaluator")
     args.root, args.rmbench = args.root.resolve(), args.rmbench.resolve()
     if not 1 <= len(args.gpus) <= 4 or len(set(args.gpus)) != len(args.gpus):
         parser.error("Select one to four distinct GPU UUIDs")
@@ -415,10 +463,15 @@ async def main():
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         reproduction = [sys.executable, str(Path(__file__).resolve()), "--root", str(args.root),
                         "--rmbench", str(args.rmbench), "--gpus", *args.gpus]
+        if args.swap_only:
+            reproduction.append("--swap-only")
         command = shlex.join(reproduction)
         (args.root / "summary/reproduce.txt").write_text(
             f"export PYTHONNOUSERSITE=1\nexport PYTHONPATH={shlex.quote(os.environ['PYTHONPATH'])}\n{command}\n"
         )
+        if args.swap_only:
+            await run_task(args, "swap_blocks", 2)
+            return
         results = [await run_task(args, task, phase) for phase, task in enumerate(TASKS, 2)]
         update_plan(args.root, (4, "in_progress"), "开始整理三任务对比。")
         final_report(args.root, results)
