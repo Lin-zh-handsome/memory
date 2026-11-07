@@ -86,6 +86,27 @@ def _read_expert(h5):
     }
 
 
+def cover_phases(annotations, episode_id):
+    phases = []
+    for label, frames in annotations[f"episode_{episode_id}"]:
+        words = label.split()
+        if len(words) < 4 or words[0] not in ("Cover", "Open"):
+            continue
+        operation = (words[0], words[2])
+        if phases and phases[-1]["operation"] == operation:
+            phases[-1]["frames"] += int(frames)
+        else:
+            phases.append({"operation": operation, "frames": int(frames)})
+    actions = [item["operation"] for item in phases]
+    cover = [("Cover", name) for name in ("left", "middle", "right")]
+    opened = {("Open", name) for name in ("left", "middle", "right")}
+    if len(actions) != 6 or actions[:3] != cover or set(actions[3:]) != opened or any(
+        item["frames"] <= 0 for item in phases
+    ):
+        raise ValueError(f"Incomplete official cover and uncover sequence for episode {episode_id}: {phases}")
+    return phases
+
+
 def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
     import h5py
 
@@ -113,6 +134,10 @@ def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
     }
     cv2.setNumThreads(1)
     with ZipFile(archive) as zipped:
+        annotations = None
+        if task == "cover_blocks":
+            name, = (item for item in zipped.namelist() if item.endswith("/language_annotation.json"))
+            annotations = json.loads(zipped.read(name))
         members = {}
         for name in zipped.namelist():
             match = re.fullmatch(r"episode_?(\d+)\.hdf5", Path(name).name)
@@ -137,6 +162,8 @@ def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
                 for time in range(1, len(state)):
                     frames[time] = preprocess_rgb(decode_image_bit(images[time]))
                 metadata["source_rgb_hwc"] = list(first_rgb.shape)
+                if annotations is not None:
+                    metadata["official_cover_phases"] = cover_phases(annotations, episode_id)
                 if episode_id == 0:
                     print(
                         f"First expert RGB {first_rgb.shape}; {metadata}; "
