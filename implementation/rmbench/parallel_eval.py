@@ -32,7 +32,7 @@ class ParallelEvaluation(Campaign):
         resets = self.args.root / "evaluation" / "reset_seeds.json"
         while self.can_start():
             if (
-                all(complete_file(path, lambda data: data["epoch"] == self.config["epochs"]) for path in markers)
+                (self.args.during_training or all(complete_file(path, lambda data: data["epoch"] == self.config["epochs"]) for path in markers))
                 and complete_file(resets, lambda data: data["complete"])
             ):
                 return True
@@ -67,10 +67,25 @@ class ParallelEvaluation(Campaign):
 
     async def worker(self, gpu, jobs):
         while jobs and self.can_start():
-            model, epoch = jobs.pop()
+            if self.args.during_training:
+                ready = next((
+                    index for index, (model, epoch) in enumerate(jobs)
+                    if (self.args.root / "checkpoints" / model / f"epoch_{epoch:03d}.pt").is_file()
+                ), None)
+                if ready is None:
+                    await asyncio.sleep(15)
+                    continue
+                model, epoch = jobs.pop(ready)
+            else:
+                model, epoch = jobs.pop()
             summary = self.args.root / "evaluation" / model / f"epoch_{epoch:03d}" / "summary.json"
             if complete_file(summary, lambda data: data["complete"]):
                 continue
+            try:
+                self.check_idle(gpu)
+            except RuntimeError as error:
+                record("evaluation_gpu_skipped", gpu=gpu, reason=str(error))
+                return
             await self.run_one(gpu, model, epoch)
 
     async def run(self):
@@ -79,9 +94,12 @@ class ParallelEvaluation(Campaign):
             return
         # The main campaign visits in ascending order. Start from the opposite
         # end so workers tackle distinct checkpoints while both make progress.
+        epochs = self.config["eval_epochs"]
+        if not self.args.during_training:
+            epochs = epochs[1:]
         jobs = [
             (model, epoch)
-            for epoch in self.config["eval_epochs"][1:]
+            for epoch in epochs
             for model in self.config["models"]
         ]
         workers = []
@@ -106,6 +124,8 @@ def main():
     parser.add_argument("--rmbench", type=Path, required=True)
     parser.add_argument("--switch-at", type=datetime.fromisoformat)
     parser.add_argument("--gpus", nargs="+", required=True)
+    parser.add_argument("--during-training", action="store_true",
+                        help="Evaluate each fully saved checkpoint as soon as its seeds are ready")
     parser.add_argument("--camera-shader", default="rt")
     parser.add_argument("--eval-batch-size", type=int, default=2)
     parser.add_argument("--drain-seconds", type=int, default=150)
