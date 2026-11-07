@@ -218,16 +218,17 @@ async def wait_for_trainer(pid, model, gpu, campaign):
     if (campaign.logs / f"{model}_complete.json").is_file():
         return
     validate_trainer(pid, model, gpu, campaign)
-    descriptor = os.pidfd_open(pid)
-    loop = asyncio.get_running_loop()
-    completed = loop.create_future()
-    loop.add_reader(descriptor, lambda: None if completed.done() else completed.set_result(None))
+    process_stat = Path(f"/proc/{pid}/stat")
+    start_time = process_stat.read_text().rsplit(")", 1)[1].split()[19]
     record("attached_training", model=model, gpu=gpu, pid=pid)
-    try:
-        await completed
-    finally:
-        loop.remove_reader(descriptor)
-        os.close(descriptor)
+    while True:
+        try:
+            fields = process_stat.read_text().rsplit(")", 1)[1].split()
+        except FileNotFoundError:
+            break
+        if fields[0] in ("Z", "X") or fields[19] != start_time:
+            break
+        await asyncio.sleep(12)
     if not (campaign.logs / f"{model}_complete.json").is_file():
         record("training_recovery", model=model, gpu=gpu, previous_pid=pid)
         campaign.check_idle(gpu)
