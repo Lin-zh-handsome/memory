@@ -86,7 +86,7 @@ def _read_expert(h5):
     }
 
 
-def prepare(archive, prepared_dir, rmbench):
+def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
     import h5py
 
     rmbench = Path(rmbench).resolve()
@@ -99,7 +99,7 @@ def prepare(archive, prepared_dir, rmbench):
     prepared_dir = Path(prepared_dir)
     prepared_dir.mkdir(parents=True, exist_ok=True)
     manifest = {
-        "task": "put_back_block",
+        "task": task,
         "config": "demo_clean",
         "split": "all 50 official demonstrations for training, no offline validation",
         "camera": CAMERA_KEY,
@@ -127,6 +127,10 @@ def prepare(archive, prepared_dir, rmbench):
         for episode_id, name in sorted(members.items()):
             with h5py.File(io.BytesIO(zipped.read(name)), "r") as h5:
                 images, state, action, metadata = _read_expert(h5)
+                if task != "put_back_block" and (
+                    metadata["layout"] != "XPolicyLab" or not metadata["action_matches_next_state"]
+                ):
+                    raise ValueError(f"Unexpected expert layout or action alignment in {name}: {metadata}")
                 first_rgb = decode_image_bit(images[0])
                 frames = np.empty((len(state), 3, IMAGE_SIZE, IMAGE_SIZE), dtype=np.uint8)
                 frames[0] = preprocess_rgb(first_rgb)
@@ -244,5 +248,6 @@ if __name__ == "__main__":
     parser.add_argument("archive", type=Path)
     parser.add_argument("prepared_dir", type=Path)
     parser.add_argument("rmbench", type=Path)
+    parser.add_argument("--task", choices=["put_back_block", "swap_blocks", "cover_blocks"], default="put_back_block")
     args = parser.parse_args()
-    prepare(args.archive, args.prepared_dir, args.rmbench)
+    prepare(args.archive, args.prepared_dir, args.rmbench, args.task)

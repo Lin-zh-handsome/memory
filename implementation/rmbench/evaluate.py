@@ -27,6 +27,7 @@ if str(WORKSPACE) not in sys.path:
     sys.path.append(str(WORKSPACE))
 adapter = importlib.import_module(f"{IMPLEMENTATION.name}.data")
 STATE_KEY = adapter.STATE_KEY
+task_state = importlib.import_module(f"{IMPLEMENTATION.name}.task_diagnostics")
 
 
 def atomic_json(path, payload):
@@ -49,7 +50,10 @@ def make_simulator(args, protocol):
             sys.path.insert(0, str(source))
 
     import sapien
-    from envs.put_back_block import put_back_block
+    task = protocol["task"]
+    if task not in ("put_back_block", "swap_blocks", "cover_blocks"):
+        raise ValueError(f"Unsupported benchmark task: {task}")
+    factory = getattr(importlib.import_module(f"envs.{task}"), task)
     from envs.utils.create_actor import UnStableError
 
     if torch.cuda.device_count() != 1:
@@ -80,7 +84,7 @@ def make_simulator(args, protocol):
     official_limit = yaml.safe_load((configs / "_eval_step_limit.yml").read_text())[protocol["task"]]
     if official_limit != protocol["max_episode_steps"]:
         raise ValueError(f"Official action limit is {official_limit}, expected {protocol['max_episode_steps']}")
-    return put_back_block, UnStableError, config
+    return factory, UnStableError, config
 
 
 def reset(env, config, seed, episode_id, limit):
@@ -216,14 +220,6 @@ class Video:
             raise RuntimeError(f"Video encoder failed for {self.path}")
 
 
-def report_state(episode):
-    env = episode["env"]
-    position = np.asarray(env.block.get_pose().p)
-    error = np.linalg.norm(position[:2] - np.asarray(env.target_pose)[:2])
-    return {"step": int(env.take_action_cnt), "stage": int(env.stage_id),
-            "button_presses": int(env.press_cnt), "xy_return_error_m": float(error)}
-
-
 def parameter_counts(policy, variant):
     training = sum(parameter.numel() for parameter in policy.parameters())
     auxiliary = 0 if variant == "M0" else sum(p.numel() for p in policy.past_head.parameters())
@@ -234,6 +230,7 @@ def parameter_counts(policy, variant):
 def evaluate_group(args, protocol, policy, config, entries, output, record_video):
     uses_memory = args.model != "M0"
     cameras = protocol["cameras"]
+    task = protocol["task"]
     limit = protocol["max_episode_steps"]
     episodes = {}
     for env_id, env, episode_id, seed in entries:
@@ -246,10 +243,11 @@ def evaluate_group(args, protocol, policy, config, entries, output, record_video
             "env": env, "seed": seed, "episode_id": episode_id, "observations": 1,
             "obs": deque([obs, obs], maxlen=2), "video": None, "trace": [],
             "observe_seconds": 0.0, "predict_seconds": 0.0, "replans": 0,
+            "initial_state": task_state.initial_state(task, env, obs[STATE_KEY]),
         }
         if record_video:
             episode["video"] = Video(output / f"seed_{seed}.pending.mp4", raw["third_view_rgb"])
-        episode["trace"].append(report_state(episode))
+        episode["trace"].append(task_state.report_state(task, env))
         episodes[env_id] = episode
 
     def advance(ids):
@@ -310,8 +308,9 @@ def evaluate_group(args, protocol, policy, config, entries, output, record_video
                     updated.append(env_id)
                     if episode["video"] is not None:
                         episode["video"].write(raw["third_view_rgb"])
-                    stage = report_state(episode)
-                    if stage["stage"] != episode["trace"][-1]["stage"]:
+                    stage = task_state.report_state(task, env)
+                    previous = episode["trace"][-1]
+                    if (stage["stage"], stage.get("invalid")) != (previous["stage"], previous.get("invalid")):
                         episode["trace"].append(stage)
                 advance(updated)
             chunk += 1
@@ -331,12 +330,15 @@ def evaluate_group(args, protocol, policy, config, entries, output, record_video
             raise RuntimeError("Actual observations and environment actions lost alignment")
         if diagnostic is not None and diagnostic["observations"] != episode["observations"]:
             raise RuntimeError("Mamba did not consume exactly one update per actual observation")
+        if diagnostic is not None:
+            diagnostic["final_event_age_steps"] = [env.take_action_cnt - t for t in diagnostic["final_event_times"]]
         yield {
             "episode_id": episode["episode_id"], "seed": episode["seed"],
             "success": bool(env.eval_success), "steps": int(env.take_action_cnt),
             "observations": episode["observations"], "replans": episode["replans"],
             "observe_seconds": episode["observe_seconds"], "predict_seconds": episode["predict_seconds"],
-            "stage_transitions": episode["trace"], "final": report_state(episode),
+            "initial_state": episode["initial_state"],
+            "stage_transitions": episode["trace"], "final": task_state.report_state(task, env),
             "render_pci": pci_address(config["render_device"].pci_string),
             "memory": diagnostic, "video": None,
         }

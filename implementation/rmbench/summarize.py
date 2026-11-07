@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+from collections import Counter
 import json
 from pathlib import Path
 
@@ -120,8 +121,9 @@ def report(root):
                 results[model][epoch] = result
     best = {model: best_result(results[model], epochs) for model in MODELS}
 
+    task = protocol["task"]
     lines = [
-        "# RMBench 放回方块单种子闭环验证",
+        f"# RMBench {task} 单种子闭环验证",
         "",
         f"任务为 {protocol['task']}，配置为 {protocol['task_config']}，训练种子为 {protocol['seed']}。"
         f"M0 和 M3 各计划训练 {protocol['epochs']} 轮，在同一组 {count} 个官方环境初始条件上评测五个检查点。"
@@ -237,6 +239,16 @@ def report(root):
             f"已完成 M3 回合的写入次数范围为 {min(writes)}–{max(writes)}，"
             f"累计遗忘 {replacements} 次，{retained}/{len(memory_rows)} 回合保留初始事件。"
         )
+    lines += ["", "## 失败阶段", ""]
+    for model in MODELS:
+        counts = Counter(
+            max(state["stage"] for state in [*row["stage_transitions"], row["final"]])
+            for result in results[model].values() for row in result["rows"] if not row["success"]
+        )
+        if results[model]:
+            breakdown = "、".join(f"阶段 {stage} 有 {total} 次" for stage, total in counts.most_common())
+            lines.append(f"- {model} 已完成节点的失败回合中，{breakdown}。" if counts
+                         else f"- {model} 已完成节点均成功。")
     lines.append("")
     for model in MODELS:
         for success, label in ((True, "成功"), (False, "失败")):
@@ -247,8 +259,8 @@ def report(root):
         "",
         "## 数据和代码来源",
         "",
-        "- 官方 50 条放回方块专家示范。"
-        "[RMBench 数据归档](https://huggingface.co/datasets/TianxingChen/RMBench/resolve/main/data/put_back_block/demo_clean.zip)",
+        "- 官方 50 条专家示范。"
+        f"[RMBench 数据归档](https://huggingface.co/datasets/TianxingChen/RMBench/resolve/main/data/{task}/demo_clean.zip)",
         "- 环境和官方成功判定。[RMBench 7d1cdfc](https://github.com/RoboTwin-Platform/RMBench/commit/7d1cdfc)",
         "- 原始扩散策略模型。[Stanford Diffusion Policy 5ba07ac](https://github.com/real-stanford/diffusion_policy/commit/5ba07ac)",
         "- 历史模块与过去动作监督参数。[Memory 3.2 d4e1749](https://github.com/Lin-zh-handsome/memory/commit/d4e1749)",
