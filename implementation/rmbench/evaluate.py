@@ -72,6 +72,7 @@ def make_simulator(args, protocol):
     config.update(
         task_name=protocol["task"], task_config=task_config, eval_mode=True,
         render_freq=0, render_device=device, camera_shader=args.camera_shader,
+        qpos_only=getattr(args, "command", None) in ("rollout", "verify"),
         left_robot_file=robot_dir, right_robot_file=robot_dir, dual_arm_embodied=True,
         left_embodiment_config=robot_config, right_embodiment_config=robot_config,
     )

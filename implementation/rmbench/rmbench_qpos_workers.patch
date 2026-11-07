@@ -1,0 +1,77 @@
+diff --git a/envs/robot/planner.py b/envs/robot/planner.py
+index 21ae432..b7cd40a 100644
+--- a/envs/robot/planner.py
++++ b/envs/robot/planner.py
+@@ -244,7 +244,8 @@ try:
+             res_result["velocity"] = np.array(result.interpolated_plan.velocity.to("cpu"))
+             return res_result
+ 
+-        def plan_grippers(self, now_val, target_val):
++        @staticmethod
++        def plan_grippers(now_val, target_val):
+             num_step = 200
+             dis_val = target_val - now_val
+             step = dis_val / num_step
+diff --git a/envs/robot/robot.py b/envs/robot/robot.py
+index fef2344..9f9617a 100644
+--- a/envs/robot/robot.py
++++ b/envs/robot/robot.py
+@@ -36,6 +36,7 @@ class Robot:
+         right_robot_file = kwargs["right_robot_file"]
+ 
+         self.need_topp = need_topp
++        self.qpos_only = kwargs.get("qpos_only", False)
+ 
+         self.left_urdf_path = os.path.join(left_robot_file, left_embodiment_args["urdf_path"])
+         self.left_srdf_path = left_embodiment_args.get("srdf_path", None)
+@@ -142,7 +143,7 @@ class Robot:
+             if hasattr(self, "right_conn") and self.right_conn:
+                 self.right_conn.send({"cmd": "reset"})
+                 _ = self.right_conn.recv()
+-        else:
++        elif not self.qpos_only:
+             if not isinstance(self.left_planner, CuroboPlanner) or (self.is_dual_arm and not isinstance(self.right_planner, CuroboPlanner)):
+                 self.set_planner(scene=scene)
+ 
+@@ -278,6 +279,13 @@ class Robot:
+             print("ee: ", self.left_ee.get_name())
+ 
+     def set_planner(self, scene=None):
++        if self.qpos_only:
++            # The policy submits joint targets. Only CPU TOPP and gripper
++            # interpolation are required, including during scene reset.
++            self.communication_flag = False
++            self.set_topp_planner(scene)
++            return
++
+         abs_left_curobo_yml_path = os.path.join(CONFIGS.ROOT_PATH, self.left_curobo_yml_path)
+         if self.is_dual_arm:
+             abs_right_curobo_yml_path = os.path.join(CONFIGS.ROOT_PATH, self.right_curobo_yml_path)
+@@ -326,6 +334,9 @@ class Robot:
+             self.left_proc.start()
+             self.right_proc.start()
+ 
++        self.set_topp_planner(scene)
++
++    def set_topp_planner(self, scene):
+         if self.need_topp:
+             self.left_mplib_planner = MplibPlanner(
+                 self.left_urdf_path,
+@@ -366,6 +377,8 @@ class Robot:
+         return sapien.Pose(gripper_pose_pos, gripper_pose_quat)
+ 
+     def left_plan_grippers(self, now_val, target_val):
++        if self.qpos_only:
++            return CuroboPlanner.plan_grippers(now_val, target_val)
+         if self.communication_flag:
+             self.left_conn.send({"cmd": "plan_grippers", "now_val": now_val, "target_val": target_val})
+             return self.left_conn.recv()
+@@ -373,6 +386,8 @@ class Robot:
+             return self.left_planner.plan_grippers(now_val, target_val)
+ 
+     def right_plan_grippers(self, now_val, target_val):
++        if self.qpos_only:
++            return CuroboPlanner.plan_grippers(now_val, target_val)
+         if self.communication_flag:
+             self.right_conn.send({"cmd": "plan_grippers", "now_val": now_val, "target_val": target_val})
+             return self.right_conn.recv()

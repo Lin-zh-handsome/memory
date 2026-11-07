@@ -132,6 +132,8 @@ def stage_configs(args, task, destination):
         "experiment_commit": previous_source.get("experiment_commit", commit),
         "evaluation_commit": commit, "rmbench": benchmark,
         "source_base": "4577eda", "asset_model": ASSETS[task],
+        "environment_patches": ["rmbench_render_device.patch", "rmbench_qpos_workers.patch"],
+        "rollout_planning": "CPU TOPP and original gripper interpolation for joint-space actions",
         "expert_archive": f"https://huggingface.co/datasets/{DATASET}/resolve/main/data/{task}/demo_clean.zip",
         "package_versions": versions, "python": sys.version.split()[0],
         "pythonpath": os.environ.get("PYTHONPATH", ""),
