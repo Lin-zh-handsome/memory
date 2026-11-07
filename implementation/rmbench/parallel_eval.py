@@ -22,12 +22,15 @@ def complete_file(path, predicate):
 class ParallelEvaluation(Campaign):
     def __init__(self, args):
         super().__init__(args)
-        self.pause_time = args.switch_at - timedelta(seconds=args.drain_seconds)
+        self.pause_time = (args.switch_at - timedelta(seconds=args.drain_seconds)) if args.switch_at else None
+
+    def can_start(self):
+        return self.pause_time is None or datetime.now().timestamp() < self.pause_time.timestamp()
 
     async def wait_for_dependencies(self):
         markers = [self.logs / f"{model}_complete.json" for model in self.config["models"]]
         resets = self.args.root / "evaluation" / "reset_seeds.json"
-        while datetime.now().timestamp() < self.pause_time.timestamp():
+        while self.can_start():
             if (
                 all(complete_file(path, lambda data: data["epoch"] == self.config["epochs"]) for path in markers)
                 and complete_file(resets, lambda data: data["complete"])
@@ -39,11 +42,14 @@ class ParallelEvaluation(Campaign):
     async def run_one(self, gpu, model, epoch):
         pci = self.pcis[gpu].split(":")[-2]
         name = f"{model}_eval_{epoch:03d}_pci_{pci}"
+        timing = ["--stop-at", self.pause_time.isoformat()] if self.pause_time else []
         child = await self.start(
             name, gpu, "evaluate.py", *self.evaluator_args(gpu), "rollout",
             "--model", model, "--epoch", epoch, "--batch-size", self.args.eval_batch_size,
-            "--stop-at", self.pause_time.isoformat(),
+            *timing,
         )
+        if self.cutover is None:
+            return await self.finish(name, child)
         try:
             code = await asyncio.wait_for(
                 child.wait(), timeout=max(0, self.cutover - 1 - datetime.now().timestamp()),
@@ -60,7 +66,7 @@ class ParallelEvaluation(Campaign):
             raise RuntimeError(f"{name} exited with code {code}")
 
     async def worker(self, gpu, jobs):
-        while jobs and datetime.now().timestamp() < self.pause_time.timestamp():
+        while jobs and self.can_start():
             model, epoch = jobs.pop()
             summary = self.args.root / "evaluation" / model / f"epoch_{epoch:03d}" / "summary.json"
             if complete_file(summary, lambda data: data["complete"]):
@@ -98,14 +104,15 @@ def main():
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--rmbench", type=Path, required=True)
-    parser.add_argument("--switch-at", type=datetime.fromisoformat, required=True)
+    parser.add_argument("--switch-at", type=datetime.fromisoformat)
     parser.add_argument("--gpus", nargs="+", required=True)
     parser.add_argument("--camera-shader", default="rt")
     parser.add_argument("--eval-batch-size", type=int, default=2)
     parser.add_argument("--drain-seconds", type=int, default=150)
     args = parser.parse_args()
-    if args.switch_at.utcoffset() is None or len(args.gpus) > 5 or len(args.gpus) != len(set(args.gpus)):
-        parser.error("Use at most five distinct auxiliary GPUs and a timezone-aware cutoff")
+    if ((args.switch_at and args.switch_at.utcoffset() is None)
+            or len(args.gpus) > 5 or len(args.gpus) != len(set(args.gpus))):
+        parser.error("Use at most five distinct auxiliary GPUs and include a timezone if specifying a cutoff")
     for name in ("root", "data", "rmbench"):
         setattr(args, name, getattr(args, name).resolve())
     asyncio.run(ParallelEvaluation(args).run())
