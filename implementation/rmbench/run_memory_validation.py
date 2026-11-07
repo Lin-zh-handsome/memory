@@ -126,8 +126,11 @@ def stage_configs(args, task, destination):
     commit = subprocess.check_output(["git", "-C", str(CODE), "rev-parse", "HEAD"], text=True).strip()
     benchmark = subprocess.check_output(["git", "-C", str(args.rmbench), "rev-parse", "HEAD"],
                                         text=True).strip()
-    atomic_json(config_dir / "source.json", {
-        "experiment_commit": commit, "evaluation_commit": commit, "rmbench": benchmark,
+    source_path = config_dir / "source.json"
+    previous_source = read_json(source_path) or {}
+    atomic_json(source_path, {
+        "experiment_commit": previous_source.get("experiment_commit", commit),
+        "evaluation_commit": commit, "rmbench": benchmark,
         "source_base": "4577eda", "asset_model": ASSETS[task],
         "expert_archive": f"https://huggingface.co/datasets/{DATASET}/resolve/main/data/{task}/demo_clean.zip",
         "package_versions": versions, "python": sys.version.split()[0],
@@ -166,20 +169,127 @@ def prepare_data(args, task, destination):
     return prepared
 
 
-async def evaluate_all(campaign, gpus):
-    jobs = [(model, epoch) for epoch in campaign.config["eval_epochs"] for model in MODEL_NAMES]
+async def prepare_evaluation(campaign, gpus):
+    reset_file = campaign.args.root / "evaluation" / "reset_seeds.json"
+    manifest = read_json(reset_file)
+    if manifest and manifest["complete"]:
+        return
+    if len(gpus) == 1:
+        await campaign.prepare(gpus[0])
+        return
 
-    async def worker(gpu):
-        while jobs:
-            model, epoch = jobs.pop(0)
+    start = campaign.config["eval_seed_start"]
+    limit = start + 10 * campaign.config["eval_episodes"]
+    while start < limit:
+        shards = []
+        for gpu in gpus:
+            first, end = start, min(start + 16, limit)
+            if first >= end:
+                break
+            name = f"prepare_seeds_{first}_{end}"
+            child = await campaign.start(name, gpu, "evaluate.py", *campaign.evaluator_args(gpu),
+                                         "prepare-seeds", "--candidate-start", first, "--candidate-stop", end)
+            shards.append(campaign.finish(name, child))
+            start = end
+        results = await asyncio.gather(*shards, return_exceptions=True)
+        for result in results:
+            if isinstance(result, Exception):
+                raise result
+        child = await campaign.start("merge_seeds", gpus[0], "evaluate.py",
+                                     *campaign.evaluator_args(gpus[0]), "merge-seeds")
+        await campaign.finish("merge_seeds", child)
+        if read_json(reset_file)["complete"]:
+            return
+    raise RuntimeError("Insufficient official expert-valid evaluation seeds")
+
+
+def validate_trainer(pid, model, gpu, campaign):
+    process = Path(f"/proc/{pid}")
+    argv = (process / "cmdline").read_bytes().split(b"\0")
+    env = (process / "environ").read_bytes().split(b"\0")
+    expected = [str(CODE / "train.py").encode(), b"--root", str(campaign.args.root).encode(),
+                b"--data", str(campaign.args.data).encode(), b"--model", model.encode()]
+    if (process.stat().st_uid != os.getuid() or argv[2:-1] != expected
+            or f"CUDA_VISIBLE_DEVICES={gpu}".encode() not in env):
+        raise RuntimeError(f"PID {pid} does not match the requested training job")
+
+
+async def wait_for_trainer(pid, model, gpu, campaign):
+    if (campaign.logs / f"{model}_complete.json").is_file():
+        return
+    validate_trainer(pid, model, gpu, campaign)
+    descriptor = os.pidfd_open(pid)
+    loop = asyncio.get_running_loop()
+    completed = loop.create_future()
+    loop.add_reader(descriptor, lambda: None if completed.done() else completed.set_result(None))
+    record("attached_training", model=model, gpu=gpu, pid=pid)
+    try:
+        await completed
+    finally:
+        loop.remove_reader(descriptor)
+        os.close(descriptor)
+    if not (campaign.logs / f"{model}_complete.json").is_file():
+        record("training_recovery", model=model, gpu=gpu, previous_pid=pid)
+        campaign.check_idle(gpu)
+        await campaign.train(model, gpu)
+
+
+async def train_and_evaluate(campaign, gpus, adopted):
+    pending = [(model, epoch) for epoch in campaign.config["eval_epochs"] for model in MODEL_NAMES]
+    training = [model for model in MODEL_NAMES if not (campaign.logs / f"{model}_complete.json").exists()]
+    training_failed = asyncio.Event()
+
+    async def worker(gpu, models):
+        for model in models:
+            try:
+                if model in adopted:
+                    await wait_for_trainer(adopted[model], model, gpu, campaign)
+                else:
+                    campaign.check_idle(gpu)
+                    await campaign.train(model, gpu)
+            except Exception:
+                training_failed.set()
+                raise
+        while pending:
+            if training_failed.is_set():
+                return
+            job = next((
+                (model, epoch) for model, epoch in pending
+                if (campaign.args.root / "checkpoints" / model / f"epoch_{epoch:03d}.pt").is_file()
+            ), None)
+            if job is None:
+                if all((campaign.logs / f"{model}_complete.json").exists() for model in MODEL_NAMES):
+                    raise RuntimeError("Training ended with missing evaluation checkpoints")
+                await asyncio.sleep(12)
+                continue
+            model, epoch = job
             result = read_json(campaign.args.root / f"evaluation/{model}/epoch_{epoch:03d}/summary.json")
-            if result is None or not result["complete"]:
-                await campaign.evaluate(gpu, model, epoch)
+            if result is not None and result["complete"]:
+                pending.remove(job)
+                continue
+            try:
+                campaign.check_idle(gpu)
+            except RuntimeError as error:
+                record("evaluation_gpu_skipped", gpu=gpu, reason=str(error))
+                return
+            pending.remove(job)
+            await campaign.evaluate(gpu, model, epoch)
 
-    outcomes = await asyncio.gather(*(worker(gpu) for gpu in gpus), return_exceptions=True)
+    assigned = [[] for _ in gpus]
+    if adopted:
+        for index, model in enumerate(MODEL_NAMES):
+            if model in training:
+                assigned[index].append(model)
+    else:
+        for index, model in enumerate(training):
+            assigned[index % len(gpus)].append(model)
+    outcomes = await asyncio.gather(*(worker(gpu, models) for gpu, models in zip(gpus, assigned)),
+                                    return_exceptions=True)
     for outcome in outcomes:
         if isinstance(outcome, Exception):
             raise outcome
+    if pending:
+        raise RuntimeError("No available GPU workers for the remaining evaluation checkpoints")
 
 
 async def run_task(args, task, phase):
@@ -195,12 +305,24 @@ async def run_task(args, task, phase):
     data = prepare_data(args, task, root)
     campaign = Campaign(SimpleNamespace(root=root, data=data, rmbench=args.rmbench,
                                         camera_shader="rt", eval_batch_size=2, switch_at=None))
+    adopted = dict(zip(MODEL_NAMES, args.adopt_swap_trainers)) if task == "swap_blocks" else {}
     gpus = []
-    for gpu in args.gpus:
+    for index, gpu in enumerate(args.gpus):
         try:
-            campaign.check_idle(gpu)
+            if adopted and index < len(MODEL_NAMES):
+                model = MODEL_NAMES[index]
+                if not (campaign.logs / f"{model}_complete.json").is_file():
+                    validate_trainer(adopted[model], model, gpu, campaign)
+                pci = subprocess.check_output([
+                    "nvidia-smi", "-i", gpu, "--query-gpu=pci.bus_id", "--format=csv,noheader",
+                ], text=True).strip()
+                campaign.pcis[gpu] = pci
+            else:
+                campaign.check_idle(gpu)
             gpus.append(gpu)
         except RuntimeError as error:
+            if adopted and index < len(MODEL_NAMES):
+                raise
             record("gpu_skipped", gpu=gpu, reason=str(error))
     if not gpus:
         raise RuntimeError("No selected GPU is available")
@@ -210,23 +332,13 @@ async def run_task(args, task, phase):
         child = await campaign.start("calibrate", primary, "calibrate.py", "--root", root, "--data", data)
         await campaign.finish("calibrate", child)
     campaign.config = read_json(root / "configs/protocol.json")
-    await campaign.prepare(primary)
+    await prepare_evaluation(campaign, gpus)
     seeds = read_json(root / "evaluation/reset_seeds.json")["seeds"]
     if not (root / "evaluation/verification/real_closed_loop.json").exists():
         child = await campaign.start("verify", primary, "evaluate.py", *campaign.evaluator_args(primary),
                                      "verify", "--seed", seeds[0])
         await campaign.finish("verify", child)
-    missing = [model for model in MODEL_NAMES if not (root / "logs" / f"{model}_complete.json").exists()]
-    if len(gpus) == 2 and len(missing) == 2:
-        outcomes = await asyncio.gather(*(campaign.train(model, gpu) for model, gpu in zip(missing, gpus)),
-                                        return_exceptions=True)
-        for outcome in outcomes:
-            if isinstance(outcome, Exception):
-                raise outcome
-    else:
-        for model in missing:
-            await campaign.train(model, primary)
-    await evaluate_all(campaign, gpus)
+    await train_and_evaluate(campaign, gpus, adopted)
     result = verify_result(root, task)
     report(root)
     atomic_json(complete, result)
@@ -285,16 +397,22 @@ async def main():
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--rmbench", type=Path, required=True)
     parser.add_argument("--gpus", nargs="+", required=True)
+    parser.add_argument("--adopt-swap-trainers", nargs=2, type=int, default=(),
+                        metavar=("M0_PID", "M3_PID"))
     args = parser.parse_args()
     args.root, args.rmbench = args.root.resolve(), args.rmbench.resolve()
-    if len(args.gpus) not in (1, 2) or len(set(args.gpus)) != len(args.gpus):
-        parser.error("Select one or two distinct GPU UUIDs")
+    if not 1 <= len(args.gpus) <= 4 or len(set(args.gpus)) != len(args.gpus):
+        parser.error("Select one to four distinct GPU UUIDs")
+    if args.adopt_swap_trainers and len(args.gpus) < 2:
+        parser.error("Existing trainers require their two original GPU UUIDs first")
     if not read_json(args.root / "audit/put_back_pass.json")["passed"]:
         raise RuntimeError("Put Back Block audit must pass before extending")
     os.environ["HF_HUB_DISABLE_XET"] = "1"
     with (args.root / "validation.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        command = " ".join(shlex.quote(arg) for arg in [sys.executable, *sys.argv])
+        reproduction = [sys.executable, str(Path(__file__).resolve()), "--root", str(args.root),
+                        "--rmbench", str(args.rmbench), "--gpus", *args.gpus]
+        command = shlex.join(reproduction)
         (args.root / "summary/reproduce.txt").write_text(
             f"export PYTHONNOUSERSITE=1\nexport PYTHONPATH={shlex.quote(os.environ['PYTHONPATH'])}\n{command}\n"
         )
