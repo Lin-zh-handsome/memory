@@ -245,6 +245,7 @@ def evaluate_group(args, protocol, policy, config, entries, output, record_video
             "obs": deque([obs, obs], maxlen=2), "video": None, "trace": [],
             "observe_seconds": 0.0, "predict_seconds": 0.0, "replans": 0,
             "initial_state": task_state.initial_state(task, env, obs[STATE_KEY]),
+            "controller_fallbacks": task_state.track_controller_fallbacks(task, env),
         }
         if record_video:
             episode["video"] = Video(output / f"seed_{seed}.pending.mp4", raw["third_view_rgb"])
@@ -341,6 +342,8 @@ def evaluate_group(args, protocol, policy, config, entries, output, record_video
             "initial_state": episode["initial_state"],
             "stage_transitions": episode["trace"], "final": task_state.report_state(task, env),
             **task_state.outcome_details(task, episode["trace"], env),
+            **({"controller_fallbacks": episode["controller_fallbacks"]}
+               if episode["controller_fallbacks"] is not None else {}),
             "render_pci": pci_address(config["render_device"].pci_string),
             "memory": diagnostic, "video": None,
         }

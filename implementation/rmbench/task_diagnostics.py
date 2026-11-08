@@ -99,3 +99,29 @@ def outcome_details(task, trace, env):
             "successful_feedback": bool(env.eval_success and final["gauge_on"]),
         }
     return details
+
+
+def track_controller_fallbacks(task, env):
+    """Count planner failures without changing the official controller behavior."""
+    if task not in ("cover_blocks", "battery_try"):
+        return None
+    counts = {"left": 0, "right": 0}
+
+    def instrument(planner, side):
+        original = planner.TOPP
+
+        def tracked(*args, **kwargs):
+            try:
+                result = original(*args, **kwargs)
+            except Exception:
+                counts[side] += 1
+                raise
+            if result[1].shape[0] == 0:
+                counts[side] += 1
+            return result
+
+        planner.TOPP = tracked
+
+    instrument(env.robot.left_mplib_planner, "left")
+    instrument(env.robot.right_mplib_planner, "right")
+    return counts
