@@ -13,7 +13,9 @@ import sys
 from types import SimpleNamespace
 
 from campaign import CODE, Campaign, record
-from run_memory_validation import atomic_json, prepare_data, stage_configs, verify_result
+from run_memory_validation import (
+    atomic_json, prepare_data, stage_configs, validate_trainer, verify_result, wait_for_trainer,
+)
 from summarize import read_json, report
 
 TASKS = {"cover_blocks": 1500, "battery_try": 1000}
@@ -100,6 +102,87 @@ def outcome_report(root, task, result):
     path.write_text(path.read_text(encoding="utf-8") + "\n".join(lines) + "\n", encoding="utf-8")
 
 
+class SingleGpuCampaign(Campaign):
+    def __init__(self, args):
+        super().__init__(args)
+        self.groups = set()
+        self.launch_lock = asyncio.Lock()
+
+    def check_idle(self, gpu):
+        query = subprocess.check_output(
+            ["nvidia-smi", "-i", gpu, "--query-gpu=pci.bus_id,memory.free",
+             "--format=csv,noheader,nounits"], text=True,
+        )
+        pci, free = query.strip().split(",")
+        self.pcis[gpu] = pci.strip()
+        if int(free) < 24000:
+            raise RuntimeError(f"Insufficient free memory for a new job on {gpu}: {free.strip()} MiB")
+        processes = subprocess.check_output(
+            ["nvidia-smi", "-i", gpu, "--query-compute-apps=pid", "--format=csv,noheader"], text=True,
+        )
+        for line in processes.splitlines():
+            try:
+                group = os.getpgid(int(line.strip()))
+            except ProcessLookupError:
+                continue
+            if group not in self.groups:
+                raise RuntimeError(f"GPU {gpu} is occupied by a different workload (PID {line.strip()})")
+
+    async def start(self, name, gpu, script, *arguments):
+        async with self.launch_lock:
+            self.check_idle(gpu)
+            child = await super().start(name, gpu, script, *arguments)
+            self.groups.add(child.pid)
+            return child
+
+    async def finish(self, name, child):
+        try:
+            return await super().finish(name, child)
+        finally:
+            self.groups.discard(child.pid)
+
+
+async def run_slots(campaign, gpu, workers, adopted):
+    cfg = campaign.config
+    pending = [(model, epoch) for epoch in cfg["eval_epochs"] for model in MODELS]
+    assigned = [list(MODELS)] if workers == 1 else [[model] for model in MODELS]
+    training_failed = asyncio.Event()
+
+    async def slot(models):
+        for model in models:
+            marker = campaign.logs / f"{model}_complete.json"
+            if marker.is_file():
+                continue
+            try:
+                if model in adopted:
+                    await wait_for_trainer(adopted[model], model, gpu, campaign)
+                else:
+                    await campaign.train(model, gpu)
+            except Exception:
+                training_failed.set()
+                raise
+        while pending and not training_failed.is_set():
+            ready = next((
+                (model, epoch) for model, epoch in pending
+                if (campaign.args.root / f"checkpoints/{model}/epoch_{epoch:03d}.pt").is_file()
+            ), None)
+            if ready is None:
+                if all((campaign.logs / f"{model}_complete.json").is_file() for model in MODELS):
+                    raise RuntimeError("Training ended without all evaluation checkpoints")
+                await asyncio.sleep(15)
+                continue
+            model, epoch = ready
+            pending.remove(ready)
+            point = read_json(campaign.args.root / f"evaluation/{model}/epoch_{epoch:03d}/summary.json")
+            if point is None or not point["complete"]:
+                await campaign.evaluate(gpu, model, epoch)
+
+    outcomes = await asyncio.gather(*(slot(models) for models in assigned), return_exceptions=True)
+    for outcome in outcomes:
+        if isinstance(outcome, Exception):
+            raise outcome
+
+
 async def run_task(args, task, expected_limit):
     root = args.root / task
     (root / "logs").mkdir(parents=True, exist_ok=True)
@@ -110,7 +193,7 @@ async def run_task(args, task, expected_limit):
     log_progress(args.root, f"开始 {task}。")
     stage_configs(args, task, root)
     data = await prepare_with_retry(args, task, root)
-    campaign = Campaign(SimpleNamespace(root=root, data=data, rmbench=args.rmbench,
+    campaign = SingleGpuCampaign(SimpleNamespace(root=root, data=data, rmbench=args.rmbench,
                                         camera_shader="rt", eval_batch_size=2, switch_at=None))
     config = campaign.config
     if (config["max_episode_steps"] != expected_limit or config["seed"] != 0
@@ -119,6 +202,12 @@ async def run_task(args, task, expected_limit):
         raise RuntimeError(f"Unexpected experimental protocol for {task}")
 
     gpu = args.gpus[0]
+    adopted = {}
+    if task == "cover_blocks" and args.adopt_cover_m0 and not (campaign.logs / "M0_complete.json").is_file():
+        pid = args.adopt_cover_m0
+        validate_trainer(pid, "M0", gpu, campaign)
+        adopted["M0"] = pid
+        campaign.groups.add(os.getpgid(pid))
     campaign.check_idle(gpu)
     if "event_thresholds" not in config:
         child = await campaign.start("calibrate", gpu, "calibrate.py", "--root", root, "--data", data)
@@ -136,17 +225,7 @@ async def run_task(args, task, expected_limit):
         await campaign.finish("verify", child)
     log_progress(args.root, f"{task} 的数据、模型梯度、记忆和真实环境接口验证通过。开始单卡正式运行。")
 
-    for model in MODELS:
-        marker = campaign.logs / f"{model}_complete.json"
-        if not marker.is_file():
-            campaign.check_idle(gpu)
-            await campaign.train(model, gpu)
-    for epoch in config["eval_epochs"]:
-        for model in MODELS:
-            point = read_json(root / f"evaluation/{model}/epoch_{epoch:03d}/summary.json")
-            if point is None or not point["complete"]:
-                campaign.check_idle(gpu)
-                await campaign.evaluate(gpu, model, epoch)
+    await run_slots(campaign, gpu, args.workers, adopted)
     result = verify_result(root, task)
     report(root)
     outcome_report(root, task, result)
@@ -186,6 +265,8 @@ async def main():
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--rmbench", type=Path, required=True)
     parser.add_argument("--gpu", required=True)
+    parser.add_argument("--workers", type=int, choices=(1, 2), default=1)
+    parser.add_argument("--adopt-cover-m0", type=int)
     args = parser.parse_args()
     args.root, args.rmbench = args.root.resolve(), args.rmbench.resolve()
     args.gpus = [args.gpu]
@@ -195,7 +276,8 @@ async def main():
     os.environ["HF_HUB_ETAG_TIMEOUT"] = "30"
     with (args.root / "mn_validation.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        command = shlex.join([sys.executable, *sys.argv])
+        command = shlex.join([sys.executable, str(Path(__file__).resolve()), "--root", str(args.root),
+                              "--rmbench", str(args.rmbench), "--gpu", args.gpu, "--workers", str(args.workers)])
         (args.root / "summary/reproduce.txt").write_text(
             f"export PYTHONNOUSERSITE=1\nexport PYTHONPATH={shlex.quote(os.environ['PYTHONPATH'])}\n{command}\n"
         )
