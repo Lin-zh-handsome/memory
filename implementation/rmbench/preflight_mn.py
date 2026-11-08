@@ -1,6 +1,7 @@
 """Validate the actual task's data and policy interface before training."""
 import argparse
 import io
+import importlib.util
 import json
 from pathlib import Path
 import sys
@@ -30,7 +31,10 @@ def main():
     try:
         from XPolicyLab.utils.process_data import decode_image_bit
     except ImportError:
-        from data.decode_image_bit import decode_image_bit
+        decoder = importlib.util.spec_from_file_location("official_rgb_decoder", args.rmbench / "data/decode_image_bit.py")
+        module = importlib.util.module_from_spec(decoder)
+        decoder.loader.exec_module(module)
+        decode_image_bit = module.decode_image_bit
 
     archive = args.root / f"archive/data/{task}/demo_clean.zip"
     with ZipFile(archive) as zipped:
