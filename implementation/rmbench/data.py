@@ -107,6 +107,31 @@ def cover_phases(annotations, episode_id):
     return phases
 
 
+def battery_phases(annotations, episode_id):
+    rows = annotations[f"episode_{episode_id}"]
+    initial_frames = 0
+    flips = []
+    for label, frames in rows:
+        if label.startswith("Use dual arm to pick up the batteries"):
+            if flips:
+                raise ValueError(f"Unexpected battery sequence for episode {episode_id}")
+            initial_frames += int(frames)
+            continue
+        flip = re.search(r"Pick up the (left|right) battery .* in the (positive|negative) direction", label)
+        if flip:
+            direction = flip.groups()
+            if flips and flips[-1]["operation"] == direction:
+                flips[-1]["frames"] += int(frames)
+            else:
+                flips.append({"operation": direction, "frames": int(frames)})
+    expected = [("left", "negative"), ("right", "negative"), ("left", "positive")]
+    if initial_frames <= 0 or not flips or [x["operation"] for x in flips] != expected[:len(flips)] or any(
+        item["frames"] <= 0 for item in flips
+    ):
+        raise ValueError(f"Incomplete official battery sequence for episode {episode_id}: {flips}")
+    return {"initial_frames": initial_frames, "direction_changes": flips}
+
+
 def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
     import h5py
 
@@ -135,7 +160,7 @@ def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
     cv2.setNumThreads(1)
     with ZipFile(archive) as zipped:
         annotations = None
-        if task == "cover_blocks":
+        if task in ("cover_blocks", "battery_try"):
             name, = (item for item in zipped.namelist() if item.endswith("/language_annotation.json"))
             annotations = json.loads(zipped.read(name))
         members = {}
@@ -162,8 +187,10 @@ def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
                 for time in range(1, len(state)):
                     frames[time] = preprocess_rgb(decode_image_bit(images[time]))
                 metadata["source_rgb_hwc"] = list(first_rgb.shape)
-                if annotations is not None:
+                if task == "cover_blocks":
                     metadata["official_cover_phases"] = cover_phases(annotations, episode_id)
+                elif task == "battery_try":
+                    metadata["official_battery_phases"] = battery_phases(annotations, episode_id)
                 if episode_id == 0:
                     print(
                         f"First expert RGB {first_rgb.shape}; {metadata}; "
@@ -275,6 +302,6 @@ if __name__ == "__main__":
     parser.add_argument("archive", type=Path)
     parser.add_argument("prepared_dir", type=Path)
     parser.add_argument("rmbench", type=Path)
-    parser.add_argument("--task", choices=["put_back_block", "swap_blocks", "cover_blocks"], default="put_back_block")
+    parser.add_argument("--task", choices=["put_back_block", "swap_blocks", "cover_blocks", "battery_try"], default="put_back_block")
     args = parser.parse_args()
     prepare(args.archive, args.prepared_dir, args.rmbench, args.task)

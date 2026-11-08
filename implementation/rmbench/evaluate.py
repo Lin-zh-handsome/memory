@@ -51,7 +51,7 @@ def make_simulator(args, protocol):
 
     import sapien
     task = protocol["task"]
-    if task not in ("put_back_block", "swap_blocks", "cover_blocks"):
+    if task not in ("put_back_block", "swap_blocks", "cover_blocks", "battery_try"):
         raise ValueError(f"Unsupported benchmark task: {task}")
     factory = getattr(importlib.import_module(f"envs.{task}"), task)
     from envs.utils.create_actor import UnStableError
@@ -311,7 +311,7 @@ def evaluate_group(args, protocol, policy, config, entries, output, record_video
                         episode["video"].write(raw["third_view_rgb"])
                     stage = task_state.report_state(task, env)
                     previous = episode["trace"][-1]
-                    if (stage["stage"], stage.get("invalid")) != (previous["stage"], previous.get("invalid")):
+                    if task_state.transition_key(stage) != task_state.transition_key(previous):
                         episode["trace"].append(stage)
                 advance(updated)
             chunk += 1
@@ -340,6 +340,7 @@ def evaluate_group(args, protocol, policy, config, entries, output, record_video
             "observe_seconds": episode["observe_seconds"], "predict_seconds": episode["predict_seconds"],
             "initial_state": episode["initial_state"],
             "stage_transitions": episode["trace"], "final": task_state.report_state(task, env),
+            **task_state.outcome_details(task, episode["trace"], env),
             "render_pci": pci_address(config["render_device"].pci_string),
             "memory": diagnostic, "video": None,
         }

@@ -22,7 +22,8 @@ from summarize import best_result, checkpoint_result, read_json, report
 
 TASKS = ("swap_blocks", "cover_blocks")
 MODEL_NAMES = ("M0", "M3")
-ASSETS = {"swap_blocks": "002_breadbasket", "cover_blocks": "003_cover"}
+ASSETS = {"swap_blocks": ("002_breadbasket",), "cover_blocks": ("003_cover",),
+          "battery_try": ("017_battery_slot_gauge", "018_battery")}
 DATASET = "TianxingChen/RMBench"
 
 
@@ -52,7 +53,7 @@ def verify_result(root, task):
                 same_keys = initial.keys() == former.keys()
                 same_poses = same_keys and all(
                     np.allclose(initial[key], former[key], rtol=0, atol=1e-5) if key == "qpos"
-                    else initial[key] == former[key] if key in ("occupied_baskets", "empty_basket", "uncover_order")
+                    else initial[key] == former[key] if key in ("occupied_baskets", "empty_basket", "uncover_order", "target_combination")
                     else all(np.allclose(a[name], b[name], rtol=0, atol=5e-4)
                              for a, b in zip(initial[key], former[key], strict=True) for name in ("p", "q"))
                     for key in initial
@@ -75,7 +76,8 @@ def verify_result(root, task):
                           "successes": best["successes"],
                           "epoch_successes": {epoch: point["successes"] for epoch, point in points.items()}}
         failures[model] = dict(stages)
-    case = "empty_basket" if task == "swap_blocks" else "uncover_order"
+    case = {"swap_blocks": "empty_basket", "cover_blocks": "uncover_order",
+            "battery_try": "target_combination"}[task]
     configurations = Counter(str(state[case]) for state in reference.values())
     if len(configurations) < 2:
         raise RuntimeError(f"Fixed seeds for {task} lack placement diversity")
@@ -103,7 +105,7 @@ def update_plan(root, phase, text):
 def stage_configs(args, task, destination):
     config_dir = destination / "configs"
     config_dir.mkdir(exist_ok=True)
-    original = args.root / "audit/put_back_original/experiment/configs/protocol.json"
+    original = getattr(args, "protocol_template", args.root / "audit/put_back_original/experiment/configs/protocol.json")
     cfg = read_json(original)
     cfg.pop("event_thresholds", None)
     limit = yaml.safe_load((args.rmbench / "env_cfg/task_config/_eval_step_limit.yml").read_text())[task]
@@ -152,16 +154,17 @@ def prepare_data(args, task, destination):
     logs = destination / "logs"
     assets = args.rmbench / "assets"
     env = {**os.environ, "HF_ENDPOINT": "https://hf-mirror.com", "HF_HUB_DISABLE_XET": "1",
+           "HF_HUB_DOWNLOAD_TIMEOUT": "120", "HF_HUB_ETAG_TIMEOUT": "30",
            "PATH": str(Path(sys.executable).parent) + ":" + os.environ["PATH"]}
     if not archive.exists():
         cpu_job(["bash", args.rmbench / "scripts/_download_data.sh", task,
                  "--cache", destination / "archive"], logs / "download.log", env)
-    asset_dir = assets / "objects" / ASSETS[task]
-    if not asset_dir.is_dir() or not any(asset_dir.rglob("*.json")):
+    missing = [asset for asset in ASSETS[task] if not any((assets / "objects" / asset).rglob("*.json"))]
+    if missing:
         from huggingface_hub import snapshot_download
 
         snapshot_download(repo_id=DATASET, repo_type="dataset", endpoint=env["HF_ENDPOINT"],
-                          local_dir=assets, allow_patterns=[f"objects/{ASSETS[task]}/**"])
+                          local_dir=assets, allow_patterns=[f"objects/{asset}/**" for asset in missing])
     if not (prepared / "manifest.json").exists():
         cpu_job([sys.executable, "-u", CODE / "data.py", archive, prepared, args.rmbench, "--task", task],
                 logs / "prepare_data.log")

@@ -165,7 +165,7 @@ def sample_policy(variant, device):
     return policy.to(device)
 
 
-def check_policy(device):
+def check_policy(device, variants=("M2", "M3")):
     obs = {
         "head_camera": torch.rand(25, 3, 32, 32, device=device),
         "agent_pos": torch.rand(25, 14, device=device),
@@ -173,7 +173,7 @@ def check_policy(device):
     def frames(start, end):
         return {key: value[start:end] for key, value in obs.items()}
 
-    for variant in ("M2", "M3"):
+    for variant in variants:
         policy = sample_policy(variant, device).eval()
         with torch.no_grad():
             full, full_history, full_state = policy.segment_condition(obs)
