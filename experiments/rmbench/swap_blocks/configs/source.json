@@ -1,0 +1,25 @@
+{
+  "experiment_commit": "8694360fbe24d4d63bdd642e770557401b9d2998",
+  "evaluation_commit": "8aef1365cde36803e293a48f90265f0d4121967f",
+  "rmbench": "7d1cdfc7661c273a7a5c5f6126e2d1a7f0a3f4b7",
+  "source_base": "4577eda",
+  "asset_model": "002_breadbasket",
+  "environment_patches": [
+    "rmbench_render_device.patch",
+    "rmbench_qpos_workers.patch"
+  ],
+  "rollout_planning": "CPU TOPP and original gripper interpolation for joint-space actions",
+  "expert_archive": "https://huggingface.co/datasets/TianxingChen/RMBench/resolve/main/data/swap_blocks/demo_clean.zip",
+  "package_versions": {
+    "torch": "2.4.1",
+    "torchvision": "0.19.1",
+    "mamba-ssm": "2.2.2",
+    "diffusers": "0.11.1",
+    "sapien": "3.0.0b1",
+    "warp-lang": "1.12.0",
+    "h5py": "3.16.0",
+    "opencv-python": "4.11.0.86",
+    "huggingface-hub": "0.25.0"
+  },
+  "python": "3.10.22"
+}

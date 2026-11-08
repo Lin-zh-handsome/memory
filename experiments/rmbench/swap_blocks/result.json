@@ -1,0 +1,55 @@
+{
+  "task": "swap_blocks",
+  "episodes": 500,
+  "models": {
+    "M0": {
+      "best_epoch": 50,
+      "rate": 0.18,
+      "successes": 9,
+      "epoch_successes": {
+        "50": 9,
+        "100": 3,
+        "150": 4,
+        "200": 5,
+        "250": 5
+      }
+    },
+    "M3": {
+      "best_epoch": 250,
+      "rate": 1.0,
+      "successes": 50,
+      "epoch_successes": {
+        "50": 11,
+        "100": 35,
+        "150": 48,
+        "200": 48,
+        "250": 50
+      }
+    }
+  },
+  "failure_stages": {
+    "M0": {
+      "0": 57,
+      "2": 44,
+      "3": 72,
+      "1": 51
+    },
+    "M3": {
+      "0": 5,
+      "1": 6,
+      "2": 21,
+      "3": 26
+    }
+  },
+  "initial_layout_counts": {
+    "0": 19,
+    "2": 18,
+    "1": 13
+  },
+  "memory": {
+    "initial_retained": 250,
+    "episodes": 250,
+    "writes": 70695,
+    "replacements": 68695
+  }
+}

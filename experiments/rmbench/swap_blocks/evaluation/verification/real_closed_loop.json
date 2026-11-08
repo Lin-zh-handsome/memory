@@ -1,0 +1,283 @@
+{
+  "render_pci": "18:00.0",
+  "camera_shader": "rt",
+  "episode_id": 0,
+  "seed": 100001,
+  "success": false,
+  "steps": 17,
+  "observations": 18,
+  "replans": 3,
+  "observe_seconds": 0.18384948559105396,
+  "predict_seconds": 2.36515034455806,
+  "initial_state": {
+    "qpos": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "baskets": [
+      {
+        "p": [
+          -0.14000000059604645,
+          -0.15000000596046448,
+          0.7409999966621399
+        ],
+        "q": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "p": [
+          0.0,
+          -0.15000000596046448,
+          0.7409999966621399
+        ],
+        "q": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "p": [
+          0.14000000059604645,
+          -0.15000000596046448,
+          0.7409999966621399
+        ],
+        "q": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "p": [
+          -0.004949864465743303,
+          -0.14577698707580566,
+          0.7564215660095215
+        ],
+        "q": [
+          0.9698889851570129,
+          -0.00016740229330025613,
+          -0.0006268734578043222,
+          0.24354684352874756
+        ]
+      },
+      {
+        "p": [
+          0.13481995463371277,
+          -0.15010491013526917,
+          0.756425678730011
+        ],
+        "q": [
+          0.9653860926628113,
+          -0.00012968374358024448,
+          -0.0008949832408688962,
+          -0.2608237862586975
+        ]
+      }
+    ],
+    "occupied_baskets": [
+      1,
+      2
+    ],
+    "empty_basket": 0
+  },
+  "stage_transitions": [
+    {
+      "step": 0,
+      "stage": 0,
+      "block_baskets": [
+        1,
+        2
+      ],
+      "button_presses": 0,
+      "invalid": false
+    }
+  ],
+  "final": {
+    "step": 17,
+    "stage": 0,
+    "block_baskets": [
+      1,
+      null
+    ],
+    "button_presses": 2,
+    "invalid": false
+  },
+  "memory": {
+    "observations": 18,
+    "write_count": 18,
+    "replacement_count": 10,
+    "initial_retained": true,
+    "capacities": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "events": [
+      {
+        "time": 0,
+        "replaced_time": null,
+        "visual_similarity_to_latest": null,
+        "history_similarity_to_latest": null
+      },
+      {
+        "time": 1,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9825432300567627,
+        "history_similarity_to_latest": 0.9150486588478088
+      },
+      {
+        "time": 2,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9854087829589844,
+        "history_similarity_to_latest": 0.921832799911499
+      },
+      {
+        "time": 3,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9753901958465576,
+        "history_similarity_to_latest": 0.9111661911010742
+      },
+      {
+        "time": 4,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9757997989654541,
+        "history_similarity_to_latest": 0.9406169056892395
+      },
+      {
+        "time": 5,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9659086465835571,
+        "history_similarity_to_latest": 0.9461723566055298
+      },
+      {
+        "time": 6,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9726331830024719,
+        "history_similarity_to_latest": 0.9502391219139099
+      },
+      {
+        "time": 7,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9767988920211792,
+        "history_similarity_to_latest": 0.933455228805542
+      },
+      {
+        "time": 8,
+        "replaced_time": 5,
+        "visual_similarity_to_latest": 0.9742279052734375,
+        "history_similarity_to_latest": 0.9244807958602905
+      },
+      {
+        "time": 9,
+        "replaced_time": 4,
+        "visual_similarity_to_latest": 0.9663705229759216,
+        "history_similarity_to_latest": 0.9338794350624084
+      },
+      {
+        "time": 10,
+        "replaced_time": 3,
+        "visual_similarity_to_latest": 0.9764169454574585,
+        "history_similarity_to_latest": 0.93020099401474
+      },
+      {
+        "time": 11,
+        "replaced_time": 8,
+        "visual_similarity_to_latest": 0.9793872833251953,
+        "history_similarity_to_latest": 0.9389042854309082
+      },
+      {
+        "time": 12,
+        "replaced_time": 7,
+        "visual_similarity_to_latest": 0.9716563820838928,
+        "history_similarity_to_latest": 0.9305136799812317
+      },
+      {
+        "time": 13,
+        "replaced_time": 10,
+        "visual_similarity_to_latest": 0.9775236248970032,
+        "history_similarity_to_latest": 0.9498828053474426
+      },
+      {
+        "time": 14,
+        "replaced_time": 12,
+        "visual_similarity_to_latest": 0.9684265851974487,
+        "history_similarity_to_latest": 0.9530138969421387
+      },
+      {
+        "time": 15,
+        "replaced_time": 13,
+        "visual_similarity_to_latest": 0.9771503210067749,
+        "history_similarity_to_latest": 0.9539298415184021
+      },
+      {
+        "time": 16,
+        "replaced_time": 14,
+        "visual_similarity_to_latest": 0.9782811403274536,
+        "history_similarity_to_latest": 0.9497722387313843
+      },
+      {
+        "time": 17,
+        "replaced_time": 11,
+        "visual_similarity_to_latest": 0.98195481300354,
+        "history_similarity_to_latest": 0.9449774026870728
+      }
+    ],
+    "final_event_times": [
+      0,
+      1,
+      2,
+      6,
+      9,
+      15,
+      16,
+      17
+    ],
+    "final_event_age_steps": [
+      17,
+      16,
+      15,
+      11,
+      8,
+      2,
+      1,
+      0
+    ]
+  },
+  "video": null
+}

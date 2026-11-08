@@ -1,0 +1,173 @@
+{
+  "render_pci": "db:00.0",
+  "camera_shader": "rt",
+  "episode_id": 0,
+  "seed": 100000,
+  "success": false,
+  "steps": 17,
+  "observations": 18,
+  "replans": 3,
+  "observe_seconds": 0.18671481404453516,
+  "predict_seconds": 2.328559991903603,
+  "stage_transitions": [
+    {
+      "step": 0,
+      "stage": 0,
+      "button_presses": 0,
+      "xy_return_error_m": 0.0005226268549449742
+    }
+  ],
+  "final": {
+    "step": 17,
+    "stage": 0,
+    "button_presses": 1,
+    "xy_return_error_m": 0.0005226862849667668
+  },
+  "memory": {
+    "observations": 18,
+    "write_count": 18,
+    "replacement_count": 10,
+    "initial_retained": true,
+    "capacities": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "events": [
+      {
+        "time": 0,
+        "replaced_time": null,
+        "visual_similarity_to_latest": null,
+        "history_similarity_to_latest": null
+      },
+      {
+        "time": 1,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.988450288772583,
+        "history_similarity_to_latest": 0.9349754452705383
+      },
+      {
+        "time": 2,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9831196069717407,
+        "history_similarity_to_latest": 0.9172935485839844
+      },
+      {
+        "time": 3,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9864194393157959,
+        "history_similarity_to_latest": 0.8983640074729919
+      },
+      {
+        "time": 4,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.996181070804596,
+        "history_similarity_to_latest": 0.952181875705719
+      },
+      {
+        "time": 5,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9720306396484375,
+        "history_similarity_to_latest": 0.9519811868667603
+      },
+      {
+        "time": 6,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9793146252632141,
+        "history_similarity_to_latest": 0.9569888114929199
+      },
+      {
+        "time": 7,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9843655824661255,
+        "history_similarity_to_latest": 0.9475042819976807
+      },
+      {
+        "time": 8,
+        "replaced_time": 5,
+        "visual_similarity_to_latest": 0.9886620044708252,
+        "history_similarity_to_latest": 0.96678626537323
+      },
+      {
+        "time": 9,
+        "replaced_time": 7,
+        "visual_similarity_to_latest": 0.993488609790802,
+        "history_similarity_to_latest": 0.9754049777984619
+      },
+      {
+        "time": 10,
+        "replaced_time": 8,
+        "visual_similarity_to_latest": 0.9894289374351501,
+        "history_similarity_to_latest": 0.9689193964004517
+      },
+      {
+        "time": 11,
+        "replaced_time": 9,
+        "visual_similarity_to_latest": 0.9867421984672546,
+        "history_similarity_to_latest": 0.956413745880127
+      },
+      {
+        "time": 12,
+        "replaced_time": 10,
+        "visual_similarity_to_latest": 0.9877375364303589,
+        "history_similarity_to_latest": 0.9642201662063599
+      },
+      {
+        "time": 13,
+        "replaced_time": 6,
+        "visual_similarity_to_latest": 0.992693305015564,
+        "history_similarity_to_latest": 0.9583326578140259
+      },
+      {
+        "time": 14,
+        "replaced_time": 4,
+        "visual_similarity_to_latest": 0.9971800446510315,
+        "history_similarity_to_latest": 0.9707308411598206
+      },
+      {
+        "time": 15,
+        "replaced_time": 13,
+        "visual_similarity_to_latest": 0.9903214573860168,
+        "history_similarity_to_latest": 0.9612513780593872
+      },
+      {
+        "time": 16,
+        "replaced_time": 12,
+        "visual_similarity_to_latest": 0.9920037984848022,
+        "history_similarity_to_latest": 0.9709229469299316
+      },
+      {
+        "time": 17,
+        "replaced_time": 15,
+        "visual_similarity_to_latest": 0.9800158739089966,
+        "history_similarity_to_latest": 0.9569637775421143
+      }
+    ],
+    "final_event_times": [
+      0,
+      1,
+      2,
+      3,
+      11,
+      14,
+      16,
+      17
+    ]
+  },
+  "video": null
+}

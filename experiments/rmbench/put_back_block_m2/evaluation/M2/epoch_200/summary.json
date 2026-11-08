@@ -1,0 +1,19 @@
+{
+  "model": "M2",
+  "epoch": 200,
+  "episodes": 50,
+  "complete": true,
+  "successes": 16,
+  "success_rate": 0.32,
+  "steps": 22493,
+  "replans": 2839,
+  "observe_seconds": 37.940295023843646,
+  "predict_seconds": 1187.0414698272943,
+  "render_pci": "18:00.0",
+  "camera_shader": "rt",
+  "render_pcis": [
+    "18:00.0"
+  ],
+  "training_parameters": 297117676,
+  "inference_parameters": 297023100
+}

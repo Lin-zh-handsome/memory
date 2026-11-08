@@ -1,0 +1,9 @@
+{
+  "experiment_commit": "c9bbf47577946366ac4bb232dd81c4e0a9639039",
+  "reference_experiment": "../../put_back_block_m0_m3",
+  "model": "continuous Mamba M2",
+  "training_seed": 0,
+  "seed_manifest": "../../put_back_block_m0_m3/evaluation/reset_seeds.json",
+  "evaluation_commit": "8aef1365cde36803e293a48f90265f0d4121967f",
+  "evaluation_controller": "RMBench qpos with CPU TOPP and original gripper interpolation"
+}

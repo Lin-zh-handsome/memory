@@ -1,0 +1,20 @@
+{
+  "model": "M3",
+  "epoch": 100,
+  "episodes": 50,
+  "complete": true,
+  "successes": 35,
+  "success_rate": 0.7,
+  "steps": 36072,
+  "replans": 4515,
+  "observe_seconds": 91.67339160107076,
+  "predict_seconds": 2008.4560527866706,
+  "render_pci": "18:00.0",
+  "camera_shader": "rt",
+  "render_pcis": [
+    "18:00.0",
+    "db:00.0"
+  ],
+  "training_parameters": 305641708,
+  "inference_parameters": 305547132
+}

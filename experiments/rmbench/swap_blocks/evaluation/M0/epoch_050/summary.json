@@ -1,0 +1,19 @@
+{
+  "model": "M0",
+  "epoch": 50,
+  "episodes": 50,
+  "complete": true,
+  "successes": 9,
+  "success_rate": 0.18,
+  "steps": 46588,
+  "replans": 5824,
+  "observe_seconds": 0.0,
+  "predict_seconds": 2387.867338986136,
+  "render_pci": "2a:00.0",
+  "camera_shader": "rt",
+  "render_pcis": [
+    "2a:00.0"
+  ],
+  "training_parameters": 289109884,
+  "inference_parameters": 289109884
+}

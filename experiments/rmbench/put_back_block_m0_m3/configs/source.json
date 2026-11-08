@@ -1,0 +1,11 @@
+{
+  "experiment_commit": "d9ff5eba80996c9f15a378a2fdb11de983b2d9ed",
+  "experiment_branch": "codex/rmbench-continuous-memory",
+  "memory_base": "d4e1749",
+  "stanford_diffusion_policy": "5ba07ac",
+  "rmbench": "7d1cdfc",
+  "render_device_patch": "implementation/rmbench/rmbench_render_device.patch",
+  "expert_archive": "https://huggingface.co/datasets/TianxingChen/RMBench/resolve/main/data/put_back_block/demo_clean.zip",
+  "asset_source": "https://huggingface.co/datasets/TianxingChen/RMBench",
+  "evaluation_commit": "4577eda4d77c9c28801119ad28112e4ccbc87b08"
+}

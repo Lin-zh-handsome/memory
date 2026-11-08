@@ -1,0 +1,117 @@
+{
+  "epochs": 250,
+  "eval_epochs": [
+    50,
+    100,
+    150,
+    200,
+    250
+  ],
+  "batch_size": 64,
+  "horizon": 16,
+  "n_obs_steps": 2,
+  "n_action_steps": 8,
+  "action_start_index": 1,
+  "past_steps": 8,
+  "past_loss_weight": 0.1,
+  "mamba": {
+    "d_model": 256,
+    "d_state": 16,
+    "d_conv": 4,
+    "expand": 2
+  },
+  "ddpm": {
+    "num_train_timesteps": 100,
+    "beta_start": 0.0001,
+    "beta_end": 0.02,
+    "beta_schedule": "squaredcos_cap_v2",
+    "variance_type": "fixed_small",
+    "clip_sample": true,
+    "prediction_type": "epsilon"
+  },
+  "num_inference_steps": 100,
+  "vision": {
+    "backbone": "resnet18",
+    "weights": null,
+    "resolution": [
+      96,
+      96
+    ],
+    "crop": [
+      84,
+      84
+    ],
+    "random_crop": true,
+    "group_norm": true,
+    "imagenet_norm": true,
+    "share_rgb_model": false,
+    "freeze": false
+  },
+  "unet": {
+    "down_dims": [
+      512,
+      1024,
+      2048
+    ],
+    "diffusion_step_embed_dim": 128,
+    "kernel_size": 5,
+    "n_groups": 8,
+    "cond_predict_scale": true
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0001,
+    "betas": [
+      0.95,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 1e-06,
+    "fused": true
+  },
+  "lr_scheduler": {
+    "name": "cosine",
+    "warmup_steps": 500
+  },
+  "ema": {
+    "enabled": true,
+    "update_after_step": 0,
+    "inv_gamma": 1.0,
+    "power": 0.75,
+    "min_value": 0.0,
+    "max_value": 0.9999
+  },
+  "precision": "float32 without TF32",
+  "task": "swap_blocks",
+  "task_config": "demo_clean",
+  "models": [
+    "M0",
+    "M3"
+  ],
+  "seed": 0,
+  "eval_episodes": 50,
+  "eval_seed_start": 100000,
+  "max_episode_steps": 1000,
+  "episode_memory_capacity": 8,
+  "cameras": [
+    "head_camera"
+  ],
+  "data_split": "all official demo_clean demonstrations, disjoint official seeded simulator resets for evaluation",
+  "sampling": "Deterministically shuffle episodes each epoch, then consume chronological 64-anchor TBPTT segments. Stanford horizon 16, pad_before=1, pad_after=7, action sequence starts at t-1. All variants use identical valid anchors and optimizer updates.",
+  "normalization": "shared training-data min/max action and qpos; RGB divided by 255",
+  "action_representation": "14-dimensional native Aloha AgileX qpos including grippers, target recorded at next frame",
+  "evaluation_weights": "EMA",
+  "resource_policy": {
+    "max_gpus": 2,
+    "routine_check_seconds": 3600
+  },
+  "event_threshold_calibration": {
+    "train_episodes": 8,
+    "adjacent_cosine_quantile": 0.2
+  },
+  "resume_every_epochs": 10,
+  "event_thresholds": {
+    "visual": 0.9966006994247436,
+    "history": 0.9952274084091186
+  }
+}

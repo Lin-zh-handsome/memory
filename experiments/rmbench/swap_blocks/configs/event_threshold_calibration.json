@@ -1,0 +1,34 @@
+{
+  "method": "Separate cosine quantiles on adjacent real observations; no evaluation data",
+  "model": "Seeded from-scratch M3 in evaluation mode before optimizer updates",
+  "seed": 0,
+  "episode_ids": [
+    0,
+    7,
+    14,
+    21,
+    28,
+    35,
+    42,
+    49
+  ],
+  "quantile": 0.2,
+  "distributions": {
+    "visual": {
+      "count": 4834,
+      "minimum": 0.9864287972450256,
+      "median": 0.9995243549346924,
+      "maximum": 1.000000238418579
+    },
+    "history": {
+      "count": 4834,
+      "minimum": 0.9476174116134644,
+      "median": 0.9991773366928101,
+      "maximum": 0.9999983310699463
+    }
+  },
+  "event_thresholds": {
+    "visual": 0.9966006994247436,
+    "history": 0.9952274084091186
+  }
+}
