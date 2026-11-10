@@ -1,0 +1,137 @@
+{
+  "snapshot_time": "2026-11-10T14:21:48+08:00",
+  "task": "cover_blocks",
+  "training_seed": 0,
+  "training_epochs": {
+    "M0": 250,
+    "M3": 250
+  },
+  "evaluation": [
+    {
+      "model": "M0",
+      "epoch": 50,
+      "episodes": 50,
+      "target_episodes": 50,
+      "successes": 6,
+      "status": "complete",
+      "success_rate": 0.12,
+      "failure_categories": {
+        "uncover_phase_timeout": 4,
+        "invalid_uncover_order": 23,
+        "invalid_cover_order": 16,
+        "cover_phase_timeout": 1
+      }
+    },
+    {
+      "model": "M0",
+      "epoch": 100,
+      "episodes": 50,
+      "target_episodes": 50,
+      "successes": 8,
+      "status": "complete",
+      "success_rate": 0.16,
+      "failure_categories": {
+        "invalid_uncover_order": 30,
+        "invalid_cover_order": 9,
+        "uncover_phase_timeout": 3
+      }
+    },
+    {
+      "model": "M0",
+      "epoch": 150,
+      "episodes": 50,
+      "target_episodes": 50,
+      "successes": 6,
+      "status": "complete",
+      "success_rate": 0.12,
+      "failure_categories": {
+        "invalid_uncover_order": 29,
+        "invalid_cover_order": 15
+      }
+    },
+    {
+      "model": "M0",
+      "epoch": 200,
+      "episodes": 4,
+      "target_episodes": 50,
+      "successes": 2,
+      "status": "in_progress",
+      "success_rate": 0.5,
+      "failure_categories": {
+        "invalid_uncover_order": 1,
+        "invalid_cover_order": 1
+      }
+    },
+    {
+      "model": "M0",
+      "epoch": 250,
+      "episodes": 0,
+      "target_episodes": 50,
+      "successes": 0,
+      "status": "pending",
+      "success_rate": null,
+      "failure_categories": {}
+    },
+    {
+      "model": "M3",
+      "epoch": 50,
+      "episodes": 50,
+      "target_episodes": 50,
+      "successes": 8,
+      "status": "complete",
+      "success_rate": 0.16,
+      "failure_categories": {
+        "invalid_uncover_order": 40,
+        "uncover_phase_timeout": 2
+      }
+    },
+    {
+      "model": "M3",
+      "epoch": 100,
+      "episodes": 50,
+      "target_episodes": 50,
+      "successes": 9,
+      "status": "complete",
+      "success_rate": 0.18,
+      "failure_categories": {
+        "invalid_uncover_order": 40,
+        "uncover_phase_timeout": 1
+      }
+    },
+    {
+      "model": "M3",
+      "epoch": 150,
+      "episodes": 8,
+      "target_episodes": 50,
+      "successes": 1,
+      "status": "in_progress",
+      "success_rate": 0.125,
+      "failure_categories": {
+        "invalid_uncover_order": 7
+      }
+    },
+    {
+      "model": "M3",
+      "epoch": 200,
+      "episodes": 0,
+      "target_episodes": 50,
+      "successes": 0,
+      "status": "pending",
+      "success_rate": null,
+      "failure_categories": {}
+    },
+    {
+      "model": "M3",
+      "epoch": 250,
+      "episodes": 0,
+      "target_episodes": 50,
+      "successes": 0,
+      "status": "pending",
+      "success_rate": null,
+      "failure_categories": {}
+    }
+  ],
+  "total_episodes": 262,
+  "target_episodes": 500,
+  "battery_try": "queued"
+}

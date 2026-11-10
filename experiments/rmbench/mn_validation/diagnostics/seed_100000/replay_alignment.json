@@ -1,0 +1,107 @@
+{
+  "exact_stage_trace": true,
+  "original": [
+    {
+      "step": 0,
+      "stage": 0,
+      "invalid": false,
+      "cover_pattern": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "step": 121,
+      "stage": 1,
+      "invalid": false,
+      "cover_pattern": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "step": 267,
+      "stage": 2,
+      "invalid": false,
+      "cover_pattern": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "step": 451,
+      "stage": 3,
+      "invalid": false,
+      "cover_pattern": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "step": 630,
+      "stage": 3,
+      "invalid": true,
+      "cover_pattern": [
+        false,
+        true,
+        true
+      ]
+    }
+  ],
+  "replay": [
+    {
+      "step": 0,
+      "stage": 0,
+      "invalid": false,
+      "cover_pattern": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "step": 121,
+      "stage": 1,
+      "invalid": false,
+      "cover_pattern": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "step": 267,
+      "stage": 2,
+      "invalid": false,
+      "cover_pattern": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "step": 451,
+      "stage": 3,
+      "invalid": false,
+      "cover_pattern": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "step": 630,
+      "stage": 3,
+      "invalid": true,
+      "cover_pattern": [
+        false,
+        true,
+        true
+      ]
+    }
+  ]
+}

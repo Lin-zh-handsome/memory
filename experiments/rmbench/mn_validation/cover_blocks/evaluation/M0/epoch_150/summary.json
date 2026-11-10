@@ -1,0 +1,13 @@
+{
+  "model": "M0",
+  "epoch": 150,
+  "episodes": 50,
+  "target_episodes": 50,
+  "successes": 6,
+  "status": "complete",
+  "success_rate": 0.12,
+  "failure_categories": {
+    "invalid_uncover_order": 29,
+    "invalid_cover_order": 15
+  }
+}

@@ -1,0 +1,11 @@
+model,epoch,episodes,target_episodes,successes,status,success_rate
+M0,50,50,50,6,complete,0.12
+M0,100,50,50,8,complete,0.16
+M0,150,50,50,6,complete,0.12
+M0,200,4,50,2,in_progress,0.5
+M0,250,0,50,0,pending,
+M3,50,50,50,8,complete,0.16
+M3,100,50,50,9,complete,0.18
+M3,150,8,50,1,in_progress,0.125
+M3,200,0,50,0,pending,
+M3,250,0,50,0,pending,

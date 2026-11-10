@@ -1,0 +1,354 @@
+[
+  {
+    "step": 456,
+    "projected_condition_l2": 229.98916952674887,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627969204671,
+      "max_arm_joint_delta_rad": 1.6689300537109375e-06,
+      "max_gripper_delta": 4.172325134277344e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289444279577804,
+      "max_arm_joint_delta_rad": 7.152557373046875e-07,
+      "max_gripper_delta": 5.960464477539063e-08
+    }
+  },
+  {
+    "step": 464,
+    "projected_condition_l2": 231.06579260592204,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627634676934,
+      "max_arm_joint_delta_rad": 1.5497207641601562e-06,
+      "max_gripper_delta": 6.556510925292969e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443845398891,
+      "max_arm_joint_delta_rad": 5.960464477539062e-07,
+      "max_gripper_delta": 1.1920928955078125e-07
+    }
+  },
+  {
+    "step": 472,
+    "projected_condition_l2": 222.93078819912498,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627836947426,
+      "max_arm_joint_delta_rad": 8.940696716308594e-06,
+      "max_gripper_delta": 4.76837158203125e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443143124102,
+      "max_arm_joint_delta_rad": 1.6689300537109375e-06,
+      "max_gripper_delta": 5.960464477539063e-08
+    }
+  },
+  {
+    "step": 480,
+    "projected_condition_l2": 222.05191096427185,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361625725704118,
+      "max_arm_joint_delta_rad": 1.4185905456542969e-05,
+      "max_gripper_delta": 3.5762786865234375e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.528944240678444,
+      "max_arm_joint_delta_rad": 1.9073486328125e-06,
+      "max_gripper_delta": 1.1920928955078125e-07
+    }
+  },
+  {
+    "step": 488,
+    "projected_condition_l2": 223.27461071823907,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361625920179241,
+      "max_arm_joint_delta_rad": 2.6226043701171875e-06,
+      "max_gripper_delta": 1.1920928955078125e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.528944240678444,
+      "max_arm_joint_delta_rad": 1.0728836059570312e-06,
+      "max_gripper_delta": 5.960464477539063e-08
+    }
+  },
+  {
+    "step": 496,
+    "projected_condition_l2": 225.27962625075548,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361626416386961,
+      "max_arm_joint_delta_rad": 1.6093254089355469e-06,
+      "max_gripper_delta": 1.1920928955078125e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289442385142976,
+      "max_arm_joint_delta_rad": 8.344650268554688e-07,
+      "max_gripper_delta": 1.1920928955078125e-07
+    }
+  },
+  {
+    "step": 504,
+    "projected_condition_l2": 230.2235187138854,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361625780757754,
+      "max_arm_joint_delta_rad": 7.227063179016113e-07,
+      "max_gripper_delta": 1.1920928955078125e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443096001293,
+      "max_arm_joint_delta_rad": 5.364418029785156e-07,
+      "max_gripper_delta": 1.7881393432617188e-07
+    }
+  },
+  {
+    "step": 512,
+    "projected_condition_l2": 230.36281038381978,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361626393138718,
+      "max_arm_joint_delta_rad": 2.428889274597168e-06,
+      "max_gripper_delta": 5.960464477539063e-08
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289444245558441,
+      "max_arm_joint_delta_rad": 2.0563602447509766e-06,
+      "max_gripper_delta": 0.0
+    }
+  },
+  {
+    "step": 520,
+    "projected_condition_l2": 226.53283087738185,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.836162743747954,
+      "max_arm_joint_delta_rad": 8.285045623779297e-06,
+      "max_gripper_delta": 2.980232238769531e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289444351504642,
+      "max_arm_joint_delta_rad": 3.7550926208496094e-06,
+      "max_gripper_delta": 1.1920928955078125e-07
+    }
+  },
+  {
+    "step": 528,
+    "projected_condition_l2": 235.48411424656712,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361625457873766,
+      "max_arm_joint_delta_rad": 8.702278137207031e-06,
+      "max_gripper_delta": 1.9669532775878906e-06
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289444807726889,
+      "max_arm_joint_delta_rad": 1.0728836059570312e-06,
+      "max_gripper_delta": 2.384185791015625e-07
+    }
+  },
+  {
+    "step": 536,
+    "projected_condition_l2": 234.52476939321568,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361628147288435,
+      "max_arm_joint_delta_rad": 1.5497207641601562e-06,
+      "max_gripper_delta": 1.0132789611816406e-06
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443856652708,
+      "max_arm_joint_delta_rad": 3.5762786865234375e-07,
+      "max_gripper_delta": 1.1920928955078125e-07
+    }
+  },
+  {
+    "step": 544,
+    "projected_condition_l2": 237.53886019262399,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627810574427,
+      "max_arm_joint_delta_rad": 3.4570693969726562e-06,
+      "max_gripper_delta": 1.2516975402832031e-06
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.528944531620969,
+      "max_arm_joint_delta_rad": 2.980232238769531e-07,
+      "max_gripper_delta": 1.1920928955078125e-07
+    }
+  },
+  {
+    "step": 552,
+    "projected_condition_l2": 233.78508768354638,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627125936255,
+      "max_arm_joint_delta_rad": 4.76837158203125e-07,
+      "max_gripper_delta": 1.7881393432617188e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.52894430138265,
+      "max_arm_joint_delta_rad": 3.5762786865234375e-07,
+      "max_gripper_delta": 1.7881393432617188e-07
+    }
+  },
+  {
+    "step": 560,
+    "projected_condition_l2": 236.65772934637502,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361628714229182,
+      "max_arm_joint_delta_rad": 2.384185791015625e-07,
+      "max_gripper_delta": 5.960464477539063e-08
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289444212121541,
+      "max_arm_joint_delta_rad": 3.5762786865234375e-07,
+      "max_gripper_delta": 2.384185791015625e-07
+    }
+  },
+  {
+    "step": 568,
+    "projected_condition_l2": 230.49444141688696,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627784655883,
+      "max_arm_joint_delta_rad": 6.020069122314453e-06,
+      "max_gripper_delta": 4.172325134277344e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289442982654973,
+      "max_arm_joint_delta_rad": 4.76837158203125e-07,
+      "max_gripper_delta": 1.4901161193847656e-07
+    }
+  },
+  {
+    "step": 576,
+    "projected_condition_l2": 227.2858303247562,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361628269679552,
+      "max_arm_joint_delta_rad": 1.5497207641601562e-06,
+      "max_gripper_delta": 0.0
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289442127796351,
+      "max_arm_joint_delta_rad": 2.9802322387695312e-06,
+      "max_gripper_delta": 0.0
+    }
+  },
+  {
+    "step": 584,
+    "projected_condition_l2": 224.48605612437,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627904065346,
+      "max_arm_joint_delta_rad": 0.00010275840759277344,
+      "max_gripper_delta": 6.258487701416016e-06
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443920049455,
+      "max_arm_joint_delta_rad": 9.894371032714844e-06,
+      "max_gripper_delta": 1.341104507446289e-06
+    }
+  },
+  {
+    "step": 592,
+    "projected_condition_l2": 220.75919728630927,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361628014642765,
+      "max_arm_joint_delta_rad": 8.64267349243164e-05,
+      "max_gripper_delta": 5.632638931274414e-06
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443920049455,
+      "max_arm_joint_delta_rad": 1.4066696166992188e-05,
+      "max_gripper_delta": 4.76837158203125e-07
+    }
+  },
+  {
+    "step": 600,
+    "projected_condition_l2": 211.9884329017679,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627463696183,
+      "max_arm_joint_delta_rad": 0.00012242794036865234,
+      "max_gripper_delta": 1.055002212524414e-05
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443619822883,
+      "max_arm_joint_delta_rad": 7.033348083496094e-06,
+      "max_gripper_delta": 8.642673492431641e-07
+    }
+  },
+  {
+    "step": 608,
+    "projected_condition_l2": 216.52009946424053,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361627184114137,
+      "max_arm_joint_delta_rad": 1.0371208190917969e-05,
+      "max_gripper_delta": 0.0
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289445630932252,
+      "max_arm_joint_delta_rad": 2.372264862060547e-05,
+      "max_gripper_delta": 0.0
+    }
+  },
+  {
+    "step": 616,
+    "projected_condition_l2": 227.8761195619341,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361625774213873,
+      "max_arm_joint_delta_rad": 7.152557373046875e-07,
+      "max_gripper_delta": 1.996755599975586e-06
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443516989917,
+      "max_arm_joint_delta_rad": 1.0728836059570312e-06,
+      "max_gripper_delta": 3.427267074584961e-06
+    }
+  },
+  {
+    "step": 624,
+    "projected_condition_l2": 233.31921705307627,
+    "left": {
+      "decoded": 0,
+      "condition_delta_l2": 0.8361626094204565,
+      "max_arm_joint_delta_rad": 4.76837158203125e-07,
+      "max_gripper_delta": 9.834766387939453e-07
+    },
+    "right": {
+      "decoded": 2,
+      "condition_delta_l2": 0.5289443867749624,
+      "max_arm_joint_delta_rad": 7.152557373046875e-07,
+      "max_gripper_delta": 1.6093254089355469e-06
+    }
+  }
+]

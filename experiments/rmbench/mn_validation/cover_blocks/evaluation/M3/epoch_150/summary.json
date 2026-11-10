@@ -1,0 +1,12 @@
+{
+  "model": "M3",
+  "epoch": 150,
+  "episodes": 8,
+  "target_episodes": 50,
+  "successes": 1,
+  "status": "in_progress",
+  "success_rate": 0.125,
+  "failure_categories": {
+    "invalid_uncover_order": 7
+  }
+}
