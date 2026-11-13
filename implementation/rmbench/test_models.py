@@ -1,4 +1,4 @@
-"""Behavioral checks for the RMBench M2/M3 causal policy contract."""
+"""Behavioral checks for the RMBench continuous-memory policy contract."""
 import argparse
 import math
 
@@ -12,7 +12,7 @@ from mamba_ssm import Mamba
 from mamba_ssm.ops.selective_scan_interface import selective_scan_ref
 
 from models import (
-    HISTORY_DIM, MEMORY_CAPACITY, Event, OrderedEvents, build_policy, mamba_recurrence,
+    HISTORY_DIM, MEMORY_CAPACITY, Event, EventAttention, OrderedEvents, build_policy, mamba_recurrence,
 )
 
 
@@ -142,6 +142,45 @@ def check_event_bank():
     assert bank.write(event(8, (90, 90)))[1] == 1
 
 
+def check_event_attention(device):
+    reader = EventAttention(query_dim=2).to(device)
+    first_in_head = torch.arange(0, HISTORY_DIM, HISTORY_DIM // 4, device=device)
+    with torch.no_grad():
+        for param in reader.parameters():
+            param.zero_()
+        reader.query_projection.weight[first_in_head, 0] = 1
+        reader.key_projection.weight[first_in_head, 0] = 1
+        reader.value_projection.weight[first_in_head, 0] = 1
+        reader.output_projection.weight.copy_(torch.eye(HISTORY_DIM, device=device))
+
+    # Invalid slots contain strong distractors, including in the empty-bank row.
+    rows = torch.zeros(3, MEMORY_CAPACITY, 2 * HISTORY_DIM + 2, device=device)
+    rows[..., 0] = 1000
+    rows[:2, 0, 0] = 1
+    rows[:2, 1, 0] = -1
+    rows[:2, :2, -1] = 1
+    query = torch.tensor([[8., 0.], [-8., 0.], [6., 0.]], device=device)
+    with torch.no_grad():
+        result = reader(query, rows.flatten(1))
+        expected = torch.zeros_like(result)
+        expected[0, first_in_head] = math.tanh(1)
+        expected[1, first_in_head] = -math.tanh(1)
+        close(result, expected)
+        assert not torch.count_nonzero(result[2])
+
+    # A late loss can learn how to read across a detached episode boundary.
+    early_events = rows[[0, 2]].flatten(1).requires_grad_()
+    late_query = query[[0, 2]].requires_grad_()
+    reader(late_query, early_events.detach()).square().sum().backward()
+    assert early_events.grad is None
+    assert_gradient(late_query)
+    assert not torch.count_nonzero(late_query.grad[1])
+    for projection in (
+        reader.query_projection, reader.key_projection, reader.value_projection, reader.output_projection,
+    ):
+        assert_gradient(projection.weight)
+
+
 def sample_policy(variant, device):
     cfg = {
         "vision": {"crop": None, "imagenet_norm": False},
@@ -165,7 +204,7 @@ def sample_policy(variant, device):
     return policy.to(device)
 
 
-def check_policy(device, variants=("M2", "M3")):
+def check_policy(device, variants=("M2", "M3", "M4")):
     obs = {
         "head_camera": torch.rand(25, 3, 32, 32, device=device),
         "agent_pos": torch.rand(25, 14, device=device),
@@ -206,7 +245,7 @@ def check_policy(device, variants=("M2", "M3")):
                     assert before == policy.memory_diagnostics(["a", "b"])
             close(torch.stack(captures), full_history)
             assert policy.memory_diagnostics(["a"])[0]["observations"] == 25
-            if variant == "M3":
+            if variant in ("M3", "M4"):
                 stats = policy.memory_diagnostics(["a"])[0]
                 assert stats["initial_retained"] and stats["replacement_count"] > 0
                 assert max(stats["capacities"]) == 8
@@ -242,6 +281,13 @@ def check_policy(device, variants=("M2", "M3")):
         if variant == "M3":
             for param in (policy.memory_projection.weight, policy.event_visual_projection.weight):
                 assert_gradient(param)
+        if variant == "M4":
+            assert_gradient(policy.event_visual_projection.weight)
+            for projection in (
+                policy.event_attention.query_projection, policy.event_attention.key_projection,
+                policy.event_attention.value_projection, policy.event_attention.output_projection,
+            ):
+                assert_gradient(projection.weight)
         assert state.conv.grad_fn is not None and state.ssm.grad_fn is not None
         detached = state.detach()
         assert detached.conv.grad_fn is None and detached.ssm.grad_fn is None
@@ -261,6 +307,8 @@ if __name__ == "__main__":
     print("PASS Mamba1 causal windows, both caches, upstream parity and TBPTT gradients", flush=True)
     check_event_bank()
     print("PASS event novelty, protected ordered memory, min redundancy and time/mask", flush=True)
+    check_event_attention(args.device)
+    print("PASS M4 query-dependent event retrieval, padding and detached-event gradients", flush=True)
     check_policy(args.device)
-    print("PASS M2/M3 online lifecycle, eight-step chunks and DDPM memory gradients", flush=True)
+    print("PASS M2/M3/M4 online lifecycle, eight-step chunks and DDPM memory gradients", flush=True)
 

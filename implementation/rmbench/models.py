@@ -50,8 +50,10 @@ def build_policy(variant, shape_meta, cfg):
     )
     if variant == "M0":
         return DiffusionUnetImagePolicy(**common, **unet)
-    if variant in ("M2", "M3"):
-        return ContinuousMemoryPolicy(cfg, unet, use_events=variant == "M3", **common)
+    if variant in ("M2", "M3", "M4"):
+        return ContinuousMemoryPolicy(
+            cfg, unet, use_events=variant in ("M3", "M4"), use_event_attention=variant == "M4", **common,
+        )
     raise ValueError(f"Unknown model {variant}")
 
 
@@ -215,12 +217,40 @@ class EpisodeState:
         }
 
 
+class EventAttention(nn.Module):
+    """Read the valid historical events using the current policy state."""
+
+    def __init__(self, query_dim):
+        super().__init__()
+        self.num_heads = 4
+        self.head_dim = HISTORY_DIM // self.num_heads
+        event_dim = 2 * HISTORY_DIM + 2
+        self.query_projection = nn.Linear(query_dim, HISTORY_DIM, bias=False)
+        self.key_projection = nn.Linear(event_dim, HISTORY_DIM, bias=False)
+        self.value_projection = nn.Linear(event_dim, HISTORY_DIM, bias=False)
+        self.output_projection = nn.Linear(HISTORY_DIM, HISTORY_DIM, bias=False)
+
+    def forward(self, query, memory_rows):
+        events = memory_rows.reshape(-1, MEMORY_CAPACITY, 2 * HISTORY_DIM + 2)
+        valid = events[..., -1].bool().unsqueeze(1)
+        query = self.query_projection(query).unflatten(-1, (self.num_heads, self.head_dim))
+        keys = self.key_projection(events).unflatten(-1, (self.num_heads, self.head_dim)).transpose(1, 2)
+        values = self.value_projection(events).unflatten(-1, (self.num_heads, self.head_dim)).transpose(1, 2)
+        scores = torch.einsum("bhd,bhsd->bhs", query, keys) * self.head_dim ** -0.5
+        scores = scores.masked_fill(~valid, torch.finfo(scores.dtype).min)
+        # The first observation has no past events. Its weights and output must be zero.
+        weights = scores.softmax(dim=-1).masked_fill(~valid, 0)
+        retrieved = torch.einsum("bhs,bhsd->bhd", weights, values).flatten(1)
+        return self.output_projection(retrieved)
+
+
 class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
-    def __init__(self, cfg, unet, use_events, **common):
+    def __init__(self, cfg, unet, use_events, use_event_attention=False, **common):
         super().__init__(**common, **unet)
         from mamba_ssm import Mamba
 
         self.use_events = use_events
+        self.use_event_attention = use_event_attention
         self.history_projection = nn.Linear(self.obs_feature_dim, HISTORY_DIM)
         self.history_mamba = Mamba(d_model=HISTORY_DIM, d_state=16, d_conv=4, expand=2)
         self.history_norm = nn.LayerNorm(HISTORY_DIM)
@@ -236,7 +266,12 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
             )
             self.visual_dim = self.obs_feature_dim - proprio_dim
             self.event_visual_projection = nn.Linear(self.visual_dim, HISTORY_DIM)
-            self.memory_projection = nn.Linear(MEMORY_CAPACITY * (2 * HISTORY_DIM + 2), HISTORY_DIM, bias=False)
+            if self.use_event_attention:
+                self.event_attention = EventAttention(self.obs_feature_dim + HISTORY_DIM)
+            else:
+                self.memory_projection = nn.Linear(
+                    MEMORY_CAPACITY * (2 * HISTORY_DIM + 2), HISTORY_DIM, bias=False,
+                )
             self.event_thresholds = cfg.get("event_thresholds")
             self.age_scale = log1p(cfg.get("max_episode_steps", 500))
             condition_dim += HISTORY_DIM
@@ -272,7 +307,7 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
         events = None
         if self.use_events:
             if self.event_thresholds is None:
-                raise ValueError("M3 requires independent visual and history thresholds calibrated on training data.")
+                raise ValueError("Event memory requires separate visual and history thresholds from training data.")
             events = OrderedEvents((self.event_thresholds["visual"], self.event_thresholds["history"]))
         return EpisodeState(conv, ssm, events, writes=[] if diagnostics else None)
 
@@ -301,7 +336,12 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
                             "visual_similarity_to_latest": None if similarity is None else similarity[0],
                             "history_similarity_to_latest": None if similarity is None else similarity[1],
                         })
-            components.append(self.memory_projection(torch.stack(memory_rows)))
+            memory_rows = torch.stack(memory_rows)
+            if self.use_event_attention:
+                query = torch.cat((features, history), dim=-1)
+                components.append(self.event_attention(query, memory_rows))
+            else:
+                components.append(self.memory_projection(memory_rows))
         conditions = torch.cat(components, dim=-1)
         state.conv, state.ssm = cache
         state.previous_feature = features[-1]

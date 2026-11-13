@@ -1,4 +1,5 @@
 {
+  "task": "cover_blocks",
   "model": "M3",
   "epoch": 50,
   "episodes": 50,

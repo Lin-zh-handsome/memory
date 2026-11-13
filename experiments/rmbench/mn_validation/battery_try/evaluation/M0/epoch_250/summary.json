@@ -1,0 +1,14 @@
+{
+  "task": "battery_try",
+  "model": "M0",
+  "epoch": 250,
+  "episodes": 50,
+  "target_episodes": 50,
+  "successes": 43,
+  "status": "complete",
+  "success_rate": 0.86,
+  "failure_categories": {
+    "combination_timeout": 5,
+    "placement_timeout": 2
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "task": "cover_blocks",
+  "model": "M0",
+  "epoch": 250,
+  "episodes": 50,
+  "target_episodes": 50,
+  "successes": 3,
+  "status": "complete",
+  "success_rate": 0.06,
+  "failure_categories": {
+    "invalid_uncover_order": 31,
+    "invalid_cover_order": 15,
+    "uncover_phase_timeout": 1
+  }
+}

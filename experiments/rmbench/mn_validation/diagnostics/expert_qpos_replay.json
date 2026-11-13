@@ -1,0 +1,269 @@
+[
+  {
+    "demo": 0,
+    "seed": 0,
+    "uncover_order": [
+      "right",
+      "middle",
+      "left"
+    ],
+    "initial_qpos_max_error": 0.0,
+    "expert_action_count": 1004,
+    "executed_actions": 947,
+    "success": true,
+    "controller_fallbacks": {
+      "left": 572,
+      "right": 714
+    },
+    "trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 266,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 448,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 626,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 807,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 947,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "demo": 1,
+    "seed": 1,
+    "uncover_order": [
+      "left",
+      "middle",
+      "right"
+    ],
+    "initial_qpos_max_error": 0.0,
+    "expert_action_count": 1016,
+    "executed_actions": 959,
+    "success": true,
+    "controller_fallbacks": {
+      "left": 632,
+      "right": 664
+    },
+    "trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 266,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 817,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 959,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ]
+  },
+  {
+    "demo": 5,
+    "seed": 5,
+    "uncover_order": [
+      "middle",
+      "left",
+      "right"
+    ],
+    "initial_qpos_max_error": 0.0,
+    "expert_action_count": 1011,
+    "executed_actions": 953,
+    "success": true,
+    "controller_fallbacks": {
+      "left": 531,
+      "right": 758
+    },
+    "trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 778,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 953,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ]
+  }
+]

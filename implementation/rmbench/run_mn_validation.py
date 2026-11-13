@@ -283,6 +283,12 @@ async def main():
         )
         results = {}
         for task, limit in TASKS.items():
+            stopped = read_json(args.root / task / "evaluation/stopped.json")
+            if stopped is not None:
+                results[task] = {"blocked": stopped["reason"]}
+                log_progress(args.root, stopped["reason"])
+                summary(args.root, results)
+                continue
             try:
                 results[task] = await run_task(args, task, limit)
             except ExternalDependencyError as error:

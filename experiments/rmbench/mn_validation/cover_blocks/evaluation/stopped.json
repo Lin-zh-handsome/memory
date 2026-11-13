@@ -1,0 +1,50 @@
+{
+  "task": "cover_blocks",
+  "status": "stopped_by_user",
+  "time": "2026-11-11T12:40:06+08:00",
+  "reason": "用户停止方块覆盖评测。已保留 458/500 回合，剩余回合取消。",
+  "episodes": 458,
+  "target_episodes": 500,
+  "checkpoints": {
+    "M0/epoch_050": {
+      "episodes": 50,
+      "successes": 6
+    },
+    "M0/epoch_100": {
+      "episodes": 50,
+      "successes": 8
+    },
+    "M0/epoch_150": {
+      "episodes": 50,
+      "successes": 6
+    },
+    "M0/epoch_200": {
+      "episodes": 50,
+      "successes": 8
+    },
+    "M0/epoch_250": {
+      "episodes": 50,
+      "successes": 3
+    },
+    "M3/epoch_050": {
+      "episodes": 50,
+      "successes": 8
+    },
+    "M3/epoch_100": {
+      "episodes": 50,
+      "successes": 9
+    },
+    "M3/epoch_150": {
+      "episodes": 50,
+      "successes": 6
+    },
+    "M3/epoch_200": {
+      "episodes": 50,
+      "successes": 8
+    },
+    "M3/epoch_250": {
+      "episodes": 8,
+      "successes": 1
+    }
+  }
+}

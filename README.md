@@ -9,3 +9,5 @@ Adaptation, training, evaluation and reporting scripts live in implementation/. 
 ## RMBench
 
 See the [RMBench experiment results](experiments/rmbench/README.md) and [continuous Mamba implementation](implementation/rmbench/README.md).
+
+[研究交接与下一步规划输入](experiments/rmbench/HANDOFF.md)

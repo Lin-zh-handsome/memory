@@ -1,0 +1,11 @@
+task,epoch,paired_episodes,both_succeed,only_M0,only_M3,both_fail
+cover_blocks,50,50,2,4,6,38
+cover_blocks,100,50,3,5,6,36
+cover_blocks,150,50,0,6,6,38
+cover_blocks,200,50,3,5,5,37
+cover_blocks,250,8,0,1,1,6
+battery_try,50,50,7,4,16,23
+battery_try,100,50,20,4,23,3
+battery_try,150,50,38,3,8,1
+battery_try,200,50,39,1,8,2
+battery_try,250,50,42,1,5,2

@@ -131,8 +131,17 @@ def prepare_seeds(args, protocol, factory, unstable, config):
         candidate = progress["next_candidate"]
         try:
             reset(env, config, candidate, candidate - start, protocol["max_episode_steps"])
-            env.play_once()
-            valid = bool(env.plan_success and env.check_success())
+            try:
+                env.play_once()
+            except AssertionError as error:
+                if (protocol["task"] != "battery_try"
+                        or str(error) != "target_pose cannot be None for move action."):
+                    raise
+                print(json.dumps({"candidate": candidate, "expert_grasp_failed": str(error)}),
+                      flush=True)
+                valid = False
+            else:
+                valid = bool(env.plan_success and env.check_success())
         except unstable:
             valid = False
         finally:
@@ -501,7 +510,7 @@ def main():
     verify.add_argument("--seed", type=int)
     verify.add_argument("--steps", type=int, default=17)
     formal = sub.add_parser("rollout")
-    formal.add_argument("--model", choices=["M0", "M2", "M3"], required=True)
+    formal.add_argument("--model", choices=["M0", "M2", "M3", "M4"], required=True)
     formal.add_argument("--epoch", type=int, required=True)
     formal.add_argument("--batch-size", type=int, default=2)
     formal.add_argument("--stop-at", type=datetime.fromisoformat,

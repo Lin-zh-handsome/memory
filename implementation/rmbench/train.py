@@ -62,13 +62,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", required=True, type=Path)
     parser.add_argument("--data", required=True, type=Path)
-    parser.add_argument("--model", required=True, choices=["M0", "M2", "M3"])
+    parser.add_argument("--model", required=True, choices=["M0", "M2", "M3", "M4"])
     args = parser.parse_args()
     root, variant = args.root, args.model
     uses_memory = variant != "M0"
     cfg = json.loads((root / "configs/protocol.json").read_text())
-    if variant == "M3" and "event_thresholds" not in cfg:
-        raise RuntimeError("Calibrate M3 event thresholds from training demonstrations first")
+    if variant in ("M3", "M4") and "event_thresholds" not in cfg:
+        raise RuntimeError("Set the event thresholds calibrated on training demonstrations first")
     seed = cfg["seed"]
     random.seed(seed)
     np.random.seed(seed)

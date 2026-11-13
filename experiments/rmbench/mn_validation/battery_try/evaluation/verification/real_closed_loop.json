@@ -1,0 +1,270 @@
+{
+  "render_pci": "db:00.0",
+  "camera_shader": "rt",
+  "episode_id": 0,
+  "seed": 100000,
+  "success": false,
+  "steps": 17,
+  "observations": 18,
+  "replans": 3,
+  "observe_seconds": 0.3056330746039748,
+  "predict_seconds": 2.4800845850259066,
+  "initial_state": {
+    "qpos": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "batteries": [
+      {
+        "p": [
+          -0.20000050961971283,
+          -0.19128020107746124,
+          0.7599998712539673
+        ],
+        "q": [
+          0.7071017026901245,
+          -0.7071118950843811,
+          -5.657481324305991e-06,
+          -2.562891495472286e-06
+        ]
+      },
+      {
+        "p": [
+          0.22177568078041077,
+          -0.1778717190027237,
+          0.7599998116493225
+        ],
+        "q": [
+          0.7071027159690857,
+          -0.7071109414100647,
+          -4.452675966604147e-06,
+          -1.8254021370012197e-06
+        ]
+      }
+    ],
+    "slot": [
+      {
+        "p": [
+          0.0,
+          -0.10000000149011612,
+          0.7409999966621399
+        ],
+        "q": [
+          0.7071068286895752,
+          0.0,
+          0.0,
+          0.7071067690849304
+        ]
+      }
+    ],
+    "target_combination": [
+      0,
+      1
+    ]
+  },
+  "stage_transitions": [
+    {
+      "step": 0,
+      "stage": 0,
+      "installed": [
+        false,
+        false
+      ],
+      "combination": null,
+      "gauge_on": false
+    }
+  ],
+  "final": {
+    "step": 17,
+    "stage": 0,
+    "installed": [
+      false,
+      false
+    ],
+    "combination": null,
+    "gauge_on": false
+  },
+  "failure_category": "placement_timeout",
+  "timed_out": false,
+  "battery_attempts": {
+    "combinations": [],
+    "attempt_count": 0,
+    "distinct_count": 0,
+    "repeated_count": 0,
+    "gauge_activated": false,
+    "successful_feedback": false
+  },
+  "controller_fallbacks": {
+    "left": 0,
+    "right": 0
+  },
+  "memory": {
+    "observations": 18,
+    "write_count": 18,
+    "replacement_count": 10,
+    "initial_retained": true,
+    "capacities": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "events": [
+      {
+        "time": 0,
+        "replaced_time": null,
+        "visual_similarity_to_latest": null,
+        "history_similarity_to_latest": null
+      },
+      {
+        "time": 1,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9794878363609314,
+        "history_similarity_to_latest": 0.8945592045783997
+      },
+      {
+        "time": 2,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.980804443359375,
+        "history_similarity_to_latest": 0.9210569262504578
+      },
+      {
+        "time": 3,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9723261594772339,
+        "history_similarity_to_latest": 0.8930655717849731
+      },
+      {
+        "time": 4,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9895951747894287,
+        "history_similarity_to_latest": 0.9672237038612366
+      },
+      {
+        "time": 5,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9718793630599976,
+        "history_similarity_to_latest": 0.9306957721710205
+      },
+      {
+        "time": 6,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9820002317428589,
+        "history_similarity_to_latest": 0.9476864337921143
+      },
+      {
+        "time": 7,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9780219793319702,
+        "history_similarity_to_latest": 0.9431620836257935
+      },
+      {
+        "time": 8,
+        "replaced_time": 3,
+        "visual_similarity_to_latest": 0.9866207838058472,
+        "history_similarity_to_latest": 0.9607566595077515
+      },
+      {
+        "time": 9,
+        "replaced_time": 7,
+        "visual_similarity_to_latest": 0.9864310026168823,
+        "history_similarity_to_latest": 0.962425708770752
+      },
+      {
+        "time": 10,
+        "replaced_time": 8,
+        "visual_similarity_to_latest": 0.9844186902046204,
+        "history_similarity_to_latest": 0.9636561870574951
+      },
+      {
+        "time": 11,
+        "replaced_time": 9,
+        "visual_similarity_to_latest": 0.9779854416847229,
+        "history_similarity_to_latest": 0.9558639526367188
+      },
+      {
+        "time": 12,
+        "replaced_time": 6,
+        "visual_similarity_to_latest": 0.9768969416618347,
+        "history_similarity_to_latest": 0.9535727500915527
+      },
+      {
+        "time": 13,
+        "replaced_time": 10,
+        "visual_similarity_to_latest": 0.9840989708900452,
+        "history_similarity_to_latest": 0.9592067003250122
+      },
+      {
+        "time": 14,
+        "replaced_time": 12,
+        "visual_similarity_to_latest": 0.9912086129188538,
+        "history_similarity_to_latest": 0.9658408164978027
+      },
+      {
+        "time": 15,
+        "replaced_time": 13,
+        "visual_similarity_to_latest": 0.9786461591720581,
+        "history_similarity_to_latest": 0.9449554085731506
+      },
+      {
+        "time": 16,
+        "replaced_time": 5,
+        "visual_similarity_to_latest": 0.9832200407981873,
+        "history_similarity_to_latest": 0.9624937176704407
+      },
+      {
+        "time": 17,
+        "replaced_time": 4,
+        "visual_similarity_to_latest": 0.9737535119056702,
+        "history_similarity_to_latest": 0.9510710835456848
+      }
+    ],
+    "final_event_times": [
+      0,
+      1,
+      2,
+      11,
+      14,
+      15,
+      16,
+      17
+    ],
+    "final_event_age_steps": [
+      17,
+      16,
+      15,
+      6,
+      3,
+      2,
+      1,
+      0
+    ]
+  },
+  "video": null
+}

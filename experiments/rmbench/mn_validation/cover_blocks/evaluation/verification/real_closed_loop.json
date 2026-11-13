@@ -1,0 +1,302 @@
+{
+  "render_pci": "db:00.0",
+  "camera_shader": "rt",
+  "episode_id": 0,
+  "seed": 100000,
+  "success": false,
+  "steps": 17,
+  "observations": 18,
+  "replans": 3,
+  "observe_seconds": 0.31286858301609755,
+  "predict_seconds": 2.9425523122772574,
+  "initial_state": {
+    "qpos": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "blocks": [
+      {
+        "p": [
+          -0.19999980926513672,
+          -0.17999984323978424,
+          0.7599998116493225
+        ],
+        "q": [
+          1.0,
+          -2.358135589020094e-06,
+          4.8541755859332625e-06,
+          -5.047196509622154e-07
+        ]
+      },
+      {
+        "p": [
+          2.0753734020217962e-07,
+          -0.17999984323978424,
+          0.7599997520446777
+        ],
+        "q": [
+          1.0,
+          -2.3212421638163505e-06,
+          4.838562290387927e-06,
+          -5.824643380947236e-07
+        ]
+      },
+      {
+        "p": [
+          0.20000021159648895,
+          -0.17999982833862305,
+          0.7599997520446777
+        ],
+        "q": [
+          1.0,
+          -2.3221284664032282e-06,
+          4.863865797233302e-06,
+          -5.216849103817367e-07
+        ]
+      }
+    ],
+    "covers": [
+      {
+        "p": [
+          -0.19999994337558746,
+          -0.05000002682209015,
+          0.7405729293823242
+        ],
+        "q": [
+          0.4999961256980896,
+          0.5000036954879761,
+          0.5000040531158447,
+          0.4999961853027344
+        ]
+      },
+      {
+        "p": [
+          -4.371395334601402e-08,
+          -0.05000003054738045,
+          0.7405728697776794
+        ],
+        "q": [
+          0.49999600648880005,
+          0.5000039339065552,
+          0.5000035762786865,
+          0.4999966621398926
+        ]
+      },
+      {
+        "p": [
+          0.19999998807907104,
+          -0.04999998211860657,
+          0.7405729293823242
+        ],
+        "q": [
+          0.4999953508377075,
+          0.5000045299530029,
+          0.5000027418136597,
+          0.49999746680259705
+        ]
+      }
+    ],
+    "uncover_order": [
+      1,
+      0,
+      2
+    ]
+  },
+  "stage_transitions": [
+    {
+      "step": 0,
+      "stage": 0,
+      "invalid": false,
+      "cover_pattern": [
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "final": {
+    "step": 17,
+    "stage": 0,
+    "invalid": false,
+    "cover_pattern": [
+      false,
+      false,
+      false
+    ]
+  },
+  "failure_category": "cover_phase_timeout",
+  "timed_out": false,
+  "controller_fallbacks": {
+    "left": 0,
+    "right": 0
+  },
+  "memory": {
+    "observations": 18,
+    "write_count": 18,
+    "replacement_count": 10,
+    "initial_retained": true,
+    "capacities": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "events": [
+      {
+        "time": 0,
+        "replaced_time": null,
+        "visual_similarity_to_latest": null,
+        "history_similarity_to_latest": null
+      },
+      {
+        "time": 1,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9814293384552002,
+        "history_similarity_to_latest": 0.9159715175628662
+      },
+      {
+        "time": 2,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9777153134346008,
+        "history_similarity_to_latest": 0.9127443432807922
+      },
+      {
+        "time": 3,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9752189517021179,
+        "history_similarity_to_latest": 0.8911534547805786
+      },
+      {
+        "time": 4,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9892385005950928,
+        "history_similarity_to_latest": 0.9582849740982056
+      },
+      {
+        "time": 5,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9715344905853271,
+        "history_similarity_to_latest": 0.9511523246765137
+      },
+      {
+        "time": 6,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9778978824615479,
+        "history_similarity_to_latest": 0.9542866945266724
+      },
+      {
+        "time": 7,
+        "replaced_time": null,
+        "visual_similarity_to_latest": 0.9738580584526062,
+        "history_similarity_to_latest": 0.9311797618865967
+      },
+      {
+        "time": 8,
+        "replaced_time": 3,
+        "visual_similarity_to_latest": 0.9810456037521362,
+        "history_similarity_to_latest": 0.9562119245529175
+      },
+      {
+        "time": 9,
+        "replaced_time": 7,
+        "visual_similarity_to_latest": 0.9827245473861694,
+        "history_similarity_to_latest": 0.9590381383895874
+      },
+      {
+        "time": 10,
+        "replaced_time": 8,
+        "visual_similarity_to_latest": 0.9818311929702759,
+        "history_similarity_to_latest": 0.9539539813995361
+      },
+      {
+        "time": 11,
+        "replaced_time": 5,
+        "visual_similarity_to_latest": 0.9778403043746948,
+        "history_similarity_to_latest": 0.9477143883705139
+      },
+      {
+        "time": 12,
+        "replaced_time": 4,
+        "visual_similarity_to_latest": 0.9742111563682556,
+        "history_similarity_to_latest": 0.950154185295105
+      },
+      {
+        "time": 13,
+        "replaced_time": 9,
+        "visual_similarity_to_latest": 0.9860862493515015,
+        "history_similarity_to_latest": 0.9608491659164429
+      },
+      {
+        "time": 14,
+        "replaced_time": 12,
+        "visual_similarity_to_latest": 0.9961017966270447,
+        "history_similarity_to_latest": 0.9704820513725281
+      },
+      {
+        "time": 15,
+        "replaced_time": 13,
+        "visual_similarity_to_latest": 0.9813435673713684,
+        "history_similarity_to_latest": 0.9524933099746704
+      },
+      {
+        "time": 16,
+        "replaced_time": 11,
+        "visual_similarity_to_latest": 0.9831107258796692,
+        "history_similarity_to_latest": 0.953926146030426
+      },
+      {
+        "time": 17,
+        "replaced_time": 10,
+        "visual_similarity_to_latest": 0.9693619012832642,
+        "history_similarity_to_latest": 0.9426566362380981
+      }
+    ],
+    "final_event_times": [
+      0,
+      1,
+      2,
+      6,
+      14,
+      15,
+      16,
+      17
+    ],
+    "final_event_age_steps": [
+      17,
+      16,
+      15,
+      11,
+      3,
+      2,
+      1,
+      0
+    ]
+  },
+  "video": null
+}

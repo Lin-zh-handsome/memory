@@ -1,0 +1,38 @@
+[
+  {
+    "epoch": 50,
+    "episodes": 50,
+    "all_covered": 50,
+    "first_uncover_correct": 19,
+    "first_uncover_invalid": 30,
+    "successes": 8,
+    "median_memory_write_fraction": 0.7181878747501665
+  },
+  {
+    "epoch": 100,
+    "episodes": 50,
+    "all_covered": 50,
+    "first_uncover_correct": 21,
+    "first_uncover_invalid": 29,
+    "successes": 9,
+    "median_memory_write_fraction": 0.7720334048025346
+  },
+  {
+    "epoch": 150,
+    "episodes": 50,
+    "all_covered": 50,
+    "first_uncover_correct": 15,
+    "first_uncover_invalid": 35,
+    "successes": 6,
+    "median_memory_write_fraction": 0.7765562923147221
+  },
+  {
+    "epoch": 200,
+    "episodes": 50,
+    "all_covered": 50,
+    "first_uncover_correct": 20,
+    "first_uncover_invalid": 30,
+    "successes": 8,
+    "median_memory_write_fraction": 0.7728181212524984
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "task": "cover_blocks",
+  "model": "M3",
+  "epoch": 250,
+  "episodes": 8,
+  "target_episodes": 50,
+  "successes": 1,
+  "status": "stopped_by_user",
+  "success_rate": 0.125,
+  "failure_categories": {
+    "invalid_uncover_order": 7
+  }
+}
