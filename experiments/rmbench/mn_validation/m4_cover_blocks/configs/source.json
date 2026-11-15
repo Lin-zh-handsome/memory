@@ -1,0 +1,57 @@
+{
+  "rmbench": "7d1cdfc7661c273a7a5c5f6126e2d1a7f0a3f4b7",
+  "source_base": "4577eda",
+  "asset_model": [
+    "003_cover"
+  ],
+  "environment_patches": [
+    "rmbench_render_device.patch",
+    "rmbench_qpos_workers.patch"
+  ],
+  "rollout_planning": "CPU TOPP and original gripper interpolation for joint-space actions",
+  "expert_archive": "https://huggingface.co/datasets/TianxingChen/RMBench/resolve/main/data/cover_blocks/demo_clean.zip",
+  "package_versions": {
+    "torch": "2.4.1",
+    "torchvision": "0.19.1",
+    "mamba-ssm": "2.2.2",
+    "diffusers": "0.11.1",
+    "sapien": "3.0.0b1",
+    "warp-lang": "1.12.0",
+    "h5py": "3.16.0",
+    "opencv-python": "4.11.0.86",
+    "huggingface-hub": "0.25.0"
+  },
+  "python": "3.10.22",
+  "baseline_training_commit": "fc325c83ff7a7662b708040630b7dfc88fd603ce",
+  "baseline_evaluation_commit": "50acf20953433fd844a0b837afdd69956fa29fa1",
+  "model_source_commit": "49b8e220c89ed4841acfccf4b0234d24541011e9",
+  "comparison": {
+    "task": "cover_blocks",
+    "baseline": "M3",
+    "candidate": "M4",
+    "paired_epochs": [
+      50,
+      100,
+      150,
+      200
+    ],
+    "seed": 0
+  },
+  "diagnostics_commit": "750f29520889aa69d4992e615906b75099e0cc40",
+  "causal_design": {
+    "checkpoint": 100,
+    "forced_recipient_seed": 100000,
+    "recipients_per_layout": 2,
+    "probe_unit": "whole held-out environment episode",
+    "frozen_noise": "same base seed, chunk index, active pair shape and slot",
+    "branch_horizon_env_steps": 320,
+    "donor_source": "protected time-zero event from a different real fixed-seed rollout at the same checkpoint",
+    "same_target_control": "prefer the same complete uncover order"
+  },
+  "two_gpu_scheduler_commit": "fe2a8ad0a6906db69796fc7a5af735c26bd2b79a",
+  "gpu_allocation": {
+    "training": 5,
+    "evaluation": 7,
+    "additional_after_training": 5
+  }
+}

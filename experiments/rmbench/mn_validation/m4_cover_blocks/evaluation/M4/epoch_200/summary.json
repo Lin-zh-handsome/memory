@@ -1,0 +1,19 @@
+{
+  "model": "M4",
+  "epoch": 200,
+  "episodes": 50,
+  "complete": true,
+  "successes": 10,
+  "success_rate": 0.2,
+  "steps": 69661,
+  "replans": 8732,
+  "observe_seconds": 149.28804639261216,
+  "predict_seconds": 3577.351561590098,
+  "render_pci": "ab:00.0",
+  "camera_shader": "rt",
+  "render_pcis": [
+    "ab:00.0"
+  ],
+  "training_parameters": 305117932,
+  "inference_parameters": 305023356
+}

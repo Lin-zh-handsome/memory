@@ -19,3 +19,8 @@ battery_try,M3,100,50,50,43,complete,0.86
 battery_try,M3,150,50,50,46,complete,0.92
 battery_try,M3,200,50,50,47,complete,0.94
 battery_try,M3,250,50,50,47,complete,0.94
+cover_blocks,M4,50,50,50,8,complete,0.16
+cover_blocks,M4,100,50,50,10,complete,0.2
+cover_blocks,M4,150,50,50,5,complete,0.1
+cover_blocks,M4,200,50,50,10,complete,0.2
+cover_blocks,M4,250,50,50,16,complete,0.32

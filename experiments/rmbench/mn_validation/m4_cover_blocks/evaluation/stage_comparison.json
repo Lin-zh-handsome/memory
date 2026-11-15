@@ -1,0 +1,153 @@
+[
+  {
+    "epoch": 50,
+    "M3": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 19,
+      "wrong_first": 30,
+      "wrong_uncover_order": 40,
+      "success": 8
+    },
+    "M4": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 17,
+      "wrong_first": 32,
+      "wrong_uncover_order": 41,
+      "success": 8
+    },
+    "pairing": {
+      "correct_first": {
+        "both": 14,
+        "M3_only": 5,
+        "M4_only": 3,
+        "neither": 28
+      },
+      "success": {
+        "both": 6,
+        "M3_only": 2,
+        "M4_only": 2,
+        "neither": 40
+      }
+    }
+  },
+  {
+    "epoch": 100,
+    "M3": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 21,
+      "wrong_first": 29,
+      "wrong_uncover_order": 40,
+      "success": 9
+    },
+    "M4": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 18,
+      "wrong_first": 32,
+      "wrong_uncover_order": 40,
+      "success": 10
+    },
+    "pairing": {
+      "correct_first": {
+        "both": 15,
+        "M3_only": 6,
+        "M4_only": 3,
+        "neither": 26
+      },
+      "success": {
+        "both": 6,
+        "M3_only": 3,
+        "M4_only": 4,
+        "neither": 37
+      }
+    }
+  },
+  {
+    "epoch": 150,
+    "M3": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 15,
+      "wrong_first": 35,
+      "wrong_uncover_order": 44,
+      "success": 6
+    },
+    "M4": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 18,
+      "wrong_first": 32,
+      "wrong_uncover_order": 45,
+      "success": 5
+    },
+    "pairing": {
+      "correct_first": {
+        "both": 14,
+        "M3_only": 1,
+        "M4_only": 4,
+        "neither": 31
+      },
+      "success": {
+        "both": 3,
+        "M3_only": 3,
+        "M4_only": 2,
+        "neither": 42
+      }
+    }
+  },
+  {
+    "epoch": 200,
+    "M3": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 20,
+      "wrong_first": 30,
+      "wrong_uncover_order": 42,
+      "success": 8
+    },
+    "M4": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 23,
+      "wrong_first": 27,
+      "wrong_uncover_order": 40,
+      "success": 10
+    },
+    "pairing": {
+      "correct_first": {
+        "both": 17,
+        "M3_only": 3,
+        "M4_only": 6,
+        "neither": 24
+      },
+      "success": {
+        "both": 5,
+        "M3_only": 3,
+        "M4_only": 5,
+        "neither": 37
+      }
+    }
+  },
+  {
+    "epoch": 250,
+    "M3": {
+      "episodes": 8,
+      "covered": 8,
+      "correct_first": 1,
+      "wrong_first": 7,
+      "wrong_uncover_order": 7,
+      "success": 1
+    },
+    "M4": {
+      "episodes": 50,
+      "covered": 50,
+      "correct_first": 28,
+      "wrong_first": 22,
+      "wrong_uncover_order": 34,
+      "success": 16
+    }
+  }
+]
