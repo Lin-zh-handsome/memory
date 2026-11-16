@@ -39,3 +39,5 @@ M4 第 250 轮的原始 50 条轨迹全部用于定位，时间序列读出覆�
 [逐回合定位](choice_timing.json) · [固定读出器结果](timeline_readout.json) · [汇总](summary.json) · [分支原始输出](branches/)
 
 复现脚本与归档的图像、Mamba 状态和物理快照保存在服务器的独立诊断目录。
+
+[这七个失败回合的逐动作块复查](../m4_memory_followthrough/REPORT.md)已完成，含真实物理重放和每块读出的时间对照。

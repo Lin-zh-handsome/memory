@@ -1,0 +1,24 @@
+{
+  "seed": 100010,
+  "prefix_and_terminal_exact": true,
+  "choice": 510,
+  "choices_by_rule": {
+    "12x25": 513,
+    "16x30": 510,
+    "20x40": 508
+  },
+  "grip": 564,
+  "lift": 587,
+  "arm": 1,
+  "first_state": {
+    "step": 641,
+    "stage": 3,
+    "invalid": true,
+    "cover_pattern": [
+      true,
+      false,
+      true
+    ]
+  },
+  "actual_target": 1
+}
