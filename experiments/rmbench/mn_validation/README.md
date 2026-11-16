@@ -19,4 +19,5 @@
 - [种子 100000 的记忆诊断](diagnostics/seed_100000/README.md)
 - [研究交接](../HANDOFF.md)
 
-- [M4 五个检查点、首次揭盖与记忆读出诊断](m4_cover_blocks/README.md)
+- [M4 五个检查点](m4_cover_blocks/README.md)
+- [M4 第 250 轮首次揭盖与历史干预诊断](../m4_first_uncover_diagnosis/REPORT.md)

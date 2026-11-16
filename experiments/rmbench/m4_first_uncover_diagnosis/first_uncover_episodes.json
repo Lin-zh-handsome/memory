@@ -1,0 +1,8432 @@
+[
+  {
+    "seed": 100000,
+    "red_green_blue_positions": [
+      1,
+      0,
+      2
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 632,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": "seed_100000_failure.mp4",
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100001,
+    "red_green_blue_positions": [
+      1,
+      0,
+      2
+    ],
+    "covered_step": 454,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 588,
+          "cover": 1,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 641,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 454,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 641,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 820,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 997,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 454,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 641,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 820,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 997,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": "seed_100001_success.mp4",
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100002,
+    "red_green_blue_positions": [
+      2,
+      0,
+      1
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 637,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100003,
+    "red_green_blue_positions": [
+      0,
+      1,
+      2
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 581,
+    "first_physical_candidate": 0,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 580,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 581,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 582,
+          "cover": 0,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 629,
+    "official_first_targets": [
+      0
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 765,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 948,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 765,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 948,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 557,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100004,
+    "red_green_blue_positions": [
+      0,
+      1,
+      2
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 0,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 0,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 629,
+    "official_first_targets": [
+      0
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 814,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 955,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 814,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 955,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100005,
+    "red_green_blue_positions": [
+      2,
+      0,
+      1
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 581,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 580,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 629,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 804,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 989,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 804,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 989,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 557,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100006,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100007,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 585,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 584,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 636,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 266,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 636,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 266,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 636,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 561,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100008,
+    "red_green_blue_positions": [
+      0,
+      1,
+      2
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 0,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 0,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      0
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 957,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 957,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100009,
+    "red_green_blue_positions": [
+      0,
+      1,
+      2
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 0,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 0,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      0
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 765,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 948,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 765,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 948,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100010,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100011,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 261,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 261,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100012,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 269,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 269,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100013,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 588,
+          "cover": 1,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 642,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 642,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 820,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 642,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 820,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 564,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100014,
+    "red_green_blue_positions": [
+      2,
+      0,
+      1
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 629,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 804,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 991,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 804,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 991,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100015,
+    "red_green_blue_positions": [
+      1,
+      0,
+      2
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 588,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 564,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100016,
+    "red_green_blue_positions": [
+      2,
+      0,
+      1
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 586,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 637,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 562,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100017,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100018,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100019,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 269,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 269,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100020,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100021,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 266,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 266,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100022,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 586,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100023,
+    "red_green_blue_positions": [
+      2,
+      0,
+      1
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 629,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 811,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 811,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100024,
+    "red_green_blue_positions": [
+      1,
+      0,
+      2
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100025,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 588,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 639,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 639,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 639,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100026,
+    "red_green_blue_positions": [
+      1,
+      0,
+      2
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 588,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 954,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 954,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100027,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 588,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100028,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 779,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100029,
+    "red_green_blue_positions": [
+      1,
+      0,
+      2
+    ],
+    "covered_step": 454,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 0,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 584,
+          "cover": 0,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 632,
+    "official_first_targets": [
+      0
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 454,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 454,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100030,
+    "red_green_blue_positions": [
+      2,
+      0,
+      1
+    ],
+    "covered_step": 454,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 584,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 454,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 813,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 454,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 813,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100031,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100032,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 585,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 584,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 637,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 561,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100033,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 584,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 632,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100034,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100035,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 586,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 637,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 990,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 990,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 562,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100036,
+    "red_green_blue_positions": [
+      1,
+      0,
+      2
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 644,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 644,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 778,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 954,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 644,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 778,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 954,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100037,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 588,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100038,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 587,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 563,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100039,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 585,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 584,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 637,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 815,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 991,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 815,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 991,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 561,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100040,
+    "red_green_blue_positions": [
+      0,
+      2,
+      1
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 586,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 638,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 562,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100041,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 581,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 580,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 765,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 944,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 765,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 944,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 557,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100042,
+    "red_green_blue_positions": [
+      2,
+      0,
+      1
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 584,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 632,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 768,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 632,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 768,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100043,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 584,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 559,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100044,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 451,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 268,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 451,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 805,
+        "stage": 4,
+        "invalid": true,
+        "cover_pattern": [
+          false,
+          true,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100045,
+    "red_green_blue_positions": [
+      0,
+      1,
+      2
+    ],
+    "covered_step": 453,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 0,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 0,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 630,
+    "official_first_targets": [
+      0
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 814,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 953,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 453,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 630,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 814,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 953,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100046,
+    "red_green_blue_positions": [
+      0,
+      1,
+      2
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 583,
+    "first_physical_candidate": 0,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 582,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 583,
+          "cover": 0,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 0,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 633,
+    "official_first_targets": [
+      0
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 633,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 957,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 633,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 816,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 957,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100047,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 582,
+    "first_physical_candidate": 2,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 581,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "10": [
+        {
+          "step": 582,
+          "cover": 2,
+          "arm": 1
+        }
+      ],
+      "15": [
+        {
+          "step": 583,
+          "cover": 2,
+          "arm": 1
+        }
+      ]
+    },
+    "official_first_step": 631,
+    "official_first_targets": [
+      2
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 269,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 811,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 952,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 121,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 269,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 631,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 811,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 952,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 558,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 1
+  },
+  {
+    "seed": 100048,
+    "red_green_blue_positions": [
+      2,
+      1,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 586,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 636,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": false,
+    "success": false,
+    "failure_category": "invalid_uncover_order",
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 636,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 636,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 562,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  },
+  {
+    "seed": 100049,
+    "red_green_blue_positions": [
+      1,
+      2,
+      0
+    ],
+    "covered_step": 452,
+    "first_prediction_step": 456,
+    "physical_begin_step": 586,
+    "first_physical_candidate": 1,
+    "threshold_sensitivity_mm": {
+      "5": [
+        {
+          "step": 585,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "10": [
+        {
+          "step": 586,
+          "cover": 1,
+          "arm": 0
+        }
+      ],
+      "15": [
+        {
+          "step": 587,
+          "cover": 1,
+          "arm": 0
+        }
+      ]
+    },
+    "official_first_step": 637,
+    "official_first_targets": [
+      1
+    ],
+    "first_red_correct": true,
+    "success": true,
+    "failure_category": null,
+    "official_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 814,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 991,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_stage_trace": [
+      {
+        "step": 0,
+        "stage": 0,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 120,
+        "stage": 1,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 267,
+        "stage": 2,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      {
+        "step": 452,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "step": 637,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      {
+        "step": 814,
+        "stage": 5,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          false,
+          false
+        ]
+      },
+      {
+        "step": 991,
+        "stage": 6,
+        "invalid": false,
+        "cover_pattern": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "replay_matches": true,
+    "video": null,
+    "grip_begin_step": 562,
+    "physical_begin_definition": "first of three consecutive measured steps with lift >10mm and a tool within 145mm including its fixed offset",
+    "physical_arm": 0
+  }
+]

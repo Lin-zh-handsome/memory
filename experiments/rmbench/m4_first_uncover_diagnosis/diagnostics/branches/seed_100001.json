@@ -1,0 +1,32 @@
+{
+  "seed": 100001,
+  "runs": [
+    {
+      "diagnostic": "factual",
+      "fork_step": 456,
+      "prefix_max_errors": {
+        "condition": 1.5497207641601562e-06,
+        "bank": 2.0265579223632812e-06,
+        "query": 1.5497207641601562e-06,
+        "physical_pose": 0.0,
+        "physical_joint": 0.0
+      },
+      "stage": {
+        "step": 456,
+        "stage": 3,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          true
+        ]
+      },
+      "admitted": false,
+      "kinematic_error_m": 1.3724668929127049e-07,
+      "action_error": 1.3589859008789062e-05,
+      "diverged_at": 464,
+      "donor_seed": null,
+      "reference_target": 1
+    }
+  ]
+}

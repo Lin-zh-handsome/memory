@@ -1,0 +1,3746 @@
+{
+  "E0": {
+    "evaluated": 50,
+    "correct": 50,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "E0_key": {
+    "evaluated": 50,
+    "correct": 50,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "E0_value": {
+    "evaluated": 50,
+    "correct": 50,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "bank_key": {
+    "evaluated": 50,
+    "correct": 45,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "bank_value": {
+    "evaluated": 50,
+    "correct": 46,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "head_concat": {
+    "evaluated": 50,
+    "correct": 25,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "readout": {
+    "evaluated": 50,
+    "correct": 24,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "query": {
+    "evaluated": 50,
+    "correct": 26,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "head_0": {
+    "evaluated": 50,
+    "correct": 23,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "head_1": {
+    "evaluated": 50,
+    "correct": 25,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "head_2": {
+    "evaluated": 50,
+    "correct": 28,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  },
+  "head_3": {
+    "evaluated": 50,
+    "correct": 27,
+    "majority_correct": 19,
+    "label_counts": {
+      "middle": 19,
+      "right": 17,
+      "left": 14
+    },
+    "predictions": [
+      {
+        "seed": 100000,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100001,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100002,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100003,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100004,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100005,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100006,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100007,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100008,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100009,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100010,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100011,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100012,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100013,
+        "position": 1,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100014,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100015,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100016,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100017,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100018,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100019,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100020,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100021,
+        "position": 0,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100022,
+        "position": 2,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100023,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100024,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100025,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100026,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100027,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100028,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100029,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100030,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100031,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100032,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100033,
+        "position": 1,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100034,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100035,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100036,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100037,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100038,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100039,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100040,
+        "position": 0,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100041,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100042,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100043,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100044,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100045,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100046,
+        "position": 0,
+        "prediction": 0,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100047,
+        "position": 2,
+        "prediction": 2,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100048,
+        "position": 2,
+        "prediction": 1,
+        "majority_prediction": 1
+      },
+      {
+        "seed": 100049,
+        "position": 1,
+        "prediction": 1,
+        "majority_prediction": 1
+      }
+    ]
+  }
+}
