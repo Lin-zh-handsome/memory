@@ -1,0 +1,254 @@
+{
+  "total": 5,
+  "exact_original": 5,
+  "correct_switches": 0,
+  "any_confirmed_switches": 0,
+  "controls_keep_old": 5,
+  "records": [
+    {
+      "seed": 100002,
+      "intended": 0,
+      "original": 1,
+      "correct_swap": 1,
+      "wrong_target_swap": 1,
+      "correct_swap_source": {
+        "seed": 100008,
+        "target": 0,
+        "decoded": 0,
+        "qpos_distance": 0.048372622579336166,
+        "source_complete": true
+      },
+      "control_source": {
+        "seed": 100036,
+        "target": 1,
+        "decoded": 1,
+        "qpos_distance": 0.024223169311881065,
+        "source_complete": true
+      },
+      "correct_readout_vector_l2": 0.4410747893306659,
+      "control_readout_vector_l2": 2.34186525971542,
+      "correct_swap_block_tcp_max_mm": 0.3996009412784057,
+      "control_block_tcp_max_mm": 1.9541557023565517,
+      "correct_swap_block_joint_max_deg": 0.04745914041996002,
+      "control_block_joint_max_deg": 0.5668945908546448,
+      "correct_swap_block_actual_left_gain_mm": -0.11773516265659034,
+      "original_block_actual_left_gain_mm": -0.048944607035222853,
+      "correct_swap_first_state": {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      "control_first_state": {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "seed": 100010,
+      "intended": 0,
+      "original": 1,
+      "correct_swap": 1,
+      "wrong_target_swap": 1,
+      "correct_swap_source": {
+        "seed": 100046,
+        "target": 0,
+        "decoded": 0,
+        "qpos_distance": 0.01799418218433857,
+        "source_complete": true
+      },
+      "control_source": {
+        "seed": 100049,
+        "target": 1,
+        "decoded": 1,
+        "qpos_distance": 0.028657281771302223,
+        "source_complete": true
+      },
+      "correct_readout_vector_l2": 1.0232671172296441,
+      "control_readout_vector_l2": 1.713761219310091,
+      "correct_swap_block_tcp_max_mm": 0.3294718165013783,
+      "control_block_tcp_max_mm": 0.791737150379104,
+      "correct_swap_block_joint_max_deg": 0.06316473335027695,
+      "control_block_joint_max_deg": 0.2953164577484131,
+      "correct_swap_block_actual_left_gain_mm": -0.20117687190535083,
+      "original_block_actual_left_gain_mm": -0.24225563975008302,
+      "correct_swap_first_state": {
+        "step": 642,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      "control_first_state": {
+        "step": 641,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "seed": 100014,
+      "intended": 0,
+      "original": 2,
+      "correct_swap": 2,
+      "wrong_target_swap": 2,
+      "correct_swap_source": {
+        "seed": 100004,
+        "target": 0,
+        "decoded": 0,
+        "qpos_distance": 0.03745761886239052,
+        "source_complete": true
+      },
+      "control_source": {
+        "seed": 100005,
+        "target": 2,
+        "decoded": 2,
+        "qpos_distance": 0.01186650525778532,
+        "source_complete": true
+      },
+      "correct_readout_vector_l2": 0.21589642166683337,
+      "control_readout_vector_l2": 2.82776094398254,
+      "correct_swap_block_tcp_max_mm": 0.10434311148142092,
+      "control_block_tcp_max_mm": 0.879124854507191,
+      "correct_swap_block_joint_max_deg": 0.02153729274868965,
+      "control_block_joint_max_deg": 0.47581955790519714,
+      "correct_swap_block_actual_left_gain_mm": 0.04241958790493494,
+      "original_block_actual_left_gain_mm": 0.04206854515423353,
+      "correct_swap_first_state": {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      "control_first_state": {
+        "step": 629,
+        "stage": 4,
+        "invalid": false,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    },
+    {
+      "seed": 100017,
+      "intended": 0,
+      "original": 1,
+      "correct_swap": 1,
+      "wrong_target_swap": 1,
+      "correct_swap_source": {
+        "seed": 100008,
+        "target": 0,
+        "decoded": 0,
+        "qpos_distance": 0.009231636300683022,
+        "source_complete": true
+      },
+      "control_source": {
+        "seed": 100036,
+        "target": 1,
+        "decoded": 1,
+        "qpos_distance": 0.017284082248806953,
+        "source_complete": true
+      },
+      "correct_readout_vector_l2": 1.157144111015282,
+      "control_readout_vector_l2": 1.5013713338125043,
+      "correct_swap_block_tcp_max_mm": 1.045975445962068,
+      "control_block_tcp_max_mm": 1.7643112560347765,
+      "correct_swap_block_joint_max_deg": 0.19089694321155548,
+      "control_block_joint_max_deg": 0.4754110276699066,
+      "correct_swap_block_actual_left_gain_mm": 0.2746310881425462,
+      "original_block_actual_left_gain_mm": 0.2482933965030909,
+      "correct_swap_first_state": {
+        "step": 638,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      },
+      "control_first_state": {
+        "step": 637,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          false,
+          true
+        ]
+      }
+    },
+    {
+      "seed": 100018,
+      "intended": 0,
+      "original": 2,
+      "correct_swap": 2,
+      "wrong_target_swap": 2,
+      "correct_swap_source": {
+        "seed": 100003,
+        "target": 0,
+        "decoded": 0,
+        "qpos_distance": 0.0287138894200325,
+        "source_complete": true
+      },
+      "control_source": {
+        "seed": 100005,
+        "target": 2,
+        "decoded": 2,
+        "qpos_distance": 0.010718310251832008,
+        "source_complete": true
+      },
+      "correct_readout_vector_l2": 0.961667754724145,
+      "control_readout_vector_l2": 2.0798155790288275,
+      "correct_swap_block_tcp_max_mm": 1.9214966237812894,
+      "control_block_tcp_max_mm": 0.717578703197398,
+      "correct_swap_block_joint_max_deg": 0.3857746124267578,
+      "control_block_joint_max_deg": 0.324848473072052,
+      "correct_swap_block_actual_left_gain_mm": -0.032567880737022215,
+      "original_block_actual_left_gain_mm": 0.0797655095437777,
+      "correct_swap_first_state": {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      },
+      "control_first_state": {
+        "step": 631,
+        "stage": 3,
+        "invalid": true,
+        "cover_pattern": [
+          true,
+          true,
+          false
+        ]
+      }
+    }
+  ]
+}

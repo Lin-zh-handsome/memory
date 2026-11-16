@@ -1,0 +1,57 @@
+[
+  {
+    "seed": 100002,
+    "donor_seed": 100045,
+    "donor_target": 0,
+    "actual_target": 1,
+    "factual_target": 1,
+    "choice_chunk": 504,
+    "choice": 509,
+    "grip": 563,
+    "official_step": 638
+  },
+  {
+    "seed": 100010,
+    "donor_seed": 100037,
+    "donor_target": 0,
+    "actual_target": 1,
+    "factual_target": 2,
+    "choice_chunk": 504,
+    "choice": 510,
+    "grip": 564,
+    "official_step": 641
+  },
+  {
+    "seed": 100014,
+    "donor_seed": 100003,
+    "donor_target": 0,
+    "actual_target": 2,
+    "factual_target": 2,
+    "choice_chunk": 504,
+    "choice": 511,
+    "grip": 558,
+    "official_step": 629
+  },
+  {
+    "seed": 100017,
+    "donor_seed": 100040,
+    "donor_target": 0,
+    "actual_target": 1,
+    "factual_target": 1,
+    "choice_chunk": 504,
+    "choice": 508,
+    "grip": 563,
+    "official_step": 638
+  },
+  {
+    "seed": 100018,
+    "donor_seed": 100006,
+    "donor_target": 0,
+    "actual_target": 2,
+    "factual_target": 2,
+    "choice_chunk": 504,
+    "choice": 510,
+    "grip": 559,
+    "official_step": 633
+  }
+]

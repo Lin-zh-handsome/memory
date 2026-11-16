@@ -27,3 +27,5 @@
 [逐块表格](action_blocks.csv) · [动作与读出明细](action_block_diagnosis.json) · [七回合选择依据](case_selection.json)
 
 [物理重放时刻](motion/) · [原 18 回合的历史替换报告](../m4_prechoice_diagnosis/REPORT.md)
+
+[第 504 步动作头记忆向量替换实验](../m4_step504_readout_swap/REPORT.md)已完成。
