@@ -46,3 +46,7 @@
 [完整研究交接、诊断依据和待验证问题](HANDOFF.md) · [种子 100000 诊断](mn_validation/diagnostics/seed_100000/README.md) · [方块覆盖阶段统计](mn_validation/cover_blocks/evaluation/stage_diagnostics.json)
 
 历史咖啡准备实验已停止，保留 17 个完整检查点和 850/1500 回合。其 M2 使用旧窗口方案。[历史结果](../coffee_preparation_d0/README_results.md)
+
+## M4 决策前首帧记忆诊断
+
+50 个回合已确定开始持续趋向盖子的运动时刻。模型从第 496 步开始替换首帧记忆，18 个回合的短程分支通过校验，其中 9 个换了实际目标、6 个换到了供体位置。 [完整报告](m4_prechoice_diagnosis/REPORT.md)

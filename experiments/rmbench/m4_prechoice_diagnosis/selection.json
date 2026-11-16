@@ -1,0 +1,23 @@
+{
+  "rule": "up to 3 correct and 3 incorrect per red position; prefer cases not used in earlier branches, then lowest seed",
+  "seeds": [
+    100002,
+    100004,
+    100006,
+    100007,
+    100008,
+    100009,
+    100010,
+    100011,
+    100012,
+    100013,
+    100014,
+    100015,
+    100016,
+    100017,
+    100018,
+    100019,
+    100020,
+    100023
+  ]
+}
