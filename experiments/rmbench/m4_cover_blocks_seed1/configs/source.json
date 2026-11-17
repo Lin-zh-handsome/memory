@@ -1,0 +1,13 @@
+{
+  "experiment_commit": "ccb7c7f52df191f811f53c8f7e37fd143eca5d95",
+  "model_base": "fe2a8ad",
+  "rmbench": "7d1cdfc7661c273a7a5c5f6126e2d1a7f0a3f4b7",
+  "environment_patches": [
+    "rmbench_render_device.patch",
+    "rmbench_qpos_workers.patch"
+  ],
+  "training_seed": 1,
+  "baseline_training_seed": 0,
+  "render_gpu": 3,
+  "eval_batch_size": 2
+}

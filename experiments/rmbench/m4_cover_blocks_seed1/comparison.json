@@ -1,0 +1,655 @@
+{
+  "checkpoints": [
+    {
+      "epoch": 50,
+      "seed0": {
+        "covered": 50,
+        "first_correct": 17,
+        "first_order_failure": 32,
+        "failed_after_first": 9,
+        "success": 8
+      },
+      "seed1": {
+        "covered": 50,
+        "first_correct": 19,
+        "first_order_failure": 30,
+        "failed_after_first": 11,
+        "success": 8
+      },
+      "success": {
+        "seed_mean_pct": 16,
+        "sample_sd_pp": 0.0,
+        "seed1_minus_seed0_pp": 0
+      },
+      "first_correct": {
+        "seed_mean_pct": 36,
+        "sample_sd_pp": 2.8284271247461903,
+        "seed1_minus_seed0_pp": 4
+      },
+      "same_wrong_first": 20
+    },
+    {
+      "epoch": 100,
+      "seed0": {
+        "covered": 50,
+        "first_correct": 18,
+        "first_order_failure": 32,
+        "failed_after_first": 8,
+        "success": 10
+      },
+      "seed1": {
+        "covered": 50,
+        "first_correct": 19,
+        "first_order_failure": 31,
+        "failed_after_first": 11,
+        "success": 8
+      },
+      "success": {
+        "seed_mean_pct": 18,
+        "sample_sd_pp": 2.8284271247461903,
+        "seed1_minus_seed0_pp": -4
+      },
+      "first_correct": {
+        "seed_mean_pct": 37,
+        "sample_sd_pp": 1.4142135623730951,
+        "seed1_minus_seed0_pp": 2
+      },
+      "same_wrong_first": 28
+    },
+    {
+      "epoch": 150,
+      "seed0": {
+        "covered": 50,
+        "first_correct": 18,
+        "first_order_failure": 32,
+        "failed_after_first": 13,
+        "success": 5
+      },
+      "seed1": {
+        "covered": 50,
+        "first_correct": 21,
+        "first_order_failure": 29,
+        "failed_after_first": 12,
+        "success": 9
+      },
+      "success": {
+        "seed_mean_pct": 14,
+        "sample_sd_pp": 5.656854249492381,
+        "seed1_minus_seed0_pp": 8
+      },
+      "first_correct": {
+        "seed_mean_pct": 39,
+        "sample_sd_pp": 4.242640687119285,
+        "seed1_minus_seed0_pp": 6
+      },
+      "same_wrong_first": 24
+    },
+    {
+      "epoch": 200,
+      "seed0": {
+        "covered": 50,
+        "first_correct": 23,
+        "first_order_failure": 27,
+        "failed_after_first": 13,
+        "success": 10
+      },
+      "seed1": {
+        "covered": 50,
+        "first_correct": 36,
+        "first_order_failure": 14,
+        "failed_after_first": 17,
+        "success": 19
+      },
+      "success": {
+        "seed_mean_pct": 29,
+        "sample_sd_pp": 12.727922061357855,
+        "seed1_minus_seed0_pp": 18
+      },
+      "first_correct": {
+        "seed_mean_pct": 59,
+        "sample_sd_pp": 18.384776310850235,
+        "seed1_minus_seed0_pp": 26
+      },
+      "same_wrong_first": 12
+    },
+    {
+      "epoch": 250,
+      "seed0": {
+        "covered": 50,
+        "first_correct": 28,
+        "first_order_failure": 22,
+        "failed_after_first": 12,
+        "success": 16
+      },
+      "seed1": {
+        "covered": 50,
+        "first_correct": 40,
+        "first_order_failure": 10,
+        "failed_after_first": 21,
+        "success": 19
+      },
+      "success": {
+        "seed_mean_pct": 35,
+        "sample_sd_pp": 4.242640687119285,
+        "seed1_minus_seed0_pp": 6
+      },
+      "first_correct": {
+        "seed_mean_pct": 68,
+        "sample_sd_pp": 16.97056274847714,
+        "seed1_minus_seed0_pp": 24
+      },
+      "same_wrong_first": 8
+    }
+  ],
+  "paired_layouts": {
+    "50": {
+      "中右左": {
+        "n": 12,
+        "seed0_first_correct": 7,
+        "seed1_first_correct": 7,
+        "both_first_wrong": 2,
+        "both_failed": 6,
+        "same_wrong_first": 1
+      },
+      "中左右": {
+        "n": 7,
+        "seed0_first_correct": 1,
+        "seed1_first_correct": 1,
+        "both_first_wrong": 6,
+        "both_failed": 6,
+        "same_wrong_first": 6
+      },
+      "右中左": {
+        "n": 10,
+        "seed0_first_correct": 2,
+        "seed1_first_correct": 4,
+        "both_first_wrong": 6,
+        "both_failed": 10,
+        "same_wrong_first": 4
+      },
+      "右左中": {
+        "n": 7,
+        "seed0_first_correct": 3,
+        "seed1_first_correct": 3,
+        "both_first_wrong": 3,
+        "both_failed": 5,
+        "same_wrong_first": 2
+      },
+      "左中右": {
+        "n": 6,
+        "seed0_first_correct": 2,
+        "seed1_first_correct": 2,
+        "both_first_wrong": 4,
+        "both_failed": 4,
+        "same_wrong_first": 3
+      },
+      "左右中": {
+        "n": 8,
+        "seed0_first_correct": 2,
+        "seed1_first_correct": 2,
+        "both_first_wrong": 6,
+        "both_failed": 8,
+        "same_wrong_first": 4
+      }
+    },
+    "100": {
+      "中右左": {
+        "n": 12,
+        "seed0_first_correct": 7,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 4,
+        "both_failed": 10,
+        "same_wrong_first": 4
+      },
+      "中左右": {
+        "n": 7,
+        "seed0_first_correct": 1,
+        "seed1_first_correct": 2,
+        "both_first_wrong": 5,
+        "both_failed": 5,
+        "same_wrong_first": 5
+      },
+      "右中左": {
+        "n": 10,
+        "seed0_first_correct": 2,
+        "seed1_first_correct": 4,
+        "both_first_wrong": 6,
+        "both_failed": 9,
+        "same_wrong_first": 6
+      },
+      "右左中": {
+        "n": 7,
+        "seed0_first_correct": 3,
+        "seed1_first_correct": 3,
+        "both_first_wrong": 4,
+        "both_failed": 5,
+        "same_wrong_first": 4
+      },
+      "左中右": {
+        "n": 6,
+        "seed0_first_correct": 4,
+        "seed1_first_correct": 3,
+        "both_first_wrong": 2,
+        "both_failed": 2,
+        "same_wrong_first": 2
+      },
+      "左右中": {
+        "n": 8,
+        "seed0_first_correct": 1,
+        "seed1_first_correct": 1,
+        "both_first_wrong": 7,
+        "both_failed": 8,
+        "same_wrong_first": 7
+      }
+    },
+    "150": {
+      "中右左": {
+        "n": 12,
+        "seed0_first_correct": 7,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 4,
+        "both_failed": 10,
+        "same_wrong_first": 4
+      },
+      "中左右": {
+        "n": 7,
+        "seed0_first_correct": 1,
+        "seed1_first_correct": 1,
+        "both_first_wrong": 6,
+        "both_failed": 6,
+        "same_wrong_first": 5
+      },
+      "右中左": {
+        "n": 10,
+        "seed0_first_correct": 4,
+        "seed1_first_correct": 4,
+        "both_first_wrong": 5,
+        "both_failed": 10,
+        "same_wrong_first": 4
+      },
+      "右左中": {
+        "n": 7,
+        "seed0_first_correct": 3,
+        "seed1_first_correct": 4,
+        "both_first_wrong": 3,
+        "both_failed": 4,
+        "same_wrong_first": 3
+      },
+      "左中右": {
+        "n": 6,
+        "seed0_first_correct": 2,
+        "seed1_first_correct": 4,
+        "both_first_wrong": 2,
+        "both_failed": 2,
+        "same_wrong_first": 2
+      },
+      "左右中": {
+        "n": 8,
+        "seed0_first_correct": 1,
+        "seed1_first_correct": 2,
+        "both_first_wrong": 6,
+        "both_failed": 8,
+        "same_wrong_first": 6
+      }
+    },
+    "200": {
+      "中右左": {
+        "n": 12,
+        "seed0_first_correct": 7,
+        "seed1_first_correct": 10,
+        "both_first_wrong": 2,
+        "both_failed": 9,
+        "same_wrong_first": 1
+      },
+      "中左右": {
+        "n": 7,
+        "seed0_first_correct": 1,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 1,
+        "both_failed": 2,
+        "same_wrong_first": 1
+      },
+      "右中左": {
+        "n": 10,
+        "seed0_first_correct": 5,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 4,
+        "both_failed": 6,
+        "same_wrong_first": 4
+      },
+      "右左中": {
+        "n": 7,
+        "seed0_first_correct": 5,
+        "seed1_first_correct": 4,
+        "both_first_wrong": 2,
+        "both_failed": 4,
+        "same_wrong_first": 2
+      },
+      "左中右": {
+        "n": 6,
+        "seed0_first_correct": 5,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 0,
+        "both_failed": 0,
+        "same_wrong_first": 0
+      },
+      "左右中": {
+        "n": 8,
+        "seed0_first_correct": 0,
+        "seed1_first_correct": 4,
+        "both_first_wrong": 4,
+        "both_failed": 8,
+        "same_wrong_first": 4
+      }
+    },
+    "250": {
+      "中右左": {
+        "n": 12,
+        "seed0_first_correct": 7,
+        "seed1_first_correct": 12,
+        "both_first_wrong": 0,
+        "both_failed": 8,
+        "same_wrong_first": 0
+      },
+      "中左右": {
+        "n": 7,
+        "seed0_first_correct": 4,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 1,
+        "both_failed": 2,
+        "same_wrong_first": 1
+      },
+      "右中左": {
+        "n": 10,
+        "seed0_first_correct": 6,
+        "seed1_first_correct": 7,
+        "both_first_wrong": 3,
+        "both_failed": 4,
+        "same_wrong_first": 3
+      },
+      "右左中": {
+        "n": 7,
+        "seed0_first_correct": 5,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 1,
+        "both_failed": 5,
+        "same_wrong_first": 1
+      },
+      "左中右": {
+        "n": 6,
+        "seed0_first_correct": 6,
+        "seed1_first_correct": 6,
+        "both_first_wrong": 0,
+        "both_failed": 0,
+        "same_wrong_first": 0
+      },
+      "左右中": {
+        "n": 8,
+        "seed0_first_correct": 0,
+        "seed1_first_correct": 3,
+        "both_first_wrong": 5,
+        "both_failed": 8,
+        "same_wrong_first": 3
+      }
+    }
+  },
+  "repeated_wrong_seed_cases": [
+    {
+      "seed": 100000,
+      "layout": "中左右",
+      "epochs_with_same_wrong_first": [
+        50,
+        100
+      ]
+    },
+    {
+      "seed": 100001,
+      "layout": "中左右",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100002,
+      "layout": "右左中",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ]
+    },
+    {
+      "seed": 100006,
+      "layout": "左右中",
+      "epochs_with_same_wrong_first": [
+        100,
+        150,
+        200,
+        250
+      ]
+    },
+    {
+      "seed": 100007,
+      "layout": "左右中",
+      "epochs_with_same_wrong_first": [
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100008,
+      "layout": "左中右",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100009,
+      "layout": "左中右",
+      "epochs_with_same_wrong_first": [
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100011,
+      "layout": "中右左",
+      "epochs_with_same_wrong_first": [
+        100,
+        150,
+        200
+      ]
+    },
+    {
+      "seed": 100012,
+      "layout": "左右中",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ]
+    },
+    {
+      "seed": 100015,
+      "layout": "中左右",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100016,
+      "layout": "右左中",
+      "epochs_with_same_wrong_first": [
+        100,
+        150,
+        200
+      ]
+    },
+    {
+      "seed": 100017,
+      "layout": "右中左",
+      "epochs_with_same_wrong_first": [
+        100,
+        150,
+        200,
+        250
+      ]
+    },
+    {
+      "seed": 100018,
+      "layout": "中右左",
+      "epochs_with_same_wrong_first": [
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100021,
+      "layout": "左右中",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ]
+    },
+    {
+      "seed": 100022,
+      "layout": "右中左",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150,
+        200
+      ]
+    },
+    {
+      "seed": 100024,
+      "layout": "中左右",
+      "epochs_with_same_wrong_first": [
+        50,
+        150,
+        200,
+        250
+      ]
+    },
+    {
+      "seed": 100026,
+      "layout": "中左右",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100027,
+      "layout": "右中左",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ]
+    },
+    {
+      "seed": 100029,
+      "layout": "中左右",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100032,
+      "layout": "左右中",
+      "epochs_with_same_wrong_first": [
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100033,
+      "layout": "中右左",
+      "epochs_with_same_wrong_first": [
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100038,
+      "layout": "左右中",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150,
+        200
+      ]
+    },
+    {
+      "seed": 100040,
+      "layout": "左右中",
+      "epochs_with_same_wrong_first": [
+        50,
+        100
+      ]
+    },
+    {
+      "seed": 100042,
+      "layout": "右左中",
+      "epochs_with_same_wrong_first": [
+        50,
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100043,
+      "layout": "右中左",
+      "epochs_with_same_wrong_first": [
+        100,
+        150
+      ]
+    },
+    {
+      "seed": 100047,
+      "layout": "右中左",
+      "epochs_with_same_wrong_first": [
+        50,
+        100
+      ]
+    },
+    {
+      "seed": 100048,
+      "layout": "右中左",
+      "epochs_with_same_wrong_first": [
+        100,
+        200,
+        250
+      ]
+    }
+  ],
+  "best_epochs": {
+    "seed0": 250,
+    "seed1": 200
+  },
+  "best_pct": [
+    32,
+    38
+  ],
+  "best_mean_pct": 35,
+  "best_sample_sd_pp": 4.242640687119285
+}
