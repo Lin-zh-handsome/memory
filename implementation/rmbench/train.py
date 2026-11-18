@@ -89,7 +89,8 @@ def main():
     dataset = EpisodeDataset(args.data)
     if uses_goal:
         from goal_targets import GoalTargets
-        dataset.goal_targets = GoalTargets(args.goal_targets, dataset.episodes)
+        dataset.goal_targets = GoalTargets(args.goal_targets, dataset.episodes,
+                                          cfg["goal_aux"].get("target_shape", (512,)))
     batch_size, horizon = cfg["batch_size"], cfg["horizon"]
     n_action_steps = cfg["n_action_steps"]
     steps_per_epoch = dataset.num_batches(batch_size, horizon, n_action_steps)

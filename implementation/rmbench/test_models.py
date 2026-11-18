@@ -1,5 +1,6 @@
 """Behavioral checks for the RMBench continuous-memory policy contract."""
 import argparse
+from math import prod
 import math
 
 import numpy as np
@@ -181,9 +182,10 @@ def check_event_attention(device):
         assert_gradient(projection.weight)
 
 
-def sample_policy(variant, device):
+def sample_policy(variant, device, goal_shape=(512,)):
     cfg = {
         "vision": {"crop": None, "imagenet_norm": False},
+        "goal_aux": {"target_shape": goal_shape},
         "ddpm": {"num_train_timesteps": 3, "prediction_type": "epsilon"},
         "horizon": 16, "n_action_steps": 8, "num_inference_steps": 3,
         "event_thresholds": {"visual": 0.9999, "history": 0.9998},
@@ -204,7 +206,7 @@ def sample_policy(variant, device):
     return policy.to(device)
 
 
-def check_policy(device, variants=("M2", "M3", "M4", "M5")):
+def check_policy(device, variants=("M2", "M3", "M4", "M5"), goal_shape=(512,)):
     obs = {
         "head_camera": torch.rand(25, 3, 32, 32, device=device),
         "agent_pos": torch.rand(25, 14, device=device),
@@ -213,7 +215,7 @@ def check_policy(device, variants=("M2", "M3", "M4", "M5")):
         return {key: value[start:end] for key, value in obs.items()}
 
     for variant in variants:
-        policy = sample_policy(variant, device).eval()
+        policy = sample_policy(variant, device, goal_shape).eval()
         with torch.no_grad():
             full, full_history, full_state = policy.segment_condition(obs)
             assert full.shape[-1] == 2 * policy.obs_feature_dim + HISTORY_DIM * (1 if variant == "M2" else 2)
@@ -284,23 +286,36 @@ def check_policy(device, variants=("M2", "M3", "M4", "M5")):
         if variant == "M5":
             assert not hasattr(policy, "past_head")
             del batch["past_action"], batch["past_mask"]
-            batch.update(goal_feature=torch.randn(6, 512, device=device),
+            batch.update(goal_feature=torch.randn(6, *goal_shape, device=device),
                          goal_valid_mask=torch.tensor([True, True, True, False, False, False], device=device),
                          goal_weight=0.02)
             condition, _, _ = policy.segment_condition(batch["obs"])
             z_goal = condition[..., -HISTORY_DIM:]
             goal, mask = batch["goal_feature"], batch["goal_valid_mask"]
+            assert policy.goal_head(z_goal).shape == (6, prod(goal_shape))
             goal_loss = policy.goal_loss(z_goal, goal, mask)
+            raw_prediction = policy.goal_head(z_goal).reshape_as(goal)
+            direct = 1 - torch.nn.functional.cosine_similarity(raw_prediction[mask], goal[mask], dim=-1)
+            close(goal_loss, direct.mean())
             close(goal_loss, policy.goal_loss(z_goal[mask], goal[mask], mask[mask]))
             assert policy.goal_loss(z_goal, goal, torch.zeros_like(mask)).item() == 0
             goal_loss.backward()
             for param in (policy.goal_latent[0].weight, policy.goal_norm.weight,
                           policy.goal_head[0].weight, policy.event_attention.output_projection.weight,
+                          policy.event_attention.query_projection.weight,
+                          policy.event_attention.key_projection.weight,
+                          policy.event_attention.value_projection.weight,
                           policy.history_mamba.in_proj.weight):
                 assert_gradient(param)
             assert any(param.grad is not None and torch.count_nonzero(param.grad)
                        for param in policy.obs_encoder.parameters())
             policy.zero_grad(set_to_none=True)
+            if len(goal_shape) == 2:
+                ddpm_only, _ = policy.compute_loss({**batch, "goal_weight": 0.0})
+                ddpm_only.backward()
+                assert_gradient(policy.goal_latent[0].weight)
+                assert_gradient(policy.event_attention.output_projection.weight)
+                policy.zero_grad(set_to_none=True)
         loss, state = policy.compute_loss(batch)
         assert torch.isfinite(loss)
         loss.backward()
@@ -340,4 +355,6 @@ if __name__ == "__main__":
     print("PASS M4 query-dependent event retrieval, padding and detached-event gradients", flush=True)
     check_policy(args.device)
     print("PASS M2/M3/M4/M5 online lifecycle, action chunks, DDPM and M5 goal-only gradients", flush=True)
+    check_policy(args.device, ("M5",), goal_shape=(9, 512))
+    print("PASS M5 spatial 9x512 goal loss, DDPM-only gradient, inference bypass and state reset", flush=True)
 

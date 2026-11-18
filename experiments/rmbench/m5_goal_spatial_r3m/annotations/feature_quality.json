@@ -1,0 +1,394 @@
+{
+  "protocol": "Leave out the entire query demonstration from its neighbor gallery; same verified goal frames across teachers.",
+  "threshold": "balanced nearest-neighbor accuracy for completed-state pattern and uncover-site must exceed their balanced chance by 10 percentage points",
+  "measures": {
+    "r3m_spatial": {
+      "state": {
+        "top1": 1.0,
+        "balanced_top1": 1.0,
+        "balanced_chance": 0.125,
+        "per_class_top1": {
+          "000": 1.0,
+          "001": 1.0,
+          "010": 1.0,
+          "011": 1.0,
+          "100": 1.0,
+          "101": 1.0,
+          "110": 1.0,
+          "111": 1.0
+        },
+        "same_class_similarity": {
+          "n": 15250,
+          "mean": 0.9729867577552795,
+          "quantiles_05_50_95": [
+            0.9026424884796143,
+            0.9809282422065735,
+            0.999979555606842
+          ]
+        },
+        "different_class_similarity": {
+          "n": 72950,
+          "mean": 0.8909355998039246,
+          "quantiles_05_50_95": [
+            0.7737103134393692,
+            0.8989473581314087,
+            0.9668546766042709
+          ]
+        },
+        "pair_auroc": 0.9152982842503847,
+        "examples": [
+          {
+            "correct": true,
+            "query_event": 0,
+            "nearest_event": 204,
+            "same_class_example": 204,
+            "query_label": "100",
+            "nearest_label": "100",
+            "similarity": 0.9999785423278809
+          },
+          {
+            "correct": true,
+            "query_event": 1,
+            "nearest_event": 205,
+            "same_class_example": 205,
+            "query_label": "110",
+            "nearest_label": "110",
+            "similarity": 0.9999905824661255
+          },
+          {
+            "correct": true,
+            "query_event": 2,
+            "nearest_event": 92,
+            "same_class_example": 92,
+            "query_label": "111",
+            "nearest_label": "111",
+            "similarity": 0.999993622303009
+          }
+        ]
+      },
+      "open_site": {
+        "top1": 1.0,
+        "balanced_top1": 1.0,
+        "balanced_chance": 0.3333333333333333,
+        "per_class_top1": {
+          "Open left": 1.0,
+          "Open middle": 1.0,
+          "Open right": 1.0
+        },
+        "same_class_similarity": {
+          "n": 7350,
+          "mean": 0.9271805882453918,
+          "quantiles_05_50_95": [
+            0.8220682561397552,
+            0.9402324557304382,
+            0.99996138215065
+          ]
+        },
+        "different_class_similarity": {
+          "n": 14700,
+          "mean": 0.9051472544670105,
+          "quantiles_05_50_95": [
+            0.7965404987335205,
+            0.9168832898139954,
+            0.9723156094551086
+          ]
+        },
+        "pair_auroc": 0.6057362950622426,
+        "examples": [
+          {
+            "correct": true,
+            "query_event": 3,
+            "nearest_event": 93,
+            "same_class_example": 93,
+            "query_label": "Open right",
+            "nearest_label": "Open right",
+            "similarity": 0.9999909996986389
+          },
+          {
+            "correct": true,
+            "query_event": 4,
+            "nearest_event": 94,
+            "same_class_example": 94,
+            "query_label": "Open middle",
+            "nearest_label": "Open middle",
+            "similarity": 0.9999399185180664
+          },
+          {
+            "correct": true,
+            "query_event": 5,
+            "nearest_event": 77,
+            "same_class_example": 77,
+            "query_label": "Open left",
+            "nearest_label": "Open left",
+            "similarity": 0.9999685287475586
+          }
+        ]
+      }
+    },
+    "legacy_imagenet_global": {
+      "state": {
+        "top1": 1.0,
+        "balanced_top1": 1.0,
+        "balanced_chance": 0.125,
+        "per_class_top1": {
+          "000": 1.0,
+          "001": 1.0,
+          "010": 1.0,
+          "011": 1.0,
+          "100": 1.0,
+          "101": 1.0,
+          "110": 1.0,
+          "111": 1.0
+        },
+        "same_class_similarity": {
+          "n": 15250,
+          "mean": 0.9679747819900513,
+          "quantiles_05_50_95": [
+            0.8519337773323059,
+            0.9886535406112671,
+            0.9980071783065796
+          ]
+        },
+        "different_class_similarity": {
+          "n": 72950,
+          "mean": 0.9042898416519165,
+          "quantiles_05_50_95": [
+            0.8043065369129181,
+            0.9096347093582153,
+            0.9630530506372452
+          ]
+        },
+        "pair_auroc": 0.8657253443297116,
+        "examples": [
+          {
+            "correct": true,
+            "query_event": 0,
+            "nearest_event": 222,
+            "same_class_example": 222,
+            "query_label": "100",
+            "nearest_label": "100",
+            "similarity": 0.99749755859375
+          },
+          {
+            "correct": true,
+            "query_event": 1,
+            "nearest_event": 55,
+            "same_class_example": 55,
+            "query_label": "110",
+            "nearest_label": "110",
+            "similarity": 0.9988163709640503
+          },
+          {
+            "correct": true,
+            "query_event": 2,
+            "nearest_event": 206,
+            "same_class_example": 206,
+            "query_label": "111",
+            "nearest_label": "111",
+            "similarity": 0.9987108111381531
+          }
+        ]
+      },
+      "open_site": {
+        "top1": 0.9933333333333333,
+        "balanced_top1": 0.9933333333333333,
+        "balanced_chance": 0.3333333333333333,
+        "per_class_top1": {
+          "Open left": 1.0,
+          "Open middle": 1.0,
+          "Open right": 0.98
+        },
+        "same_class_similarity": {
+          "n": 7350,
+          "mean": 0.9138330221176147,
+          "quantiles_05_50_95": [
+            0.7942767143249512,
+            0.9312975406646729,
+            0.9973229736089706
+          ]
+        },
+        "different_class_similarity": {
+          "n": 14700,
+          "mean": 0.9025160670280457,
+          "quantiles_05_50_95": [
+            0.7912002801895142,
+            0.9229591190814972,
+            0.9893776774406433
+          ]
+        },
+        "pair_auroc": 0.5538093016798556,
+        "examples": [
+          {
+            "correct": true,
+            "query_event": 3,
+            "nearest_event": 129,
+            "same_class_example": 129,
+            "query_label": "Open right",
+            "nearest_label": "Open right",
+            "similarity": 0.9986131191253662
+          },
+          {
+            "correct": true,
+            "query_event": 4,
+            "nearest_event": 94,
+            "same_class_example": 94,
+            "query_label": "Open middle",
+            "nearest_label": "Open middle",
+            "similarity": 0.9943729639053345
+          },
+          {
+            "correct": true,
+            "query_event": 5,
+            "nearest_event": 191,
+            "same_class_example": 191,
+            "query_label": "Open left",
+            "nearest_label": "Open left",
+            "similarity": 0.9979762434959412
+          },
+          {
+            "correct": false,
+            "query_event": 286,
+            "nearest_event": 142,
+            "same_class_example": 166,
+            "query_label": "Open right",
+            "nearest_label": "Open left",
+            "similarity": 0.9885031580924988
+          }
+        ]
+      }
+    },
+    "r3m_global": {
+      "state": {
+        "top1": 0.9966666666666667,
+        "balanced_top1": 0.9903846153846154,
+        "balanced_chance": 0.125,
+        "per_class_top1": {
+          "000": 1.0,
+          "001": 1.0,
+          "010": 0.9230769230769231,
+          "011": 1.0,
+          "100": 1.0,
+          "101": 1.0,
+          "110": 1.0,
+          "111": 1.0
+        },
+        "same_class_similarity": {
+          "n": 15250,
+          "mean": 0.989774227142334,
+          "quantiles_05_50_95": [
+            0.9626098275184631,
+            0.9944694638252258,
+            0.9999918937683105
+          ]
+        },
+        "different_class_similarity": {
+          "n": 72950,
+          "mean": 0.9460933208465576,
+          "quantiles_05_50_95": [
+            0.8683635622262955,
+            0.9585551023483276,
+            0.9893665611743927
+          ]
+        },
+        "pair_auroc": 0.9098099043809481,
+        "examples": [
+          {
+            "correct": true,
+            "query_event": 0,
+            "nearest_event": 204,
+            "same_class_example": 204,
+            "query_label": "100",
+            "nearest_label": "100",
+            "similarity": 0.9999940395355225
+          },
+          {
+            "correct": true,
+            "query_event": 1,
+            "nearest_event": 205,
+            "same_class_example": 205,
+            "query_label": "110",
+            "nearest_label": "110",
+            "similarity": 0.9999964237213135
+          },
+          {
+            "correct": true,
+            "query_event": 2,
+            "nearest_event": 92,
+            "same_class_example": 92,
+            "query_label": "111",
+            "nearest_label": "111",
+            "similarity": 0.9999984502792358
+          },
+          {
+            "correct": false,
+            "query_event": 286,
+            "nearest_event": 118,
+            "same_class_example": 136,
+            "query_label": "010",
+            "nearest_label": "100",
+            "similarity": 0.995309591293335
+          }
+        ]
+      },
+      "open_site": {
+        "top1": 1.0,
+        "balanced_top1": 1.0,
+        "balanced_chance": 0.3333333333333333,
+        "per_class_top1": {
+          "Open left": 1.0,
+          "Open middle": 1.0,
+          "Open right": 1.0
+        },
+        "same_class_similarity": {
+          "n": 7350,
+          "mean": 0.9721683263778687,
+          "quantiles_05_50_95": [
+            0.9112447947263718,
+            0.9816408753395081,
+            0.9999829262495041
+          ]
+        },
+        "different_class_similarity": {
+          "n": 14700,
+          "mean": 0.9645015001296997,
+          "quantiles_05_50_95": [
+            0.8847876787185669,
+            0.9770808815956116,
+            0.9954982995986938
+          ]
+        },
+        "pair_auroc": 0.5733425517145634,
+        "examples": [
+          {
+            "correct": true,
+            "query_event": 3,
+            "nearest_event": 93,
+            "same_class_example": 93,
+            "query_label": "Open right",
+            "nearest_label": "Open right",
+            "similarity": 0.9999966621398926
+          },
+          {
+            "correct": true,
+            "query_event": 4,
+            "nearest_event": 94,
+            "same_class_example": 94,
+            "query_label": "Open middle",
+            "nearest_label": "Open middle",
+            "similarity": 0.9999792575836182
+          },
+          {
+            "correct": true,
+            "query_event": 5,
+            "nearest_event": 95,
+            "same_class_example": 95,
+            "query_label": "Open left",
+            "nearest_label": "Open left",
+            "similarity": 0.9999876618385315
+          }
+        ]
+      }
+    }
+  },
+  "pass": true
+}

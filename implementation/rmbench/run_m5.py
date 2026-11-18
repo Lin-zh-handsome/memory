@@ -26,7 +26,7 @@ def baseline_paths():
     return {0: rmbench / "mn_validation/m4_cover_blocks", 1: rmbench / "m4_cover_blocks_seed1"}
 
 
-def prepare_seed(root, reference, seed):
+def prepare_seed(root, reference, seed, spatial_r3m=False):
     baseline = json.loads((reference / "configs/protocol.json").read_text())
     if (baseline["seed"] != seed or baseline["task"] != "cover_blocks"
             or baseline["task_config"] != "demo_clean" or baseline["epochs"] != 250
@@ -36,6 +36,8 @@ def prepare_seed(root, reference, seed):
     baseline.pop("past_loss_weight")
     baseline["models"] = ["M5"]
     baseline["goal_aux"] = {"weight": 0.02, "warmup_epochs": 10}
+    if spatial_r3m:
+        baseline["goal_aux"].update(target_shape=[9, 512], target_teacher="r3m_resnet18_layer4")
     baseline["resource_policy"] = {"max_gpus": 2, "routine_check_seconds": 3600}
     protocol = root / "configs/protocol.json"
     if protocol.exists() and json.loads(protocol.read_text()) != baseline:
@@ -130,10 +132,16 @@ def main():
     for item in ("root", "data", "rmbench"):
         parser.add_argument(f"--{item}", type=lambda p: Path(p).resolve(), required=True)
     parser.add_argument("--two-gpus", action="store_true", help="Allow one extra physical GPU for checkpoints")
+    parser.add_argument("--spatial-r3m", action="store_true")
+    parser.add_argument("--stage-results", action="store_true", help="Commit completed server results for publication")
     parser.add_argument("--publish", action="store_true", help="Publish the completed report and compact results")
     args = parser.parse_args()
     if not (args.root / "annotations/goal_features.npy").is_file():
         raise FileNotFoundError("Generate frozen teacher features before starting the campaign")
+    if args.spatial_r3m:
+        quality = json.loads((args.root / "annotations/feature_quality.json").read_text())
+        if not quality["pass"]:
+            raise RuntimeError("Frozen R3M goal-feature quality check did not pass")
     logs = args.root / "logs"
     logs.mkdir(exist_ok=True)
     with (logs / "M5_campaign.lock").open("a+") as lock:
@@ -144,7 +152,7 @@ def main():
 
         references = baseline_paths()
         seed_roots = {0: args.root}
-        prepare_seed(args.root, references[0], 0)
+        prepare_seed(args.root, references[0], 0, args.spatial_r3m)
         run_seed(args, args.root, 0, lock)
         metrics = {ep: stage_metrics(rows) for ep, rows in read_results(args.root, "M5").items()}
         best = best_epoch(metrics)
@@ -153,13 +161,29 @@ def main():
                    "episodes": 50, "run_seed_1": gate})
         if gate:
             seed_roots[1] = args.root / "seed1"
-            prepare_seed(seed_roots[1], references[1], 1)
+            prepare_seed(seed_roots[1], references[1], 1, args.spatial_r3m)
             run_seed(args, seed_roots[1], 1, lock)
+        if args.spatial_r3m:
+            for seed, root in seed_roots.items():
+                if (root / "goal_readout.json").is_file():
+                    continue
+                card = choose_card(SimpleNamespace(gpu="auto", reserved_gpu=None,
+                                                    wait_for_pid=None, render_pci=None))
+                probe = run_job("probe_m5_spatial.py",
+                                ("--root", root, "--data", args.data, "--targets", args.root / "annotations"),
+                                root / "logs/M5_goal_readout.log", card, lock)
+                try:
+                    if probe.wait() or not (root / "goal_readout.json").is_file():
+                        raise RuntimeError(f"M5 spatial readout failed for seed {seed}")
+                finally:
+                    stop_own_job(probe)
         report(args.root, references, seed_roots)
         record("complete", seeds=list(seed_roots))
-        if args.publish:
-            subprocess.run([sys.executable, str(Path(__file__).with_name("publish_m5.py")), str(args.root)],
-                           check=True)
+        if args.publish or args.stage_results:
+            command = [sys.executable, str(Path(__file__).with_name("publish_m5.py")), str(args.root)]
+            if not args.publish:
+                command.append("--stage-only")
+            subprocess.run(command, check=True)
 
 
 if __name__ == "__main__":

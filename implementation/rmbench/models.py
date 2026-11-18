@@ -285,8 +285,9 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
                 nn.Linear(HISTORY_DIM, HISTORY_DIM),
             )
             self.goal_norm = nn.LayerNorm(HISTORY_DIM)
+            self.goal_shape = tuple(cfg.get("goal_aux", {}).get("target_shape", (512,)))
             self.goal_head = nn.Sequential(
-                nn.Linear(HISTORY_DIM, HISTORY_DIM), nn.GELU(), nn.Linear(HISTORY_DIM, 512),
+                nn.Linear(HISTORY_DIM, HISTORY_DIM), nn.GELU(), nn.Linear(HISTORY_DIM, prod(self.goal_shape)),
             )
         else:
             self.past_loss_weight = cfg.get("past_loss_weight", 0.1)
@@ -382,8 +383,12 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
         return ((prediction - label).square() * mask).sum() / (mask.sum() * self.action_dim).clamp_min(1)
 
     def goal_loss(self, goal_latent, goal_feature, valid_mask):
-        prediction = self.goal_head(goal_latent)
+        prediction = self.goal_head(goal_latent).reshape(len(goal_latent), *self.goal_shape)
+        if prediction.shape != goal_feature.shape:
+            raise ValueError(f"Expected goal feature shape {prediction.shape}, got {goal_feature.shape}")
         error = 1 - F.cosine_similarity(prediction, goal_feature, dim=-1)
+        if error.ndim == 2:
+            error = error.mean(dim=1)
         return error.masked_fill(~valid_mask, 0).sum() / valid_mask.sum().clamp_min(1)
 
     def compute_loss(self, batch, carry=None):

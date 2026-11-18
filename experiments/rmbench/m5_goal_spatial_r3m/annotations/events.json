@@ -1,0 +1,3953 @@
+{
+  "schema_version": 2,
+  "target_shape": [
+    9,
+    512
+  ],
+  "teacher": {
+    "teacher": "official author release R3M-ResNet18",
+    "repository": "https://huggingface.co/surajnair/r3m-18",
+    "revision": "1a4f077fe01db52c8f5d9f8d6641b6e03f688420",
+    "weight_sha256": "58d7bfcda80d81a4c54582e0dd3b0a73aaa2cafff111325eff729419ea989c1e",
+    "preprocess": {
+      "channel_order": "RGB",
+      "input_dtype": "uint8",
+      "input_range": [
+        0,
+        255
+      ],
+      "resize_short_edge": 256,
+      "center_crop": [
+        224,
+        224
+      ],
+      "interpolation": "PIL bilinear",
+      "scale": "divide by 255 exactly once",
+      "normalize_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "normalize_std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "layer": "layer4",
+    "layer_shape": [
+      512,
+      7,
+      7
+    ],
+    "pool": "adaptive avg-pool 3x3, flatten row-major",
+    "target_shape": [
+      9,
+      512
+    ],
+    "l2_normalization": "per 512-dimensional spatial location"
+  },
+  "task": "cover_blocks",
+  "events": [
+    {
+      "episode_id": 0,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 0,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 0,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 329,
+      "goal_frame_index": 328,
+      "goal_feature_index": 1,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 238
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 0,
+      "event_id": 2,
+      "start_frame": 329,
+      "end_frame": 509,
+      "goal_frame_index": 508,
+      "goal_feature_index": 2,
+      "valid_mask": {
+        "start_frame": 329,
+        "end_frame": 419
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 0,
+      "event_id": 3,
+      "start_frame": 509,
+      "end_frame": 684,
+      "goal_frame_index": 683,
+      "goal_feature_index": 3,
+      "valid_mask": {
+        "start_frame": 509,
+        "end_frame": 596
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 0,
+      "event_id": 4,
+      "start_frame": 684,
+      "end_frame": 830,
+      "goal_frame_index": 829,
+      "goal_feature_index": 4,
+      "valid_mask": {
+        "start_frame": 684,
+        "end_frame": 757
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 0,
+      "event_id": 5,
+      "start_frame": 830,
+      "end_frame": 1004,
+      "goal_frame_index": 1003,
+      "goal_feature_index": 5,
+      "valid_mask": {
+        "start_frame": 830,
+        "end_frame": 917
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 1,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 6,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 1,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 7,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 1,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 8,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 1,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 9,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 599
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 1,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 841,
+      "goal_frame_index": 840,
+      "goal_feature_index": 10,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 763
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 1,
+      "event_id": 5,
+      "start_frame": 841,
+      "end_frame": 1016,
+      "goal_frame_index": 1015,
+      "goal_feature_index": 11,
+      "valid_mask": {
+        "start_frame": 841,
+        "end_frame": 928
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 2,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 12,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 2,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 13,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 2,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 14,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 2,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 15,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 599
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 2,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 834,
+      "goal_frame_index": 833,
+      "goal_feature_index": 16,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 760
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 2,
+      "event_id": 5,
+      "start_frame": 834,
+      "end_frame": 1007,
+      "goal_frame_index": 1006,
+      "goal_feature_index": 17,
+      "valid_mask": {
+        "start_frame": 834,
+        "end_frame": 920
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 3,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 18,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 3,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 19,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 3,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 510,
+      "goal_frame_index": 509,
+      "goal_feature_index": 20,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 3,
+      "event_id": 3,
+      "start_frame": 510,
+      "end_frame": 684,
+      "goal_frame_index": 683,
+      "goal_feature_index": 21,
+      "valid_mask": {
+        "start_frame": 510,
+        "end_frame": 597
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 3,
+      "event_id": 4,
+      "start_frame": 684,
+      "end_frame": 834,
+      "goal_frame_index": 833,
+      "goal_feature_index": 22,
+      "valid_mask": {
+        "start_frame": 684,
+        "end_frame": 759
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 3,
+      "event_id": 5,
+      "start_frame": 834,
+      "end_frame": 1008,
+      "goal_frame_index": 1007,
+      "goal_feature_index": 23,
+      "valid_mask": {
+        "start_frame": 834,
+        "end_frame": 921
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 4,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 24,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 4,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 332,
+      "goal_frame_index": 331,
+      "goal_feature_index": 25,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 4,
+      "event_id": 2,
+      "start_frame": 332,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 26,
+      "valid_mask": {
+        "start_frame": 332,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 4,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 688,
+      "goal_frame_index": 687,
+      "goal_feature_index": 27,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 600
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 4,
+      "event_id": 4,
+      "start_frame": 688,
+      "end_frame": 838,
+      "goal_frame_index": 837,
+      "goal_feature_index": 28,
+      "valid_mask": {
+        "start_frame": 688,
+        "end_frame": 763
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 4,
+      "event_id": 5,
+      "start_frame": 838,
+      "end_frame": 1012,
+      "goal_frame_index": 1011,
+      "goal_feature_index": 29,
+      "valid_mask": {
+        "start_frame": 838,
+        "end_frame": 925
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 5,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 30,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 5,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 31,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 5,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 32,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 5,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 661,
+      "goal_frame_index": 660,
+      "goal_feature_index": 33,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 587
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 5,
+      "event_id": 4,
+      "start_frame": 661,
+      "end_frame": 836,
+      "goal_frame_index": 835,
+      "goal_feature_index": 34,
+      "valid_mask": {
+        "start_frame": 661,
+        "end_frame": 748
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 5,
+      "event_id": 5,
+      "start_frame": 836,
+      "end_frame": 1011,
+      "goal_frame_index": 1010,
+      "goal_feature_index": 35,
+      "valid_mask": {
+        "start_frame": 836,
+        "end_frame": 923
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 6,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 36,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 6,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 37,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 6,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 38,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 6,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 688,
+      "goal_frame_index": 687,
+      "goal_feature_index": 39,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 600
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 6,
+      "event_id": 4,
+      "start_frame": 688,
+      "end_frame": 836,
+      "goal_frame_index": 835,
+      "goal_feature_index": 40,
+      "valid_mask": {
+        "start_frame": 688,
+        "end_frame": 762
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 6,
+      "event_id": 5,
+      "start_frame": 836,
+      "end_frame": 1010,
+      "goal_frame_index": 1009,
+      "goal_feature_index": 41,
+      "valid_mask": {
+        "start_frame": 836,
+        "end_frame": 923
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 7,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 42,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 7,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 43,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 7,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 44,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 7,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 685,
+      "goal_frame_index": 684,
+      "goal_feature_index": 45,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 7,
+      "event_id": 4,
+      "start_frame": 685,
+      "end_frame": 859,
+      "goal_frame_index": 858,
+      "goal_feature_index": 46,
+      "valid_mask": {
+        "start_frame": 685,
+        "end_frame": 772
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 7,
+      "event_id": 5,
+      "start_frame": 859,
+      "end_frame": 1050,
+      "goal_frame_index": 1049,
+      "goal_feature_index": 47,
+      "valid_mask": {
+        "start_frame": 859,
+        "end_frame": 954
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 8,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 48,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 8,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 49,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 8,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 50,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 8,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 662,
+      "goal_frame_index": 661,
+      "goal_feature_index": 51,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 586
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 8,
+      "event_id": 4,
+      "start_frame": 662,
+      "end_frame": 837,
+      "goal_frame_index": 836,
+      "goal_feature_index": 52,
+      "valid_mask": {
+        "start_frame": 662,
+        "end_frame": 749
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 8,
+      "event_id": 5,
+      "start_frame": 837,
+      "end_frame": 1011,
+      "goal_frame_index": 1010,
+      "goal_feature_index": 53,
+      "valid_mask": {
+        "start_frame": 837,
+        "end_frame": 924
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 9,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 54,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 9,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 55,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 9,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 56,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 9,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 688,
+      "goal_frame_index": 687,
+      "goal_feature_index": 57,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 600
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 9,
+      "event_id": 4,
+      "start_frame": 688,
+      "end_frame": 863,
+      "goal_frame_index": 862,
+      "goal_feature_index": 58,
+      "valid_mask": {
+        "start_frame": 688,
+        "end_frame": 775
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 9,
+      "event_id": 5,
+      "start_frame": 863,
+      "end_frame": 1050,
+      "goal_frame_index": 1049,
+      "goal_feature_index": 59,
+      "valid_mask": {
+        "start_frame": 863,
+        "end_frame": 956
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 10,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 60,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 10,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 61,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 10,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 62,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 10,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 652,
+      "goal_frame_index": 651,
+      "goal_feature_index": 63,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 582
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 10,
+      "event_id": 4,
+      "start_frame": 652,
+      "end_frame": 830,
+      "goal_frame_index": 829,
+      "goal_feature_index": 64,
+      "valid_mask": {
+        "start_frame": 652,
+        "end_frame": 741
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 10,
+      "event_id": 5,
+      "start_frame": 830,
+      "end_frame": 1003,
+      "goal_frame_index": 1002,
+      "goal_feature_index": 65,
+      "valid_mask": {
+        "start_frame": 830,
+        "end_frame": 916
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 11,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 66,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 11,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 67,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 11,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 68,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 11,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 688,
+      "goal_frame_index": 687,
+      "goal_feature_index": 69,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 600
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 11,
+      "event_id": 4,
+      "start_frame": 688,
+      "end_frame": 862,
+      "goal_frame_index": 861,
+      "goal_feature_index": 70,
+      "valid_mask": {
+        "start_frame": 688,
+        "end_frame": 775
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 11,
+      "event_id": 5,
+      "start_frame": 862,
+      "end_frame": 1053,
+      "goal_frame_index": 1052,
+      "goal_feature_index": 71,
+      "valid_mask": {
+        "start_frame": 862,
+        "end_frame": 957
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 12,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 72,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 12,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 73,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 12,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 510,
+      "goal_frame_index": 509,
+      "goal_feature_index": 74,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 12,
+      "event_id": 3,
+      "start_frame": 510,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 75,
+      "valid_mask": {
+        "start_frame": 510,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 12,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 834,
+      "goal_frame_index": 833,
+      "goal_feature_index": 76,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 760
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 12,
+      "event_id": 5,
+      "start_frame": 834,
+      "end_frame": 1008,
+      "goal_frame_index": 1007,
+      "goal_feature_index": 77,
+      "valid_mask": {
+        "start_frame": 834,
+        "end_frame": 921
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 13,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 78,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 13,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 79,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 13,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 80,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 13,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 663,
+      "goal_frame_index": 662,
+      "goal_feature_index": 81,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 587
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 13,
+      "event_id": 4,
+      "start_frame": 663,
+      "end_frame": 839,
+      "goal_frame_index": 838,
+      "goal_feature_index": 82,
+      "valid_mask": {
+        "start_frame": 663,
+        "end_frame": 751
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 13,
+      "event_id": 5,
+      "start_frame": 839,
+      "end_frame": 1013,
+      "goal_frame_index": 1012,
+      "goal_feature_index": 83,
+      "valid_mask": {
+        "start_frame": 839,
+        "end_frame": 926
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 14,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 150,
+      "goal_frame_index": 149,
+      "goal_feature_index": 84,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 75
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 14,
+      "event_id": 1,
+      "start_frame": 150,
+      "end_frame": 332,
+      "goal_frame_index": 331,
+      "goal_feature_index": 85,
+      "valid_mask": {
+        "start_frame": 150,
+        "end_frame": 241
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 14,
+      "event_id": 2,
+      "start_frame": 332,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 86,
+      "valid_mask": {
+        "start_frame": 332,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 14,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 653,
+      "goal_frame_index": 652,
+      "goal_feature_index": 87,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 583
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 14,
+      "event_id": 4,
+      "start_frame": 653,
+      "end_frame": 831,
+      "goal_frame_index": 830,
+      "goal_feature_index": 88,
+      "valid_mask": {
+        "start_frame": 653,
+        "end_frame": 742
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 14,
+      "event_id": 5,
+      "start_frame": 831,
+      "end_frame": 1005,
+      "goal_frame_index": 1004,
+      "goal_feature_index": 89,
+      "valid_mask": {
+        "start_frame": 831,
+        "end_frame": 918
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 15,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 90,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 15,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 91,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 15,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 92,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 15,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 93,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 15,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 832,
+      "goal_frame_index": 831,
+      "goal_feature_index": 94,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 759
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 15,
+      "event_id": 5,
+      "start_frame": 832,
+      "end_frame": 1007,
+      "goal_frame_index": 1006,
+      "goal_feature_index": 95,
+      "valid_mask": {
+        "start_frame": 832,
+        "end_frame": 919
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 16,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 96,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 16,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 97,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 16,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 98,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 16,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 698,
+      "goal_frame_index": 697,
+      "goal_feature_index": 99,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 604
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 16,
+      "event_id": 4,
+      "start_frame": 698,
+      "end_frame": 870,
+      "goal_frame_index": 869,
+      "goal_feature_index": 100,
+      "valid_mask": {
+        "start_frame": 698,
+        "end_frame": 784
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 16,
+      "event_id": 5,
+      "start_frame": 870,
+      "end_frame": 1043,
+      "goal_frame_index": 1042,
+      "goal_feature_index": 101,
+      "valid_mask": {
+        "start_frame": 870,
+        "end_frame": 956
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 17,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 102,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 17,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 103,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 17,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 104,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 17,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 650,
+      "goal_frame_index": 649,
+      "goal_feature_index": 105,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 581
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 17,
+      "event_id": 4,
+      "start_frame": 650,
+      "end_frame": 826,
+      "goal_frame_index": 825,
+      "goal_feature_index": 106,
+      "valid_mask": {
+        "start_frame": 650,
+        "end_frame": 738
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 17,
+      "event_id": 5,
+      "start_frame": 826,
+      "end_frame": 1000,
+      "goal_frame_index": 999,
+      "goal_feature_index": 107,
+      "valid_mask": {
+        "start_frame": 826,
+        "end_frame": 913
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 18,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 108,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 18,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 329,
+      "goal_frame_index": 328,
+      "goal_feature_index": 109,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 238
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 18,
+      "event_id": 2,
+      "start_frame": 329,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 110,
+      "valid_mask": {
+        "start_frame": 329,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 18,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 650,
+      "goal_frame_index": 649,
+      "goal_feature_index": 111,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 580
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 18,
+      "event_id": 4,
+      "start_frame": 650,
+      "end_frame": 828,
+      "goal_frame_index": 827,
+      "goal_feature_index": 112,
+      "valid_mask": {
+        "start_frame": 650,
+        "end_frame": 739
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 18,
+      "event_id": 5,
+      "start_frame": 828,
+      "end_frame": 1000,
+      "goal_frame_index": 999,
+      "goal_feature_index": 113,
+      "valid_mask": {
+        "start_frame": 828,
+        "end_frame": 914
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 19,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 114,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 19,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 115,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 19,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 116,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 19,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 695,
+      "goal_frame_index": 694,
+      "goal_feature_index": 117,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 603
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 19,
+      "event_id": 4,
+      "start_frame": 695,
+      "end_frame": 870,
+      "goal_frame_index": 869,
+      "goal_feature_index": 118,
+      "valid_mask": {
+        "start_frame": 695,
+        "end_frame": 782
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 19,
+      "event_id": 5,
+      "start_frame": 870,
+      "end_frame": 1044,
+      "goal_frame_index": 1043,
+      "goal_feature_index": 119,
+      "valid_mask": {
+        "start_frame": 870,
+        "end_frame": 957
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 20,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 120,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 20,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 121,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 20,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 122,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 20,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 652,
+      "goal_frame_index": 651,
+      "goal_feature_index": 123,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 582
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 20,
+      "event_id": 4,
+      "start_frame": 652,
+      "end_frame": 829,
+      "goal_frame_index": 828,
+      "goal_feature_index": 124,
+      "valid_mask": {
+        "start_frame": 652,
+        "end_frame": 740
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 20,
+      "event_id": 5,
+      "start_frame": 829,
+      "end_frame": 1004,
+      "goal_frame_index": 1003,
+      "goal_feature_index": 125,
+      "valid_mask": {
+        "start_frame": 829,
+        "end_frame": 916
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 21,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 126,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 21,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 127,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 21,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 128,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 21,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 688,
+      "goal_frame_index": 687,
+      "goal_feature_index": 129,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 600
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 21,
+      "event_id": 4,
+      "start_frame": 688,
+      "end_frame": 863,
+      "goal_frame_index": 862,
+      "goal_feature_index": 130,
+      "valid_mask": {
+        "start_frame": 688,
+        "end_frame": 775
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 21,
+      "event_id": 5,
+      "start_frame": 863,
+      "end_frame": 1052,
+      "goal_frame_index": 1051,
+      "goal_feature_index": 131,
+      "valid_mask": {
+        "start_frame": 863,
+        "end_frame": 957
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 22,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 132,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 22,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 133,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 22,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 134,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 22,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 135,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 22,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 826,
+      "goal_frame_index": 825,
+      "goal_feature_index": 136,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 756
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 22,
+      "event_id": 5,
+      "start_frame": 826,
+      "end_frame": 998,
+      "goal_frame_index": 997,
+      "goal_feature_index": 137,
+      "valid_mask": {
+        "start_frame": 826,
+        "end_frame": 912
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 23,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 138,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 23,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 139,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 23,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 510,
+      "goal_frame_index": 509,
+      "goal_feature_index": 140,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 23,
+      "event_id": 3,
+      "start_frame": 510,
+      "end_frame": 685,
+      "goal_frame_index": 684,
+      "goal_feature_index": 141,
+      "valid_mask": {
+        "start_frame": 510,
+        "end_frame": 597
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 23,
+      "event_id": 4,
+      "start_frame": 685,
+      "end_frame": 859,
+      "goal_frame_index": 858,
+      "goal_feature_index": 142,
+      "valid_mask": {
+        "start_frame": 685,
+        "end_frame": 772
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 23,
+      "event_id": 5,
+      "start_frame": 859,
+      "end_frame": 1049,
+      "goal_frame_index": 1048,
+      "goal_feature_index": 143,
+      "valid_mask": {
+        "start_frame": 859,
+        "end_frame": 954
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 24,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 144,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 24,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 145,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 24,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 146,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 24,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 697,
+      "goal_frame_index": 696,
+      "goal_feature_index": 147,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 604
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 24,
+      "event_id": 4,
+      "start_frame": 697,
+      "end_frame": 872,
+      "goal_frame_index": 871,
+      "goal_feature_index": 148,
+      "valid_mask": {
+        "start_frame": 697,
+        "end_frame": 784
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 24,
+      "event_id": 5,
+      "start_frame": 872,
+      "end_frame": 1045,
+      "goal_frame_index": 1044,
+      "goal_feature_index": 149,
+      "valid_mask": {
+        "start_frame": 872,
+        "end_frame": 958
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 25,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 150,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 25,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 329,
+      "goal_frame_index": 328,
+      "goal_feature_index": 151,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 238
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 25,
+      "event_id": 2,
+      "start_frame": 329,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 152,
+      "valid_mask": {
+        "start_frame": 329,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 25,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 652,
+      "goal_frame_index": 651,
+      "goal_feature_index": 153,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 582
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 25,
+      "event_id": 4,
+      "start_frame": 652,
+      "end_frame": 827,
+      "goal_frame_index": 826,
+      "goal_feature_index": 154,
+      "valid_mask": {
+        "start_frame": 652,
+        "end_frame": 739
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 25,
+      "event_id": 5,
+      "start_frame": 827,
+      "end_frame": 1001,
+      "goal_frame_index": 1000,
+      "goal_feature_index": 155,
+      "valid_mask": {
+        "start_frame": 827,
+        "end_frame": 914
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 26,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 156,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 26,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 332,
+      "goal_frame_index": 331,
+      "goal_feature_index": 157,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 26,
+      "event_id": 2,
+      "start_frame": 332,
+      "end_frame": 514,
+      "goal_frame_index": 513,
+      "goal_feature_index": 158,
+      "valid_mask": {
+        "start_frame": 332,
+        "end_frame": 423
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 26,
+      "event_id": 3,
+      "start_frame": 514,
+      "end_frame": 661,
+      "goal_frame_index": 660,
+      "goal_feature_index": 159,
+      "valid_mask": {
+        "start_frame": 514,
+        "end_frame": 587
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 26,
+      "event_id": 4,
+      "start_frame": 661,
+      "end_frame": 836,
+      "goal_frame_index": 835,
+      "goal_feature_index": 160,
+      "valid_mask": {
+        "start_frame": 661,
+        "end_frame": 748
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 26,
+      "event_id": 5,
+      "start_frame": 836,
+      "end_frame": 1010,
+      "goal_frame_index": 1009,
+      "goal_feature_index": 161,
+      "valid_mask": {
+        "start_frame": 836,
+        "end_frame": 923
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 27,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 162,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 27,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 163,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 27,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 514,
+      "goal_frame_index": 513,
+      "goal_feature_index": 164,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 27,
+      "event_id": 3,
+      "start_frame": 514,
+      "end_frame": 699,
+      "goal_frame_index": 698,
+      "goal_feature_index": 165,
+      "valid_mask": {
+        "start_frame": 514,
+        "end_frame": 606
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 27,
+      "event_id": 4,
+      "start_frame": 699,
+      "end_frame": 874,
+      "goal_frame_index": 873,
+      "goal_feature_index": 166,
+      "valid_mask": {
+        "start_frame": 699,
+        "end_frame": 786
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 27,
+      "event_id": 5,
+      "start_frame": 874,
+      "end_frame": 1047,
+      "goal_frame_index": 1046,
+      "goal_feature_index": 167,
+      "valid_mask": {
+        "start_frame": 874,
+        "end_frame": 960
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 28,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 168,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 28,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 169,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 28,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 510,
+      "goal_frame_index": 509,
+      "goal_feature_index": 170,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 28,
+      "event_id": 3,
+      "start_frame": 510,
+      "end_frame": 663,
+      "goal_frame_index": 662,
+      "goal_feature_index": 171,
+      "valid_mask": {
+        "start_frame": 510,
+        "end_frame": 586
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 28,
+      "event_id": 4,
+      "start_frame": 663,
+      "end_frame": 838,
+      "goal_frame_index": 837,
+      "goal_feature_index": 172,
+      "valid_mask": {
+        "start_frame": 663,
+        "end_frame": 750
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 28,
+      "event_id": 5,
+      "start_frame": 838,
+      "end_frame": 1012,
+      "goal_frame_index": 1011,
+      "goal_feature_index": 173,
+      "valid_mask": {
+        "start_frame": 838,
+        "end_frame": 925
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 29,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 174,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 29,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 175,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 29,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 510,
+      "goal_frame_index": 509,
+      "goal_feature_index": 176,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 29,
+      "event_id": 3,
+      "start_frame": 510,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 177,
+      "valid_mask": {
+        "start_frame": 510,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 29,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 859,
+      "goal_frame_index": 858,
+      "goal_feature_index": 178,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 772
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 29,
+      "event_id": 5,
+      "start_frame": 859,
+      "end_frame": 1045,
+      "goal_frame_index": 1044,
+      "goal_feature_index": 179,
+      "valid_mask": {
+        "start_frame": 859,
+        "end_frame": 952
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 30,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 180,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 30,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 181,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 30,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 182,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 30,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 688,
+      "goal_frame_index": 687,
+      "goal_feature_index": 183,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 600
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 30,
+      "event_id": 4,
+      "start_frame": 688,
+      "end_frame": 828,
+      "goal_frame_index": 827,
+      "goal_feature_index": 184,
+      "valid_mask": {
+        "start_frame": 688,
+        "end_frame": 758
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 30,
+      "event_id": 5,
+      "start_frame": 828,
+      "end_frame": 1000,
+      "goal_frame_index": 999,
+      "goal_feature_index": 185,
+      "valid_mask": {
+        "start_frame": 828,
+        "end_frame": 914
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 31,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 186,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 31,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 329,
+      "goal_frame_index": 328,
+      "goal_feature_index": 187,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 238
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 31,
+      "event_id": 2,
+      "start_frame": 329,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 188,
+      "valid_mask": {
+        "start_frame": 329,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 31,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 189,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 31,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 833,
+      "goal_frame_index": 832,
+      "goal_feature_index": 190,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 759
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 31,
+      "event_id": 5,
+      "start_frame": 833,
+      "end_frame": 1007,
+      "goal_frame_index": 1006,
+      "goal_feature_index": 191,
+      "valid_mask": {
+        "start_frame": 833,
+        "end_frame": 920
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 32,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 192,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 32,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 193,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 32,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 194,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 32,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 687,
+      "goal_frame_index": 686,
+      "goal_feature_index": 195,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 599
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 32,
+      "event_id": 4,
+      "start_frame": 687,
+      "end_frame": 839,
+      "goal_frame_index": 838,
+      "goal_feature_index": 196,
+      "valid_mask": {
+        "start_frame": 687,
+        "end_frame": 763
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 32,
+      "event_id": 5,
+      "start_frame": 839,
+      "end_frame": 1013,
+      "goal_frame_index": 1012,
+      "goal_feature_index": 197,
+      "valid_mask": {
+        "start_frame": 839,
+        "end_frame": 926
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 33,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 198,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 33,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 199,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 33,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 200,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 33,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 701,
+      "goal_frame_index": 700,
+      "goal_feature_index": 201,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 606
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 33,
+      "event_id": 4,
+      "start_frame": 701,
+      "end_frame": 876,
+      "goal_frame_index": 875,
+      "goal_feature_index": 202,
+      "valid_mask": {
+        "start_frame": 701,
+        "end_frame": 788
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 33,
+      "event_id": 5,
+      "start_frame": 876,
+      "end_frame": 1050,
+      "goal_frame_index": 1049,
+      "goal_feature_index": 203,
+      "valid_mask": {
+        "start_frame": 876,
+        "end_frame": 963
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 34,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 204,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 34,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 329,
+      "goal_frame_index": 328,
+      "goal_feature_index": 205,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 238
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 34,
+      "event_id": 2,
+      "start_frame": 329,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 206,
+      "valid_mask": {
+        "start_frame": 329,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 34,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 652,
+      "goal_frame_index": 651,
+      "goal_feature_index": 207,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 581
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 34,
+      "event_id": 4,
+      "start_frame": 652,
+      "end_frame": 831,
+      "goal_frame_index": 830,
+      "goal_feature_index": 208,
+      "valid_mask": {
+        "start_frame": 652,
+        "end_frame": 741
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 34,
+      "event_id": 5,
+      "start_frame": 831,
+      "end_frame": 1004,
+      "goal_frame_index": 1003,
+      "goal_feature_index": 209,
+      "valid_mask": {
+        "start_frame": 831,
+        "end_frame": 917
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 35,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 210,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 35,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 329,
+      "goal_frame_index": 328,
+      "goal_feature_index": 211,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 238
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 35,
+      "event_id": 2,
+      "start_frame": 329,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 212,
+      "valid_mask": {
+        "start_frame": 329,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 35,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 686,
+      "goal_frame_index": 685,
+      "goal_feature_index": 213,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 35,
+      "event_id": 4,
+      "start_frame": 686,
+      "end_frame": 836,
+      "goal_frame_index": 835,
+      "goal_feature_index": 214,
+      "valid_mask": {
+        "start_frame": 686,
+        "end_frame": 761
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 35,
+      "event_id": 5,
+      "start_frame": 836,
+      "end_frame": 1010,
+      "goal_frame_index": 1009,
+      "goal_feature_index": 215,
+      "valid_mask": {
+        "start_frame": 836,
+        "end_frame": 923
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 36,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 216,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 36,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 333,
+      "goal_frame_index": 332,
+      "goal_feature_index": 217,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 241
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 36,
+      "event_id": 2,
+      "start_frame": 333,
+      "end_frame": 514,
+      "goal_frame_index": 513,
+      "goal_feature_index": 218,
+      "valid_mask": {
+        "start_frame": 333,
+        "end_frame": 423
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 36,
+      "event_id": 3,
+      "start_frame": 514,
+      "end_frame": 703,
+      "goal_frame_index": 702,
+      "goal_feature_index": 219,
+      "valid_mask": {
+        "start_frame": 514,
+        "end_frame": 608
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 36,
+      "event_id": 4,
+      "start_frame": 703,
+      "end_frame": 877,
+      "goal_frame_index": 876,
+      "goal_feature_index": 220,
+      "valid_mask": {
+        "start_frame": 703,
+        "end_frame": 790
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 36,
+      "event_id": 5,
+      "start_frame": 877,
+      "end_frame": 1050,
+      "goal_frame_index": 1049,
+      "goal_feature_index": 221,
+      "valid_mask": {
+        "start_frame": 877,
+        "end_frame": 963
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 37,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 222,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 37,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 223,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 37,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 514,
+      "goal_frame_index": 513,
+      "goal_feature_index": 224,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 37,
+      "event_id": 3,
+      "start_frame": 514,
+      "end_frame": 653,
+      "goal_frame_index": 652,
+      "goal_feature_index": 225,
+      "valid_mask": {
+        "start_frame": 514,
+        "end_frame": 583
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 37,
+      "event_id": 4,
+      "start_frame": 653,
+      "end_frame": 825,
+      "goal_frame_index": 824,
+      "goal_feature_index": 226,
+      "valid_mask": {
+        "start_frame": 653,
+        "end_frame": 739
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 37,
+      "event_id": 5,
+      "start_frame": 825,
+      "end_frame": 998,
+      "goal_frame_index": 997,
+      "goal_feature_index": 227,
+      "valid_mask": {
+        "start_frame": 825,
+        "end_frame": 911
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 38,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 228,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 38,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 229,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 38,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 230,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 38,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 687,
+      "goal_frame_index": 686,
+      "goal_feature_index": 231,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 599
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 38,
+      "event_id": 4,
+      "start_frame": 687,
+      "end_frame": 827,
+      "goal_frame_index": 826,
+      "goal_feature_index": 232,
+      "valid_mask": {
+        "start_frame": 687,
+        "end_frame": 757
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 38,
+      "event_id": 5,
+      "start_frame": 827,
+      "end_frame": 1003,
+      "goal_frame_index": 1002,
+      "goal_feature_index": 233,
+      "valid_mask": {
+        "start_frame": 827,
+        "end_frame": 915
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 39,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 234,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 39,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 235,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 39,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 236,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 39,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 659,
+      "goal_frame_index": 658,
+      "goal_feature_index": 237,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 585
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 39,
+      "event_id": 4,
+      "start_frame": 659,
+      "end_frame": 833,
+      "goal_frame_index": 832,
+      "goal_feature_index": 238,
+      "valid_mask": {
+        "start_frame": 659,
+        "end_frame": 746
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 39,
+      "event_id": 5,
+      "start_frame": 833,
+      "end_frame": 1006,
+      "goal_frame_index": 1005,
+      "goal_feature_index": 239,
+      "valid_mask": {
+        "start_frame": 833,
+        "end_frame": 919
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 40,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 240,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 40,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 332,
+      "goal_frame_index": 331,
+      "goal_feature_index": 241,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 40,
+      "event_id": 2,
+      "start_frame": 332,
+      "end_frame": 515,
+      "goal_frame_index": 514,
+      "goal_feature_index": 242,
+      "valid_mask": {
+        "start_frame": 332,
+        "end_frame": 423
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 40,
+      "event_id": 3,
+      "start_frame": 515,
+      "end_frame": 703,
+      "goal_frame_index": 702,
+      "goal_feature_index": 243,
+      "valid_mask": {
+        "start_frame": 515,
+        "end_frame": 609
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 40,
+      "event_id": 4,
+      "start_frame": 703,
+      "end_frame": 878,
+      "goal_frame_index": 877,
+      "goal_feature_index": 244,
+      "valid_mask": {
+        "start_frame": 703,
+        "end_frame": 790
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 40,
+      "event_id": 5,
+      "start_frame": 878,
+      "end_frame": 1053,
+      "goal_frame_index": 1052,
+      "goal_feature_index": 245,
+      "valid_mask": {
+        "start_frame": 878,
+        "end_frame": 965
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 41,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 246,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 41,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 247,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 41,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 248,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 41,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 687,
+      "goal_frame_index": 686,
+      "goal_feature_index": 249,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 599
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 41,
+      "event_id": 4,
+      "start_frame": 687,
+      "end_frame": 826,
+      "goal_frame_index": 825,
+      "goal_feature_index": 250,
+      "valid_mask": {
+        "start_frame": 687,
+        "end_frame": 756
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 41,
+      "event_id": 5,
+      "start_frame": 826,
+      "end_frame": 998,
+      "goal_frame_index": 997,
+      "goal_feature_index": 251,
+      "valid_mask": {
+        "start_frame": 826,
+        "end_frame": 912
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 42,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 252,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 42,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 253,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 42,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 254,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 42,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 653,
+      "goal_frame_index": 652,
+      "goal_feature_index": 255,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 583
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 42,
+      "event_id": 4,
+      "start_frame": 653,
+      "end_frame": 827,
+      "goal_frame_index": 826,
+      "goal_feature_index": 256,
+      "valid_mask": {
+        "start_frame": 653,
+        "end_frame": 740
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 42,
+      "event_id": 5,
+      "start_frame": 827,
+      "end_frame": 1000,
+      "goal_frame_index": 999,
+      "goal_feature_index": 257,
+      "valid_mask": {
+        "start_frame": 827,
+        "end_frame": 913
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 43,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 258,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 43,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 259,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 43,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 260,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 43,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 698,
+      "goal_frame_index": 697,
+      "goal_feature_index": 261,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 605
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 43,
+      "event_id": 4,
+      "start_frame": 698,
+      "end_frame": 873,
+      "goal_frame_index": 872,
+      "goal_feature_index": 262,
+      "valid_mask": {
+        "start_frame": 698,
+        "end_frame": 785
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 43,
+      "event_id": 5,
+      "start_frame": 873,
+      "end_frame": 1047,
+      "goal_frame_index": 1046,
+      "goal_feature_index": 263,
+      "valid_mask": {
+        "start_frame": 873,
+        "end_frame": 960
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 44,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 264,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 44,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 265,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 44,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 266,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 44,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 658,
+      "goal_frame_index": 657,
+      "goal_feature_index": 267,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 585
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 44,
+      "event_id": 4,
+      "start_frame": 658,
+      "end_frame": 833,
+      "goal_frame_index": 832,
+      "goal_feature_index": 268,
+      "valid_mask": {
+        "start_frame": 658,
+        "end_frame": 745
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 44,
+      "event_id": 5,
+      "start_frame": 833,
+      "end_frame": 1007,
+      "goal_frame_index": 1006,
+      "goal_feature_index": 269,
+      "valid_mask": {
+        "start_frame": 833,
+        "end_frame": 920
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 45,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 270,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 45,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 271,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 45,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 512,
+      "goal_frame_index": 511,
+      "goal_feature_index": 272,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 45,
+      "event_id": 3,
+      "start_frame": 512,
+      "end_frame": 703,
+      "goal_frame_index": 702,
+      "goal_feature_index": 273,
+      "valid_mask": {
+        "start_frame": 512,
+        "end_frame": 607
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 45,
+      "event_id": 4,
+      "start_frame": 703,
+      "end_frame": 877,
+      "goal_frame_index": 876,
+      "goal_feature_index": 274,
+      "valid_mask": {
+        "start_frame": 703,
+        "end_frame": 790
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 45,
+      "event_id": 5,
+      "start_frame": 877,
+      "end_frame": 1051,
+      "goal_frame_index": 1050,
+      "goal_feature_index": 275,
+      "valid_mask": {
+        "start_frame": 877,
+        "end_frame": 964
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 46,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 149,
+      "goal_frame_index": 148,
+      "goal_feature_index": 276,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 46,
+      "event_id": 1,
+      "start_frame": 149,
+      "end_frame": 331,
+      "goal_frame_index": 330,
+      "goal_feature_index": 277,
+      "valid_mask": {
+        "start_frame": 149,
+        "end_frame": 240
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 46,
+      "event_id": 2,
+      "start_frame": 331,
+      "end_frame": 514,
+      "goal_frame_index": 513,
+      "goal_feature_index": 278,
+      "valid_mask": {
+        "start_frame": 331,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 46,
+      "event_id": 3,
+      "start_frame": 514,
+      "end_frame": 689,
+      "goal_frame_index": 688,
+      "goal_feature_index": 279,
+      "valid_mask": {
+        "start_frame": 514,
+        "end_frame": 601
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 46,
+      "event_id": 4,
+      "start_frame": 689,
+      "end_frame": 861,
+      "goal_frame_index": 860,
+      "goal_feature_index": 280,
+      "valid_mask": {
+        "start_frame": 689,
+        "end_frame": 775
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 46,
+      "event_id": 5,
+      "start_frame": 861,
+      "end_frame": 1052,
+      "goal_frame_index": 1051,
+      "goal_feature_index": 281,
+      "valid_mask": {
+        "start_frame": 861,
+        "end_frame": 956
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 47,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 282,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 47,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 283,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 47,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 511,
+      "goal_frame_index": 510,
+      "goal_feature_index": 284,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 420
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 47,
+      "event_id": 3,
+      "start_frame": 511,
+      "end_frame": 685,
+      "goal_frame_index": 684,
+      "goal_feature_index": 285,
+      "valid_mask": {
+        "start_frame": 511,
+        "end_frame": 598
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 47,
+      "event_id": 4,
+      "start_frame": 685,
+      "end_frame": 861,
+      "goal_frame_index": 860,
+      "goal_feature_index": 286,
+      "valid_mask": {
+        "start_frame": 685,
+        "end_frame": 773
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 47,
+      "event_id": 5,
+      "start_frame": 861,
+      "end_frame": 1046,
+      "goal_frame_index": 1045,
+      "goal_feature_index": 287,
+      "valid_mask": {
+        "start_frame": 861,
+        "end_frame": 953
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 48,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 148,
+      "goal_frame_index": 147,
+      "goal_feature_index": 288,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 74
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 48,
+      "event_id": 1,
+      "start_frame": 148,
+      "end_frame": 330,
+      "goal_frame_index": 329,
+      "goal_feature_index": 289,
+      "valid_mask": {
+        "start_frame": 148,
+        "end_frame": 239
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 48,
+      "event_id": 2,
+      "start_frame": 330,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 290,
+      "valid_mask": {
+        "start_frame": 330,
+        "end_frame": 421
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 48,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 687,
+      "goal_frame_index": 686,
+      "goal_feature_index": 291,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 600
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 48,
+      "event_id": 4,
+      "start_frame": 687,
+      "end_frame": 861,
+      "goal_frame_index": 860,
+      "goal_feature_index": 292,
+      "valid_mask": {
+        "start_frame": 687,
+        "end_frame": 774
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 48,
+      "event_id": 5,
+      "start_frame": 861,
+      "end_frame": 1053,
+      "goal_frame_index": 1052,
+      "goal_feature_index": 293,
+      "valid_mask": {
+        "start_frame": 861,
+        "end_frame": 957
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 49,
+      "event_id": 0,
+      "start_frame": 0,
+      "end_frame": 150,
+      "goal_frame_index": 149,
+      "goal_feature_index": 294,
+      "valid_mask": {
+        "start_frame": 0,
+        "end_frame": 75
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 49,
+      "event_id": 1,
+      "start_frame": 150,
+      "end_frame": 332,
+      "goal_frame_index": 331,
+      "goal_feature_index": 295,
+      "valid_mask": {
+        "start_frame": 150,
+        "end_frame": 241
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 49,
+      "event_id": 2,
+      "start_frame": 332,
+      "end_frame": 513,
+      "goal_frame_index": 512,
+      "goal_feature_index": 296,
+      "valid_mask": {
+        "start_frame": 332,
+        "end_frame": 422
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 49,
+      "event_id": 3,
+      "start_frame": 513,
+      "end_frame": 661,
+      "goal_frame_index": 660,
+      "goal_feature_index": 297,
+      "valid_mask": {
+        "start_frame": 513,
+        "end_frame": 587
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 49,
+      "event_id": 4,
+      "start_frame": 661,
+      "end_frame": 837,
+      "goal_frame_index": 836,
+      "goal_feature_index": 298,
+      "valid_mask": {
+        "start_frame": 661,
+        "end_frame": 749
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    },
+    {
+      "episode_id": 49,
+      "event_id": 5,
+      "start_frame": 837,
+      "end_frame": 1011,
+      "goal_frame_index": 1010,
+      "goal_feature_index": 299,
+      "valid_mask": {
+        "start_frame": 837,
+        "end_frame": 924
+      },
+      "annotation_source": "cover_blocks/aloha_agilex/language_annotation.json"
+    }
+  ]
+}

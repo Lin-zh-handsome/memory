@@ -1,0 +1,61 @@
+{
+  "teacher": {
+    "teacher": "official author release R3M-ResNet18",
+    "repository": "https://huggingface.co/surajnair/r3m-18",
+    "revision": "1a4f077fe01db52c8f5d9f8d6641b6e03f688420",
+    "weight_sha256": "58d7bfcda80d81a4c54582e0dd3b0a73aaa2cafff111325eff729419ea989c1e",
+    "preprocess": {
+      "channel_order": "RGB",
+      "input_dtype": "uint8",
+      "input_range": [
+        0,
+        255
+      ],
+      "resize_short_edge": 256,
+      "center_crop": [
+        224,
+        224
+      ],
+      "interpolation": "PIL bilinear",
+      "scale": "divide by 255 exactly once",
+      "normalize_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "normalize_std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "layer": "layer4",
+    "layer_shape": [
+      512,
+      7,
+      7
+    ],
+    "pool": "adaptive avg-pool 3x3, flatten row-major",
+    "target_shape": [
+      9,
+      512
+    ],
+    "l2_normalization": "per 512-dimensional spatial location"
+  },
+  "comparison_teacher": {
+    "teacher": "torchvision ResNet18 IMAGENET1K_V1",
+    "checkpoint_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "preprocess": "native head RGB, 224x224 bilinear antialias resize, ImageNet normalization",
+    "feature": "global average pool, 512 dimensions, unit L2 norm"
+  },
+  "episodes": 50,
+  "candidate_events": 300,
+  "valid_events": 300,
+  "default_frames": 300,
+  "adjusted_frames": 0,
+  "invalid_events": 0,
+  "raw_frames": 51127,
+  "paired_frames": 51077,
+  "valid_training_anchors": 25478
+}

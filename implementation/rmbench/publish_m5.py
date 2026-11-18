@@ -9,9 +9,13 @@ import sys
 
 def main():
     root = Path(sys.argv[1]).resolve()
+    stage_only = "--stage-only" in sys.argv[2:]
     checkout = Path(__file__).resolve().parents[2]
     relative = Path("experiments/rmbench/m5_goal_keyframe_aux")
     branch = "codex/m5-goal-keyframe-aux"
+    if (root / "annotations/feature_quality.json").is_file():
+        relative = Path("experiments/rmbench/m5_goal_spatial_r3m")
+        branch = "codex/m5-goal-spatial-r3m"
 
     def git(*args):
         return subprocess.check_output(["git", "-C", str(checkout), *args], text=True).strip()
@@ -39,6 +43,8 @@ def main():
             handle.write(entry)
     for seed_root in (root, root / "seed1") if gate["run_seed_1"] else (root,):
         files += list((seed_root / "configs").glob("*.json"))
+        if (seed_root / "goal_readout.json").is_file():
+            files.append(seed_root / "goal_readout.json")
         files += [seed_root / "logs/M5_epochs.csv", seed_root / "evaluation/reset_seeds.json"]
         for directory in (seed_root / "evaluation/M5").glob("epoch_*"):
             files.extend(directory / name for name in ("episodes.jsonl", "summary.json", "evaluation_protocol.json"))
@@ -48,7 +54,10 @@ def main():
         shutil.copyfile(source, dest)
     git("add", "--", *(str(relative / source.relative_to(root)) for source in files))
     if git("diff", "--cached", "--name-only"):
-        print(git("commit", "-m", "Publish complete M5 Cover Blocks experiments"), flush=True)
+        print(git("-c", "user.name=Codex", "-c", "user.email=codex@openai.com", "commit", "-m", "Publish complete M5 Cover Blocks experiments"), flush=True)
+    if stage_only:
+        print(git("rev-parse", "HEAD"), flush=True)
+        return
     git("push", "origin", f"HEAD:refs/heads/{branch}")
     head = git("rev-parse", "HEAD")
     if git("ls-remote", "origin", f"refs/heads/{branch}").split()[0] != head:

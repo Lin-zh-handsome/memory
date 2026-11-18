@@ -46,12 +46,12 @@ def events_from_durations(episode_id, durations, paired_frames, label_source):
 class GoalTargets:
     """Targets are batch labels keyed by chronological anchor, never observations."""
 
-    def __init__(self, directory, episodes):
+    def __init__(self, directory, episodes, feature_shape=(GOAL_DIM,)):
         metadata = json.loads((directory / "events.json").read_text())
+        self.feature_shape = tuple(feature_shape)
         self.features = np.load(directory / "goal_features.npy", allow_pickle=False)
-        if (self.features.shape != (len(metadata["events"]), GOAL_DIM)
-                or not np.isfinite(self.features).all()
-                or not np.allclose(np.linalg.norm(self.features, axis=1), 1, atol=1e-5)):
+        if (self.features.shape != (len(metadata["events"]), *self.feature_shape)
+                or not np.isfinite(self.features).all()):
             raise ValueError("Invalid frozen goal features")
         self.anchor_index = {ep["id"]: np.full(ep["steps"], -1, dtype=np.int64) for ep in episodes}
         end_by_episode = dict.fromkeys(self.anchor_index, 0)
@@ -60,11 +60,19 @@ class GoalTargets:
             start, stop = event["start_frame"], event["end_frame"]
             mask_end = event["valid_mask"]["end_frame"]
             values = self.anchor_index[ep]
-            if not (event["goal_feature"] == feature_index and start == end_by_episode[ep]
+            goal_index = event["goal_frame_index"]
+            feature_row = event.get("goal_feature_index", event.get("goal_feature"))
+            if not (feature_row in (feature_index, None) and start == end_by_episode[ep]
                     and event["valid_mask"]["start_frame"] == start
-                    and start <= mask_end <= stop - 1 < len(values)
-                    and event["goal_frame_index"] == stop - 1):
+                    and start <= mask_end <= start + (stop - start) // 2
+                    and start < stop <= len(values)
+                    and (goal_index is not None and start <= goal_index < stop
+                         and feature_row == feature_index and (mask_end <= goal_index or mask_end == start)
+                         or goal_index is None and feature_row is None and mask_end == start)):
                 raise ValueError(f"Invalid event index: {event}")
+            if feature_row is not None and not np.allclose(
+                    np.linalg.norm(self.features[feature_index], axis=-1), 1, atol=1e-5):
+                raise ValueError(f"Unnormalized goal feature {feature_index}")
             values[start:mask_end] = feature_index
             end_by_episode[ep] = stop
         if any(end_by_episode[ep] != len(values) for ep, values in self.anchor_index.items()):
@@ -73,7 +81,7 @@ class GoalTargets:
     def batch(self, episode_id, start, stop):
         indices = self.anchor_index[episode_id][start:stop]
         valid = indices >= 0
-        labels = np.zeros((len(indices), GOAL_DIM), dtype=self.features.dtype)
+        labels = np.zeros((len(indices), *self.feature_shape), dtype=self.features.dtype)
         labels[valid] = self.features[indices[valid]]
         return {"goal_feature": torch.from_numpy(labels), "goal_valid_mask": torch.from_numpy(valid)}
 
