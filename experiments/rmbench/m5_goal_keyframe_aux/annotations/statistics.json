@@ -1,0 +1,15 @@
+{
+  "episodes": 50,
+  "events": 300,
+  "raw_frames": 51127,
+  "paired_frames": 51077,
+  "valid_training_anchors": 25478,
+  "all_training_anchors": 50727,
+  "teacher": {
+    "teacher": "torchvision ResNet18 IMAGENET1K_V1",
+    "checkpoint_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "preprocess": "native head RGB, 224x224 bilinear antialias resize, ImageNet normalization",
+    "feature": "global average pool, 512 dimensions, unit L2 norm"
+  }
+}

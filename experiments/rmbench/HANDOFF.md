@@ -59,3 +59,7 @@ RMBench 训练使用每任务 50 条官方 `demo_clean` 示范，从头训练 25
 4. 给出论文里现在可以写的结论、需要新实验支持的结论，以及下一条可发给 Codex 的具体执行指令。历史读出或注意力本身不能作为利用历史的因果证据。
 
 [实验索引](README.md) · [多事件任务结果](mn_validation/README.md) · [模型和 M4 入口](../../implementation/rmbench)
+
+## 第三章规划与 M5
+
+[第三章研究计划](chapter3_planning/task_plan.md) · [研究发现](chapter3_planning/findings.md) · [进度与原始记录索引](chapter3_planning/progress.md) · [M5 实现审查入口](m5_goal_keyframe_aux/README.md)

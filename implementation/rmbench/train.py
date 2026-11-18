@@ -38,7 +38,7 @@ def cuda_observations(observations):
     }
 
 
-def move_batch(batch, variant):
+def move_batch(batch, variant, goal_weight=None):
     obs = cuda_observations(batch["obs"])
     action = batch["action"].to("cuda")
     if variant == "M0":
@@ -49,25 +49,34 @@ def move_batch(batch, variant):
             for key, value in obs.items()
         }
         return {"obs": obs, "action": action}
-    return {
-        "obs": obs,
-        "action": action,
-        "anchors": batch["anchors"].to("cuda"),
-        "past_action": batch["past_action"].to("cuda"),
-        "past_mask": batch["past_mask"].to("cuda"),
-    }
+    result = {"obs": obs, "action": action, "anchors": batch["anchors"].to("cuda")}
+    if variant == "M5":
+        result.update(goal_feature=batch["goal_feature"].to("cuda"),
+                      goal_valid_mask=batch["goal_valid_mask"].to("cuda"), goal_weight=goal_weight)
+    else:
+        result.update(past_action=batch["past_action"].to("cuda"),
+                      past_mask=batch["past_mask"].to("cuda"))
+    return result
+
+
+def effective_goal_weight(config, epoch):
+    return config["weight"] * min((epoch - 1) / (config["warmup_epochs"] - 1), 1.0)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", required=True, type=Path)
     parser.add_argument("--data", required=True, type=Path)
-    parser.add_argument("--model", required=True, choices=["M0", "M2", "M3", "M4"])
+    parser.add_argument("--model", required=True, choices=["M0", "M2", "M3", "M4", "M5"])
+    parser.add_argument("--goal-targets", type=Path)
     args = parser.parse_args()
     root, variant = args.root, args.model
     uses_memory = variant != "M0"
+    uses_goal = variant == "M5"
+    if uses_goal != (args.goal_targets is not None):
+        parser.error("--goal-targets is required only for M5")
     cfg = json.loads((root / "configs/protocol.json").read_text())
-    if variant in ("M3", "M4") and "event_thresholds" not in cfg:
+    if variant in ("M3", "M4", "M5") and "event_thresholds" not in cfg:
         raise RuntimeError("Set the event thresholds calibrated on training demonstrations first")
     seed = cfg["seed"]
     random.seed(seed)
@@ -78,6 +87,9 @@ def main():
     configure_precision()
 
     dataset = EpisodeDataset(args.data)
+    if uses_goal:
+        from goal_targets import GoalTargets
+        dataset.goal_targets = GoalTargets(args.goal_targets, dataset.episodes)
     batch_size, horizon = cfg["batch_size"], cfg["horizon"]
     n_action_steps = cfg["n_action_steps"]
     steps_per_epoch = dataset.num_batches(batch_size, horizon, n_action_steps)
@@ -104,16 +116,17 @@ def main():
     (root / "logs").mkdir(exist_ok=True)
     log_path = root / "logs" / f"{variant}_epochs.csv"
     trainable = {name: param.numel() for name, param in policy.named_parameters() if param.requires_grad}
+    auxiliary_prefix = "goal_head." if uses_goal else "past_head."
     parameter_counts = {
         "trainable_parameters": sum(trainable.values()),
         "inference_parameters": sum(size for name, size in trainable.items()
-                                    if not name.startswith("past_head.")),
+                                    if not name.startswith(auxiliary_prefix)),
     }
     model_config = {**cfg, "model": variant, "shape_meta": meta, **parameter_counts,
                     "updates_per_epoch": steps_per_epoch, "samples_per_epoch": samples_per_epoch}
     (root / "configs" / f"{variant}.json").write_text(json.dumps(model_config, indent=2) + "\n")
     first_epoch, consumed_batches, global_step = 1, 0, 0
-    totals = np.zeros(3)
+    totals = np.zeros(4 if uses_goal else 3)
     count = 0
     carry = None
 
@@ -171,13 +184,14 @@ def main():
     for epoch in range(first_epoch, cfg["epochs"] + 1):
         start = time.monotonic()
         policy.train()
+        weight = effective_goal_weight(cfg["goal_aux"], epoch) if uses_goal else None
         torch.cuda.reset_peak_memory_stats()
         for index, cpu_batch in enumerate(
             dataset.batches(batch_size, horizon, n_action_steps, epoch, seed), start=1
         ):
             if index <= consumed_batches:
                 continue
-            batch = move_batch(cpu_batch, variant)
+            batch = move_batch(cpu_batch, variant, weight)
             optimizer.zero_grad(set_to_none=True)
             if uses_memory:
                 if cpu_batch["segment_start"] == 0:
@@ -198,11 +212,22 @@ def main():
                 carry = None if cpu_batch["end_of_episode"] else carry.detach()
             parts = policy.loss_parts if uses_memory else (loss.detach(), 0.0)
             n = batch["action"].shape[0]
-            totals += n * np.array([loss.item(), float(parts[0]), float(parts[1])])
+            total, ddpm, auxiliary = loss.item(), float(parts[0]), float(parts[1])
+            totals[:2] += n * np.array([total, ddpm])
+            if uses_goal:
+                valid = int(cpu_batch["goal_valid_mask"].sum())
+                totals[2] += valid * auxiliary
+                totals[3] += valid
+                auxiliary_metrics = {"goal_loss": auxiliary, "effective_goal_weight": weight,
+                                     "valid_goal_samples": valid}
+            else:
+                totals[2] += n * auxiliary
+                auxiliary_metrics = {"past_loss": auxiliary}
             count += n
             if global_step <= 3 or global_step % 100 == 0:
-                print(json.dumps({"epoch": epoch, "step": global_step, "loss": loss.item(),
-                                  "ddpm_loss": float(parts[0]), "past_loss": float(parts[1]),
+                print(json.dumps({"epoch": epoch, "step": global_step,
+                                  ("total_loss" if uses_goal else "loss"): total,
+                                  "ddpm_loss": ddpm, **auxiliary_metrics,
                                   "lr": scheduler.get_last_lr()[0]}), flush=True)
             if stop and index < steps_per_epoch:
                 save_resume(epoch, index, totals, count, carry)
@@ -212,8 +237,17 @@ def main():
 
         if global_step != epoch * steps_per_epoch or count != samples_per_epoch or carry is not None:
             raise RuntimeError("Sampler updates, samples, or episode boundary disagree with the protocol")
-        row = {"epoch": epoch, "global_step": global_step, "samples": count, "loss": totals[0] / count,
-               "ddpm_loss": totals[1] / count, "past_loss": totals[2] / count,
+        if uses_goal:
+            valid_count = int(totals[3])
+            if valid_count == 0:
+                raise RuntimeError("M5 completed an epoch without valid goal labels")
+            auxiliary_metrics = {"goal_loss": totals[2] / valid_count, "effective_goal_weight": weight,
+                                 "valid_goal_samples": valid_count}
+        else:
+            auxiliary_metrics = {"past_loss": totals[2] / count}
+        row = {"epoch": epoch, "global_step": global_step, "samples": count,
+               ("total_loss" if uses_goal else "loss"): totals[0] / count,
+               "ddpm_loss": totals[1] / count, **auxiliary_metrics,
                "seconds_this_session": time.monotonic() - start,
                "peak_gpu_memory_bytes": torch.cuda.max_memory_allocated()}
         rows = []
@@ -229,7 +263,7 @@ def main():
         if epoch in cfg["eval_epochs"]:
             atomic_save({**header, "epoch": epoch, "ema": ema_policy.state_dict()},
                         ckdir / f"epoch_{epoch:03d}.pt")
-        totals, count, consumed_batches = np.zeros(3), 0, 0
+        totals, count, consumed_batches = np.zeros_like(totals), 0, 0
         checkpointed = (stop or epoch == 1 or epoch in cfg["eval_epochs"]
                         or epoch % cfg["resume_every_epochs"] == 0)
         if checkpointed:

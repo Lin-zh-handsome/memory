@@ -50,9 +50,10 @@ def build_policy(variant, shape_meta, cfg):
     )
     if variant == "M0":
         return DiffusionUnetImagePolicy(**common, **unet)
-    if variant in ("M2", "M3", "M4"):
+    if variant in ("M2", "M3", "M4", "M5"):
         return ContinuousMemoryPolicy(
-            cfg, unet, use_events=variant in ("M3", "M4"), use_event_attention=variant == "M4", **common,
+            cfg, unet, use_events=variant in ("M3", "M4", "M5"),
+            use_event_attention=variant in ("M4", "M5"), use_goal_aux=variant == "M5", **common,
         )
     raise ValueError(f"Unknown model {variant}")
 
@@ -245,7 +246,7 @@ class EventAttention(nn.Module):
 
 
 class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
-    def __init__(self, cfg, unet, use_events, use_event_attention=False, **common):
+    def __init__(self, cfg, unet, use_events, use_event_attention=False, use_goal_aux=False, **common):
         super().__init__(**common, **unet)
         from mamba_ssm import Mamba
 
@@ -254,10 +255,12 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
         self.history_projection = nn.Linear(self.obs_feature_dim, HISTORY_DIM)
         self.history_mamba = Mamba(d_model=HISTORY_DIM, d_state=16, d_conv=4, expand=2)
         self.history_norm = nn.LayerNorm(HISTORY_DIM)
-        self.past_head = nn.Sequential(
-            nn.Linear(HISTORY_DIM, HISTORY_DIM), nn.GELU(),
-            nn.Linear(HISTORY_DIM, PAST_STEPS * self.action_dim),
-        )
+        self.use_goal_aux = use_goal_aux
+        if not use_goal_aux:
+            self.past_head = nn.Sequential(
+                nn.Linear(HISTORY_DIM, HISTORY_DIM), nn.GELU(),
+                nn.Linear(HISTORY_DIM, PAST_STEPS * self.action_dim),
+            )
         condition_dim = self.n_obs_steps * self.obs_feature_dim + HISTORY_DIM
         if use_events:
             # Stanford's encoder puts all RGB features before proprioception.
@@ -276,7 +279,17 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
             self.age_scale = log1p(cfg.get("max_episode_steps", 500))
             condition_dim += HISTORY_DIM
         self.encoder_chunk_size = cfg.get("history_encoder_chunk_size", 64)
-        self.past_loss_weight = cfg.get("past_loss_weight", 0.1)
+        if use_goal_aux:
+            self.goal_latent = nn.Sequential(
+                nn.Linear(self.obs_feature_dim + 2 * HISTORY_DIM, HISTORY_DIM), nn.SiLU(),
+                nn.Linear(HISTORY_DIM, HISTORY_DIM),
+            )
+            self.goal_norm = nn.LayerNorm(HISTORY_DIM)
+            self.goal_head = nn.Sequential(
+                nn.Linear(HISTORY_DIM, HISTORY_DIM), nn.GELU(), nn.Linear(HISTORY_DIM, 512),
+            )
+        else:
+            self.past_loss_weight = cfg.get("past_loss_weight", 0.1)
         self.model = ConditionalUnet1D(
             input_dim=self.action_dim, local_cond_dim=None, global_cond_dim=condition_dim, **unet,
         )
@@ -339,7 +352,12 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
             memory_rows = torch.stack(memory_rows)
             if self.use_event_attention:
                 query = torch.cat((features, history), dim=-1)
-                components.append(self.event_attention(query, memory_rows))
+                retrieved = self.event_attention(query, memory_rows)
+                if self.use_goal_aux:
+                    retrieved = self.goal_norm(retrieved + self.goal_latent(
+                        torch.cat((query, retrieved), dim=-1)
+                    ))
+                components.append(retrieved)
             else:
                 components.append(self.memory_projection(memory_rows))
         conditions = torch.cat(components, dim=-1)
@@ -363,6 +381,11 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
         mask = past_mask.unsqueeze(-1).to(prediction.dtype)
         return ((prediction - label).square() * mask).sum() / (mask.sum() * self.action_dim).clamp_min(1)
 
+    def goal_loss(self, goal_latent, goal_feature, valid_mask):
+        prediction = self.goal_head(goal_latent)
+        error = 1 - F.cosine_similarity(prediction, goal_feature, dim=-1)
+        return error.masked_fill(~valid_mask, 0).sum() / valid_mask.sum().clamp_min(1)
+
     def compute_loss(self, batch, carry=None):
         condition, history, carry = self.segment_condition(batch["obs"], carry)
         if "anchors" in batch:
@@ -380,6 +403,11 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
         else:
             raise ValueError(f"Unsupported prediction type {prediction_type}")
         loss_ddpm = F.mse_loss(prediction, target)
+        if self.use_goal_aux:
+            loss_goal = self.goal_loss(condition[..., -HISTORY_DIM:], batch["goal_feature"],
+                                       batch["goal_valid_mask"])
+            self.loss_parts = (loss_ddpm.detach(), loss_goal.detach())
+            return loss_ddpm + batch["goal_weight"] * loss_goal, carry
         loss_past = self.past_loss(history, batch["past_action"], batch["past_mask"])
         self.loss_parts = (loss_ddpm.detach(), loss_past.detach())
         return loss_ddpm + self.past_loss_weight * loss_past, carry

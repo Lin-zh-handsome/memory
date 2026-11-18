@@ -232,7 +232,10 @@ class Video:
 
 def parameter_counts(policy, variant):
     training = sum(parameter.numel() for parameter in policy.parameters())
-    auxiliary = 0 if variant == "M0" else sum(p.numel() for p in policy.past_head.parameters())
+    head = getattr(policy, "goal_head" if variant == "M5" else "past_head", None)
+    auxiliary = sum(p.numel() for p in head.parameters()) if head is not None else 0
+    if variant == "M5":
+        training -= sum(parameter.numel() for parameter in policy.normalizer.parameters())
     return {"training_parameters": training, "inference_parameters": training - auxiliary}
 
 
@@ -510,7 +513,7 @@ def main():
     verify.add_argument("--seed", type=int)
     verify.add_argument("--steps", type=int, default=17)
     formal = sub.add_parser("rollout")
-    formal.add_argument("--model", choices=["M0", "M2", "M3", "M4"], required=True)
+    formal.add_argument("--model", choices=["M0", "M2", "M3", "M4", "M5"], required=True)
     formal.add_argument("--epoch", type=int, required=True)
     formal.add_argument("--batch-size", type=int, default=2)
     formal.add_argument("--stop-at", type=datetime.fromisoformat,

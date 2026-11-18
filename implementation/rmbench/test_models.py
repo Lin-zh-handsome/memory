@@ -204,7 +204,7 @@ def sample_policy(variant, device):
     return policy.to(device)
 
 
-def check_policy(device, variants=("M2", "M3", "M4")):
+def check_policy(device, variants=("M2", "M3", "M4", "M5")):
     obs = {
         "head_camera": torch.rand(25, 3, 32, 32, device=device),
         "agent_pos": torch.rand(25, 14, device=device),
@@ -239,17 +239,25 @@ def check_policy(device, variants=("M2", "M3", "M4")):
                         lambda module, args, kwargs: close(kwargs["global_cond"], full[index:index + 1]),
                         with_kwargs=True,
                     )
-                    predicted = policy.predict_stream(["a"])
+                    with torch.no_grad():
+                        if variant == "M5":
+                            def unexpected_goal(*_):
+                                raise AssertionError("Inference must not call the supervised goal head")
+                            goal_hook = policy.goal_head.register_forward_hook(unexpected_goal)
+                        predicted = policy.predict_stream(["a"])
+                        if variant == "M5":
+                            goal_hook.remove()
                     hook.remove()
                     close(predicted["action"], predicted["action_pred"][:, 1:9])
                     assert before == policy.memory_diagnostics(["a", "b"])
             close(torch.stack(captures), full_history)
             assert policy.memory_diagnostics(["a"])[0]["observations"] == 25
-            if variant in ("M3", "M4"):
+            if variant in ("M3", "M4", "M5"):
                 stats = policy.memory_diagnostics(["a"])[0]
                 assert stats["initial_retained"] and stats["replacement_count"] > 0
                 assert max(stats["capacities"]) == 8
-                assert not torch.count_nonzero(full[0, -HISTORY_DIM:])
+                if variant != "M5":
+                    assert not torch.count_nonzero(full[0, -HISTORY_DIM:])
                 assert torch.count_nonzero(full[1, -HISTORY_DIM:])
             else:
                 assert not hasattr(policy, "memory_projection")
@@ -273,15 +281,36 @@ def check_policy(device, variants=("M2", "M3", "M4")):
             "past_action": torch.randn(6, 8, 14, device=device),
             "past_mask": torch.arange(6, device=device)[:, None] > torch.arange(8, device=device)[None, :],
         }
+        if variant == "M5":
+            assert not hasattr(policy, "past_head")
+            del batch["past_action"], batch["past_mask"]
+            batch.update(goal_feature=torch.randn(6, 512, device=device),
+                         goal_valid_mask=torch.tensor([True, True, True, False, False, False], device=device),
+                         goal_weight=0.02)
+            condition, _, _ = policy.segment_condition(batch["obs"])
+            z_goal = condition[..., -HISTORY_DIM:]
+            goal, mask = batch["goal_feature"], batch["goal_valid_mask"]
+            goal_loss = policy.goal_loss(z_goal, goal, mask)
+            close(goal_loss, policy.goal_loss(z_goal[mask], goal[mask], mask[mask]))
+            assert policy.goal_loss(z_goal, goal, torch.zeros_like(mask)).item() == 0
+            goal_loss.backward()
+            for param in (policy.goal_latent[0].weight, policy.goal_norm.weight,
+                          policy.goal_head[0].weight, policy.event_attention.output_projection.weight,
+                          policy.history_mamba.in_proj.weight):
+                assert_gradient(param)
+            assert any(param.grad is not None and torch.count_nonzero(param.grad)
+                       for param in policy.obs_encoder.parameters())
+            policy.zero_grad(set_to_none=True)
         loss, state = policy.compute_loss(batch)
         assert torch.isfinite(loss)
         loss.backward()
-        for param in (policy.history_mamba.in_proj.weight, policy.past_head[0].weight):
+        head = policy.goal_head if variant == "M5" else policy.past_head
+        for param in (policy.history_mamba.in_proj.weight, head[0].weight):
             assert_gradient(param)
         if variant == "M3":
             for param in (policy.memory_projection.weight, policy.event_visual_projection.weight):
                 assert_gradient(param)
-        if variant == "M4":
+        if variant in ("M4", "M5"):
             assert_gradient(policy.event_visual_projection.weight)
             for projection in (
                 policy.event_attention.query_projection, policy.event_attention.key_projection,
@@ -310,5 +339,5 @@ if __name__ == "__main__":
     check_event_attention(args.device)
     print("PASS M4 query-dependent event retrieval, padding and detached-event gradients", flush=True)
     check_policy(args.device)
-    print("PASS M2/M3/M4 online lifecycle, eight-step chunks and DDPM memory gradients", flush=True)
+    print("PASS M2/M3/M4/M5 online lifecycle, action chunks, DDPM and M5 goal-only gradients", flush=True)
 

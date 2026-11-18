@@ -62,3 +62,7 @@
 ## M4 方块覆盖训练种子 1
 
 种子 1 完成 250 轮训练和 250 个正式回合，最佳成功率为 38%。[两训练种子对照与布局统计](m4_cover_blocks_seed1/REPORT.md)
+
+## 第三章规划与 M5
+
+[第三章研究计划](chapter3_planning/task_plan.md) · [研究发现](chapter3_planning/findings.md) · [进度与原始记录索引](chapter3_planning/progress.md) · [M5 实现审查入口](m5_goal_keyframe_aux/README.md)

@@ -214,10 +214,11 @@ def prepare(archive, prepared_dir, rmbench, task="put_back_block"):
 
 
 class EpisodeDataset:
-    def __init__(self, prepared_dir):
+    def __init__(self, prepared_dir, goal_targets=None):
         self.root = Path(prepared_dir)
         self.manifest = json.loads((self.root / "manifest.json").read_text(encoding="utf-8"))
         self.episodes = self.manifest["episodes"]
+        self.goal_targets = goal_targets
 
     def _episode_dir(self, episode_id):
         return self.root / f"episode_{episode_id:07d}"
@@ -279,18 +280,22 @@ class EpisodeDataset:
                 obs_stop = length if end_of_episode else stop
                 anchors = np.arange(start, stop)
                 action_indices = anchors[:, None] - 1 + np.arange(horizon)[None, :]
-                past_indices = anchors[:, None] - PAST_STEPS + np.arange(PAST_STEPS)[None, :]
-                past_mask = past_indices >= 0
-                past_actions = actions[past_indices.clip(0, length - 1)]
-                past_actions[~past_mask] = 0
+                if self.goal_targets is None:
+                    past_indices = anchors[:, None] - PAST_STEPS + np.arange(PAST_STEPS)[None, :]
+                    past_mask = past_indices >= 0
+                    past_actions = actions[past_indices.clip(0, length - 1)]
+                    past_actions[~past_mask] = 0
+                    auxiliary = {"past_action": torch.from_numpy(past_actions),
+                                 "past_mask": torch.from_numpy(past_mask)}
+                else:
+                    auxiliary = self.goal_targets.batch(episode_id, start, stop)
                 yield {
                     "obs": {key: values[start:obs_stop] for key, values in observations.items()},
                     "previous_obs": {key: values[max(start - 1, 0):max(start - 1, 0) + 1]
                                      for key, values in observations.items()},
                     "anchors": torch.arange(stop - start),
                     "action": torch.from_numpy(actions[action_indices.clip(0, length - 1)]),
-                    "past_action": torch.from_numpy(past_actions),
-                    "past_mask": torch.from_numpy(past_mask),
+                    **auxiliary,
                     "episode_id": episode_id,
                     "segment_start": start,
                     "end_of_episode": end_of_episode,
