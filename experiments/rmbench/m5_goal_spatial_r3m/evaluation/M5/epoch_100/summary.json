@@ -1,0 +1,19 @@
+{
+  "model": "M5",
+  "epoch": 100,
+  "episodes": 50,
+  "complete": true,
+  "successes": 10,
+  "success_rate": 0.2,
+  "steps": 69656,
+  "replans": 8731,
+  "observe_seconds": 842.1934634214267,
+  "predict_seconds": 4689.818461479619,
+  "render_pci": "18:00.0",
+  "camera_shader": "rt",
+  "render_pcis": [
+    "18:00.0"
+  ],
+  "training_parameters": 306605518,
+  "inference_parameters": 305355470
+}

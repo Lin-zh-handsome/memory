@@ -1,0 +1,8 @@
+{
+  "best_epoch": 150,
+  "successes": 40,
+  "episodes": 50,
+  "threshold_met": true,
+  "run_seed_1": false,
+  "seed_1_deferred": true
+}

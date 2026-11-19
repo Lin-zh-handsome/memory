@@ -1,0 +1,762 @@
+{
+  "0": {
+    "causal_goal_readout": {
+      "scope": "Training demonstrations; neighbor gallery excludes the query episode. No claim on held-out policy training data.",
+      "checkpoints": {
+        "50": {
+          "events": 300,
+          "mean_matched_cosine": 0.9908763766288757,
+          "mean_other_episode_prototype_cosine": 0.9511979222297668,
+          "cross_episode_state_top1": 0.9766666666666667,
+          "cross_episode_uncover_position_top1": 0.9666666666666667
+        },
+        "250": {
+          "events": 300,
+          "mean_matched_cosine": 0.9979252219200134,
+          "mean_other_episode_prototype_cosine": 0.9511979222297668,
+          "cross_episode_state_top1": 1.0,
+          "cross_episode_uncover_position_top1": 1.0
+        }
+      }
+    },
+    "m4": {
+      "50": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 17,
+        "second": 9,
+        "third": 8,
+        "success": 8,
+        "first_correct_later_failed": 9,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 1,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 0
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 3,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 2
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 2,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 2,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 2
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 2,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 2
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 7,
+            "second": 5,
+            "third": 4,
+            "success": 4,
+            "first_correct_later_failed": 3
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 41,
+          "uncover_phase_timeout": 1
+        }
+      },
+      "100": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 18,
+        "second": 10,
+        "third": 10,
+        "success": 10,
+        "first_correct_later_failed": 8,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 1,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 0
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 3,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 1
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 4,
+            "second": 4,
+            "third": 4,
+            "success": 4,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 1,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 1
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 2,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 1
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 7,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 5
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 40
+        }
+      },
+      "150": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 18,
+        "second": 5,
+        "third": 5,
+        "success": 5,
+        "first_correct_later_failed": 13,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 1,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 0
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 3,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 2
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 2,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 1,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 1
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 4,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 4
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 7,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 6
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 45
+        }
+      },
+      "200": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 23,
+        "second": 10,
+        "third": 10,
+        "success": 10,
+        "first_correct_later_failed": 13,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 1,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 1
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 5,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 3
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 5,
+            "second": 5,
+            "third": 5,
+            "success": 5,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 0,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 0
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 5,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 4
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 7,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 5
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 40
+        }
+      },
+      "250": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 28,
+        "second": 16,
+        "third": 16,
+        "success": 16,
+        "first_correct_later_failed": 12,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 4,
+            "second": 3,
+            "third": 3,
+            "success": 3,
+            "first_correct_later_failed": 1
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 5,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 3
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 6,
+            "second": 6,
+            "third": 6,
+            "success": 6,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 0,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 0
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 6,
+            "second": 2,
+            "third": 2,
+            "success": 2,
+            "first_correct_later_failed": 4
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 7,
+            "second": 3,
+            "third": 3,
+            "success": 3,
+            "first_correct_later_failed": 4
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 34
+        }
+      }
+    },
+    "m5": {
+      "50": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 19,
+        "second": 7,
+        "third": 7,
+        "success": 7,
+        "first_correct_later_failed": 12,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 1,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 0
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 2,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 2
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 2,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 1
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 2,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 1
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 5,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 5
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 7,
+            "second": 4,
+            "third": 4,
+            "success": 4,
+            "first_correct_later_failed": 3
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 42,
+          "uncover_phase_timeout": 1
+        }
+      },
+      "100": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 22,
+        "second": 11,
+        "third": 10,
+        "success": 10,
+        "first_correct_later_failed": 12,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 1,
+            "second": 1,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 0
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 3,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 3
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 4,
+            "second": 4,
+            "third": 4,
+            "success": 4,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 0,
+            "second": 0,
+            "third": 0,
+            "success": 0,
+            "first_correct_later_failed": 0
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 6,
+            "second": 2,
+            "third": 1,
+            "success": 1,
+            "first_correct_later_failed": 5
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 8,
+            "second": 4,
+            "third": 4,
+            "success": 4,
+            "first_correct_later_failed": 4
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 40
+        }
+      },
+      "150": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 50,
+        "second": 40,
+        "third": 40,
+        "success": 40,
+        "first_correct_later_failed": 10,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 7,
+            "second": 7,
+            "third": 7,
+            "success": 7,
+            "first_correct_later_failed": 0
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 7,
+            "second": 5,
+            "third": 5,
+            "success": 5,
+            "first_correct_later_failed": 2
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 6,
+            "second": 6,
+            "third": 6,
+            "success": 6,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 8,
+            "second": 7,
+            "third": 7,
+            "success": 7,
+            "first_correct_later_failed": 1
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 10,
+            "second": 10,
+            "third": 10,
+            "success": 10,
+            "first_correct_later_failed": 0
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 12,
+            "second": 5,
+            "third": 5,
+            "success": 5,
+            "first_correct_later_failed": 7
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 10
+        }
+      },
+      "200": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 50,
+        "second": 38,
+        "third": 38,
+        "success": 38,
+        "first_correct_later_failed": 12,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 7,
+            "second": 5,
+            "third": 5,
+            "success": 5,
+            "first_correct_later_failed": 2
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 7,
+            "second": 7,
+            "third": 7,
+            "success": 7,
+            "first_correct_later_failed": 0
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 6,
+            "second": 6,
+            "third": 6,
+            "success": 6,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 8,
+            "second": 7,
+            "third": 7,
+            "success": 7,
+            "first_correct_later_failed": 1
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 10,
+            "second": 10,
+            "third": 10,
+            "success": 10,
+            "first_correct_later_failed": 0
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 12,
+            "second": 3,
+            "third": 3,
+            "success": 3,
+            "first_correct_later_failed": 9
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 12
+        }
+      },
+      "250": {
+        "episodes": 50,
+        "covered": 50,
+        "first": 50,
+        "second": 39,
+        "third": 39,
+        "success": 39,
+        "first_correct_later_failed": 11,
+        "layouts": {
+          "中左右": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 7,
+            "second": 4,
+            "third": 4,
+            "success": 4,
+            "first_correct_later_failed": 3
+          },
+          "右左中": {
+            "episodes": 7,
+            "covered": 7,
+            "first": 7,
+            "second": 7,
+            "third": 7,
+            "success": 7,
+            "first_correct_later_failed": 0
+          },
+          "左中右": {
+            "episodes": 6,
+            "covered": 6,
+            "first": 6,
+            "second": 6,
+            "third": 6,
+            "success": 6,
+            "first_correct_later_failed": 0
+          },
+          "左右中": {
+            "episodes": 8,
+            "covered": 8,
+            "first": 8,
+            "second": 8,
+            "third": 8,
+            "success": 8,
+            "first_correct_later_failed": 0
+          },
+          "右中左": {
+            "episodes": 10,
+            "covered": 10,
+            "first": 10,
+            "second": 10,
+            "third": 10,
+            "success": 10,
+            "first_correct_later_failed": 0
+          },
+          "中右左": {
+            "episodes": 12,
+            "covered": 12,
+            "first": 12,
+            "second": 4,
+            "third": 4,
+            "success": 4,
+            "first_correct_later_failed": 8
+          }
+        },
+        "failures": {
+          "invalid_uncover_order": 11
+        }
+      }
+    },
+    "m4_best_epoch": 250,
+    "m5_best_epoch": 150,
+    "losses": {
+      "1": {
+        "total_loss": 0.2856822567380816,
+        "ddpm_loss": 0.2856822567380816,
+        "goal_loss": 0.97777457805357,
+        "effective_goal_weight": 0.0,
+        "valid_goal_samples": 25478.0
+      },
+      "10": {
+        "total_loss": 0.02165536548038526,
+        "ddpm_loss": 0.021231791483721597,
+        "goal_loss": 0.024069807501581796,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 25478.0
+      },
+      "50": {
+        "total_loss": 0.0057462042675441695,
+        "ddpm_loss": 0.005567115287134066,
+        "goal_loss": 0.010405113604447081,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 25478.0
+      },
+      "100": {
+        "total_loss": 0.002926911706448142,
+        "ddpm_loss": 0.002835277182170561,
+        "goal_loss": 0.005489741205572435,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 25478.0
+      },
+      "150": {
+        "total_loss": 0.0014275967988798075,
+        "ddpm_loss": 0.0013754408719460346,
+        "goal_loss": 0.00339429668723268,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 25478.0
+      },
+      "200": {
+        "total_loss": 0.0007793677545102201,
+        "ddpm_loss": 0.0007463107256800229,
+        "goal_loss": 0.0022380943328611713,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 25478.0
+      },
+      "250": {
+        "total_loss": 0.0005435576609464671,
+        "ddpm_loss": 0.0005169118603551048,
+        "goal_loss": 0.00179635284158062,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 25478.0
+      }
+    }
+  }
+}

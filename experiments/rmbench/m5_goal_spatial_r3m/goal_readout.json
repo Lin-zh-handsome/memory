@@ -1,0 +1,19 @@
+{
+  "scope": "Training demonstrations; neighbor gallery excludes the query episode. No claim on held-out policy training data.",
+  "checkpoints": {
+    "50": {
+      "events": 300,
+      "mean_matched_cosine": 0.9908763766288757,
+      "mean_other_episode_prototype_cosine": 0.9511979222297668,
+      "cross_episode_state_top1": 0.9766666666666667,
+      "cross_episode_uncover_position_top1": 0.9666666666666667
+    },
+    "250": {
+      "events": 300,
+      "mean_matched_cosine": 0.9979252219200134,
+      "mean_other_episode_prototype_cosine": 0.9511979222297668,
+      "cross_episode_state_top1": 1.0,
+      "cross_episode_uncover_position_top1": 1.0
+    }
+  }
+}

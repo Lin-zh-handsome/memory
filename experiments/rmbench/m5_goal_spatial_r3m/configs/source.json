@@ -1,0 +1,67 @@
+{
+  "rmbench": "7d1cdfc7661c273a7a5c5f6126e2d1a7f0a3f4b7",
+  "environment_patches": [
+    "rmbench_render_device.patch",
+    "rmbench_qpos_workers.patch"
+  ],
+  "expert_archive": "https://huggingface.co/datasets/TianxingChen/RMBench/resolve/main/data/cover_blocks/demo_clean.zip",
+  "package_versions": {
+    "torch": "2.4.1",
+    "torchvision": "0.19.1",
+    "mamba-ssm": "2.2.2",
+    "diffusers": "0.11.1",
+    "sapien": "3.0.0b1",
+    "warp-lang": "1.12.0",
+    "h5py": "3.16.0",
+    "opencv-python": "4.11.0.86",
+    "huggingface-hub": "0.25.0"
+  },
+  "implementation_commit": "f232b66979d60e4a7530c1bad33ae8b8dcd1049f",
+  "baseline_commit": "bfaec495f1db1ca2af84308348ec56aad45cc3b0",
+  "baseline_thresholds": "reuse matched M4 threshold calibration by training seed",
+  "target_version": "spatial-r3m-v1",
+  "teacher": {
+    "teacher": "official author release R3M-ResNet18",
+    "repository": "https://huggingface.co/surajnair/r3m-18",
+    "revision": "1a4f077fe01db52c8f5d9f8d6641b6e03f688420",
+    "weight_sha256": "58d7bfcda80d81a4c54582e0dd3b0a73aaa2cafff111325eff729419ea989c1e",
+    "preprocess": {
+      "channel_order": "RGB",
+      "input_dtype": "uint8",
+      "input_range": [
+        0,
+        255
+      ],
+      "resize_short_edge": 256,
+      "center_crop": [
+        224,
+        224
+      ],
+      "interpolation": "PIL bilinear",
+      "scale": "divide by 255 exactly once",
+      "normalize_mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "normalize_std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "layer": "layer4",
+    "layer_shape": [
+      512,
+      7,
+      7
+    ],
+    "pool": "adaptive avg-pool 3x3, flatten row-major",
+    "target_shape": [
+      9,
+      512
+    ],
+    "l2_normalization": "per 512-dimensional spatial location"
+  },
+  "old_global_experiment": "experiments/rmbench/m5_goal_keyframe_aux, 22 evaluated / 1 success, stopped by user"
+}
