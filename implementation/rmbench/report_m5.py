@@ -69,7 +69,7 @@ def loss_summary(root):
     return sums
 
 
-def report(root, baselines, seed_roots):
+def report(root, baselines, seed_roots, defer_seed1=False):
     records = {}
     sections = []
     for seed, path in seed_roots.items():
@@ -135,11 +135,15 @@ def report(root, baselines, seed_roots):
                       "查询回合不进入候选库，但策略曾用这些示范训练。闭环决策能力由独立环境评测衡量。", ""]
         sections.extend(lines)
     reached = records[0]["m5"][records[0]["m5_best_epoch"]]["success"] >= 20
-    if reached != (1 in records):
+    if (reached and not defer_seed1) != (1 in records):
         raise ValueError("Seed 1 presence disagrees with the 40% gate")
     spatial = (root / "annotations/feature_quality.json").is_file()
     teacher = ("冻结官方 R3M-ResNet18 从 layer4 生成 3×3 个 512 维位置表征，每个位置分别归一化。"
                if spatial else "冻结 ImageNet ResNet18（残差视觉网络）离线生成 512 维归一化标签。")
+    seed_gate_note = "种子 0 的最佳成功率低于 40%，本轮保留种子 0 的完整结果。"
+    if reached:
+        seed_gate_note = ("种子 0 达到 40% 门槛。按用户安排，种子 1 暂缓。"
+                          if defer_seed1 else "种子 0 达到 40% 门槛，已执行种子 1。")
     intro = ["# M5 下一关键状态辅助监督 · RMBench 方块覆盖", "",
              "M5 保留 M4 的连续历史、事件写入淘汰、交叉注意力和扩散动作网络。"
              "用于重构过去动作的辅助头改为预测下一关键帧视觉表征；预测使用的潜在向量也直接送给动作头。",
@@ -148,8 +152,7 @@ def report(root, baselines, seed_roots):
              "每个事件用最后一张有效 RGB 形成目标，只有前半段的锚点使用目标损失。",
              teacher,
              "参见 [标注统计](annotations/statistics.json) 和 [复现步骤](README.md)。",
-             "", "种子 0 达到 40% 门槛，已执行种子 1。" if reached else
-             "种子 0 的最佳成功率低于 40%，本轮保留种子 0 的完整结果。", ""]
+             "", seed_gate_note, ""]
     comparison = records[0]
     delta = (comparison["m5"][comparison["m5_best_epoch"]]["success"]
              - comparison["m4"][comparison["m4_best_epoch"]]["success"])

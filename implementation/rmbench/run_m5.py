@@ -133,6 +133,8 @@ def main():
         parser.add_argument(f"--{item}", type=lambda p: Path(p).resolve(), required=True)
     parser.add_argument("--two-gpus", action="store_true", help="Allow one extra physical GPU for checkpoints")
     parser.add_argument("--spatial-r3m", action="store_true")
+    parser.add_argument("--defer-seed1", action="store_true",
+                        help="Finish and report seed 0 while leaving seed 1 for a later run")
     parser.add_argument("--stage-results", action="store_true", help="Commit completed server results for publication")
     parser.add_argument("--publish", action="store_true", help="Publish the completed report and compact results")
     args = parser.parse_args()
@@ -157,9 +159,11 @@ def main():
         metrics = {ep: stage_metrics(rows) for ep, rows in read_results(args.root, "M5").items()}
         best = best_epoch(metrics)
         gate = metrics[best]["success"] >= 20
+        run_seed_1 = gate and not args.defer_seed1
         write_json(args.root / "seed_gate.json", {"best_epoch": best, "successes": metrics[best]["success"],
-                   "episodes": 50, "run_seed_1": gate})
-        if gate:
+                   "episodes": 50, "threshold_met": gate, "run_seed_1": run_seed_1,
+                   "seed_1_deferred": gate and args.defer_seed1})
+        if run_seed_1:
             seed_roots[1] = args.root / "seed1"
             prepare_seed(seed_roots[1], references[1], 1, args.spatial_r3m)
             run_seed(args, seed_roots[1], 1, lock)
@@ -177,7 +181,7 @@ def main():
                         raise RuntimeError(f"M5 spatial readout failed for seed {seed}")
                 finally:
                     stop_own_job(probe)
-        report(args.root, references, seed_roots)
+        report(args.root, references, seed_roots, defer_seed1=args.defer_seed1)
         record("complete", seeds=list(seed_roots))
         if args.publish or args.stage_results:
             command = [sys.executable, str(Path(__file__).with_name("publish_m5.py")), str(args.root)]
