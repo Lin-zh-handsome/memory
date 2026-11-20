@@ -31,8 +31,10 @@
 
 先读本目录的 task_plan.md 和 findings.md，再读对应报告。RMBench 已发布的报告目录见 [实验分支](https://github.com/Lin-zh-handsome/memory/tree/codex/rmbench-memory-validation/experiments/rmbench)。原 M4 实验 B 正式结果在 mn_validation/m4_cover_blocks/，M3 单回合重放在 mn_validation/diagnostics/seed_100000/。首次揭盖时间线与历史替换使用后续独立诊断报告，可配合逐回合记录复核。
 
-下次发布时，本目录及五个 M4 实验的三件套沿原路径加入 Git。对旧 .planning 和旧队列目录，以实验为单位放入本目录的 history/，继续保留任务计划、研究发现和进度三份文件，把记录中的过期安排明确写成历史状态。Coffee 仅在第三章交接中引用已发布的 3.2 分支，实验文件仍在该历史分支。
+第三章与各实验的三份规划文档沿原路径保存。旧实验规划归档见 [history](history/)。Coffee 实验文件在历史分支 3.2。
 
 ## M5 下一关键状态辅助监督
 
-用户已批准 M5，保留原 M4 写入和动作协议，把过去动作重构改为预测下一关键帧视觉特征。独立规划见 [M5 进度](../m5_goal_keyframe_aux/progress.md)。当前已完成实现与训练前检查。
+2026-11-20 已核对空间版 M5 种子 0 的五组环境种子均为 100000–100049，每个检查点各 50 回合，训练共 250 轮。第 50、100、150、200、250 轮分别为 7/50（14%）、10/50（20%）、40/50（80%）、38/50（76%）、39/50（78%）。种子 1 按用户安排暂缓。
+
+[空间版 M5 正式报告](../m5_goal_spatial_r3m/REPORT.md) · [空间版 M5 计划](../m5_goal_spatial_r3m/task_plan.md) · [空间版 M5 发现](../m5_goal_spatial_r3m/findings.md) · [空间版 M5 进度](../m5_goal_spatial_r3m/progress.md)
