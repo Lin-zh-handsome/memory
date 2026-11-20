@@ -307,6 +307,8 @@ if __name__ == "__main__":
     parser.add_argument("archive", type=Path)
     parser.add_argument("prepared_dir", type=Path)
     parser.add_argument("rmbench", type=Path)
-    parser.add_argument("--task", choices=["put_back_block", "swap_blocks", "cover_blocks", "battery_try"], default="put_back_block")
+    parser.add_argument("--task", choices=["put_back_block", "swap_blocks", "cover_blocks", "battery_try",
+                                           "observe_and_pickup", "rearrange_blocks", "swap_T",
+                                           "blocks_ranking_try", "press_button"], default="put_back_block")
     args = parser.parse_args()
     prepare(args.archive, args.prepared_dir, args.rmbench, args.task)

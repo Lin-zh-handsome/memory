@@ -15,7 +15,7 @@ import numpy as np
 import torch
 
 from data import EpisodeDataset, observation_meta
-from models import build_policy
+from models import EVENT_VARIANTS, PAST_ACTION_VARIANTS, POLICY_VARIANTS, build_policy
 
 
 def atomic_save(payload, path):
@@ -53,7 +53,7 @@ def move_batch(batch, variant, goal_weight=None):
     if variant == "M5":
         result.update(goal_feature=batch["goal_feature"].to("cuda"),
                       goal_valid_mask=batch["goal_valid_mask"].to("cuda"), goal_weight=goal_weight)
-    else:
+    elif variant in PAST_ACTION_VARIANTS:
         result.update(past_action=batch["past_action"].to("cuda"),
                       past_mask=batch["past_mask"].to("cuda"))
     return result
@@ -67,16 +67,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", required=True, type=Path)
     parser.add_argument("--data", required=True, type=Path)
-    parser.add_argument("--model", required=True, choices=["M0", "M2", "M3", "M4", "M5"])
+    parser.add_argument("--model", required=True, choices=POLICY_VARIANTS)
     parser.add_argument("--goal-targets", type=Path)
     args = parser.parse_args()
     root, variant = args.root, args.model
     uses_memory = variant != "M0"
     uses_goal = variant == "M5"
+    uses_past = variant in PAST_ACTION_VARIANTS
     if uses_goal != (args.goal_targets is not None):
         parser.error("--goal-targets is required only for M5")
     cfg = json.loads((root / "configs/protocol.json").read_text())
-    if variant in ("M3", "M4", "M5") and "event_thresholds" not in cfg:
+    if variant in EVENT_VARIANTS and "event_thresholds" not in cfg:
         raise RuntimeError("Set the event thresholds calibrated on training demonstrations first")
     seed = cfg["seed"]
     random.seed(seed)
@@ -221,9 +222,11 @@ def main():
                 totals[3] += valid
                 auxiliary_metrics = {"goal_loss": auxiliary, "effective_goal_weight": weight,
                                      "valid_goal_samples": valid}
-            else:
+            elif uses_past:
                 totals[2] += n * auxiliary
                 auxiliary_metrics = {"past_loss": auxiliary}
+            else:
+                auxiliary_metrics = {}
             count += n
             if global_step <= 3 or global_step % 100 == 0:
                 print(json.dumps({"epoch": epoch, "step": global_step,
@@ -244,8 +247,10 @@ def main():
                 raise RuntimeError("M5 completed an epoch without valid goal labels")
             auxiliary_metrics = {"goal_loss": totals[2] / valid_count, "effective_goal_weight": weight,
                                  "valid_goal_samples": valid_count}
-        else:
+        elif uses_past or variant == "M0":
             auxiliary_metrics = {"past_loss": totals[2] / count}
+        else:
+            auxiliary_metrics = {}
         row = {"epoch": epoch, "global_step": global_step, "samples": count,
                ("total_loss" if uses_goal else "loss"): totals[0] / count,
                "ddpm_loss": totals[1] / count, **auxiliary_metrics,

@@ -22,6 +22,9 @@ from diffusion_policy.policy.diffusion_unet_image_policy import DiffusionUnetIma
 MEMORY_CAPACITY = 8
 HISTORY_DIM = 256
 PAST_STEPS = 8
+PAST_ACTION_VARIANTS = ("M2", "M3", "M4")
+EVENT_VARIANTS = ("M3", "M4", "M5", "memory_only")
+POLICY_VARIANTS = ("M0", *PAST_ACTION_VARIANTS, "M5", "mamba_only", "memory_only")
 
 
 def build_policy(variant, shape_meta, cfg):
@@ -50,10 +53,12 @@ def build_policy(variant, shape_meta, cfg):
     )
     if variant == "M0":
         return DiffusionUnetImagePolicy(**common, **unet)
-    if variant in ("M2", "M3", "M4", "M5"):
+    if variant in POLICY_VARIANTS:
         return ContinuousMemoryPolicy(
-            cfg, unet, use_events=variant in ("M3", "M4", "M5"),
-            use_event_attention=variant in ("M4", "M5"), use_goal_aux=variant == "M5", **common,
+            cfg, unet, use_events=variant in EVENT_VARIANTS,
+            use_event_attention=variant in ("M4", "M5", "memory_only"),
+            use_goal_aux=variant == "M5", use_shared_fusion=variant in ("M5", "memory_only"),
+            use_past_aux=variant in PAST_ACTION_VARIANTS, **common,
         )
     raise ValueError(f"Unknown model {variant}")
 
@@ -246,7 +251,8 @@ class EventAttention(nn.Module):
 
 
 class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
-    def __init__(self, cfg, unet, use_events, use_event_attention=False, use_goal_aux=False, **common):
+    def __init__(self, cfg, unet, use_events, use_event_attention=False,
+                 use_goal_aux=False, use_shared_fusion=None, use_past_aux=None, **common):
         super().__init__(**common, **unet)
         from mamba_ssm import Mamba
 
@@ -256,7 +262,9 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
         self.history_mamba = Mamba(d_model=HISTORY_DIM, d_state=16, d_conv=4, expand=2)
         self.history_norm = nn.LayerNorm(HISTORY_DIM)
         self.use_goal_aux = use_goal_aux
-        if not use_goal_aux:
+        self.use_shared_fusion = use_goal_aux if use_shared_fusion is None else use_shared_fusion
+        self.use_past_aux = not use_goal_aux if use_past_aux is None else use_past_aux
+        if self.use_past_aux:
             self.past_head = nn.Sequential(
                 nn.Linear(HISTORY_DIM, HISTORY_DIM), nn.GELU(),
                 nn.Linear(HISTORY_DIM, PAST_STEPS * self.action_dim),
@@ -279,7 +287,7 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
             self.age_scale = log1p(cfg.get("max_episode_steps", 500))
             condition_dim += HISTORY_DIM
         self.encoder_chunk_size = cfg.get("history_encoder_chunk_size", 64)
-        if use_goal_aux:
+        if self.use_shared_fusion:
             self.goal_latent = nn.Sequential(
                 nn.Linear(self.obs_feature_dim + 2 * HISTORY_DIM, HISTORY_DIM), nn.SiLU(),
                 nn.Linear(HISTORY_DIM, HISTORY_DIM),
@@ -289,11 +297,14 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
             self.goal_head = nn.Sequential(
                 nn.Linear(HISTORY_DIM, HISTORY_DIM), nn.GELU(), nn.Linear(HISTORY_DIM, prod(self.goal_shape)),
             )
-        else:
+        if self.use_past_aux:
             self.past_loss_weight = cfg.get("past_loss_weight", 0.1)
         self.model = ConditionalUnet1D(
             input_dim=self.action_dim, local_cond_dim=None, global_cond_dim=condition_dim, **unet,
         )
+        if self.use_shared_fusion and not self.use_goal_aux:
+            # Match M5's initialized action network and RNG, then drop its training-only head.
+            del self.goal_head
         self._online = {}
 
     def encode_observations(self, obs):
@@ -354,7 +365,7 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
             if self.use_event_attention:
                 query = torch.cat((features, history), dim=-1)
                 retrieved = self.event_attention(query, memory_rows)
-                if self.use_goal_aux:
+                if self.use_shared_fusion:
                     retrieved = self.goal_norm(retrieved + self.goal_latent(
                         torch.cat((query, retrieved), dim=-1)
                     ))
@@ -413,6 +424,9 @@ class ContinuousMemoryPolicy(DiffusionUnetImagePolicy):
                                        batch["goal_valid_mask"])
             self.loss_parts = (loss_ddpm.detach(), loss_goal.detach())
             return loss_ddpm + batch["goal_weight"] * loss_goal, carry
+        if not self.use_past_aux:
+            self.loss_parts = (loss_ddpm.detach(), loss_ddpm.new_zeros(()))
+            return loss_ddpm, carry
         loss_past = self.past_loss(history, batch["past_action"], batch["past_mask"])
         self.loss_parts = (loss_ddpm.detach(), loss_past.detach())
         return loss_ddpm + self.past_loss_weight * loss_past, carry

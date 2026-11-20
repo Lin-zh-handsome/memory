@@ -1,0 +1,80 @@
+{
+  "task": "cover_blocks",
+  "training_seed": 0,
+  "environment_seed": 100000,
+  "records": [
+    {
+      "model": "memory_only",
+      "ema_global_step": 8180,
+      "steps": 17,
+      "observations": 18,
+      "history_updates": 18,
+      "replans": 3,
+      "action_shapes": [
+        [
+          1,
+          8,
+          14
+        ],
+        [
+          1,
+          8,
+          14
+        ],
+        [
+          1,
+          8,
+          14
+        ]
+      ],
+      "writes": 12,
+      "surviving_event_times": [
+        0,
+        1,
+        2,
+        5,
+        9,
+        11,
+        16,
+        17
+      ],
+      "official_success": false,
+      "official_step_limit": 1500,
+      "completion": "diagnostic_cutoff_17",
+      "render_pci": "5d:00.0"
+    },
+    {
+      "model": "mamba_only",
+      "ema_global_step": 8180,
+      "steps": 17,
+      "observations": 18,
+      "history_updates": 18,
+      "replans": 3,
+      "action_shapes": [
+        [
+          1,
+          8,
+          14
+        ],
+        [
+          1,
+          8,
+          14
+        ],
+        [
+          1,
+          8,
+          14
+        ]
+      ],
+      "writes": 0,
+      "surviving_event_times": [],
+      "official_success": false,
+      "official_step_limit": 1500,
+      "completion": "diagnostic_cutoff_17",
+      "render_pci": "5d:00.0"
+    }
+  ],
+  "matched_initial_state": true,
+  "formal_evaluation": false
+}

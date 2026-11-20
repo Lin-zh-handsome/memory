@@ -60,6 +60,8 @@ def report_state(task, env):
         combination = [int(bit) for bit in env.get_curr_combination()] if all(placed) else None
         return {**state, "stage": 3 if env.eval_success else sum(placed), "installed": placed,
                 "combination": combination, "gauge_on": bool(env.check_dashboard_on())}
+    if task != "put_back_block":
+        return {**state, "stage": int(bool(env.eval_success))}
     position = np.asarray(env.block.get_pose().p)
     error = np.linalg.norm(position[:2] - np.asarray(env.target_pose)[:2])
     return {**state, "stage": int(env.stage_id), "button_presses": int(env.press_cnt),

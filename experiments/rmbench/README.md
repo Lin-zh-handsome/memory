@@ -1,5 +1,11 @@
 # RMBench 方块归位与方块交换
 
+## 当前发布 · 九任务四组消融
+
+[最新运行快照](m5_ablation_seeds/STATUS.md) · [正式结果总表](m5_ablation_seeds/REPORT.md) · [评测协议](m5_ablation_seeds/task_plan.md) · [代码审查发现](m5_ablation_seeds/findings.md) · [执行进度](m5_ablation_seeds/progress.md)
+
+## 早期实验记录
+
 [四项任务进度、全部检查点结果及 M4 状态](PROGRESS.md)
 
 本实验使用 RMBench 官方 `demo_clean` 的每任务 50 条专家示范。各模型从头训练 250 轮，训练种子为 0。同一任务的所有模型和检查点使用同一组 50 个固定环境种子，以官方成功判定统计闭环成功率。

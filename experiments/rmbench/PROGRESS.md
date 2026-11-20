@@ -1,5 +1,11 @@
 # RMBench 实验进度汇报
 
+## 当前发布 · 九任务四组消融
+
+[最新运行快照](m5_ablation_seeds/STATUS.md) · [正式结果总表](m5_ablation_seeds/REPORT.md) · [评测协议](m5_ablation_seeds/task_plan.md) · [代码审查发现](m5_ablation_seeds/findings.md) · [执行进度](m5_ablation_seeds/progress.md)
+
+## 早期实验记录
+
 截至北京时间 2026 年 11 月 16 日，正式实验共完成 10 组训练，每组 250 轮。50 个评测检查点中，49 个跑满 50 回合，另有 1 个按要求停止，共记录 2,458 回合。M3 在方块归位和方块交换达到 100%，在电池试插达到 94%。方块覆盖的最佳实测成绩更新为 M4 第 250 轮 32%（16/50）。
 
 ## 检查点结果

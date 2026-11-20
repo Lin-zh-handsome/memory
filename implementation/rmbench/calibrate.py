@@ -24,6 +24,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", required=True, type=Path)
     parser.add_argument("--data", required=True, type=Path)
+    parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
     protocol = args.root / "configs/protocol.json"
     cfg = json.loads(protocol.read_text())
@@ -39,14 +40,18 @@ def main():
     configure_precision()
     policy = build_policy("M3", observation_meta(cfg), cfg)
     policy.set_normalizer(dataset.normalizer())
-    policy.cuda().eval()
+    policy.to(args.device).eval()
     count = min(calibration["train_episodes"], len(dataset.episodes))
     indices = np.linspace(0, len(dataset.episodes) - 1, count, dtype=int)
     episode_ids = [dataset.episodes[index]["id"] for index in indices]
     scores = {"visual": [], "history": []}
 
     for episode_id in episode_ids:
-        observations = cuda_observations(dataset.episode_observations(episode_id))
+        raw = dataset.episode_observations(episode_id)
+        observations = (cuda_observations(raw) if args.device == "cuda" else {
+            key: value.float().div_(255) if value.dtype == torch.uint8 else value
+            for key, value in raw.items()
+        })
         keys = tuple(observations)
         chunks = zip(*(observations[key].split(cfg["batch_size"]) for key in keys))
         features = torch.cat([policy.encode_observations(dict(zip(keys, chunk))) for chunk in chunks])

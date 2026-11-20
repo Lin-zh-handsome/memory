@@ -1,5 +1,13 @@
 # 连续 Mamba 与情景记忆 · 研究交接
 
+## 当前发布 · 九任务四组消融
+
+[最新运行快照](m5_ablation_seeds/STATUS.md) · [正式结果总表](m5_ablation_seeds/REPORT.md) · [评测协议](m5_ablation_seeds/task_plan.md) · [代码审查发现](m5_ablation_seeds/findings.md) · [执行进度](m5_ablation_seeds/progress.md)
+
+[打开网页版 ChatGPT](https://chatgpt.com/)
+
+## 早期实验记录
+
 [汇报版进度与全部检查点成绩](PROGRESS.md)
 
 截至北京时间 2026 年 11 月 16 日。本项目关注机器人在当前观测缺少关键信息时，如何读取历史并用它决定动作。**原版 M3 在方块归位和交换各达到 100%，在电池试插达到 94%，在方块覆盖的完整检查点上最高为 18%。** 方块覆盖的单回合干预显示，记忆中仍能读出遮挡前的位置，动作却几乎不随这条线索变化。M4 已完成 250 轮训练和 250 回合评测，第 250 轮为 32%（16/50），首次揭对 28/50。[M4 实验 B](mn_validation/m4_cover_blocks/README.md)

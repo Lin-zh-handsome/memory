@@ -1,5 +1,6 @@
 """Official RMBench reset qualification and matched closed-loop DP evaluation."""
 
+from contextlib import contextmanager
 import argparse
 from collections import deque
 from datetime import datetime
@@ -51,7 +52,9 @@ def make_simulator(args, protocol):
 
     import sapien
     task = protocol["task"]
-    if task not in ("put_back_block", "swap_blocks", "cover_blocks", "battery_try"):
+    if task not in ("put_back_block", "swap_blocks", "cover_blocks", "battery_try",
+                    "observe_and_pickup", "rearrange_blocks", "swap_T", "blocks_ranking_try",
+                    "press_button"):
         raise ValueError(f"Unsupported benchmark task: {task}")
     factory = getattr(importlib.import_module(f"envs.{task}"), task)
     from envs.utils.create_actor import UnStableError
@@ -88,13 +91,17 @@ def make_simulator(args, protocol):
     return factory, UnStableError, config
 
 
+class ResetProtocolError(RuntimeError):
+    """The simulator and the selected protocol disagree on a run-level invariant."""
+
+
 def reset(env, config, seed, episode_id, limit):
     env.setup_demo(now_ep_num=episode_id, seed=seed, is_test=True, **config)
     if env.step_lim != limit:
-        raise RuntimeError(f"Episode {seed} uses unexpected action limit {env.step_lim}")
+        raise ResetProtocolError(f"Episode {seed} uses unexpected action limit {env.step_lim}")
     bound = pci_address(env.scene.render_system.device.pci_string)
     if bound != pci_address(config["render_device"].pci_string):
-        raise RuntimeError(f"SAPIEN scene bound to {bound}")
+        raise ResetProtocolError(f"SAPIEN scene bound to {bound}")
     return env
 
 
@@ -105,17 +112,30 @@ def seed_protocol(protocol):
     }
 
 
+@contextmanager
+def seed_file_lock(path):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.with_suffix(".lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        yield
+
+
 def prepare_seeds(args, protocol, factory, unstable, config):
     evaluation = args.experiment / "evaluation"
     start = protocol["eval_seed_start"]
     count = protocol["eval_episodes"]
-    sharded = args.candidate_start is not None
+    sharded = getattr(args, "candidate_start", None) is not None
     first = args.candidate_start if sharded else start
     end = args.candidate_stop if sharded else start + 10 * count
     if sharded:
         path = evaluation / f"seed_shards/{first}_{end}.json"
     else:
-        path = evaluation / "reset_seeds.json"
+        path = reset_seed_path(args.experiment, protocol)
+    with seed_file_lock(path):
+        _prepare_seeds(args, protocol, factory, unstable, config, path, start, first, end, count, sharded)
+
+
+def _prepare_seeds(args, protocol, factory, unstable, config, path, start, first, end, count, sharded):
     expected = seed_protocol(protocol)
     if path.exists():
         progress = json.loads(path.read_text())
@@ -126,24 +146,28 @@ def prepare_seeds(args, protocol, factory, unstable, config):
         if sharded:
             progress.update(candidate_start=first, candidate_stop=end)
     seeds = progress["seeds"]
+    if progress["complete"]:
+        if not sharded and len(seeds) != count:
+            raise ValueError(f"Completed reset list has an unexpected size: {path}")
+        return
     env = factory()
     while progress["next_candidate"] < end and (sharded or len(seeds) < count):
         candidate = progress["next_candidate"]
         try:
             reset(env, config, candidate, candidate - start, protocol["max_episode_steps"])
-            try:
-                env.play_once()
-            except AssertionError as error:
-                if (protocol["task"] != "battery_try"
-                        or str(error) != "target_pose cannot be None for move action."):
-                    raise
-                print(json.dumps({"candidate": candidate, "expert_grasp_failed": str(error)}),
-                      flush=True)
-                valid = False
-            else:
-                valid = bool(env.plan_success and env.check_success())
+            env.play_once()
+        except (ResetProtocolError, OSError, ImportError, MemoryError, torch.cuda.OutOfMemoryError):
+            raise
         except unstable:
             valid = False
+        except Exception as error:
+            # XPolicyLab skips a candidate when the official expert setup or play_once fails.
+            failure = {"candidate": candidate, "error": f"{type(error).__name__}: {error}"}
+            progress.setdefault("expert_errors", []).append(failure)
+            print(json.dumps(failure), flush=True)
+            valid = False
+        else:
+            valid = bool(env.plan_success and env.check_success())
         finally:
             if hasattr(env, "scene"):
                 env.close_env(clear_cache=(candidate - first + 1) % config["clear_cache_freq"] == 0)
@@ -158,8 +182,12 @@ def prepare_seeds(args, protocol, factory, unstable, config):
 
 
 def merge_seeds(experiment, protocol):
-    evaluation = experiment / "evaluation"
-    output = evaluation / "reset_seeds.json"
+    output = reset_seed_path(experiment, protocol)
+    with seed_file_lock(output):
+        _merge_seeds(experiment / "evaluation", protocol, output)
+
+
+def _merge_seeds(evaluation, protocol, output):
     expected = seed_protocol(protocol)
     start = expected["seed_start"]
     count = protocol["eval_episodes"]
@@ -231,12 +259,12 @@ class Video:
 
 
 def parameter_counts(policy, variant):
-    training = sum(parameter.numel() for parameter in policy.parameters())
-    head = getattr(policy, "goal_head" if variant == "M5" else "past_head", None)
-    auxiliary = sum(p.numel() for p in head.parameters()) if head is not None else 0
-    if variant == "M5":
-        training -= sum(parameter.numel() for parameter in policy.normalizer.parameters())
-    return {"training_parameters": training, "inference_parameters": training - auxiliary}
+    # The normalizer stores data statistics as Parameters for checkpoint loading.
+    sizes = {name: p.numel() for name, p in policy.named_parameters()
+             if not name.startswith("normalizer.")}
+    prefix = "goal_head." if variant == "M5" else "past_head."
+    return {"training_parameters": sum(sizes.values()),
+            "inference_parameters": sum(n for name, n in sizes.items() if not name.startswith(prefix))}
 
 
 @torch.inference_mode()
@@ -435,13 +463,21 @@ def evaluate_checkpoint(args, protocol):
                 return 0
         if reached_cutoff(args):
             return stopped_at_cutoff(args, output)
-        factory, _, config = make_simulator(args, protocol)
+        factory, unstable, config = make_simulator(args, protocol)
+        if "shared_reset_seeds" in protocol:
+            prepare_seeds(args, protocol, factory, unstable, {**config, "qpos_only": False})
         policy = get_policy(args, protocol)
         return rollout(args, protocol, policy, factory, config, output)
 
 
+def reset_seed_path(experiment, protocol):
+    if "shared_reset_seeds" in protocol:
+        return Path(protocol["shared_reset_seeds"])
+    return experiment / "evaluation/reset_seeds.json"
+
+
 def rollout(args, protocol, policy, factory, config, output):
-    reset_path = args.experiment / "evaluation/reset_seeds.json"
+    reset_path = reset_seed_path(args.experiment, protocol)
     manifest = json.loads(reset_path.read_text())
     seeds = manifest["seeds"]
     if (not manifest["complete"] or len(seeds) != protocol["eval_episodes"]
@@ -513,7 +549,7 @@ def main():
     verify.add_argument("--seed", type=int)
     verify.add_argument("--steps", type=int, default=17)
     formal = sub.add_parser("rollout")
-    formal.add_argument("--model", choices=["M0", "M2", "M3", "M4", "M5"], required=True)
+    formal.add_argument("--model", choices=importlib.import_module(f"{IMPLEMENTATION.name}.models").POLICY_VARIANTS, required=True)
     formal.add_argument("--epoch", type=int, required=True)
     formal.add_argument("--batch-size", type=int, default=2)
     formal.add_argument("--stop-at", type=datetime.fromisoformat,
