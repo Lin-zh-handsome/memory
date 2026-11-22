@@ -2,6 +2,8 @@
 
 ## 当前发布 · 九任务四组消融
 
+北京时间 2026 年 11 月 22 日，已完成 5/108 组，另有 6 个新增检查点各评满 50 回合。训练与评测处于暂停状态。
+
 [最新运行快照](m5_ablation_seeds/STATUS.md) · [正式结果总表](m5_ablation_seeds/REPORT.md) · [评测协议](m5_ablation_seeds/task_plan.md) · [代码审查发现](m5_ablation_seeds/findings.md) · [执行进度](m5_ablation_seeds/progress.md)
 
 [打开网页版 ChatGPT](https://chatgpt.com/)

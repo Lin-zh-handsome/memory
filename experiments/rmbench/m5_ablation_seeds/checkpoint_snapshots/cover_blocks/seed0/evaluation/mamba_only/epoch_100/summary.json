@@ -1,0 +1,19 @@
+{
+  "model": "mamba_only",
+  "epoch": 100,
+  "episodes": 50,
+  "complete": true,
+  "successes": 10,
+  "success_rate": 0.2,
+  "steps": 69648,
+  "replans": 8731,
+  "observe_seconds": 461.656642482616,
+  "predict_seconds": 6075.283815694973,
+  "render_pci": "2a:00.0",
+  "camera_shader": "rt",
+  "render_pcis": [
+    "2a:00.0"
+  ],
+  "training_parameters": 297022926,
+  "inference_parameters": 297022926
+}

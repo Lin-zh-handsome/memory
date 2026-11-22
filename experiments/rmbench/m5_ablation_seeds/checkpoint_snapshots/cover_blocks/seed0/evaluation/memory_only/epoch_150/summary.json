@@ -1,0 +1,19 @@
+{
+  "model": "memory_only",
+  "epoch": 150,
+  "episodes": 40,
+  "complete": false,
+  "successes": 6,
+  "success_rate": null,
+  "steps": 56868,
+  "replans": 7127,
+  "observe_seconds": 668.132401458919,
+  "predict_seconds": 3729.015633915551,
+  "render_pci": "2a:00.0",
+  "camera_shader": "rt",
+  "render_pcis": [
+    "2a:00.0"
+  ],
+  "training_parameters": 305355470,
+  "inference_parameters": 305355470
+}
