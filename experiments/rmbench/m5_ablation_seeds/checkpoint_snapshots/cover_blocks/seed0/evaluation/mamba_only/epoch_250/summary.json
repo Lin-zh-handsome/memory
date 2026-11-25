@@ -1,18 +1,20 @@
 {
   "model": "mamba_only",
   "epoch": 250,
-  "episodes": 2,
-  "complete": false,
-  "successes": 0,
-  "success_rate": null,
-  "steps": 3000,
-  "replans": 376,
-  "observe_seconds": 542.4485665149987,
-  "predict_seconds": 9505.694301920012,
-  "render_pci": "18:00.0",
+  "episodes": 50,
+  "complete": true,
+  "successes": 6,
+  "success_rate": 0.12,
+  "steps": 71759,
+  "replans": 8995,
+  "observe_seconds": 1854.2552812239155,
+  "predict_seconds": 31063.217182535678,
+  "render_pci": "ab:00.0",
   "camera_shader": "rt",
   "render_pcis": [
-    "18:00.0"
+    "18:00.0",
+    "ab:00.0",
+    "ba:00.0"
   ],
   "training_parameters": 297022926,
   "inference_parameters": 297022926

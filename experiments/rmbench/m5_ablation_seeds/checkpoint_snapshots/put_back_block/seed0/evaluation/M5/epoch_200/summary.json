@@ -1,18 +1,19 @@
 {
   "model": "M5",
   "epoch": 200,
-  "episodes": 8,
-  "complete": false,
-  "successes": 8,
-  "success_rate": null,
-  "steps": 2750,
-  "replans": 346,
-  "observe_seconds": 2147.505924904719,
-  "predict_seconds": 7695.901168926619,
-  "render_pci": "18:00.0",
+  "episodes": 50,
+  "complete": true,
+  "successes": 50,
+  "success_rate": 1.0,
+  "steps": 17211,
+  "replans": 2178,
+  "observe_seconds": 4815.82066115737,
+  "predict_seconds": 18017.68514442537,
+  "render_pci": "ba:00.0",
   "camera_shader": "rt",
   "render_pcis": [
-    "18:00.0"
+    "18:00.0",
+    "ba:00.0"
   ],
   "training_parameters": 306605518,
   "inference_parameters": 305355470
