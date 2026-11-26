@@ -1,0 +1,91 @@
+{
+  "project_python": [
+    "implementation/check_interfaces.py",
+    "implementation/coffee_data.py",
+    "implementation/coffee_env.py",
+    "implementation/coffee_models.py",
+    "implementation/dispatch.py",
+    "implementation/download_ranges.py",
+    "implementation/evaluate.py",
+    "implementation/fix_robomimic_import.py",
+    "implementation/prepare_data.py",
+    "implementation/record_hd.py",
+    "implementation/rmbench/ablation_eval_shards.py",
+    "implementation/rmbench/ablation_targets.py",
+    "implementation/rmbench/calibrate.py",
+    "implementation/rmbench/campaign.py",
+    "implementation/rmbench/data.py",
+    "implementation/rmbench/evaluate.py",
+    "implementation/rmbench/goal_targets.py",
+    "implementation/rmbench/models.py",
+    "implementation/rmbench/parallel_eval.py",
+    "implementation/rmbench/preflight_mn.py",
+    "implementation/rmbench/prepare_ablation.py",
+    "implementation/rmbench/probe_m5_spatial.py",
+    "implementation/rmbench/publish_m5.py",
+    "implementation/rmbench/report_ablation.py",
+    "implementation/rmbench/report_m5.py",
+    "implementation/rmbench/run_ablation.py",
+    "implementation/rmbench/run_m4.py",
+    "implementation/rmbench/run_m5.py",
+    "implementation/rmbench/run_memory_validation.py",
+    "implementation/rmbench/run_mn_validation.py",
+    "implementation/rmbench/run_put_back_m2.py",
+    "implementation/rmbench/spatial_goal_targets.py",
+    "implementation/rmbench/summarize.py",
+    "implementation/rmbench/task_diagnostics.py",
+    "implementation/rmbench/test_models.py",
+    "implementation/rmbench/train.py",
+    "implementation/summarize.py",
+    "implementation/train.py"
+  ],
+  "diagnostic_python": [
+    "observe_pickup_m5_failure/replay.py",
+    "observe_pickup_m5_cue/cue_probe.py",
+    "observe_pickup_m5_exposure/exposure.py"
+  ],
+  "simulator_patches": [
+    "envs/_base_task.py",
+    "envs/robot/robot.py",
+    "envs/robot/planner.py"
+  ],
+  "targeted_cpu_checks": {
+    "input_pixel_0.5_actual": [
+      -2.1179039478302,
+      -2.0357141494750977,
+      -1.804444432258606
+    ],
+    "input_pixel_0.5_expected": [
+      0.0655021220445633,
+      0.1964285671710968,
+      0.4177778363227844
+    ],
+    "finished_training_without_checkpoints_pending_job_count": 0
+  },
+  "actual_checkpoint_evidence": {
+    "observe_and_pickup_seed0_M5_epoch250": {
+      "imagenet_norm": true,
+      "head_camera_scale": [
+        2.0
+      ],
+      "head_camera_offset": [
+        -1.0
+      ]
+    },
+    "cover_blocks_seed0_M0_epoch250": {
+      "imagenet_norm": true,
+      "head_camera_scale": [
+        2.0
+      ],
+      "head_camera_offset": [
+        -1.0
+      ]
+    }
+  },
+  "matched_reused_baselines": [
+    "put_back_block",
+    "swap_blocks",
+    "battery_try",
+    "cover_blocks"
+  ]
+}

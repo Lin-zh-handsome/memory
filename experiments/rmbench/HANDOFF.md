@@ -75,3 +75,8 @@ RMBench 训练使用每任务 50 条官方 `demo_clean` 示范，从头训练 25
 [第三章研究计划](chapter3_planning/task_plan.md) · [研究发现](chapter3_planning/findings.md) · [进度与原始记录索引](chapter3_planning/progress.md) · [空间版 M5 正式报告](m5_goal_spatial_r3m/REPORT.md) · [空间版 M5 规划](m5_goal_spatial_r3m/task_plan.md) · [旧版 M5 实现](m5_goal_keyframe_aux/README.md)
 
 空间版 M5 种子 0 完成 250 轮训练及 250 回合评测，最佳为第 150 轮 80%，第 250 轮为 78%。种子 1 暂缓。
+
+
+## 2026-11-26 代码审查
+
+[当前代码问题与处理顺序](code_review_20261126/REPORT.md) · [复现依据](code_review_20261126/evidence.json)
