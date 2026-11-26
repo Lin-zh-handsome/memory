@@ -131,8 +131,8 @@ def main():
     parser.add_argument("--drain-seconds", type=int, default=150)
     args = parser.parse_args()
     if ((args.switch_at and args.switch_at.utcoffset() is None)
-            or len(args.gpus) > 5 or len(args.gpus) != len(set(args.gpus))):
-        parser.error("Use at most five distinct auxiliary GPUs and include a timezone if specifying a cutoff")
+            or not 1 <= len(args.gpus) <= 2 or len(args.gpus) != len(set(args.gpus))):
+        parser.error("Use one or two distinct GPUs and include a timezone if specifying a cutoff")
     for name in ("root", "data", "rmbench"):
         setattr(args, name, getattr(args, name).resolve())
     asyncio.run(ParallelEvaluation(args).run())

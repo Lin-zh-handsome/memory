@@ -68,7 +68,7 @@ def shared_seed0_gpu(running,allow_remaining=False):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',required=True)
-    p.add_argument('--max-gpus',type=int,default=1,choices=[1,2,3,4])
+    p.add_argument('--max-gpus',type=int,default=1,choices=[1,2])
     p.add_argument('--adopt-pid',type=int);p.add_argument('--adopt-gpu',type=int)
     p.add_argument('--adopt-model',choices=['M0','M2']);p.add_argument('--adopt-seed',type=int)
     p.add_argument('--parallel-seed0',action='store_true')

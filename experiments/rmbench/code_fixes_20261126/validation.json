@@ -1,0 +1,61 @@
+{
+  "regression_tests": 6,
+  "passed": true,
+  "new_tasks": [
+    {
+      "task": "swap_blocks",
+      "rgb_normalization": "identity",
+      "event_thresholds": {
+        "visual": 0.997718095779419,
+        "history": 0.9967200756072998
+      },
+      "shared_reset_seeds": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/reset_seeds.json"
+    },
+    {
+      "task": "battery_try",
+      "rgb_normalization": "identity",
+      "event_thresholds": {
+        "visual": 0.9976565837860107,
+        "history": 0.99672611951828
+      },
+      "shared_reset_seeds": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/reset_seeds.json"
+    },
+    {
+      "task": "rearrange_blocks",
+      "rgb_normalization": "identity",
+      "event_thresholds": {
+        "visual": 0.9984289407730103,
+        "history": 0.9977840185165405
+      },
+      "shared_reset_seeds": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/reset_seeds.json"
+    },
+    {
+      "task": "swap_T",
+      "rgb_normalization": "identity",
+      "event_thresholds": {
+        "visual": 0.9954793453216553,
+        "history": 0.9935193181037902
+      },
+      "shared_reset_seeds": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/reset_seeds.json"
+    },
+    {
+      "task": "blocks_ranking_try",
+      "rgb_normalization": "identity",
+      "event_thresholds": {
+        "visual": 0.9988733530044556,
+        "history": 0.9984191060066223
+      },
+      "shared_reset_seeds": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/blocks_ranking_try/reset_seeds.json"
+    },
+    {
+      "task": "press_button",
+      "rgb_normalization": "identity",
+      "event_thresholds": {
+        "visual": 0.9988565444946289,
+        "history": 0.9984143733978271
+      },
+      "shared_reset_seeds": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/press_button/reset_seeds.json"
+    }
+  ],
+  "official_task_rules": "unchanged"
+}

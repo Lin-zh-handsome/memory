@@ -63,7 +63,7 @@ def convert_shard(task):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--gpus',default='1,2,3,5')
+    p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--gpus',help='One or two comma-separated idle GPU indices; default selects one idle GPU')
     args=p.parse_args(); root=Path(args.root); source=root/'data/coffee_preparation_d0.hdf5'
     part=source.with_suffix('.hdf5.part')
     if not source.exists():
@@ -82,7 +82,16 @@ def main():
         print(json.dumps(report,indent=2),flush=True)
         (root/'configs/data_inspection.json').write_text(json.dumps(report,indent=2))
     out=root/'data/visual'; out.mkdir(exist_ok=True)
-    gpus=[int(x) for x in args.gpus.split(',')]
+    if args.gpus is None:
+        from dispatch import available_gpus
+        available = available_gpus()
+        if not available:
+            raise RuntimeError("No idle GPU is available for data preparation")
+        gpus = [available[0][0]]
+    else:
+        gpus = [int(x) for x in args.gpus.split(',')]
+    if not 1 <= len(gpus) <= 2 or len(set(gpus)) != len(gpus):
+        p.error("Select one or two distinct GPU indices")
     tasks=[(str(source),str(out),names[i::len(gpus)],g) for i,g in enumerate(gpus)]
     import multiprocessing as mp
     with concurrent.futures.ProcessPoolExecutor(len(gpus),mp_context=mp.get_context('spawn')) as pool:

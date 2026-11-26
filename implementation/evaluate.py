@@ -63,7 +63,7 @@ def init_states(root):
         'method':'Official D0 reset sampled once; save and replay model XML and flattened simulator state.'},indent=2))
 
 
-def evaluate(policy,root,variant,train_seed,epoch,n_envs=10):
+def _evaluate(policy,root,variant,train_seed,epoch,n_envs=10):
     root=Path(root)
     episode_file=root/f'eval/{variant}_seed{train_seed}_epoch{epoch}_episodes.csv'
     fields=['model','train_seed','epoch','env_seed','success','steps','stages']
@@ -124,6 +124,22 @@ def evaluate(policy,root,variant,train_seed,epoch,n_envs=10):
             'successful_episodes':success,'episodes':50,'success_rate':success/50}
     (root/f'eval/{variant}_seed{train_seed}_epoch{epoch}.json').write_text(json.dumps(result,indent=2))
     return result
+
+
+def evaluate(policy, root, variant, train_seed, epoch, n_envs=10):
+    python_rng = random.getstate()
+    numpy_rng = np.random.get_state()
+    device = policy.device
+    devices = [device.index if device.index is not None else torch.cuda.current_device()] if device.type == "cuda" else []
+    try:
+        with torch.random.fork_rng(devices=devices):
+            random.seed(100000)
+            np.random.seed(100000)
+            torch.manual_seed(100000)
+            return _evaluate(policy, root, variant, train_seed, epoch, n_envs)
+    finally:
+        random.setstate(python_rng)
+        np.random.set_state(numpy_rng)
 
 
 if __name__=='__main__':

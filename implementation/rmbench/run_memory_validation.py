@@ -455,8 +455,8 @@ async def main():
     if len(args.adopt_swap_evaluators) > len(args.gpus):
         parser.error("One GPU is required for each adopted evaluator")
     args.root, args.rmbench = args.root.resolve(), args.rmbench.resolve()
-    if not 1 <= len(args.gpus) <= 4 or len(set(args.gpus)) != len(args.gpus):
-        parser.error("Select one to four distinct GPU UUIDs")
+    if not 1 <= len(args.gpus) <= 2 or len(set(args.gpus)) != len(args.gpus):
+        parser.error("Select one or two distinct GPU UUIDs")
     if args.adopt_swap_trainers and len(args.gpus) < 2:
         parser.error("Existing trainers require their two original GPU UUIDs first")
     if not read_json(args.root / "audit/put_back_pass.json")["passed"]:

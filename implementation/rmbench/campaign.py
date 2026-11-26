@@ -215,8 +215,8 @@ def main():
     parser.add_argument("--eval-batch-size", type=int, default=2)
     args = parser.parse_args()
     gpus = [args.primary, *([args.auxiliary] if args.auxiliary else []), *args.seed_gpus]
-    if len(gpus) != len(set(gpus)) or len(gpus) > 6:
-        parser.error("Provide at most six distinct physical GPUs")
+    if len(gpus) != len(set(gpus)) or len(gpus) > 2:
+        parser.error("Provide at most two distinct physical GPUs")
     if len(gpus) > 1 and (args.switch_at is None or args.switch_at.utcoffset() is None):
         parser.error("Auxiliary GPUs require a time zone in --switch-at")
     for name in ("root", "data", "rmbench"):

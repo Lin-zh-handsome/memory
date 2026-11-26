@@ -67,7 +67,7 @@ def main():
     torch.set_num_threads(2)
     torch.manual_seed(0)
     configure_precision()
-    normalizer = dataset.normalizer()
+    normalizer = dataset.normalizer(cfg["vision"])
     for key, values in dataset.training_arrays().items():
         tensor = torch.from_numpy(values[::113])
         normalized = normalizer[key].normalize(tensor)

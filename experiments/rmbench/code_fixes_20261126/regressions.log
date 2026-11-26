@@ -1,0 +1,11 @@
+test_completed_evaluations_can_survive_checkpoint_cleanup (__main__.CorrectionsTest) ... ok
+test_corrected_and_historical_rgb_ranges (__main__.CorrectionsTest) ... ok
+test_missing_pending_checkpoint_never_completes (__main__.CorrectionsTest) ... ok
+test_old_coffee_evaluation_preserves_training_rng (__main__.CorrectionsTest) ... ok
+test_scheduler_reports_missing_artifact (__main__.CorrectionsTest) ... ok
+test_task_diagnostics_read_values_without_advancing_task (__main__.CorrectionsTest) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.161s
+
+OK

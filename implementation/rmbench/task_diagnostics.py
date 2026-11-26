@@ -24,6 +24,20 @@ def initial_state(task, env, qpos):
         state.update(batteries=[pose_record(env.battery1), pose_record(env.battery2)],
                      slot=[pose_record(env.battery_slot)],
                      target_combination=[int(bit) for bit in env.correct_combination])
+    elif task == "observe_and_pickup":
+        state.update(objects=[pose_record(actor) for actor in env.object],
+                     target_index=int(env.target_object_idx),
+                     object_models=list(zip(env.object_modelnames, map(int, env.object_ids))))
+    elif task == "rearrange_blocks":
+        state.update(blocks=[pose_record(env.block1), pose_record(env.block2)],
+                     target_positions=[env.target_pose1.p.tolist(), env.target_pose2.p.tolist()])
+    elif task == "swap_T":
+        state.update(blocks=[pose_record(env.T_block1), pose_record(env.T_block2)],
+                     target_positions=[np.asarray(env.target_pose2).tolist(), np.asarray(env.target_pose1).tolist()])
+    elif task == "blocks_ranking_try":
+        state.update(blocks=[pose_record(actor) for actor in (env.block1, env.block2, env.block3)])
+    elif task == "press_button":
+        state.update(target_counts=[int(env.card_id_1), int(env.card_id_2)])
     return state
 
 
@@ -60,6 +74,41 @@ def report_state(task, env):
         combination = [int(bit) for bit in env.get_curr_combination()] if all(placed) else None
         return {**state, "stage": 3 if env.eval_success else sum(placed), "installed": placed,
                 "combination": combination, "gauge_on": bool(env.check_dashboard_on())}
+    if task == "observe_and_pickup":
+        contacts = {actor.actor.per_scene_id: index for index, actor in enumerate(env.object)}
+        fingers = [set() for _ in env.object]
+        for contact in env.scene.get_contacts():
+            first, second = [body.entity for body in contact.bodies]
+            for finger, obj in ((first, second), (second, first)):
+                index = contacts.get(obj.per_scene_id)
+                if index is not None and finger.name in env.robot.gripper_name:
+                    fingers[index].add(finger.name)
+        grasped = [index for index, names in enumerate(fingers) if len(names) >= 2]
+        return {**state, "stage": int(bool(env.eval_success)), "invalid": bool(env.fail_flag),
+                "success_checks": int(env.get_obs_cnt), "wall_visible": int(env.get_obs_cnt) >= 20,
+                "target_index": int(env.target_object_idx), "grasped_objects": grasped,
+                "target_height_m": float(env.object[env.target_object_idx].get_pose().p[2])}
+    if task == "rearrange_blocks":
+        return {**state, "stage": int(env.stage_id), "button_presses": int(env.press_cnt),
+                "invalid": int(env.press_cnt) > 1,
+                "block_positions": [actor.get_pose().p.tolist() for actor in (env.block1, env.block2)]}
+    if task == "swap_T":
+        actors = (env.T_block1, env.T_block2)
+        goals = (env.target_pose2, env.target_pose1)
+        errors = [float(np.linalg.norm(actor.get_pose().p[:2] - goal[:2]))
+                  for actor, goal in zip(actors, goals)]
+        return {**state, "stage": int(bool(env.eval_success)), "xy_errors_m": errors,
+                "blocks": [pose_record(actor) for actor in actors]}
+    if task == "blocks_ranking_try":
+        positions = [actor.get_pose().p.tolist() for actor in (env.block1, env.block2, env.block3)]
+        order = np.argsort([position[0] for position in positions]).tolist()
+        return {**state, "stage": int(bool(env.eval_success)), "block_order": order,
+                "button_presses": int(env.press_cnt), "block_positions": positions}
+    if task == "press_button":
+        return {**state, "stage": int(bool(env.eval_success)),
+                "button_counts": [int(env.press_cnt_1), int(env.press_cnt_2), int(env.press_cnt_check_button)],
+                "target_counts": [int(env.card_id_1), int(env.card_id_2)],
+                "check_button_pressed": bool(env.press_flag_check_button)}
     if task != "put_back_block":
         return {**state, "stage": int(bool(env.eval_success))}
     position = np.asarray(env.block.get_pose().p)
@@ -69,10 +118,26 @@ def report_state(task, env):
 
 
 def transition_key(state):
-    return (state["stage"], state.get("invalid"), state.get("combination"), state.get("gauge_on"))
+    return (state["stage"], state.get("invalid"), state.get("combination"), state.get("gauge_on"),
+            state.get("wall_visible"), state.get("grasped_objects"), state.get("button_presses"),
+            state.get("block_order"), state.get("button_counts"))
 
 
 def outcome_details(task, trace, env):
+    if task == "observe_and_pickup":
+        first = next((row for row in trace if row.get("grasped_objects")), None)
+        category = None
+        if not env.eval_success:
+            if env.fail_flag:
+                category = "early_motion"
+            elif first is None:
+                category = "no_two_finger_contact"
+            elif first["grasped_objects"] != [int(env.target_object_idx)]:
+                category = "first_contact_wrong_object"
+            else:
+                category = "target_contact_without_success"
+        return {"failure_category": category, "first_two_finger_contact": first,
+                "first_contact_correct": bool(first and first["grasped_objects"] == [int(env.target_object_idx)])}
     if task not in ("cover_blocks", "battery_try"):
         return {}
     final = report_state(task, env)

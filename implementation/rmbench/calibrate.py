@@ -39,7 +39,7 @@ def main():
     torch.set_num_threads(3)
     configure_precision()
     policy = build_policy("M3", observation_meta(cfg), cfg)
-    policy.set_normalizer(dataset.normalizer())
+    policy.set_normalizer(dataset.normalizer(cfg["vision"]))
     policy.to(args.device).eval()
     count = min(calibration["train_episodes"], len(dataset.episodes))
     indices = np.linspace(0, len(dataset.episodes) - 1, count, dtype=int)

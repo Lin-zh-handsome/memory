@@ -45,7 +45,8 @@
     "group_norm": true,
     "imagenet_norm": true,
     "share_rgb_model": false,
-    "freeze": false
+    "freeze": false,
+    "rgb_normalization": "identity"
   },
   "unet": {
     "down_dims": [
@@ -111,9 +112,5 @@
     "train_episodes": 8,
     "adjacent_cosine_quantile": 0.2
   },
-  "resume_every_epochs": 10,
-  "event_thresholds": {
-    "visual": 0.9983704090118408,
-    "history": 0.9977781772613525
-  }
+  "resume_every_epochs": 10
 }

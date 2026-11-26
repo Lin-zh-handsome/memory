@@ -1,0 +1,167 @@
+{
+  "completed": 3,
+  "tasks": [
+    {
+      "task": "put_back_block",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/seed0",
+      "rgb_normalization": "range",
+      "reused_complete": true,
+      "training_complete": true,
+      "epoch_complete": 250,
+      "evaluation_complete": true,
+      "counts": [
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "best_success_rate": 1.0
+    },
+    {
+      "task": "swap_blocks",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_blocks/seed0",
+      "rgb_normalization": "identity",
+      "reused_complete": false,
+      "training_complete": false,
+      "epoch_complete": 2,
+      "evaluation_complete": false,
+      "counts": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_success_rate": null
+    },
+    {
+      "task": "battery_try",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/battery_try/seed0",
+      "rgb_normalization": "identity",
+      "reused_complete": false,
+      "training_complete": false,
+      "epoch_complete": 1,
+      "evaluation_complete": false,
+      "counts": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_success_rate": null
+    },
+    {
+      "task": "cover_blocks",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m",
+      "rgb_normalization": "range",
+      "reused_complete": true,
+      "training_complete": true,
+      "epoch_complete": 250,
+      "evaluation_complete": true,
+      "counts": [
+        7,
+        10,
+        40,
+        38,
+        39
+      ],
+      "best_success_rate": 0.8
+    },
+    {
+      "task": "observe_and_pickup",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/seed0",
+      "rgb_normalization": "range",
+      "reused_complete": true,
+      "training_complete": true,
+      "epoch_complete": 250,
+      "evaluation_complete": true,
+      "counts": [
+        1,
+        0,
+        0,
+        0,
+        3
+      ],
+      "best_success_rate": 0.06
+    },
+    {
+      "task": "rearrange_blocks",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/rearrange_blocks/seed0",
+      "rgb_normalization": "identity",
+      "reused_complete": false,
+      "training_complete": false,
+      "epoch_complete": 2,
+      "evaluation_complete": false,
+      "counts": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_success_rate": null
+    },
+    {
+      "task": "swap_T",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_T/seed0",
+      "rgb_normalization": "identity",
+      "reused_complete": false,
+      "training_complete": false,
+      "epoch_complete": 2,
+      "evaluation_complete": false,
+      "counts": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_success_rate": null
+    },
+    {
+      "task": "blocks_ranking_try",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/blocks_ranking_try/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/blocks_ranking_try/seed0",
+      "rgb_normalization": "identity",
+      "reused_complete": false,
+      "training_complete": false,
+      "epoch_complete": null,
+      "evaluation_complete": false,
+      "counts": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_success_rate": null
+    },
+    {
+      "task": "press_button",
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/press_button/seed0",
+      "previous_root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/press_button/seed0",
+      "rgb_normalization": "identity",
+      "reused_complete": false,
+      "training_complete": false,
+      "epoch_complete": null,
+      "evaluation_complete": false,
+      "counts": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "best_success_rate": null
+    }
+  ]
+}

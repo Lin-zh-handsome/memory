@@ -98,7 +98,7 @@ def main():
     samples_per_epoch = dataset.num_samples(horizon, n_action_steps)
     meta = observation_meta(cfg)
     policy = build_policy(variant, meta, cfg)
-    policy.set_normalizer(dataset.normalizer())
+    policy.set_normalizer(dataset.normalizer(cfg["vision"]))
     policy.cuda()
     ema_policy = copy.deepcopy(policy)
     ema_policy.requires_grad_(False)

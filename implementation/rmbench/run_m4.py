@@ -129,10 +129,32 @@ def eval_finished(root, config, epoch):
             and summary["episodes"] == config["eval_episodes"])
 
 
+def isolated_render_command(command, card):
+    """Expose the selected NVIDIA and DRM device nodes to the simulator."""
+    pci = "0000:" + pci_address(card.pci)
+    information = Path("/proc/driver/nvidia/gpus") / pci / "information"
+    minor = next(line.split(":", 1)[1].strip() for line in information.read_text().splitlines()
+                 if line.startswith("Device Minor:"))
+    nodes = [Path("/dev/nvidia" + minor), Path("/dev/nvidiactl"), Path("/dev/nvidia-uvm")]
+    uvm_tools = Path("/dev/nvidia-uvm-tools")
+    if uvm_tools.exists():
+        nodes.append(uvm_tools)
+    drm = Path("/dev/dri/by-path")
+    for link in sorted(drm.glob(f"pci-{pci}-*")):
+        nodes.append(link.resolve(strict=True))
+    wrapped = ["bwrap", "--bind", "/", "/", "--dev", "/dev",
+               "--dev-bind", "/dev/shm", "/dev/shm"]
+    for node in nodes:
+        wrapped.extend(["--dev-bind", str(node), str(node)])
+    return [*wrapped, "--", *command]
+
+
 def run_job(script, args, log, card, lock):
     command = [sys.executable, "-u", str(CODE / script), *map(str, args)]
     env = {**os.environ, "PYTHONNOUSERSITE": "1", "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
            "CUDA_VISIBLE_DEVICES": card.uuid}
+    if script == "evaluate.py" and env.get("RMBENCH_ISOLATE_RENDER_GPU") == "1":
+        command = isolated_render_command(command, card)
     with log.open("ab") as output:
         job = subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=output, stderr=output,
                                env=env, start_new_session=True, pass_fds=(lock.fileno(),))

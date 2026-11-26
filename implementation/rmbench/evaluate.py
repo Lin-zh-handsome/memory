@@ -395,7 +395,7 @@ def get_policy(args, protocol):
     if args.command == "verify":
         torch.manual_seed(protocol["seed"])
         policy = build_policy(args.model, adapter.observation_meta(protocol), protocol)
-        policy.set_normalizer(adapter.EpisodeDataset(args.data).normalizer())
+        policy.set_normalizer(adapter.EpisodeDataset(args.data).normalizer(protocol["vision"]))
     else:
         checkpoint = args.experiment / f"checkpoints/{args.model}/epoch_{args.epoch:03d}.pt"
         payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
@@ -410,10 +410,11 @@ def get_policy(args, protocol):
 def summarize(path, args, protocol, policy, rows):
     count = len(rows)
     successes = sum(row["success"] for row in rows)
-    complete = count == protocol["eval_episodes"]
+    expected = args.episode_range[1] - args.episode_range[0] if getattr(args, "episode_range", None) else protocol["eval_episodes"]
+    complete = count == expected
     payload = {
         "model": args.model, "epoch": args.epoch, "episodes": count, "complete": complete,
-        "successes": successes, "success_rate": successes / count if complete else None,
+        "successes": successes, "success_rate": successes / count if complete and not getattr(args, "episode_range", None) else None,
         "steps": sum(row["steps"] for row in rows), "replans": sum(row["replans"] for row in rows),
         "observe_seconds": sum(row["observe_seconds"] for row in rows),
         "predict_seconds": sum(row["predict_seconds"] for row in rows),
@@ -440,6 +441,11 @@ def stopped_at_cutoff(args, output, episodes=None):
 
 def evaluate_checkpoint(args, protocol):
     output = args.experiment / f"evaluation/{args.model}/epoch_{args.epoch:03d}"
+    args.full_output = output
+    if args.episode_range:
+        start, stop = args.episode_range
+        output = output / "shards" / f"{start:02d}_{stop:02d}"
+    expected = args.episode_range[1] - args.episode_range[0] if args.episode_range else protocol["eval_episodes"]
     output.mkdir(parents=True, exist_ok=True)
     with (output / ".rollout.lock").open("a") as lock:
         if args.stop_at is None:
@@ -457,7 +463,7 @@ def evaluate_checkpoint(args, protocol):
         summary_path = output / "summary.json"
         if summary_path.exists():
             summary = json.loads(summary_path.read_text())
-            if (summary["complete"] and summary["episodes"] == protocol["eval_episodes"]
+            if (summary["complete"] and summary["episodes"] == expected
                     and summary["model"] == args.model and summary["epoch"] == args.epoch):
                 print(json.dumps({**summary, "already_complete": True}), flush=True)
                 return 0
@@ -494,14 +500,19 @@ def rollout(args, protocol, policy, factory, config, output):
     atomic_json(run_config_path, run_config)
     log = output / "episodes.jsonl"
     rows = [json.loads(line) for line in log.read_text().splitlines() if line] if log.exists() else []
-    if [row["seed"] for row in rows] != seeds[:len(rows)]:
+    first, stop = getattr(args, "episode_range", None) or (0, len(seeds))
+    if getattr(args, "episode_range", None) and not rows:
+        original = args.full_output / "episodes.jsonl"
+        if original.exists():
+            rows = [json.loads(line) for line in original.read_text().splitlines()][first:stop]
+    if [row["seed"] for row in rows] != seeds[first:first + len(rows)]:
         raise ValueError("Saved rollouts do not match the fixed reset sequence")
     kinds = {row["success"] for row in rows if row["video"] and (output / row["video"]).is_file()}
     batch_size = args.batch_size
-    if len(rows) != len(seeds) and len(rows) % batch_size:
+    if len(rows) != stop - first and len(rows) % batch_size:
         raise ValueError("Saved rollouts end partway through a deterministic batch")
-    environments = [factory() for _ in range(min(batch_size, len(seeds) - len(rows)))]
-    for start in range(len(rows), len(seeds), batch_size):
+    environments = [factory() for _ in range(min(batch_size, stop - first - len(rows)))]
+    for start in range(first + len(rows), stop, batch_size):
         if reached_cutoff(args):
             summarize(output / "summary.json", args, protocol, policy, rows)
             return stopped_at_cutoff(args, output, len(rows))
@@ -552,6 +563,7 @@ def main():
     formal.add_argument("--model", choices=importlib.import_module(f"{IMPLEMENTATION.name}.models").POLICY_VARIANTS, required=True)
     formal.add_argument("--epoch", type=int, required=True)
     formal.add_argument("--batch-size", type=int, default=2)
+    formal.add_argument("--episode-range", type=int, nargs=2, metavar=("START", "STOP"))
     formal.add_argument("--stop-at", type=datetime.fromisoformat,
                         help="Stop before another batch after this ISO 8601 time with UTC offset")
     args = parser.parse_args()
@@ -575,6 +587,12 @@ def main():
             parser.error("Expected a protocol checkpoint and a positive evaluation batch size")
         if args.stop_at is not None and args.stop_at.utcoffset() is None:
             parser.error("--stop-at requires a time zone offset")
+        if args.episode_range:
+            first, stop = args.episode_range
+            count = protocol["eval_episodes"]
+            if not (0 <= first < stop <= count and first % args.batch_size == 0
+                    and (stop == count or stop % args.batch_size == 0)):
+                parser.error("Episode range must preserve original full batch boundaries")
         args.verify_steps = None
         return evaluate_checkpoint(args, protocol)
     factory, unstable, config = make_simulator(args, protocol)

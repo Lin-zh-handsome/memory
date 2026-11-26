@@ -232,13 +232,20 @@ class EpisodeDataset:
             "action": np.concatenate([self._load(ep["id"], "action") for ep in self.episodes]),
         }
 
-    def normalizer(self):
-        from diffusion_policy.model.common.normalizer import LinearNormalizer
+    def normalizer(self, vision=None):
+        from diffusion_policy.model.common.normalizer import LinearNormalizer, SingleFieldLinearNormalizer
         from diffusion_policy.common.normalize_util import get_image_range_normalizer
 
+        # Existing protocols and checkpoints use the original [-1, 1] range.
+        mode = (vision or {}).get("rgb_normalization", "range")
+        if mode not in ("identity", "range"):
+            raise ValueError(f"Unknown RGB normalization: {mode}")
         normalizer = LinearNormalizer()
         normalizer.fit(self.training_arrays(), last_n_dims=1, mode="limits")
-        normalizer[CAMERA_KEY] = get_image_range_normalizer()
+        if mode == "identity":
+            normalizer[CAMERA_KEY] = SingleFieldLinearNormalizer.create_identity()
+        else:
+            normalizer[CAMERA_KEY] = get_image_range_normalizer()
         return normalizer
 
     @staticmethod
