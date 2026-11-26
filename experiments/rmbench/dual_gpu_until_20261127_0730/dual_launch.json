@@ -1,0 +1,25 @@
+{
+  "status": "launched",
+  "pid": 3754132,
+  "gpus": [
+    [
+      "5",
+      "GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f",
+      "31528"
+    ],
+    [
+      "6",
+      "GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314",
+      "4"
+    ]
+  ],
+  "saved_checkpoints": [
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/seed0/checkpoints/M5/latest.pt",
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/seed0/checkpoints/M5/latest.pt",
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0/checkpoints/M5/latest.pt",
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0/checkpoints/M5/latest.pt"
+  ],
+  "processes_per_gpu": 4,
+  "graceful_at": "2026-11-27T07:25:00+08:00",
+  "force_at": "2026-11-27T07:29:00+08:00"
+}

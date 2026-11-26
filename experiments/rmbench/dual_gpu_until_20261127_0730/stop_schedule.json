@@ -1,0 +1,10 @@
+{
+  "graceful_at": "2026-11-27T07:25:00+08:00",
+  "force_at": "2026-11-27T07:29:00+08:00",
+  "release_before": "2026-11-27T07:30:00+08:00",
+  "cron_marker": "rmbench-rgb-m5-stop-20261127",
+  "host_timezone": "Asia/Shanghai",
+  "queue": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/queue.json",
+  "max_gpus": 2,
+  "processes_per_gpu": 4
+}

@@ -1,0 +1,50 @@
+{
+  "now": "2026-11-26T21:41:40.054082+08:00",
+  "schedule": {
+    "graceful_at": "2026-11-27T07:25:00+08:00",
+    "force_at": "2026-11-27T07:29:00+08:00",
+    "release_before": "2026-11-27T07:30:00+08:00",
+    "cron_marker": "rmbench-rgb-m5-stop-20261127",
+    "host_timezone": "Asia/Shanghai",
+    "queue": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/queue.json",
+    "max_gpus": 2,
+    "processes_per_gpu": 4
+  },
+  "processes": [
+    {
+      "pid": 3754132,
+      "group": 3754132,
+      "kind": "coordinator"
+    },
+    {
+      "pid": 3754195,
+      "group": 3754195,
+      "kind": "train"
+    },
+    {
+      "pid": 3754196,
+      "group": 3754196,
+      "kind": "train"
+    },
+    {
+      "pid": 3754197,
+      "group": 3754197,
+      "kind": "train"
+    },
+    {
+      "pid": 3754198,
+      "group": 3754198,
+      "kind": "train"
+    },
+    {
+      "pid": 3754199,
+      "group": 3754199,
+      "kind": "train"
+    },
+    {
+      "pid": 3754200,
+      "group": 3754200,
+      "kind": "train"
+    }
+  ]
+}
