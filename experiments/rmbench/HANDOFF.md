@@ -86,3 +86,7 @@ RMBench 训练使用每任务 50 条官方 `demo_clean` 示范，从头训练 25
 ## 2026-11-26 代码审查
 
 [当前代码问题与处理顺序](code_review_20261126/REPORT.md) · [复现依据](code_review_20261126/evidence.json)
+
+## 2026-11-26 记忆写入阈值调研
+
+[文献对照与判断](memory_write_threshold_literature_20261126/REPORT.md)。五篇原文核对；当前训练和官方规则保持不变。
