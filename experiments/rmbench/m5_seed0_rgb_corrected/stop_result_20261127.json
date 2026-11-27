@@ -1,0 +1,76 @@
+{
+  "status": "paused",
+  "reason": "scheduled_0730_beijing",
+  "time": "2026-11-27T07:29:01.528829+08:00",
+  "target_time": "2026-11-27T07:30:00+08:00",
+  "forced": false,
+  "remaining": [],
+  "checkpoints": [
+    {
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/seed0",
+      "checkpoint": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/seed0/checkpoints/M5/latest.pt",
+      "last_resume_record": {
+        "resume_saved": true,
+        "next_epoch": 141,
+        "batch": 419,
+        "global_step": 70419,
+        "checkpoint_seconds": 14.563732109032571
+      }
+    },
+    {
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/seed0",
+      "checkpoint": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/seed0/checkpoints/M5/latest.pt",
+      "last_resume_record": {
+        "resume_saved": true,
+        "next_epoch": 126,
+        "batch": 369,
+        "global_step": 69494,
+        "checkpoint_seconds": 14.423877286724746
+      }
+    },
+    {
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0",
+      "checkpoint": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0/checkpoints/M5/latest.pt",
+      "last_resume_record": {
+        "resume_saved": true,
+        "next_epoch": 210,
+        "batch": 4,
+        "global_step": 73154,
+        "checkpoint_seconds": 14.044576055370271
+      }
+    },
+    {
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "checkpoint": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0/checkpoints/M5/latest.pt",
+      "last_resume_record": {
+        "resume_saved": true,
+        "next_epoch": 245,
+        "batch": 265,
+        "global_step": 73465,
+        "checkpoint_seconds": 14.301723374053836
+      }
+    },
+    {
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/blocks_ranking_try/seed0",
+      "checkpoint": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/blocks_ranking_try/seed0/checkpoints/M5/latest.pt",
+      "last_resume_record": {
+        "resume_saved": true,
+        "next_epoch": 21,
+        "batch": 818,
+        "global_step": 24118,
+        "checkpoint_seconds": 12.833711391314864
+      }
+    },
+    {
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/press_button/seed0",
+      "checkpoint": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/press_button/seed0/checkpoints/M5/latest.pt",
+      "last_resume_record": {
+        "resume_saved": true,
+        "next_epoch": 57,
+        "batch": 249,
+        "global_step": 24329,
+        "checkpoint_seconds": 15.68125313334167
+      }
+    }
+  ]
+}

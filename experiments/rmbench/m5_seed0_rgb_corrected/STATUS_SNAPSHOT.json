@@ -1,0 +1,263 @@
+{
+  "time": "2026-11-27T10:08:44.967407+08:00",
+  "tasks": [
+    {
+      "task": "put_back_block",
+      "version": "old",
+      "completed_epoch": 250,
+      "evaluations": [
+        {
+          "epoch": 50,
+          "episodes_completed": 50,
+          "successes": 50,
+          "complete": true
+        },
+        {
+          "epoch": 100,
+          "episodes_completed": 50,
+          "successes": 50,
+          "complete": true
+        },
+        {
+          "epoch": 150,
+          "episodes_completed": 50,
+          "successes": 50,
+          "complete": true
+        },
+        {
+          "epoch": 200,
+          "episodes_completed": 50,
+          "successes": 50,
+          "complete": true
+        },
+        {
+          "epoch": 250,
+          "episodes_completed": 50,
+          "successes": 50,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "task": "swap_blocks",
+      "version": "corrected",
+      "completed_epoch": 140,
+      "evaluations": [
+        {
+          "epoch": 50,
+          "episodes_completed": 50,
+          "successes": 48,
+          "complete": true
+        },
+        {
+          "epoch": 100,
+          "episodes_completed": 18,
+          "successes": 17,
+          "complete": false
+        }
+      ],
+      "last_training_records": [
+        {
+          "resume_saved": true,
+          "next_epoch": 141,
+          "batch": 419,
+          "global_step": 70419,
+          "checkpoint_seconds": 14.563732109032571
+        },
+        {
+          "paused_epoch": 141,
+          "batch": 419,
+          "global_step": 70419
+        }
+      ]
+    },
+    {
+      "task": "battery_try",
+      "version": "corrected",
+      "completed_epoch": 125,
+      "evaluations": [
+        {
+          "epoch": 50,
+          "episodes_completed": 12,
+          "successes": 3,
+          "complete": false
+        }
+      ],
+      "last_training_records": [
+        {
+          "resume_saved": true,
+          "next_epoch": 126,
+          "batch": 369,
+          "global_step": 69494,
+          "checkpoint_seconds": 14.423877286724746
+        },
+        {
+          "paused_epoch": 126,
+          "batch": 369,
+          "global_step": 69494
+        }
+      ]
+    },
+    {
+      "task": "cover_blocks",
+      "version": "old",
+      "completed_epoch": 250,
+      "evaluations": [
+        {
+          "epoch": 50,
+          "episodes_completed": 50,
+          "successes": 7,
+          "complete": true
+        },
+        {
+          "epoch": 100,
+          "episodes_completed": 50,
+          "successes": 10,
+          "complete": true
+        },
+        {
+          "epoch": 150,
+          "episodes_completed": 50,
+          "successes": 40,
+          "complete": true
+        },
+        {
+          "epoch": 200,
+          "episodes_completed": 50,
+          "successes": 38,
+          "complete": true
+        },
+        {
+          "epoch": 250,
+          "episodes_completed": 50,
+          "successes": 39,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "task": "observe_and_pickup",
+      "version": "old",
+      "completed_epoch": 250,
+      "evaluations": [
+        {
+          "epoch": 50,
+          "episodes_completed": 50,
+          "successes": 1,
+          "complete": true
+        },
+        {
+          "epoch": 100,
+          "episodes_completed": 50,
+          "successes": 0,
+          "complete": true
+        },
+        {
+          "epoch": 150,
+          "episodes_completed": 50,
+          "successes": 0,
+          "complete": true
+        },
+        {
+          "epoch": 200,
+          "episodes_completed": 50,
+          "successes": 0,
+          "complete": true
+        },
+        {
+          "epoch": 250,
+          "episodes_completed": 50,
+          "successes": 3,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "task": "rearrange_blocks",
+      "version": "corrected",
+      "completed_epoch": 209,
+      "evaluations": [],
+      "last_training_records": [
+        {
+          "resume_saved": true,
+          "next_epoch": 210,
+          "batch": 4,
+          "global_step": 73154,
+          "checkpoint_seconds": 14.044576055370271
+        },
+        {
+          "paused_epoch": 210,
+          "batch": 4,
+          "global_step": 73154
+        }
+      ]
+    },
+    {
+      "task": "swap_T",
+      "version": "corrected",
+      "completed_epoch": 244,
+      "evaluations": [
+        {
+          "epoch": 50,
+          "episodes_completed": 50,
+          "successes": 2,
+          "complete": true
+        }
+      ],
+      "last_training_records": [
+        {
+          "resume_saved": true,
+          "next_epoch": 245,
+          "batch": 265,
+          "global_step": 73465,
+          "checkpoint_seconds": 14.301723374053836
+        },
+        {
+          "paused_epoch": 245,
+          "batch": 265,
+          "global_step": 73465
+        }
+      ]
+    },
+    {
+      "task": "blocks_ranking_try",
+      "version": "corrected",
+      "completed_epoch": 20,
+      "evaluations": [],
+      "last_training_records": [
+        {
+          "resume_saved": true,
+          "next_epoch": 21,
+          "batch": 818,
+          "global_step": 24118,
+          "checkpoint_seconds": 12.833711391314864
+        },
+        {
+          "paused_epoch": 21,
+          "batch": 818,
+          "global_step": 24118
+        }
+      ]
+    },
+    {
+      "task": "press_button",
+      "version": "corrected",
+      "completed_epoch": 56,
+      "evaluations": [],
+      "last_training_records": [
+        {
+          "resume_saved": true,
+          "next_epoch": 57,
+          "batch": 249,
+          "global_step": 24329,
+          "checkpoint_seconds": 15.68125313334167
+        },
+        {
+          "paused_epoch": 57,
+          "batch": 249,
+          "global_step": 24329
+        }
+      ]
+    }
+  ]
+}
