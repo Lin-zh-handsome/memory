@@ -1,0 +1,101 @@
+{
+  "time": "2026-11-27T17:20:35.552883+08:00",
+  "task": "swap_T",
+  "model": "M5",
+  "seed": 0,
+  "training_complete": true,
+  "completed_epoch": 250,
+  "evaluations": [
+    {
+      "epoch": 50,
+      "episodes": 50,
+      "successes": 2,
+      "complete": true,
+      "shards": [
+        {
+          "range": "00_26",
+          "episodes": 26,
+          "successes": 1
+        },
+        {
+          "range": "26_50",
+          "episodes": 24,
+          "successes": 1
+        }
+      ]
+    },
+    {
+      "epoch": 100,
+      "episodes": 50,
+      "successes": 11,
+      "complete": true,
+      "shards": [
+        {
+          "range": "00_26",
+          "episodes": 26,
+          "successes": 3
+        },
+        {
+          "range": "26_50",
+          "episodes": 24,
+          "successes": 8
+        }
+      ]
+    },
+    {
+      "epoch": 150,
+      "episodes": 46,
+      "successes": 21,
+      "complete": false,
+      "shards": [
+        {
+          "range": "00_26",
+          "episodes": 26,
+          "successes": 12
+        },
+        {
+          "range": "26_50",
+          "episodes": 20,
+          "successes": 9
+        }
+      ]
+    },
+    {
+      "epoch": 200,
+      "episodes": 44,
+      "successes": 33,
+      "complete": false,
+      "shards": [
+        {
+          "range": "00_26",
+          "episodes": 26,
+          "successes": 19
+        },
+        {
+          "range": "26_50",
+          "episodes": 18,
+          "successes": 14
+        }
+      ]
+    },
+    {
+      "epoch": 250,
+      "episodes": 28,
+      "successes": 26,
+      "complete": false,
+      "shards": [
+        {
+          "range": "00_26",
+          "episodes": 14,
+          "successes": 12
+        },
+        {
+          "range": "26_50",
+          "episodes": 14,
+          "successes": 14
+        }
+      ]
+    }
+  ],
+  "complete": false
+}
