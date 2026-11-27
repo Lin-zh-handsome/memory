@@ -1,0 +1,99 @@
+{
+  "time": "2026-11-27T21:30:13.411282+08:00",
+  "training": [
+    {
+      "task": "swap_blocks",
+      "resume_epoch": {
+        "resume_epoch": 141,
+        "batch": 419,
+        "global_step": 70419
+      },
+      "step": null,
+      "epoch_complete": null,
+      "error": false
+    },
+    {
+      "task": "battery_try",
+      "resume_epoch": {
+        "resume_epoch": 126,
+        "batch": 369,
+        "global_step": 69494
+      },
+      "step": {
+        "epoch": 126,
+        "step": 69500,
+        "total_loss": 0.002338704653084278,
+        "ddpm_loss": 0.0023367975372821093,
+        "goal_loss": 9.535381104797125e-05,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 53,
+        "lr": 4.9857459691549814e-05
+      },
+      "epoch_complete": null,
+      "error": false
+    },
+    {
+      "task": "rearrange_blocks",
+      "resume_epoch": {
+        "resume_epoch": 210,
+        "batch": 4,
+        "global_step": 73154
+      },
+      "step": {
+        "epoch": 210,
+        "step": 73200,
+        "total_loss": 0.00028145796386525035,
+        "ddpm_loss": 0.0002720932534430176,
+        "goal_loss": 0.00046823505545035005,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 64,
+        "lr": 6.519309328077938e-06
+      },
+      "epoch_complete": null,
+      "error": false
+    },
+    {
+      "task": "blocks_ranking_try",
+      "resume_epoch": {
+        "resume_epoch": 21,
+        "batch": 818,
+        "global_step": 24118
+      },
+      "step": null,
+      "epoch_complete": null,
+      "error": false
+    },
+    {
+      "task": "press_button",
+      "resume_epoch": {
+        "resume_epoch": 57,
+        "batch": 249,
+        "global_step": 24329
+      },
+      "step": null,
+      "epoch_complete": null,
+      "error": false
+    }
+  ],
+  "evaluation": [
+    {
+      "task": "swap_blocks",
+      "log": "M5_eval_100_00_26.log",
+      "closed_loop_started": true,
+      "error": false
+    },
+    {
+      "task": "swap_blocks",
+      "log": "M5_eval_100_26_50.log",
+      "closed_loop_started": true,
+      "error": false
+    },
+    {
+      "task": "battery_try",
+      "log": "M5_eval_050_00_26.log",
+      "closed_loop_started": true,
+      "error": false
+    }
+  ],
+  "gpu_state": "5, GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f, 29178 MiB, 143771 MiB, 100 %\n6, GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314, 26534 MiB, 143771 MiB, 100 %\n"
+}
