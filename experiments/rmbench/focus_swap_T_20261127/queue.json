@@ -1,0 +1,14 @@
+{
+  "jobs": [
+    {
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "data": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/datasets/swap_T/prepared",
+      "model": "M5",
+      "targets": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_T/annotations"
+    }
+  ],
+  "fully_prepared": true,
+  "preparation_finished": true,
+  "finish_model_first": "M5",
+  "scope": "Only swap_T M5 seed0 corrected RGB"
+}

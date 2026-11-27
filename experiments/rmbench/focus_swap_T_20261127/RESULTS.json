@@ -1,0 +1,46 @@
+{
+  "time": "2026-11-27T10:42:41.756826+08:00",
+  "task": "swap_T",
+  "model": "M5",
+  "seed": 0,
+  "rgb_normalization": "identity",
+  "training_complete": false,
+  "evaluations": [
+    {
+      "epoch": 50,
+      "episodes": 50,
+      "successes": 2,
+      "complete": true,
+      "success_rate": 0.04
+    },
+    {
+      "epoch": 100,
+      "episodes": 0,
+      "successes": 0,
+      "complete": false,
+      "success_rate": null
+    },
+    {
+      "epoch": 150,
+      "episodes": 0,
+      "successes": 0,
+      "complete": false,
+      "success_rate": null
+    },
+    {
+      "epoch": 200,
+      "episodes": 0,
+      "successes": 0,
+      "complete": false,
+      "success_rate": null
+    },
+    {
+      "epoch": 250,
+      "episodes": 0,
+      "successes": 0,
+      "complete": false,
+      "success_rate": null
+    }
+  ],
+  "complete": false
+}
