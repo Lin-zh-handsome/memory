@@ -1,0 +1,13 @@
+{
+  "time": "2026-11-27T18:09:19.379870+08:00",
+  "status": "completed",
+  "exit_code": 0,
+  "pid": 161605,
+  "supervisor_pid": 161545,
+  "gpu_index": 5,
+  "gpu_uuid": "GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f",
+  "processes": 4,
+  "scope": "swap_T M5 seed0 corrected RGB",
+  "queue": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/focus_swap_T_20261127/queue.json",
+  "results": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/focus_swap_T_20261127/RESULTS.json"
+}

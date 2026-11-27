@@ -1,28 +1,17 @@
 {
-  "time": "2026-11-27T17:20:35.552883+08:00",
+  "time": "2026-11-27T20:12:11.467213+08:00",
   "task": "swap_T",
   "model": "M5",
   "seed": 0,
-  "training_complete": true,
+  "rgb_normalization": "identity",
   "completed_epoch": 250,
+  "training_complete": true,
   "evaluations": [
     {
       "epoch": 50,
       "episodes": 50,
       "successes": 2,
       "complete": true,
-      "shards": [
-        {
-          "range": "00_26",
-          "episodes": 26,
-          "successes": 1
-        },
-        {
-          "range": "26_50",
-          "episodes": 24,
-          "successes": 1
-        }
-      ],
       "success_rate": 0.04
     },
     {
@@ -30,78 +19,33 @@
       "episodes": 50,
       "successes": 11,
       "complete": true,
-      "shards": [
-        {
-          "range": "00_26",
-          "episodes": 26,
-          "successes": 3
-        },
-        {
-          "range": "26_50",
-          "episodes": 24,
-          "successes": 8
-        }
-      ],
       "success_rate": 0.22
     },
     {
       "epoch": 150,
-      "episodes": 46,
-      "successes": 21,
-      "complete": false,
-      "shards": [
-        {
-          "range": "00_26",
-          "episodes": 26,
-          "successes": 12
-        },
-        {
-          "range": "26_50",
-          "episodes": 20,
-          "successes": 9
-        }
-      ],
-      "success_rate": null
+      "episodes": 50,
+      "successes": 23,
+      "complete": true,
+      "success_rate": 0.46
     },
     {
       "epoch": 200,
-      "episodes": 44,
-      "successes": 33,
-      "complete": false,
-      "shards": [
-        {
-          "range": "00_26",
-          "episodes": 26,
-          "successes": 19
-        },
-        {
-          "range": "26_50",
-          "episodes": 18,
-          "successes": 14
-        }
-      ],
-      "success_rate": null
+      "episodes": 50,
+      "successes": 38,
+      "complete": true,
+      "success_rate": 0.76
     },
     {
       "epoch": 250,
-      "episodes": 28,
-      "successes": 26,
-      "complete": false,
-      "shards": [
-        {
-          "range": "00_26",
-          "episodes": 14,
-          "successes": 12
-        },
-        {
-          "range": "26_50",
-          "episodes": 14,
-          "successes": 14
-        }
-      ],
-      "success_rate": null
+      "episodes": 50,
+      "successes": 45,
+      "complete": true,
+      "success_rate": 0.9
     }
   ],
-  "complete": false,
-  "rgb_normalization": "identity"
+  "complete": true,
+  "best_epoch": 250,
+  "best_success_rate": 0.9,
+  "finished_at": "2026-11-27T18:09:19.379870+08:00",
+  "gpu_released": true
 }
