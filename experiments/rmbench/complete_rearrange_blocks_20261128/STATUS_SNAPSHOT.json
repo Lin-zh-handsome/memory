@@ -1,0 +1,151 @@
+{
+  "observed_at": "2026-11-28T16:35:41+08:00",
+  "model": "M5",
+  "seed": 0,
+  "tasks": [
+    {
+      "task": "put_back_block",
+      "name": "方块归位",
+      "epochs_complete": 250,
+      "nodes": 5,
+      "successes": [
+        50,
+        50,
+        50,
+        50,
+        50
+      ],
+      "version": "旧版保留",
+      "state": "已全部完成"
+    },
+    {
+      "task": "swap_blocks",
+      "name": "方块交换",
+      "epochs_complete": 203,
+      "nodes": 3,
+      "successes": [
+        48,
+        48,
+        50,
+        null,
+        null
+      ],
+      "version": "修正RGB",
+      "state": "正在第204轮"
+    },
+    {
+      "task": "battery_try",
+      "name": "电池试插",
+      "epochs_complete": 181,
+      "nodes": 3,
+      "successes": [
+        17,
+        42,
+        46,
+        null,
+        null
+      ],
+      "version": "修正RGB",
+      "state": "正在第182轮"
+    },
+    {
+      "task": "cover_blocks",
+      "name": "方块覆盖",
+      "epochs_complete": 250,
+      "nodes": 5,
+      "successes": [
+        7,
+        10,
+        40,
+        38,
+        39
+      ],
+      "version": "旧版保留",
+      "state": "已全部完成"
+    },
+    {
+      "task": "observe_and_pickup",
+      "name": "观察后抓取",
+      "epochs_complete": 250,
+      "nodes": 5,
+      "successes": [
+        1,
+        0,
+        0,
+        0,
+        3
+      ],
+      "version": "旧版保留",
+      "state": "已全部完成"
+    },
+    {
+      "task": "rearrange_blocks",
+      "name": "方块重排",
+      "epochs_complete": 250,
+      "nodes": 5,
+      "successes": [
+        16,
+        28,
+        50,
+        50,
+        50
+      ],
+      "version": "修正RGB",
+      "state": "已全部完成"
+    },
+    {
+      "task": "swap_T",
+      "name": "T形块交换",
+      "epochs_complete": 250,
+      "nodes": 5,
+      "successes": [
+        2,
+        11,
+        23,
+        38,
+        45
+      ],
+      "version": "修正RGB",
+      "state": "已全部完成"
+    },
+    {
+      "task": "blocks_ranking_try",
+      "name": "方块排序",
+      "epochs_complete": 40,
+      "nodes": 0,
+      "successes": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "version": "修正RGB",
+      "state": "正在第41轮"
+    },
+    {
+      "task": "press_button",
+      "name": "按按钮",
+      "epochs_complete": 89,
+      "nodes": 0,
+      "successes": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "version": "修正RGB",
+      "state": "训练排队；50轮已评16/50，成功0"
+    }
+  ],
+  "fully_complete_tasks": 5,
+  "training_complete_tasks": 5,
+  "complete_eval_nodes": 31,
+  "planned_eval_nodes": 45,
+  "active_gpu_indices": [
+    5
+  ],
+  "active_training_jobs": 3,
+  "active_eval_jobs": 1
+}

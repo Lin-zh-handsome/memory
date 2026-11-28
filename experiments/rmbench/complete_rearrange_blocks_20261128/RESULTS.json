@@ -1,0 +1,49 @@
+{
+  "observed_at": "2026-11-28T16:35:41+08:00",
+  "task": "rearrange_blocks",
+  "model": "M5",
+  "seed": 0,
+  "rgb_normalization": "identity",
+  "training_complete": true,
+  "epochs": 250,
+  "evaluations": [
+    {
+      "epoch": 50,
+      "episodes": 50,
+      "successes": 16,
+      "success_rate": 0.32,
+      "complete": true
+    },
+    {
+      "epoch": 100,
+      "episodes": 50,
+      "successes": 28,
+      "success_rate": 0.56,
+      "complete": true
+    },
+    {
+      "epoch": 150,
+      "episodes": 50,
+      "successes": 50,
+      "success_rate": 1.0,
+      "complete": true
+    },
+    {
+      "epoch": 200,
+      "episodes": 50,
+      "successes": 50,
+      "success_rate": 1.0,
+      "complete": true
+    },
+    {
+      "epoch": 250,
+      "episodes": 50,
+      "successes": 50,
+      "success_rate": 1.0,
+      "complete": true
+    }
+  ],
+  "best_epoch": 150,
+  "best_success_rate": 1.0,
+  "complete": true
+}

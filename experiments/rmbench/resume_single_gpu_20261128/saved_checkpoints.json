@@ -1,0 +1,34 @@
+[
+  {
+    "task": "swap_blocks",
+    "resume_saved": true,
+    "next_epoch": 185,
+    "batch": 118,
+    "global_step": 92118,
+    "checkpoint_seconds": 6.636988709680736
+  },
+  {
+    "task": "battery_try",
+    "resume_saved": true,
+    "next_epoch": 165,
+    "batch": 225,
+    "global_step": 90917,
+    "checkpoint_seconds": 10.13133220281452
+  },
+  {
+    "task": "blocks_ranking_try",
+    "resume_saved": true,
+    "next_epoch": 33,
+    "batch": 714,
+    "global_step": 37994,
+    "checkpoint_seconds": 10.186827630735934
+  },
+  {
+    "task": "press_button",
+    "resume_saved": true,
+    "next_epoch": 90,
+    "batch": 418,
+    "global_step": 38688,
+    "checkpoint_seconds": 10.391824984923005
+  }
+]
