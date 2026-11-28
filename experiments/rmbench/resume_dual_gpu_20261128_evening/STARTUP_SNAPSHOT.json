@@ -1,0 +1,119 @@
+{
+  "time": "2026-11-28T21:30:52.366991+08:00",
+  "jobs": [
+    {
+      "task": "swap_blocks",
+      "log": "M5_eval_200_00_26.log",
+      "resume": null,
+      "latest_training_step": null,
+      "last_closed_loop_step": [
+        "30",
+        "1000"
+      ],
+      "error": false
+    },
+    {
+      "task": "swap_blocks",
+      "log": "M5_eval_200_26_50.log",
+      "resume": null,
+      "latest_training_step": null,
+      "last_closed_loop_step": [
+        "45",
+        "1000"
+      ],
+      "error": false
+    },
+    {
+      "task": "swap_blocks",
+      "log": "M5_train.log",
+      "resume": {
+        "resume_epoch": 219,
+        "batch": 439,
+        "global_step": 109439
+      },
+      "latest_training_step": null,
+      "last_closed_loop_step": null,
+      "error": false
+    },
+    {
+      "task": "battery_try",
+      "log": "M5_train.log",
+      "resume": {
+        "resume_epoch": 196,
+        "batch": 220,
+        "global_step": 108055
+      },
+      "latest_training_step": {
+        "epoch": 196,
+        "step": 108100,
+        "total_loss": 0.0009433111408725381,
+        "ddpm_loss": 0.0009409469203092158,
+        "goal_loss": 0.00011820966756204143,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 64,
+        "lr": 1.1361913977257422e-05
+      },
+      "last_closed_loop_step": null,
+      "error": false
+    },
+    {
+      "task": "blocks_ranking_try",
+      "log": "M5_train.log",
+      "resume": {
+        "resume_epoch": 47,
+        "batch": 932,
+        "global_step": 54522
+      },
+      "latest_training_step": {
+        "epoch": 47,
+        "step": 54600,
+        "total_loss": 0.004231981001794338,
+        "ddpm_loss": 0.004231981001794338,
+        "goal_loss": 0.0,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 0,
+        "lr": 9.169781103498516e-05
+      },
+      "last_closed_loop_step": null,
+      "error": false
+    },
+    {
+      "task": "press_button",
+      "log": "M5_eval_050_26_50.log",
+      "resume": null,
+      "latest_training_step": null,
+      "last_closed_loop_step": [
+        "20",
+        "1500"
+      ],
+      "error": false
+    },
+    {
+      "task": "press_button",
+      "log": "M5_train.log",
+      "resume": {
+        "resume_epoch": 90,
+        "batch": 418,
+        "global_step": 38688
+      },
+      "latest_training_step": {
+        "epoch": 90,
+        "step": 38700,
+        "total_loss": 0.000981051241979003,
+        "ddpm_loss": 0.000981051241979003,
+        "goal_loss": 0.0,
+        "effective_goal_weight": 0.02,
+        "valid_goal_samples": 0,
+        "lr": 7.171308008824316e-05
+      },
+      "last_closed_loop_step": null,
+      "error": false
+    }
+  ],
+  "gpu_state": "5, GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f, 27538 MiB, 100 %\n6, GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314, 21840 MiB, 100 %\n",
+  "gpu_process_counts": {
+    "GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f": 4,
+    "GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314": 3
+  },
+  "startup_confirmed": true
+}

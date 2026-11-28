@@ -1,0 +1,41 @@
+{
+  "pid": 1457873,
+  "supervisor_pid": 1457813,
+  "gpu_indices": [
+    5,
+    6
+  ],
+  "gpu_uuids": [
+    "GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f",
+    "GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314"
+  ],
+  "slots_per_gpu": 4,
+  "training_slots_per_gpu": 2,
+  "evaluation_slots_per_gpu": 2,
+  "fill_idle_slots": true,
+  "queue": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/queue.json",
+  "scope": "M5 seed0 corrected RGB remaining tasks",
+  "deadline": null,
+  "command": [
+    "flock",
+    "-n",
+    "-F",
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/queue.lock",
+    "/home/linzhenghong/miniconda3/envs/coffee-dp/bin/python",
+    "-u",
+    "/home/linzhenghong/project/rmbench_m0_m3/source/m5-goal-spatial-r3m/implementation/rmbench/run_ablation.py",
+    "--queue",
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/queue.json",
+    "--rmbench",
+    "/home/linzhenghong/project/rmbench_m0_m3/source/RMBench",
+    "--gpu",
+    "GPU-45346f5d-173b-0c42-f281-3120b3fcbc3f",
+    "GPU-8667433d-39d2-34a0-76d0-b1d2d1a30314",
+    "--train-slots",
+    "2",
+    "--eval-slots",
+    "2",
+    "--split-evaluations",
+    "--fill-idle-slots"
+  ]
+}

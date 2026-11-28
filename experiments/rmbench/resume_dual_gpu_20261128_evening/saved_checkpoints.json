@@ -1,0 +1,26 @@
+[
+  {
+    "task": "swap_blocks",
+    "resume_saved": true,
+    "next_epoch": 219,
+    "batch": 439,
+    "global_step": 109439,
+    "checkpoint_seconds": 7.621903425082564
+  },
+  {
+    "task": "battery_try",
+    "resume_saved": true,
+    "next_epoch": 196,
+    "batch": 220,
+    "global_step": 108055,
+    "checkpoint_seconds": 9.416245584376156
+  },
+  {
+    "task": "blocks_ranking_try",
+    "resume_saved": true,
+    "next_epoch": 47,
+    "batch": 932,
+    "global_step": 54522,
+    "checkpoint_seconds": 9.345158068463206
+  }
+]
