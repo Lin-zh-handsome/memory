@@ -1,0 +1,1019 @@
+{
+  "specs_checked": 110,
+  "complete_nodes_checked": 45,
+  "complete_episode_records": 2250,
+  "partial_nodes_seen": 3,
+  "errors": [],
+  "nodes": [
+    {
+      "task": "battery_try",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/battery_try/seed0",
+      "rows": 50,
+      "successes": 17,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "battery_try",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/battery_try/seed0",
+      "rows": 50,
+      "successes": 46,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "mamba_only",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 5,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "mamba_only",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 10,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "mamba_only",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 7,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "mamba_only",
+      "epoch": 200,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 6,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "mamba_only",
+      "epoch": 250,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 6,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "memory_only",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 7,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "memory_only",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 9,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "memory_only",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0",
+      "rows": 50,
+      "successes": 8,
+      "shard_rows": 24,
+      "errors": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/seed0",
+      "rows": 50,
+      "successes": 1,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/seed0",
+      "rows": 50,
+      "successes": 0,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "model": "M5",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/seed0",
+      "rows": 50,
+      "successes": 0,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "model": "M5",
+      "epoch": 200,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/seed0",
+      "rows": 50,
+      "successes": 0,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "model": "M5",
+      "epoch": 250,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/seed0",
+      "rows": 50,
+      "successes": 3,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "put_back_block",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "put_back_block",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "put_back_block",
+      "model": "M5",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 24,
+      "errors": []
+    },
+    {
+      "task": "put_back_block",
+      "model": "M5",
+      "epoch": 200,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "put_back_block",
+      "model": "M5",
+      "epoch": 250,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "rearrange_blocks",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/rearrange_blocks/seed0",
+      "rows": 50,
+      "successes": 14,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_T",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_T/seed0",
+      "rows": 50,
+      "successes": 3,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_blocks",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_blocks/seed0",
+      "rows": 50,
+      "successes": 48,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_blocks",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_blocks/seed0",
+      "rows": 50,
+      "successes": 49,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m",
+      "rows": 50,
+      "successes": 7,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m",
+      "rows": 50,
+      "successes": 10,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "M5",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m",
+      "rows": 50,
+      "successes": 40,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "M5",
+      "epoch": 200,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m",
+      "rows": 50,
+      "successes": 38,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "cover_blocks",
+      "model": "M5",
+      "epoch": 250,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m",
+      "rows": 50,
+      "successes": 39,
+      "shard_rows": 0,
+      "errors": []
+    },
+    {
+      "task": "battery_try",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/seed0",
+      "rows": 50,
+      "successes": 17,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "battery_try",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/seed0",
+      "rows": 50,
+      "successes": 42,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "battery_try",
+      "model": "M5",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/seed0",
+      "rows": 50,
+      "successes": 46,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "rearrange_blocks",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0",
+      "rows": 50,
+      "successes": 16,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "rearrange_blocks",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0",
+      "rows": 50,
+      "successes": 28,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "rearrange_blocks",
+      "model": "M5",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "rearrange_blocks",
+      "model": "M5",
+      "epoch": 200,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "rearrange_blocks",
+      "model": "M5",
+      "epoch": 250,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_T",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "rows": 50,
+      "successes": 2,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_T",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "rows": 50,
+      "successes": 11,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_T",
+      "model": "M5",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "rows": 50,
+      "successes": 23,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_T",
+      "model": "M5",
+      "epoch": 200,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "rows": 50,
+      "successes": 38,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_T",
+      "model": "M5",
+      "epoch": 250,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/seed0",
+      "rows": 50,
+      "successes": 45,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_blocks",
+      "model": "M5",
+      "epoch": 50,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/seed0",
+      "rows": 50,
+      "successes": 48,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_blocks",
+      "model": "M5",
+      "epoch": 100,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/seed0",
+      "rows": 50,
+      "successes": 48,
+      "shard_rows": 50,
+      "errors": []
+    },
+    {
+      "task": "swap_blocks",
+      "model": "M5",
+      "epoch": 150,
+      "root": "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/seed0",
+      "rows": 50,
+      "successes": 50,
+      "shard_rows": 50,
+      "errors": []
+    }
+  ],
+  "manifests": {
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/battery_try/reset_seeds.json": {
+      "task": "battery_try",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/blocks_ranking_try/reset_seeds.json": {
+      "task": "blocks_ranking_try",
+      "count": 1,
+      "unique": 1,
+      "complete": false,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100000
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed0/evaluation/reset_seeds.json": {
+      "task": "cover_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed1/evaluation/reset_seeds.json": {
+      "task": "cover_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/cover_blocks/seed2/evaluation/reset_seeds.json": {
+      "task": "cover_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/observe_and_pickup/reset_seeds.json": {
+      "task": "observe_and_pickup",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100051
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/press_button/reset_seeds.json": {
+      "task": "press_button",
+      "count": 1,
+      "unique": 1,
+      "complete": false,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100000
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/put_back_block/reset_seeds.json": {
+      "task": "put_back_block",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/rearrange_blocks/reset_seeds.json": {
+      "task": "rearrange_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_T/reset_seeds.json": {
+      "task": "swap_T",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100054
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_ablation_seeds/swap_blocks/reset_seeds.json": {
+      "task": "swap_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100001,
+      "maximum": 100090
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_goal_spatial_r3m/evaluation/reset_seeds.json": {
+      "task": "cover_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/battery_try/reset_seeds.json": {
+      "task": "battery_try",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/blocks_ranking_try/reset_seeds.json": {
+      "task": "blocks_ranking_try",
+      "count": 1,
+      "unique": 1,
+      "complete": false,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100000
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/press_button/reset_seeds.json": {
+      "task": "press_button",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/rearrange_blocks/reset_seeds.json": {
+      "task": "rearrange_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100049
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_T/reset_seeds.json": {
+      "task": "swap_T",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100000,
+      "maximum": 100054
+    },
+    "/home/linzhenghong/project/rmbench_m0_m3/experiments/rmbench/m5_seed0_rgb_corrected/swap_blocks/reset_seeds.json": {
+      "task": "swap_blocks",
+      "count": 50,
+      "unique": 50,
+      "complete": true,
+      "start": 100000,
+      "minimum": 100001,
+      "maximum": 100090
+    }
+  },
+  "current_vs_legacy_resets": [
+    {
+      "task": "put_back_block",
+      "current_count": 50,
+      "legacy_count": 50,
+      "identical": true,
+      "legacy_complete": true
+    },
+    {
+      "task": "swap_blocks",
+      "current_count": 50,
+      "legacy_count": 50,
+      "identical": true,
+      "legacy_complete": true
+    },
+    {
+      "task": "battery_try",
+      "current_count": 50,
+      "legacy_count": 50,
+      "identical": true,
+      "legacy_complete": true
+    },
+    {
+      "task": "observe_and_pickup",
+      "current_count": 50,
+      "legacy_count": 50,
+      "identical": true,
+      "legacy_complete": true
+    },
+    {
+      "task": "rearrange_blocks",
+      "current_count": 50,
+      "legacy_count": 50,
+      "identical": true,
+      "legacy_complete": true
+    },
+    {
+      "task": "swap_T",
+      "current_count": 50,
+      "legacy_count": 50,
+      "identical": true,
+      "legacy_complete": true
+    },
+    {
+      "task": "blocks_ranking_try",
+      "current_count": 1,
+      "legacy_count": 1,
+      "identical": true,
+      "legacy_complete": false
+    },
+    {
+      "task": "press_button",
+      "current_count": 50,
+      "legacy_count": 1,
+      "identical": false,
+      "legacy_complete": false
+    }
+  ],
+  "logged_terminal_condition_checks": [
+    {
+      "task": "observe_and_pickup",
+      "epoch": 50,
+      "successes": 1,
+      "compatible_logged_checks": 0,
+      "contradictions": [],
+      "success_final_stages": [
+        1
+      ],
+      "insufficient_terminal_logs": [
+        {
+          "episode_id": 28,
+          "seed": 100030
+        }
+      ]
+    },
+    {
+      "task": "observe_and_pickup",
+      "epoch": 100,
+      "successes": 0,
+      "compatible_logged_checks": 0,
+      "contradictions": [],
+      "success_final_stages": [],
+      "insufficient_terminal_logs": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "epoch": 150,
+      "successes": 0,
+      "compatible_logged_checks": 0,
+      "contradictions": [],
+      "success_final_stages": [],
+      "insufficient_terminal_logs": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "epoch": 200,
+      "successes": 0,
+      "compatible_logged_checks": 0,
+      "contradictions": [],
+      "success_final_stages": [],
+      "insufficient_terminal_logs": []
+    },
+    {
+      "task": "observe_and_pickup",
+      "epoch": 250,
+      "successes": 3,
+      "compatible_logged_checks": 0,
+      "contradictions": [],
+      "success_final_stages": [
+        1
+      ],
+      "insufficient_terminal_logs": [
+        {
+          "episode_id": 6,
+          "seed": 100006
+        },
+        {
+          "episode_id": 25,
+          "seed": 100027
+        },
+        {
+          "episode_id": 30,
+          "seed": 100032
+        }
+      ]
+    },
+    {
+      "task": "put_back_block",
+      "epoch": 50,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "put_back_block",
+      "epoch": 100,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "put_back_block",
+      "epoch": 150,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "put_back_block",
+      "epoch": 200,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "put_back_block",
+      "epoch": 250,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "cover_blocks",
+      "epoch": 50,
+      "successes": 7,
+      "compatible_logged_checks": 7,
+      "contradictions": [],
+      "success_final_stages": [
+        6
+      ]
+    },
+    {
+      "task": "cover_blocks",
+      "epoch": 100,
+      "successes": 10,
+      "compatible_logged_checks": 10,
+      "contradictions": [],
+      "success_final_stages": [
+        6
+      ]
+    },
+    {
+      "task": "cover_blocks",
+      "epoch": 150,
+      "successes": 40,
+      "compatible_logged_checks": 40,
+      "contradictions": [],
+      "success_final_stages": [
+        6
+      ]
+    },
+    {
+      "task": "cover_blocks",
+      "epoch": 200,
+      "successes": 38,
+      "compatible_logged_checks": 38,
+      "contradictions": [],
+      "success_final_stages": [
+        6
+      ]
+    },
+    {
+      "task": "cover_blocks",
+      "epoch": 250,
+      "successes": 39,
+      "compatible_logged_checks": 39,
+      "contradictions": [],
+      "success_final_stages": [
+        6
+      ]
+    },
+    {
+      "task": "battery_try",
+      "epoch": 50,
+      "successes": 17,
+      "compatible_logged_checks": 17,
+      "contradictions": [],
+      "success_final_stages": [
+        3
+      ]
+    },
+    {
+      "task": "battery_try",
+      "epoch": 100,
+      "successes": 42,
+      "compatible_logged_checks": 42,
+      "contradictions": [],
+      "success_final_stages": [
+        3
+      ]
+    },
+    {
+      "task": "battery_try",
+      "epoch": 150,
+      "successes": 46,
+      "compatible_logged_checks": 46,
+      "contradictions": [],
+      "success_final_stages": [
+        3
+      ]
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 50,
+      "successes": 16,
+      "compatible_logged_checks": 16,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 100,
+      "successes": 28,
+      "compatible_logged_checks": 28,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 150,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 200,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 250,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        2
+      ]
+    },
+    {
+      "task": "swap_T",
+      "epoch": 50,
+      "successes": 2,
+      "compatible_logged_checks": 2,
+      "contradictions": [],
+      "success_final_stages": [
+        1
+      ]
+    },
+    {
+      "task": "swap_T",
+      "epoch": 100,
+      "successes": 11,
+      "compatible_logged_checks": 11,
+      "contradictions": [],
+      "success_final_stages": [
+        1
+      ]
+    },
+    {
+      "task": "swap_T",
+      "epoch": 150,
+      "successes": 23,
+      "compatible_logged_checks": 23,
+      "contradictions": [],
+      "success_final_stages": [
+        1
+      ]
+    },
+    {
+      "task": "swap_T",
+      "epoch": 200,
+      "successes": 38,
+      "compatible_logged_checks": 38,
+      "contradictions": [],
+      "success_final_stages": [
+        1
+      ]
+    },
+    {
+      "task": "swap_T",
+      "epoch": 250,
+      "successes": 45,
+      "compatible_logged_checks": 45,
+      "contradictions": [],
+      "success_final_stages": [
+        1
+      ]
+    },
+    {
+      "task": "swap_blocks",
+      "epoch": 50,
+      "successes": 48,
+      "compatible_logged_checks": 48,
+      "contradictions": [],
+      "success_final_stages": [
+        4
+      ]
+    },
+    {
+      "task": "swap_blocks",
+      "epoch": 100,
+      "successes": 48,
+      "compatible_logged_checks": 48,
+      "contradictions": [],
+      "success_final_stages": [
+        4
+      ]
+    },
+    {
+      "task": "swap_blocks",
+      "epoch": 150,
+      "successes": 50,
+      "compatible_logged_checks": 50,
+      "contradictions": [],
+      "success_final_stages": [
+        4
+      ]
+    }
+  ],
+  "initial_state_comparisons": 1900,
+  "initial_state_mismatches": [],
+  "scope": "Stored records and code only; no fresh GPU rollout. Log compatibility does not independently recreate all simulator predicates.",
+  "terminal_check_notes": [
+    "Success labels are generated solely by env.eval_success. Logged terminal fields provide consistency checks, not a fresh independent simulator rollout.",
+    "Old Observe-and-Pickup successful records only include stage and step, so four successes lack height/fail_flag evidence for an independent terminal check.",
+    "Put-Back-Block permits press_cnt to exceed 1 after entering stage 1; one epoch-50 success with press_cnt=2 is valid under the official predicate.",
+    "Swap-T reference orientations were subsequently recovered from saved target poses by inverting the official Rx(-90deg) transform; all success-row XY, orientation and Z checks passed. See geometric_audit.json. Final gripper states are not independently logged."
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "rmbench_python_files": [
+    {
+      "path": "implementation/rmbench/ablation_eval_shards.py",
+      "lines": 79
+    },
+    {
+      "path": "implementation/rmbench/ablation_targets.py",
+      "lines": 136
+    },
+    {
+      "path": "implementation/rmbench/calibrate.py",
+      "lines": 94
+    },
+    {
+      "path": "implementation/rmbench/campaign.py",
+      "lines": 230
+    },
+    {
+      "path": "implementation/rmbench/data.py",
+      "lines": 321
+    },
+    {
+      "path": "implementation/rmbench/evaluate.py",
+      "lines": 621
+    },
+    {
+      "path": "implementation/rmbench/goal_targets.py",
+      "lines": 198
+    },
+    {
+      "path": "implementation/rmbench/models.py",
+      "lines": 487
+    },
+    {
+      "path": "implementation/rmbench/parallel_eval.py",
+      "lines": 142
+    },
+    {
+      "path": "implementation/rmbench/preflight_mn.py",
+      "lines": 99
+    },
+    {
+      "path": "implementation/rmbench/prepare_ablation.py",
+      "lines": 154
+    },
+    {
+      "path": "implementation/rmbench/prepare_m5_rgb_corrected.py",
+      "lines": 121
+    },
+    {
+      "path": "implementation/rmbench/probe_m5_spatial.py",
+      "lines": 92
+    },
+    {
+      "path": "implementation/rmbench/publish_m5.py",
+      "lines": 69
+    },
+    {
+      "path": "implementation/rmbench/report_ablation.py",
+      "lines": 172
+    },
+    {
+      "path": "implementation/rmbench/report_m5.py",
+      "lines": 173
+    },
+    {
+      "path": "implementation/rmbench/run_ablation.py",
+      "lines": 231
+    },
+    {
+      "path": "implementation/rmbench/run_m4.py",
+      "lines": 292
+    },
+    {
+      "path": "implementation/rmbench/run_m5.py",
+      "lines": 194
+    },
+    {
+      "path": "implementation/rmbench/run_memory_validation.py",
+      "lines": 485
+    },
+    {
+      "path": "implementation/rmbench/run_mn_validation.py",
+      "lines": 304
+    },
+    {
+      "path": "implementation/rmbench/run_put_back_m2.py",
+      "lines": 104
+    },
+    {
+      "path": "implementation/rmbench/spatial_goal_targets.py",
+      "lines": 349
+    },
+    {
+      "path": "implementation/rmbench/stop_campaign.py",
+      "lines": 136
+    },
+    {
+      "path": "implementation/rmbench/summarize.py",
+      "lines": 290
+    },
+    {
+      "path": "implementation/rmbench/task_diagnostics.py",
+      "lines": 194
+    },
+    {
+      "path": "implementation/rmbench/test_models.py",
+      "lines": 360
+    },
+    {
+      "path": "implementation/rmbench/test_regressions.py",
+      "lines": 148
+    },
+    {
+      "path": "implementation/rmbench/train.py",
+      "lines": 292
+    }
+  ],
+  "reviewed_paths": [
+    "models.py",
+    "train.py",
+    "data.py",
+    "evaluate.py",
+    "ablation_eval_shards.py",
+    "report_ablation.py",
+    "summarize.py",
+    "report_m5.py",
+    "goal_targets.py",
+    "spatial_goal_targets.py",
+    "ablation_targets.py",
+    "calibrate.py",
+    "prepare_ablation.py",
+    "prepare_m5_rgb_corrected.py",
+    "run_ablation.py"
+  ],
+  "official_sources": "See official_eval_audit.md and REPORT.md",
+  "no_source_mutations": true,
+  "new_gpu_jobs": 0
+}

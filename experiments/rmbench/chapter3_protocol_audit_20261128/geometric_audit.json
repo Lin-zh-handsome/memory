@@ -1,0 +1,125 @@
+{
+  "reports": [
+    {
+      "task": "swap_T",
+      "epoch": 50,
+      "success_rows": 2,
+      "geometry_passed": 2,
+      "maximum_observed": {
+        "position_m": 0.02458997085165478,
+        "angle_deg": 13.60340979616997,
+        "height_m": 0.760365903377533
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "swap_T",
+      "epoch": 100,
+      "success_rows": 11,
+      "geometry_passed": 11,
+      "maximum_observed": {
+        "position_m": 0.022020901097797765,
+        "angle_deg": 13.132981300236425,
+        "height_m": 0.7603656649589539
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "swap_T",
+      "epoch": 150,
+      "success_rows": 23,
+      "geometry_passed": 23,
+      "maximum_observed": {
+        "position_m": 0.02465356651392974,
+        "angle_deg": 14.374706146457347,
+        "height_m": 0.7603651881217957
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "swap_T",
+      "epoch": 200,
+      "success_rows": 38,
+      "geometry_passed": 38,
+      "maximum_observed": {
+        "position_m": 0.023958135260143218,
+        "angle_deg": 14.814555663558766,
+        "height_m": 0.760367751121521
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "swap_T",
+      "epoch": 250,
+      "success_rows": 45,
+      "geometry_passed": 45,
+      "maximum_observed": {
+        "position_m": 0.022506090154822373,
+        "angle_deg": 14.922711868533616,
+        "height_m": 0.7603651881217957
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 50,
+      "success_rows": 16,
+      "geometry_passed": 16,
+      "maximum_observed": {
+        "component_position_error_m": 0.018483206629753113
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 100,
+      "success_rows": 28,
+      "geometry_passed": 28,
+      "maximum_observed": {
+        "component_position_error_m": 0.01014275848865509
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 150,
+      "success_rows": 50,
+      "geometry_passed": 50,
+      "maximum_observed": {
+        "component_position_error_m": 0.005983762443065643
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 200,
+      "success_rows": 50,
+      "geometry_passed": 50,
+      "maximum_observed": {
+        "component_position_error_m": 0.006281942129135132
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    },
+    {
+      "task": "rearrange_blocks",
+      "epoch": 250,
+      "success_rows": 50,
+      "geometry_passed": 50,
+      "maximum_observed": {
+        "component_position_error_m": 0.00513342022895813
+      },
+      "failures": [],
+      "limitation": "Final gripper state is not independently logged. Only the original reviewed simulator checks gripper openness."
+    }
+  ],
+  "method": "Use stored native object poses and saved target poses, without simulator reruns. For swap_T target quaternion is q_ref * Rx(-90deg), invert with Rx(+90deg) following official load_actors, then apply official angle<15deg and xy<0.025,z<0.77. For rearrange use componentwise XY<0.03 and official stage/count."
+}
